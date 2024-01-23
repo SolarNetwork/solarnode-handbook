@@ -118,7 +118,47 @@ network={
 }
 ```
 
+## Firewall
+
+SolarNodeOS uses the [nftables][nftables] system to provide an IP firewall to SolarNode. By
+default only the following incoming TCP ports are allowed:
+
+| Port | Description |
+|:-----|:------------|
+| 22   | SSH access |
+| 80   | HTTP SolarNode UI |
+| 8080 | HTTP SolarNode UI alternate port |
+
+### Open additional IP ports
+
+You can edit the `/etc/nftables.conf` file to add additional open IP ports as needed. A good place
+to insert new rules is **after** the lines that open ports 80 and 8080:
+
+```
+# Allows HTTP
+add rule ip filter INPUT tcp dport 80 counter accept
+add rule ip filter INPUT tcp dport 8080 counter accept
+```
+
+For example, if you would like to open UDP port 50222 to support the Weatherflow Tempest weather
+station, add the following **after** the above lines:
+
+```
+# Allow WeatherFlow Tempest messages
+add rule ip filter INPUT udp dport 50222 counter accept
+```
+
+### Reload firewall rules
+
+If you make changes to the firewall rules in `/etc/nftables.conf`, run the following command
+to reload the firewall configuration:
+
+```sh
+sudo systemctl reload nftables
+```
+
 [dhcp]: https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol
 [dns]: https://en.wikipedia.org/wiki/Domain_Name_System
-[systemd-networkd-man]: https://manpages.debian.org/bullseye/systemd/systemd-networkd.8.en.html
 [network-unit]: https://manpages.debian.org/bullseye/systemd/systemd.network.5.en.html
+[nftables]: https://en.wikipedia.org/wiki/Nftables
+[systemd-networkd-man]: https://manpages.debian.org/bullseye/systemd/systemd-networkd.8.en.html
