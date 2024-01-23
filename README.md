@@ -179,6 +179,8 @@ pip3 install mkdocs-awesome-pages-plugin mkdocs-enumerate-headings-plugin mkdocs
 To build and view the handbook on your own machine, run `mkdocs serve`. You can then view
 the handbook at http://localhost:8000/solarnode-handbook/.
 
+To deploy the changes, run `mkdocs gh-deploy`.
+
 [md]: https://en.wikipedia.org/wiki/Markdown
 [mkdocs]: https://github.com/mkdocs/mkdocs/
 [mkdocs-material]: https://github.com/squidfunk/mkdocs-material
