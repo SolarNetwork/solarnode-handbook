@@ -2,382 +2,382 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/osgi/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/osgi/blueprint-compendium/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/osgi/blueprint/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/osgi/configuration-admin/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/osgi/life-cycle/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/osgi/manifest/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/services/backup-manager/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/services/closeable-service/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/services/datum-data-source-poll-job/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/services/datum-data-source/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/services/datum-db/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/services/datum-queue/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/services/job-scheduler/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/services/placeholder-service/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/services/settings-db/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/services/settings-service/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/services/sql-database/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/services/task-executor/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/services/task-scheduler/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/settings/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/settings/factory/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/settings/provider/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/settings/resource-handler/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/settings/singleton/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/developers/settings/specifier/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/configuration/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/expressions/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/getting-started/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/logging/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/networking/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/op-modes/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/placeholders/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/remote-access/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/security-tokens/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/settings/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/solarflux/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/user-metadata-service/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/chain/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/control-updater/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/downsample/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/expression/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/join/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/op-mode/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/parameter-expression/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/property/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/split/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/tariff/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/throttle/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/unchanged-property/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/unchanged/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/virtual-meter/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/certificates/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/home/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/login/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/plugins/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/profile/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/settings/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/settings/datum-filters/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/settings/logging/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/settings/manage-component/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/settings/op-modes/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/tools/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/tools/command-console/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/setup-app/tools/controls/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/sysadmin/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/sysadmin/date-time/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/sysadmin/networking/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/sysadmin/packages/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/sysadmin/solarnode-service/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/sysadmin/solarssh/</loc>
-         <lastmod>2023-09-15</lastmod>
+         <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

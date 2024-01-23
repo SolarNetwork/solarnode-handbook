@@ -392,6 +392,25 @@
     WiFi Auto Access Point mode
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#firewall">
+    Firewall
+  </a>
+<nav aria-label="Firewall" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#open-additional-ip-ports">
+    Open additional IP ports
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reload-firewall-rules">
+    Reload firewall rules
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -681,6 +700,25 @@
     WiFi Auto Access Point mode
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#firewall">
+    Firewall
+  </a>
+<nav aria-label="Firewall" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#open-additional-ip-ports">
+    Open additional IP ports
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reload-firewall-rules">
+    Reload firewall rules
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -776,6 +814,48 @@ network={
     psk="solarnode"
     frequency=2462
 }
+</code></pre></div>
+<h2 id="firewall"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.6</span> Firewall<a class="headerlink" href="#firewall" title="Permanent link">¶</a></h2>
+<p>SolarNodeOS uses the <a href="https://en.wikipedia.org/wiki/Nftables">nftables</a> system to provide an IP firewall to SolarNode. By
+default only the following incoming TCP ports are allowed:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Port</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">22</td>
+<td align="left">SSH access</td>
+</tr>
+<tr>
+<td align="left">80</td>
+<td align="left">HTTP SolarNode UI</td>
+</tr>
+<tr>
+<td align="left">8080</td>
+<td align="left">HTTP SolarNode UI alternate port</td>
+</tr>
+</tbody>
+</table>
+<h3 id="open-additional-ip-ports"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.6.1</span> Open additional IP ports<a class="headerlink" href="#open-additional-ip-ports" title="Permanent link">¶</a></h3>
+<p>You can edit the <code>/etc/nftables.conf</code> file to add additional open IP ports as needed. A good place
+to insert new rules is <strong>after</strong> the lines that open ports 80 and 8080:</p>
+<div class="highlight"><pre><span></span><code># Allows HTTP
+add rule ip filter INPUT tcp dport 80 counter accept
+add rule ip filter INPUT tcp dport 8080 counter accept
+</code></pre></div>
+<p>For example, if you would like to open UDP port 50222 to support the Weatherflow Tempest weather
+station, add the following <strong>after</strong> the above lines:</p>
+<div class="highlight"><pre><span></span><code># Allow WeatherFlow Tempest messages
+add rule ip filter INPUT udp dport 50222 counter accept
+</code></pre></div>
+<h3 id="reload-firewall-rules"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.6.2</span> Reload firewall rules<a class="headerlink" href="#reload-firewall-rules" title="Permanent link">¶</a></h3>
+<p>If you make changes to the firewall rules in <code>/etc/nftables.conf</code>, run the following command
+to reload the firewall configuration:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nftables
 </code></pre></div>
 </article>
 </div>
