@@ -901,8 +901,10 @@ can help make the connection process easier to remember. Here's an example that 
 <span class="w">  </span><span class="k">else</span>
 <span class="w">    </span><span class="nb">shift</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Enter SN token secret when first prompted for password. Enter node </span><span class="nv">$node_id</span><span class="s2"> password second."</span>
-<span class="w">    </span>ssh<span class="w"> </span>-o<span class="w"> </span><span class="nv">StrictHostKeyChecking</span><span class="o">=</span>no<span class="w"> </span>-o<span class="w"> </span><span class="nv">UserKnownHostsFile</span><span class="o">=</span>/dev/null<span class="w"> </span>-o<span class="w"> </span><span class="nv">LogLevel</span><span class="o">=</span>ERROR<span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>-J<span class="w"> </span><span class="s2">"</span><span class="nv">$node_id</span><span class="s2">"</span><span class="s1">'SN_TOKEN_HERE@ssh.solarnetwork.net:9022'</span><span class="w"> </span><span class="nv">$@</span><span class="w"> </span>solar@solarnode-<span class="nv">$node_id</span>
+<span class="w">    </span>ssh<span class="w"> </span>-o<span class="w"> </span><span class="nv">StrictHostKeyChecking</span><span class="o">=</span>no<span class="w"> </span>-o<span class="w"> </span><span class="nv">UserKnownHostsFile</span><span class="o">=</span>/dev/null<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-o<span class="w"> </span><span class="nv">LogLevel</span><span class="o">=</span>ERROR<span class="w"> </span>-o<span class="w"> </span><span class="nv">NumberOfPasswordPrompts</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-J<span class="w"> </span><span class="s2">"</span><span class="nv">$node_id</span><span class="s2">"</span><span class="s1">'SN_TOKEN_HERE@ssh.solarnetwork.net:9022'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span><span class="nv">$@</span><span class="w"> </span>solar@solarnode-<span class="nv">$node_id</span>
 <span class="w">  </span><span class="k">fi</span>
 <span class="o">}</span>
 </code></pre></div>
