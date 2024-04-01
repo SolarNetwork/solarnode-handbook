@@ -136,8 +136,10 @@ function solarssh () {
   else
     shift
     echo "Enter SN token secret when first prompted for password. Enter node $node_id password second."
-    ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR \
-      -J "$node_id"'SN_TOKEN_HERE@ssh.solarnetwork.net:9022' $@ solar@solarnode-$node_id
+    ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+	  -o LogLevel=ERROR -o NumberOfPasswordPrompts=1 \
+      -J "$node_id"'SN_TOKEN_HERE@ssh.solarnetwork.net:9022' \
+	  $@ solar@solarnode-$node_id
   fi
 }
 ```
