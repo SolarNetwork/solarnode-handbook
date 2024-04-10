@@ -146,6 +146,11 @@ multiplication. The following functions help with other math operations:
 | `up(n,significance)` | `Number`, `Number` | `Number` | Round numbers away from zero, to the nearest integer multiple of `significance`. |
 
 
+#### Node metadata functions
+
+All the [Datum Metadata](#datum-metadata) functions like `metadataAtPath(path)` can be invoked
+directly, operating on the node's own metadata instead of a datum stream's metadata.
+
 #### Operational functions
 
 The following functions deal with general SolarNode operations:
