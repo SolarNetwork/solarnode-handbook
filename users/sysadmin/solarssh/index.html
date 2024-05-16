@@ -174,8 +174,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../setup-app/settings/manage-component/">
-        Manage Component
+<a class="md-nav__link" href="../../setup-app/settings/components/">
+        Components
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/settings/services/">
+        Services
       </a>
 </li>
 <li class="md-nav__item">
@@ -191,6 +196,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/settings/op-modes/">
         Operational Modes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/settings/backups/">
+        Backups
       </a>
 </li>
 </ul>
@@ -678,26 +688,26 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="solarssh"><span class="enumerate-headings-plugin enumerate-heading-plugin">39.</span> SolarSSH<a class="headerlink" href="#solarssh" title="Permanent link">¶</a></h1>
+<h1 id="solarssh"><span class="enumerate-headings-plugin enumerate-heading-plugin">41.</span> SolarSSH<a class="headerlink" href="#solarssh" title="Permanent link">¶</a></h1>
 <p>The <code>sn-solarssh</code> package in SolarNodeOS provides a <code>solarssh</code> command-line tool for managing
 <a href="../../remote-access/#solarssh">SolarSSH</a> connections.</p>
-<h2 id="show-ssh-public-key"><span class="enumerate-headings-plugin enumerate-heading-plugin">39.1</span> Show SSH public key<a class="headerlink" href="#show-ssh-public-key" title="Permanent link">¶</a></h2>
+<h2 id="show-ssh-public-key"><span class="enumerate-headings-plugin enumerate-heading-plugin">41.1</span> Show SSH public key<a class="headerlink" href="#show-ssh-public-key" title="Permanent link">¶</a></h2>
 <p>To view the node's public SSH key, you can execute <code>solarssh showkey</code>.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>solarssh<span class="w"> </span>showkey
 ssh-ed25519<span class="w"> </span>AAAAC3NzaC1lZDI1NTE5AAAAIG7DWIuC2MVHy/gfD32sCayoVFpGVbZ8VXuQubmKjwyx<span class="w"> </span>SolarNode
 </code></pre></div>
-<h2 id="list-solarssh-sessions"><span class="enumerate-headings-plugin enumerate-heading-plugin">39.2</span> List SolarSSH sessions<a class="headerlink" href="#list-solarssh-sessions" title="Permanent link">¶</a></h2>
+<h2 id="list-solarssh-sessions"><span class="enumerate-headings-plugin enumerate-heading-plugin">41.2</span> List SolarSSH sessions<a class="headerlink" href="#list-solarssh-sessions" title="Permanent link">¶</a></h2>
 <p>Run <code>solarssh list</code> to view all available SolarSSH sessions.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>solarssh<span class="w"> </span>list
 b0ae36e0-06ae-4d3d-b34e-9bf2ca8049f1,ssh.solarnetwork.net,8022,43340
 </code></pre></div>
-<h2 id="view-solarssh-session-status"><span class="enumerate-headings-plugin enumerate-heading-plugin">39.3</span> View SolarSSH session status<a class="headerlink" href="#view-solarssh-session-status" title="Permanent link">¶</a></h2>
+<h2 id="view-solarssh-session-status"><span class="enumerate-headings-plugin enumerate-heading-plugin">41.3</span> View SolarSSH session status<a class="headerlink" href="#view-solarssh-session-status" title="Permanent link">¶</a></h2>
 <p>Using the output of <code>solarssh list</code> you can view the SSH connection status of a specific SSH
 session with <code>solarssh status</code>, like this:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>solarssh<span class="w"> </span>-c<span class="w"> </span>b0ae36e0-06ae-4d3d-b34e-9bf2ca8049f1,ssh.solarnetwork.net,8022,43340<span class="w"> </span>status
 active
 </code></pre></div>
-<h2 id="stop-solarssh-session"><span class="enumerate-headings-plugin enumerate-heading-plugin">39.4</span> Stop SolarSSH session<a class="headerlink" href="#stop-solarssh-session" title="Permanent link">¶</a></h2>
+<h2 id="stop-solarssh-session"><span class="enumerate-headings-plugin enumerate-heading-plugin">41.4</span> Stop SolarSSH session<a class="headerlink" href="#stop-solarssh-session" title="Permanent link">¶</a></h2>
 <p>You can force a SolarSSH session to end using <code>solarssh stop</code>, like this:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>solarssh<span class="w"> </span>-c<span class="w"> </span>b0ae36e0-06ae-4d3d-b34e-9bf2ca8049f1,ssh.solarnetwork.net,8022,43340<span class="w"> </span>stop
 </code></pre></div>

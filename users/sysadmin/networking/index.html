@@ -174,8 +174,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../setup-app/settings/manage-component/">
-        Manage Component
+<a class="md-nav__link" href="../../setup-app/settings/components/">
+        Components
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/settings/services/">
+        Services
       </a>
 </li>
 <li class="md-nav__item">
@@ -191,6 +196,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/settings/op-modes/">
         Operational Modes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/settings/backups/">
+        Backups
       </a>
 </li>
 </ul>
@@ -726,17 +736,17 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="networking"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.</span> Networking<a class="headerlink" href="#networking" title="Permanent link">¶</a></h1>
+<h1 id="networking"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.</span> Networking<a class="headerlink" href="#networking" title="Permanent link">¶</a></h1>
 <p>SolarNodeOS uses the <a href="https://manpages.debian.org/bullseye/systemd/systemd-networkd.8.en.html">systemd-networkd</a> service to manage network devices and their settings.
 A <em>network device</em> relates to a physical network hardware device or a software networking component, as recognized
 and named by the operating system. For example, the first available ethernet device is typically named <code>eth0</code> and
 the first available WiFi device <code>wlan0</code>.</p>
-<h2 id="network-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.1</span> Network configuration<a class="headerlink" href="#network-configuration" title="Permanent link">¶</a></h2>
+<h2 id="network-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.1</span> Network configuration<a class="headerlink" href="#network-configuration" title="Permanent link">¶</a></h2>
 <p>Network configuration is stored in <a href="https://manpages.debian.org/bullseye/systemd/systemd.network.5.en.html"><code>.network</code></a> files in the <code>/etc/systemd/network</code>
 directory. SolarNodeOS comes with default support for ethernet and WiFi network devices.</p>
 <p>The default <code>10-eth.network</code> file configures the default ethernet network <code>eth0</code> to use DHCP to automatically
 obtain a network address, routing information, and DNS servers to use.</p>
-<h2 id="dhcp-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.2</span> DHCP configuration<a class="headerlink" href="#dhcp-configuration" title="Permanent link">¶</a></h2>
+<h2 id="dhcp-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.2</span> DHCP configuration<a class="headerlink" href="#dhcp-configuration" title="Permanent link">¶</a></h2>
 <p>SolarNodeOS networks are configured to use DHCP by default. If you need to re-configure a network to
 use DHCP, change the configuration to look like this:</p>
 <div class="highlight"><span class="filename">Ethernet network with DHCP configuration</span><pre><span></span><code><span class="k">[Match]</span>
@@ -746,7 +756,7 @@ use DHCP, change the configuration to look like this:</p>
 <span class="na">DHCP</span><span class="o">=</span><span class="s">yes</span>
 </code></pre></div>
 <p>Use a <strong>Name</strong> value specific to your network.</p>
-<h2 id="static-network-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.3</span> Static network configuration<a class="headerlink" href="#static-network-configuration" title="Permanent link">¶</a></h2>
+<h2 id="static-network-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.3</span> Static network configuration<a class="headerlink" href="#static-network-configuration" title="Permanent link">¶</a></h2>
 <p>If you need to use a static network address, instead of DHCP, edit the network configuration file
 (for example, the <code>10-eth.network</code> file for the ethernet network), and change it to look like this:</p>
 <div class="highlight"><span class="filename">Ethernet network with static address configuration</span><pre><span></span><code><span class="k">[Match]</span>
@@ -772,7 +782,7 @@ everything into the <code>[Network]</code> section:</p>
 <span class="na">Gateway</span><span class="o">=</span><span class="s">192.168.3.1</span>
 <span class="na">DNS</span><span class="o">=</span><span class="s">1.1.1.1</span>
 </code></pre></div>
-<h2 id="wifi-network-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.4</span> WiFi network configuration<a class="headerlink" href="#wifi-network-configuration" title="Permanent link">¶</a></h2>
+<h2 id="wifi-network-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.4</span> WiFi network configuration<a class="headerlink" href="#wifi-network-configuration" title="Permanent link">¶</a></h2>
 <p>The default <code>20-wlan.network</code> file configures the default WiFi network <code>wlan0</code> to use DHCP to
 automatically obtain a network address, routing information, and DNS servers to use. To configure
 the WiFi network SolarNode should connect to, run this command:</p>
@@ -789,7 +799,7 @@ the WiFi network SolarNode should connect to, run this command:</p>
 <p>WiFi support is provided by the <code>sn-wifi</code> package, which may not be installed. See the <a href="../packages/#install-packages">Package
 Maintenance</a> section for information about installing packages.</p>
 </div>
-<h2 id="wifi-auto-access-point-mode"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.5</span> WiFi Auto Access Point mode<a class="headerlink" href="#wifi-auto-access-point-mode" title="Permanent link">¶</a></h2>
+<h2 id="wifi-auto-access-point-mode"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.5</span> WiFi Auto Access Point mode<a class="headerlink" href="#wifi-auto-access-point-mode" title="Permanent link">¶</a></h2>
 <p>For initial setup of a the WiFi settings on a SolarNode it can be helpful for SolarNode to create
 its own WiFi network, as an access point. The <code>sn-wifi-autoap@wlan0</code> service can be used for this.
 When enabled, it will monitor the WiFi network status, and when the WiFi connection fails for any
@@ -815,7 +825,7 @@ network={
     frequency=2462
 }
 </code></pre></div>
-<h2 id="firewall"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.6</span> Firewall<a class="headerlink" href="#firewall" title="Permanent link">¶</a></h2>
+<h2 id="firewall"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.6</span> Firewall<a class="headerlink" href="#firewall" title="Permanent link">¶</a></h2>
 <p>SolarNodeOS uses the <a href="https://en.wikipedia.org/wiki/Nftables">nftables</a> system to provide an IP firewall to SolarNode. By
 default only the following incoming TCP ports are allowed:</p>
 <table>
@@ -840,7 +850,7 @@ default only the following incoming TCP ports are allowed:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="open-additional-ip-ports"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.6.1</span> Open additional IP ports<a class="headerlink" href="#open-additional-ip-ports" title="Permanent link">¶</a></h3>
+<h3 id="open-additional-ip-ports"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.6.1</span> Open additional IP ports<a class="headerlink" href="#open-additional-ip-ports" title="Permanent link">¶</a></h3>
 <p>You can edit the <code>/etc/nftables.conf</code> file to add additional open IP ports as needed. A good place
 to insert new rules is <strong>after</strong> the lines that open ports 80 and 8080:</p>
 <div class="highlight"><pre><span></span><code># Allows HTTP
@@ -852,7 +862,7 @@ station, add the following <strong>after</strong> the above lines:</p>
 <div class="highlight"><pre><span></span><code># Allow WeatherFlow Tempest messages
 add rule ip filter INPUT udp dport 50222 counter accept
 </code></pre></div>
-<h3 id="reload-firewall-rules"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.6.2</span> Reload firewall rules<a class="headerlink" href="#reload-firewall-rules" title="Permanent link">¶</a></h3>
+<h3 id="reload-firewall-rules"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.6.2</span> Reload firewall rules<a class="headerlink" href="#reload-firewall-rules" title="Permanent link">¶</a></h3>
 <p>If you make changes to the firewall rules in <code>/etc/nftables.conf</code>, run the following command
 to reload the firewall configuration:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nftables

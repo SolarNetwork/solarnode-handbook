@@ -174,8 +174,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../users/setup-app/settings/manage-component/">
-        Manage Component
+<a class="md-nav__link" href="../../users/setup-app/settings/components/">
+        Components
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../users/setup-app/settings/services/">
+        Services
       </a>
 </li>
 <li class="md-nav__item">
@@ -191,6 +196,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../users/setup-app/settings/op-modes/">
         Operational Modes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../users/setup-app/settings/backups/">
+        Backups
       </a>
 </li>
 </ul>
@@ -619,18 +629,18 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">56.</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h1>
+<h1 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h1>
 <p>SolarNode provides a way for plugin components to describe their user-configurable properties,
-called <em>settings</em>, to the platform. SolarNode provides a web-based GUI that makes it easy for users
+called <em>settings</em>, to the platform. SolarNode provides a web-based UI that makes it easy for users
 to configure those components using a web browser. For example, here is a screen shot of the
-SolarNode GUI showing a form for the settings of a Database Backup component:</p>
-<p><img alt="SolarNode settings form for a component with 3 settings" src="../../images/developers/settings/web-form.png" width="783"/></p>
+SolarNode UI showing a form for the settings of a Database Backup component:</p>
+<p><img alt="SolarNode settings form for a component with 3 settings" src="../../images/developers/settings/web-form%402x.png" width="728"/></p>
 <p>The mechanism for components to describe themselves in this way is called the <strong>Settings API</strong>.
 Classes that wish to participate in this system publish metadata about their configurable properties
-through the <a href="provider/">Settings Provider</a> API, and then SolarNode generates a GUI form based on
+through the <a href="provider/">Settings Provider</a> API, and then SolarNode generates a UI form based on
 that metadata. Each form field in the previous example image is a <a href="specifier/">Setting Specifier</a>.</p>
 <p>The process is similar to the built-in Settings app on iOS: iOS applications can publish
-configurable property definitions and the Settings app displays a GUI that allows users to modify
+configurable property definitions and the Settings app displays a UI that allows users to modify
 those properties.</p>
 </article>
 </div>

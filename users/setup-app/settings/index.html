@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://solarnetwork.github.io/solarnode-handbook/users/setup-app/settings/" rel="canonical"/>
 <link href="../certificates/" rel="prev"/>
-<link href="manage-component/" rel="next"/>
+<link href="components/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.7" name="generator"/>
 <title>Settings - SolarNode Handbook</title>
@@ -174,8 +174,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="manage-component/">
-        Manage Component
+<a class="md-nav__link" href="components/">
+        Components
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="services/">
+        Services
       </a>
 </li>
 <li class="md-nav__item">
@@ -191,6 +196,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="op-modes/">
         Operational Modes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="backups/">
+        Backups
       </a>
 </li>
 </ul>
@@ -613,46 +623,6 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#components">
-    Components
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#settings_1">
-    Settings
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#backup-restore">
-    Backup &amp; Restore
-  </a>
-<nav aria-label="Backup &amp; Restore" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#file-system-backup-service">
-    File System Backup Service
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#s3-backup-service">
-    S3 Backup Service
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#settings-backup-restore">
-    Settings Backup &amp; Restore
-  </a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
@@ -660,146 +630,19 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h1>
-<p>The Settings page in SolarNode Setup is where you can configure all available SolarNode settings.
-The page is divided 4 main sections, outlined next.</p>
-<h2 id="components"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1</span> Components<a class="headerlink" href="#components" title="Permanent link">¶</a></h2>
-<p>The Components section lists all the configurable <em>multi-instance components</em> available on
-your SolarNode. <em>Multi-instance</em> means you can configure any number of a given component,
-each with their own settings.</p>
-<p>For example imagine you want to collect data from a power meter, solar inverter, and weather
-station, all of which use the Modbus protocol. To do that you would configure three <em>instances</em> of
-the Modbus Device component, one for each device.</p>
-<p>Use the <strong>Manage</strong> button for any listed compoennt to <a href="manage-component/">add or remove instances</a>
-of that component.</p>
-<p>An <strong>instance count badge</strong> appears next to any component with at least one instance configured.</p>
+<p>The Settings section in SolarNode Setup is where you can configure all available SolarNode settings.</p>
 <figure>
-<p><img alt="Settings components list" src="../../../images/users/setup/setup-components%402x.png" width="740"/></p>
+<p><img alt="Settings components list" src="../../../images/users/setup/settings-components%402x.png" width="863"/></p>
 </figure>
-<h2 id="settings_1"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.2</span> Settings<a class="headerlink" href="#settings_1" title="Permanent link">¶</a></h2>
-<p>Other configurable services that are not <a href="#components">Components</a> appear in the Settings section.</p>
-<p>Each setting will include a <span class="twemoji"><svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M464 256a208 208 0 1 0-416 0 208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0 256 256 0 1 1-512 0zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"></path></svg></span> button that will show you a
-brief description of that setting.</p>
-<figure>
-<p><img alt="Setting tool tips have helpful information" src="../../../images/users/setup/setup-settings-toolip%402x.png" width="790"/></p>
-</figure>
-<p>After making any change, an <strong>Active value</strong> label will appear, showing the currently active value
-for that setting.</p>
-<figure>
-<p><img alt="Modified settings show the previous value" src="../../../images/users/setup/setup-setting-changed-value%402x.png" width="566"/></p>
-</figure>
-<p>In order to save your changes, you must click the <strong>Save All Changes</strong> button. You may need to scroll
-the page to find it!</p>
-<figure>
-<p><img alt="Save all changes button" src="../../../images/users/setup/setup-save-changes%402x.png" width="734"/></p>
-</figure>
-<h2 id="backup-restore"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.3</span> Backup &amp; Restore<a class="headerlink" href="#backup-restore" title="Permanent link">¶</a></h2>
-<p>The Backup &amp; Restore section lets you manage SolarNode backups. Each backup contains a snapshot
-of the settings you have configured, the node's certificate, and custom plugins.</p>
-<figure>
-<p><img alt="Backup and restore form" src="../../../images/users/setup/setup-backups%402x.png" width="650"/></p>
-</figure>
-<h3 id="file-system-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.3.1</span> File System Backup Service<a class="headerlink" href="#file-system-backup-service" title="Permanent link">¶</a></h3>
-<p>The File System Backup Service is the default Backup Service provided by SolarNode. It saves
-the backup onto the node itself. In order to be able to restore your settings if the node is damaged
-or lost, you must download a copy of a backup using the <strong>Download</strong> button, and save the file
-to a safe place.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you do not download a copy of a backup, you run the risk of losing your settings and
-node certificate, making it impossible to restore the node in the event of a catastrophic
-hardware failure.</p>
-</div>
-<p>The configurable settings of the File System Backup Service are:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Setting</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Backup Directory</td>
-<td align="left">The folder (on the node) where the backups will be saved.</td>
-</tr>
-<tr>
-<td align="left">Copies</td>
-<td align="left">The number of backup copies to keep, before deleting the oldest backup.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="s3-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.3.2</span> S3 Backup Service<a class="headerlink" href="#s3-backup-service" title="Permanent link">¶</a></h3>
-<p>The S3 Backup Service creates cloud-based backups in <a href="https://aws.amazon.com/s3/">AWS S3</a> (or any compatible provider). You
-must configure the credentials and S3 location details to use before any backups can be created.</p>
-<figure>
-<p><img alt="S3 Backup settings form" src="../../../images/users/setup/setup-s3-backup%402x.png" width="460"/></p>
-</figure>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The S3 Backup Service requires the <a href="https://github.com/SolarNetwork/solarnetwork-node/tree/develop/net.solarnetwork.node.backup.s3">S3 Backup Service Plugin</a>.</p>
-</div>
-<p>The configurable settings of the S3 Backup Service are:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Setting</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">AWS Token</td>
-<td align="left">The AWS access token to authenticate with.</td>
-</tr>
-<tr>
-<td align="left">AWS Secret</td>
-<td align="left">The AWS access token secret to authenticate with.</td>
-</tr>
-<tr>
-<td align="left">AWS Region</td>
-<td align="left">The name of the Amazon region to use, for example <code>us-west-2</code>.</td>
-</tr>
-<tr>
-<td align="left">S3 Bucket</td>
-<td align="left">The name of the S3 bucket to use.</td>
-</tr>
-<tr>
-<td align="left">S3 Path</td>
-<td align="left">An optional root path to use for all backup data (typically a folder location).</td>
-</tr>
-<tr>
-<td align="left">Storage Class</td>
-<td align="left">A supported storage class, such as STANDARD (the default), <code>STANDARD_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>REDUCED_REDUNDANCY</code>, and so on.</td>
-</tr>
-<tr>
-<td align="left">Copies</td>
-<td align="left">The number of backup copies to keep, before deleting the oldest backup.</td>
-</tr>
-<tr>
-<td align="left">Cache Seconds</td>
-<td align="left">The amount of time to cache backup metadata such as the list of available backups, in seconds.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="settings-backup-restore"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.4</span> Settings Backup &amp; Restore<a class="headerlink" href="#settings-backup-restore" title="Permanent link">¶</a></h2>
-<p>The Settings Backup &amp; Restore section provides a way to manage <a href="../../settings/">Settings Files</a>
-and Settings Resources, both of which are backups for the configured settings in SolarNode.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Settings Files and Settings Resources do <strong>not</strong> include the node's certificate or custom
-plugins. See the <a href="#backup-restore">Backup &amp; Restore</a> section for managing "full" backups
-that <em>do</em> include those items.</p>
-</div>
-<figure>
-<p><img alt="Settings import/export form" src="../../../images/users/setup/setup-settings-backup%402x.png" width="676"/></p>
-</figure>
-<p>The <strong>Export</strong> button allows you to download a <a href="../../settings/">Settings File</a> with the currently active configuration.</p>
-<p>The <strong>Import</strong> button allows you to upload a previously-downloaded <a href="../../settings/">Settings File</a>.</p>
-<p>The <strong>Settings Resource</strong> menu and associated <strong>Export to file</strong> button allow you to download
-specialized settings files, offered by some components in SolarNode.</p>
-<p>The <strong>Auto backups</strong> area will have a list of buttons, each of which will let you download a
-<a href="../../settings/">Settings File</a> that SolarNode automatically created. Each button shows you
-the date the settings backup was created.</p>
+<p>The section is divided into the following pages:</p>
+<ul>
+<li><a href="components/">Components</a></li>
+<li><a href="services/">Services</a></li>
+<li><a href="datum-filters/">Datum Filters</a></li>
+<li><a href="logging/">Logging</a></li>
+<li><a href="op-modes/">Operational Modes</a></li>
+<li><a href="backups/">Backups</a></li>
+</ul>
 </article>
 </div>
 </div>

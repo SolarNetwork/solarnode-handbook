@@ -174,8 +174,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/settings/manage-component/">
-        Manage Component
+<a class="md-nav__link" href="../setup-app/settings/components/">
+        Components
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../setup-app/settings/services/">
+        Services
       </a>
 </li>
 <li class="md-nav__item">
@@ -191,6 +196,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../setup-app/settings/op-modes/">
         Operational Modes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../setup-app/settings/backups/">
+        Backups
       </a>
 </li>
 </ul>
@@ -850,7 +860,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="expressions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.</span> Expressions<a class="headerlink" href="#expressions" title="Permanent link">¶</a></h1>
+<h1 id="expressions"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.</span> Expressions<a class="headerlink" href="#expressions" title="Permanent link">¶</a></h1>
 <p>Many SolarNode components support a general "expressions" framework that can be used to calculate
 values using a scripting language. SolarNode comes with the <a href="https://github.com/SolarNetwork/solarnetwork/wiki/Spring-Expression-Language">Spel</a> scripting language by
 default, so this guide describes that language.</p>
@@ -865,11 +875,11 @@ it will add a new <code>watts</code> property by multiplying the captured <code>
 In essence the expression is like this code:</p>
 <div class="highlight"><pre><span></span><code>watts = amps × volts
 </code></pre></div>
-<h2 id="datum-expressions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.1</span> Datum Expressions<a class="headerlink" href="#datum-expressions" title="Permanent link">¶</a></h2>
+<h2 id="datum-expressions"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.1</span> Datum Expressions<a class="headerlink" href="#datum-expressions" title="Permanent link">¶</a></h2>
 <p>Many SolarNode expressions are evaluated in the context of a <a href="../datum/">datum</a>, typically one captured
 from a device SolarNode is collecting data from. In this context, the expression supports accessing
 datum properties directly as expression variables, and some helpful functions are provided.</p>
-<h3 id="datum-property-variables"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.1.1</span> Datum property variables<a class="headerlink" href="#datum-property-variables" title="Permanent link">¶</a></h3>
+<h3 id="datum-property-variables"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.1.1</span> Datum property variables<a class="headerlink" href="#datum-property-variables" title="Permanent link">¶</a></h3>
 <p>All datum properties with <em>simple</em> names can be referred to directly as variables. Here <em>simple</em>
 just means a name that is also a <a href="https://github.com/SolarNetwork/solarnetwork/wiki/Spring-Expression-Language#variable-names">legal variable name</a>. The <a href="../datum/#datum-property-classifications">property
 classifications</a> do not matter in this context: the expression will look for
@@ -888,7 +898,7 @@ properties in all classifications.</p>
 <span class="p">}</span>
 </code></pre></div>
 <p>The expression can use the variables <code>watts</code>, <code>wattHours</code>, and <code>mode</code>.</p>
-<h3 id="other-variables"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.1.2</span> Other variables<a class="headerlink" href="#other-variables" title="Permanent link">¶</a></h3>
+<h3 id="other-variables"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.1.2</span> Other variables<a class="headerlink" href="#other-variables" title="Permanent link">¶</a></h3>
 <p>A datum expression will also provide the following variables:</p>
 <table>
 <thead>
@@ -926,9 +936,9 @@ properties in all classifications.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.1.3</span> Functions<a class="headerlink" href="#functions" title="Permanent link">¶</a></h3>
+<h3 id="functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.1.3</span> Functions<a class="headerlink" href="#functions" title="Permanent link">¶</a></h3>
 <p>Some functions are provided to help with datum-related expressions.</p>
-<h4 id="bit-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.1.3.1</span> Bit functions<a class="headerlink" href="#bit-functions" title="Permanent link">¶</a></h4>
+<h4 id="bit-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.1.3.1</span> Bit functions<a class="headerlink" href="#bit-functions" title="Permanent link">¶</a></h4>
 <p>The following functions help with bitwise integer manipulation operations:</p>
 <table>
 <thead>
@@ -1025,7 +1035,7 @@ properties in all classifications.</p>
 <p>All number arguments will be converted to <code>BigInteger</code> values for the bitwise operations, and
  <code>BigInteger</code> values are returned.</p>
 </div>
-<h4 id="datum-stream-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.1.3.2</span> Datum stream functions<a class="headerlink" href="#datum-stream-functions" title="Permanent link">¶</a></h4>
+<h4 id="datum-stream-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.1.3.2</span> Datum stream functions<a class="headerlink" href="#datum-stream-functions" title="Permanent link">¶</a></h4>
 <p>The following functions deal with datum streams. The <code>latest()</code> and <code>offset()</code> functions give you
 access to recently-captured datum from any SolarNode source, so you can refer to any datum stream
 being generated in SolarNode. They return another datum expression root object, which means you have
@@ -1132,7 +1142,7 @@ access to all the variables and functions documented on this page with them as w
 </tr>
 </tbody>
 </table>
-<h4 id="math-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.1.3.3</span> Math functions<a class="headerlink" href="#math-functions" title="Permanent link">¶</a></h4>
+<h4 id="math-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.1.3.3</span> Math functions<a class="headerlink" href="#math-functions" title="Permanent link">¶</a></h4>
 <p>Expressions support basic <a href="https://github.com/SolarNetwork/solarnetwork/wiki/Spring-Expression-Language-Syntax#mathematical-operators">math operators</a> like <code>+</code> for addition and <code>*</code> for
 multiplication. The following functions help with other math operations:</p>
 <table>
@@ -1261,10 +1271,10 @@ multiplication. The following functions help with other math operations:</p>
 </tr>
 </tbody>
 </table>
-<h4 id="node-metadata-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.1.3.4</span> Node metadata functions<a class="headerlink" href="#node-metadata-functions" title="Permanent link">¶</a></h4>
+<h4 id="node-metadata-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.1.3.4</span> Node metadata functions<a class="headerlink" href="#node-metadata-functions" title="Permanent link">¶</a></h4>
 <p>All the <a href="#datum-metadata">Datum Metadata</a> functions like <code>metadataAtPath(path)</code> can be invoked
 directly, operating on the node's own metadata instead of a datum stream's metadata.</p>
-<h4 id="operational-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.1.3.5</span> Operational functions<a class="headerlink" href="#operational-functions" title="Permanent link">¶</a></h4>
+<h4 id="operational-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.1.3.5</span> Operational functions<a class="headerlink" href="#operational-functions" title="Permanent link">¶</a></h4>
 <p>The following functions deal with general SolarNode operations:</p>
 <table>
 <thead>
@@ -1284,7 +1294,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h4 id="property-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.1.3.6</span> Property functions<a class="headerlink" href="#property-functions" title="Permanent link">¶</a></h4>
+<h4 id="property-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.1.3.6</span> Property functions<a class="headerlink" href="#property-functions" title="Permanent link">¶</a></h4>
 <p>The following functions help with expression properties (variables):</p>
 <table>
 <thead>
@@ -1310,7 +1320,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h2 id="expression-examples"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.2</span> Expression examples<a class="headerlink" href="#expression-examples" title="Permanent link">¶</a></h2>
+<h2 id="expression-examples"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.2</span> Expression examples<a class="headerlink" href="#expression-examples" title="Permanent link">¶</a></h2>
 <p>Let's assume a captured datum like this, expressed as JSON:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"i"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -1357,7 +1367,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h3 id="datum-stream-history"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.2.1</span> Datum stream history<a class="headerlink" href="#datum-stream-history" title="Permanent link">¶</a></h3>
+<h3 id="datum-stream-history"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.2.1</span> Datum stream history<a class="headerlink" href="#datum-stream-history" title="Permanent link">¶</a></h3>
 <p>Building on the previous example datum, let's assume an <strong>earlier</strong> datum for the same source ID had
 been collected with these properties (the classifications have been omitted for brevity):</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1395,7 +1405,7 @@ example:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="other-datum-stream-history"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.2.2</span> Other datum stream history<a class="headerlink" href="#other-datum-stream-history" title="Permanent link">¶</a></h3>
+<h3 id="other-datum-stream-history"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.2.2</span> Other datum stream history<a class="headerlink" href="#other-datum-stream-history" title="Permanent link">¶</a></h3>
 <p>Other datum stream histories collected by SolarNode can also be accessed via the
 <code>offset(source,offset)</code> function. Let's assume SolarNode is collecting a datum stream for the source
 ID <code>solar</code>, and had amassed the following history, in newest-to-oldest order:</p>
@@ -1460,10 +1470,10 @@ examples:</p>
 </tr>
 </tbody>
 </table>
-<h2 id="datum-metadata"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.3</span> Datum metadata<a class="headerlink" href="#datum-metadata" title="Permanent link">¶</a></h2>
+<h2 id="datum-metadata"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.3</span> Datum metadata<a class="headerlink" href="#datum-metadata" title="Permanent link">¶</a></h2>
 <p>Some functions return <a href="https://github.com/SolarNetwork/solarnetwork-common/blob/develop/net.solarnetwork.common/src/net/solarnetwork/domain/datum/DatumMetadataOperations.java"><code>DatumMetadataOperations</code></a> objects. These objects
 provide <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#metadata">metadata</a> for things like a specific source ID on SolarNode.</p>
-<h3 id="datum-metadata-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.3.1</span> Datum metadata properties<a class="headerlink" href="#datum-metadata-properties" title="Permanent link">¶</a></h3>
+<h3 id="datum-metadata-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.3.1</span> Datum metadata properties<a class="headerlink" href="#datum-metadata-properties" title="Permanent link">¶</a></h3>
 <p>The properties available on datum metadata objects are:</p>
 <table>
 <thead>
@@ -1501,7 +1511,7 @@ provide <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-
 </tr>
 </tbody>
 </table>
-<h3 id="datum-metadata-general-info-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.3.2</span> Datum metadata general info functions<a class="headerlink" href="#datum-metadata-general-info-functions" title="Permanent link">¶</a></h3>
+<h3 id="datum-metadata-general-info-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.3.2</span> Datum metadata general info functions<a class="headerlink" href="#datum-metadata-general-info-functions" title="Permanent link">¶</a></h3>
 <p>The following functions available on datum metadata objects support access to the general
 metadata (e.g. the <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#metadata"><code>m</code> metadata</a> map):</p>
 <table>
@@ -1540,7 +1550,7 @@ metadata (e.g. the <a href="https://github.com/SolarNetwork/solarnetwork/wiki/So
 </tr>
 </tbody>
 </table>
-<h3 id="datum-metadata-property-info-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.3.3</span> Datum metadata property info functions<a class="headerlink" href="#datum-metadata-property-info-functions" title="Permanent link">¶</a></h3>
+<h3 id="datum-metadata-property-info-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.3.3</span> Datum metadata property info functions<a class="headerlink" href="#datum-metadata-property-info-functions" title="Permanent link">¶</a></h3>
 <p>The following functions available on datum metadata objects support access to the property
 metadata (e.g. the <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#metadata"><code>pm</code> metadata</a> map):</p>
 <table>
@@ -1579,7 +1589,7 @@ metadata (e.g. the <a href="https://github.com/SolarNetwork/solarnetwork/wiki/So
 </tr>
 </tbody>
 </table>
-<h3 id="datum-metadata-global-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.3.4</span> Datum metadata global functions<a class="headerlink" href="#datum-metadata-global-functions" title="Permanent link">¶</a></h3>
+<h3 id="datum-metadata-global-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.3.4</span> Datum metadata global functions<a class="headerlink" href="#datum-metadata-global-functions" title="Permanent link">¶</a></h3>
 <p>The following functions available on datum metadata objects support access to both general and property metadata:</p>
 <table>
 <thead>
