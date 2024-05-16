@@ -97,7 +97,7 @@ the invitation you generated in SolarNetwork. The acceptance process goes throug
 
 	First you **submit** the invitation in the acceptance form.
 
-	![SolarNode invitation acceptance form](../images/users/associate/invitation-form%402x.png){width=852}
+	![SolarNode invitation acceptance form](../images/users/associate/invitation-form%402x.png){width=878}
 
 === "Preview"
 
@@ -107,7 +107,7 @@ the invitation you generated in SolarNetwork. The acceptance process goes throug
 
 		The expected **SolarNetwork Service** value shown in this step will be `in.solarnetwork.net`.
 
-	![SolarNode invitation preview](../images/users/associate/invitation-preview%402x.png){width=852}
+	![SolarNode invitation preview](../images/users/associate/invitation-preview%402x.png){width=878}
 
 === "Confirm"
 
@@ -119,7 +119,7 @@ the invitation you generated in SolarNetwork. The acceptance process goes throug
 		Ensure you provide a **Certificate Password** on this step, so SolarNetwork can generate
 		a security certificate for your SolarNode.
 
-	![Confirm SolarNode invitation details](../images/users/associate/invitation-verify%402x.png){width=837}
+	![Confirm SolarNode invitation details](../images/users/associate/invitation-verify%402x.png){width=878}
 
 === "Complete"
 
@@ -127,7 +127,7 @@ the invitation you generated in SolarNetwork. The acceptance process goes throug
 	identifier known as your **Node ID**. A randomly generated SolarNode login password will have been
 	generated; you are given the opportunity to easily change that if you prefer.
 
-	![SolarNode invitation complete](../images/users/associate/invitation-complete%402x.png){width=852}
+	![SolarNode invitation complete](../images/users/associate/invitation-complete%402x.png){width=878}
 
 ## Next steps
 
