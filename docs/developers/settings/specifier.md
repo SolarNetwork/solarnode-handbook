@@ -54,7 +54,7 @@ great way to see how the settings can be used.
 
 The [`TextFieldSettingSpecifier`][TextFieldSettingSpecifier] defines a simple string-based
 configurable property and is the most common setting type. The setting defines a `key` that maps to
-a setter method on its associated component class. In the SolarNode GUI a text field is rendered as
+a setter method on its associated component class. In the SolarNode UI a text field is rendered as
 an HTML form text input, like this:
 
 ![Text field setting as an HTML form field](../../images/developers/settings/text-field-setting.png){width=416}
@@ -83,7 +83,7 @@ new BasicTextFieldSettingSpecifier("myProperty", null);
 ### Secure Text Field
 
 The `BasicTextFieldSettingSpecifier` can also be used for "secure" text fields where the field's
-content is obscured from view. In the SolarNode GUI a secure text field is rendered as an HTML
+content is obscured from view. In the SolarNode UI a secure text field is rendered as an HTML
 password form input like this:
 
 ![Secure text field setting as an HTML form field](../../images/developers/settings/secure-text-field-setting.png){width=435}
@@ -101,7 +101,7 @@ new BasicTextFieldSettingSpecifier("myProperty", null, true);
 
 The [`TitleSettingSpecifier`][TitleSettingSpecifier] defines a simple read-only string-based
 configurable property. The setting defines a `key` that maps to a setter method on its associated
-component class. In the SolarNode GUI the default value is rendered as plain text, like this:
+component class. In the SolarNode UI the default value is rendered as plain text, like this:
 
 ![Title setting as HTML text](../../images/developers/settings/title-setting.png){width=246}
 
@@ -114,7 +114,7 @@ new BasicTitleSettingSpecifier("status", "Status is good.", true);
 
 ### HTML Title
 
-The [`TitleSettingSpecifier`][TitleSettingSpecifier] supports HTML markup. In the SolarNode GUI the
+The [`TitleSettingSpecifier`][TitleSettingSpecifier] supports HTML markup. In the SolarNode UI the
 default value is rendered directly into HTML, like this:
 
 ![Title setting as HTML text](../../images/developers/settings/title-markup-setting.png){width=366}
@@ -128,7 +128,7 @@ new BasicTitleSettingSpecifier("status", "Status is <b>good</b>.", true, true);
 
 The [`TextAreaSettingSpecifier`][TextAreaSettingSpecifier] defines a simple string-based
 configurable property for a larger text value, loaded as an external file using the
-[SettingResourceHandler](resource-handler.md) API. In the SolarNode GUI a text area is rendered
+[SettingResourceHandler](resource-handler.md) API. In the SolarNode UI a text area is rendered
 as an HTML form text area with an associated button to upload the content, like this:
 
 ![Text area setting as an HTML form field](../../images/developers/settings/text-area-setting.png){width=476}
@@ -146,7 +146,7 @@ new BasicTextAreaSettingSpecifier("myProperty", null);
 ### Direct Text Area
 
 The `BasicTextAreaSettingSpecifier` can also be used for "direct" text areas where the field's
-content is not uploaded as an external file. In the SolarNode GUI a direct text area is rendered as
+content is not uploaded as an external file. In the SolarNode UI a direct text area is rendered as
 an HTML form text area, like this:
 
 ![Direct text area setting as an HTML form field](../../images/developers/settings/direct-text-area-setting.png){width=446}
@@ -163,7 +163,7 @@ new BasicTextAreaSettingSpecifier("myProperty", null, true);
 ## Toggle
 
 The [`ToggleSettingSpecifier`][ToggleSettingSpecifier] defines a boolean configurable property. In
-the SolarNode GUI a toggle setting is rendered as an HTML form button, like this:
+the SolarNode UI a toggle setting is rendered as an HTML form button, like this:
 
 ![Toggle setting as an HTML form field](../../images/developers/settings/toggle-setting.png){width=142}
 
@@ -179,7 +179,7 @@ new BasicToggleSettingSpecifier("enabled", true);  // default "on"
 ## Slider
 
 The [`SliderSettingSpecifier`][SliderSettingSpecifier] defines a number-based configuration property
-with minimum and maximum values enforced, and a _step_ limit. In the SolarNode GUI a
+with minimum and maximum values enforced, and a _step_ limit. In the SolarNode UI a
 slider is rendered as an HTML widget, like this:
 
 ![Slider setting as an HTML form widget](../../images/developers/settings/slider-setting.png){width=382}
@@ -198,7 +198,7 @@ new BasicSliderSettingSpecifier("volume", 5.0, 0.0, 11.0, 0.5);
 ## Radio Group
 
 The [`RadioGroupSettingSpecifier`][RadioGroupSettingSpecifier] defines a configurable property that
-accepts a single value from a fixed set of possible values. In the SolarNode GUI a radio group is
+accepts a single value from a fixed set of possible values. In the SolarNode UI a radio group is
 rendered as a set of HTML radio input form fields, like this:
 
 ![Radio Group setting as a set of HTML radio inputs](../../images/developers/settings/radio-group-setting.png){width=156}
@@ -221,7 +221,7 @@ radio.setValueTitles(radioValues);
 ## Multi-value
 
 The [`MultiValueSettingSpecifier`][MultiValueSettingSpecifier] defines a configurable property that
-accepts a single value from a fixed set of possible values. In the SolarNode GUI a multi-value
+accepts a single value from a fixed set of possible values. In the SolarNode UI a multi-value
 setting is rendered as an HTML select form field, like this:
 
 ![Multi-value setting as an HTML select form field](../../images/developers/settings/multi-value-setting.png){width=318}
@@ -244,7 +244,7 @@ menu.setValueTitles(menuValues);
 ## File
 
 The [`FileSettingSpecifier`][FileSettingSpecifier] defines a file-based resource property, loaded as
-an external file using the [SettingResourceHandler](resource-handler.md) API. In the SolarNode GUI a
+an external file using the [SettingResourceHandler](resource-handler.md) API. In the SolarNode UI a
 file setting is rendered as an HTML file input, like this:
 
 ![File setting as an HTML form field](../../images/developers/settings/file-setting.png){width=468}
@@ -265,7 +265,7 @@ new BasicFileSettingSpecifier("document-list", null,
 ## Dynamic List
 
 A Dynamic List setting allows the user to manage a list of homogeneous items, adding or subtracting items as desired.
-The items can be literals like strings, or arbitrary objects that define their own settings. In the SolarNode GUI a
+The items can be literals like strings, or arbitrary objects that define their own settings. In the SolarNode UI a
 dynamic list setting is rendered as a pair of HTML buttons to remove and add items, like this:
 
 ![Dynamic list setting in an HTML form](../../images/developers/settings/dynamic-list-setting.png){width=198}

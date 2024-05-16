@@ -7,7 +7,9 @@ Settings can also be exported and imported in a CSV format, and can be applied w
 up with [Auto Settings](#auto-settings) CSV files. Here is an example of a settings form in the
 SolarNode setup app:
 
-![SolarNode settings form for a component with 3 settings](../images/developers/settings/web-form.png){width=783}
+<figure markdown>
+  ![SolarNode settings form for a component with 3 settings](../images/developers/settings/web-form@2x.png){width=728}
+</figure>
 
 There are 3 settings represented in that screen shot:
 
@@ -19,10 +21,11 @@ There are 3 settings represented in that screen shot:
 	Nearly every form field you can edit in the SolarNode setup app represents a setting for a
 	component in SolarNode.
 
-In the SolarNode setup app the settings can be imported and exported from the main Settings screen
-in the [Settings Backup & Restore](setup-app/settings/index.md#settings-backup-restore) section:
+In the SolarNode setup app the settings can be imported and exported from the
+**Settings > Backups** screen in the
+[Settings Backup & Restore](setup-app/settings/backups.md#settings-backup-restore) section:
 
-![SolarNode settings import/export form](../images/users/settings-io.png){width=742}
+![SolarNode settings import/export form](../images/users/setup/settings-backup-restore@2x.png){width=728}
 
 ## Settings CSV example
 
@@ -94,7 +97,7 @@ Many plugins provide _component factories_ which allow you to configure any numb
 that component. Each component _instance_ is assigned a unique _identifier_ when it is created. In
 the SolarNode setup app, the component instance identifiers appear throughout the UI:
 
-![Component identifiers in the SolarNode setup app](../images/users/component-instance-identifiers%402x.png){width=736}
+![Component identifiers in the SolarNode setup app](../images/users/component-instance-identifiers%402x.png){width=728}
 
 In the previous [example CSV](#settings-csv-example) the **Modbus I/O** plugin allows you to
 configure any number of Modbus connection components, each with their own specific settings. That is

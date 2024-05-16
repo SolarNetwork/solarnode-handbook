@@ -144,7 +144,7 @@ The part of the Setting Resource Handler API that supports exporting setting res
 The `supportedCurrentResourceSettingKeys()` method returns a set of resource keys the component supports
 for exporting. The `currentSettingResources()` method returns the resources to export for a given key.
 
-The SolarNode GUI shows a form menu with all the available resources for all components that support
+The SolarNode UI shows a form menu with all the available resources for all components that support
 the `SettingResourceHandler` API, and lets the user to download them:
 
 ![Resource export UI in SolarNode](../../images/developers/settings/setting-resource-export-ui.png){width=482}

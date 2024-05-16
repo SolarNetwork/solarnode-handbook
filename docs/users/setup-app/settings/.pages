@@ -1,7 +1,9 @@
 title: Settings
 nav:
     - index.md
-    - manage-component.md
+    - components.md
+    - services.md
     - datum-filters.md
     - logging.md
     - op-modes.md
+    - backups.md

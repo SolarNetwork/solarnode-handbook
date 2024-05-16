@@ -1,4 +1,27 @@
-# Manage Component
+# Components
+
+The Components page lists all the configurable _multi-instance components_ available on
+your SolarNode. _Multi-instance_ means you can configure any number of a given component,
+each with their own settings.
+
+For example imagine you want to collect data from a power meter, solar inverter, and weather
+station, all of which use the Modbus protocol. To do that you would configure three _instances_ of
+the Modbus Device component, one for each device.
+
+<figure markdown>
+  ![Settings components list](../../../images/users/setup/settings-components@2x.png){width=863}
+</figure>
+
+Use the **Manage** button for any listed compoennt to [add or remove instances](#manage-component)
+of that component.
+
+An **instance count badge** appears next to any component with at least one instance configured.
+
+<figure markdown>
+  ![Settings components list](../../../images/users/setup/settings-components-annotated@2x.png){width=863}
+</figure>
+
+## Manage Component
 
 The component management page is shown when you click the **Manage** button for a multi-instance
 component. Each component instance's settings are independent, allowing you to integrate with
@@ -9,7 +32,7 @@ create two Modbus Device component instances, and configure them with settings a
 device.
 
 <figure markdown>
-  ![Component management UI](../../../images/users/setup/setup-manage-component%402x.png){width=837}
+  ![Component management UI](../../../images/users/setup/settings-manage-component@2x.png){width=728}
   <caption>The component management screen allows you to add, update, and remove component instances.</caption>
 </figure>
 
@@ -20,7 +43,7 @@ is the name of the component you are managing. You will be given the opportunity
 identifier to the new component instance:
 
 <figure markdown>
-  ![New component instance dialog](../../../images/users/setup/setup-manage-component-add-form%402x.png){width=550}
+  ![New component instance dialog](../../../images/users/setup/settings-manage-component-add-form@2x.png){width=510}
   <caption>When creating a new component instance you can provide a short name to identify it with.</caption>
 </figure>
 
@@ -28,7 +51,7 @@ When you add more than one component instance, the identifiers appear as clickab
 you to switch between the setting forms for each component.
 
 <figure markdown>
-  ![Component instance buttons](../../../images/users/setup/setup-manage-component-identifiers%402x.png){width=400}
+  ![Component instance buttons](../../../images/users/setup/settings-manage-component-identifiers@2x.png){width=372}
   <caption>Component instance buttons let you switch between each component instance.</caption>
 </figure>
 
@@ -48,7 +71,7 @@ At the bottom of each component instance are buttons that let you **delete** or 
 intance.
 
 <figure markdown>
-  ![New component instance dialog](../../../images/users/setup/setup-manage-component-actions%402x.png){width=516}
+  ![Component action buttons](../../../images/users/setup/settings-manage-component-actions@2x.png){width=352}
   <caption>Buttons to delete or reset component instance.</caption>
 </figure>
 
@@ -65,3 +88,22 @@ needed.
 
 The **Remove all** button in the top-right of the page allows you to remove all component instances,
 including any customized settings on those instances.
+
+!!! warning
+
+    The **Remove all** action will **delete** all your customized settings for **all** the component
+	instances you are managing. When finished it will be as if you never configured this
+	component before.
+
+
+<figure markdown>
+  ![Remove all button](../../../images/users/setup/settings-manage-component-remove-all@2x.png){width=350}
+  <caption>Remove all instances with the "Remove all" button.</caption>
+</figure>
+
+You will be asked to confirm removing all instances:
+
+<figure markdown>
+  ![Remove all button confirmation dialog](../../../images/users/setup/settings-manage-component-remove-all-confirm@2x.png){width=506}
+  <caption>Confirming the "Remove all" action.</caption>
+</figure>
