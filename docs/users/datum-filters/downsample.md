@@ -13,7 +13,7 @@ This filter is provided by the [Standard Datum Filters][sdf] plugin.
 ## Settings
 
 <figure markdown>
-  ![Downsample filter component settings](../../images/users/datum-filters/downsample-filter-settings%402x.png){width=600 loading=lazy}
+  ![Downsample filter component settings](../../images/users/datum-filters/downsample-filter-settings%402x.png){width=934 loading=lazy}
 </figure>
 
 | Setting            | Description                                                       |
