@@ -9,10 +9,10 @@
 <link href="../unchanged/" rel="prev"/>
 <link href="../../solarflux/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.7" name="generator"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-9.5.23" name="generator"/>
 <title>Virtual Meter - SolarNode Handbook</title>
-<link href="../../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -20,7 +20,6 @@
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="indigo" data-md-color-primary="amber" data-md-color-scheme="default" dir="ltr">
-<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -56,15 +55,16 @@
 </div>
 </div>
 <form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="amber" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="amber" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
 </label>
-<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="amber" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="amber" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
 </label>
 </form>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
 <label class="md-header__button md-icon" for="__search">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
 </label>
@@ -113,232 +113,312 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../">User Guide</a>
-<label for="__nav_1">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    User Guide
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-expanded="true" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
-          User Guide
-        </label>
+            User Guide
+          </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../getting-started/">
-        Getting Started
-      </a>
+<span class="md-ellipsis">
+    Getting Started
+  </span>
+</a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_3" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../setup-app/">Setup App</a>
-<label for="__nav_1_3">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../setup-app/">
+<span class="md-ellipsis">
+    Setup App
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_3">
 <span class="md-nav__icon md-icon"></span>
-          Setup App
-        </label>
+            Setup App
+          </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/login/">
-        Login
-      </a>
+<span class="md-ellipsis">
+    Login
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/home/">
-        Home
-      </a>
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/certificates/">
-        Certificates
-      </a>
+<span class="md-ellipsis">
+    Certificates
+  </span>
+</a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../setup-app/settings/">Settings</a>
-<label for="__nav_1_3_5">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../setup-app/settings/">
+<span class="md-ellipsis">
+    Settings
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_1_3_5">
 <span class="md-nav__icon md-icon"></span>
-          Settings
-        </label>
+            Settings
+          </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/settings/components/">
-        Components
-      </a>
+<span class="md-ellipsis">
+    Components
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/settings/services/">
-        Services
-      </a>
+<span class="md-ellipsis">
+    Services
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/settings/datum-filters/">
-        Datum Filters
-      </a>
+<span class="md-ellipsis">
+    Datum Filters
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/settings/logging/">
-        Logging
-      </a>
+<span class="md-ellipsis">
+    Logging
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/settings/op-modes/">
-        Operational Modes
-      </a>
+<span class="md-ellipsis">
+    Operational Modes
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/settings/backups/">
-        Backups
-      </a>
+<span class="md-ellipsis">
+    Backups
+  </span>
+</a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_3_6" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../setup-app/tools/">Tools</a>
-<label for="__nav_1_3_6">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../setup-app/tools/">
+<span class="md-ellipsis">
+    Tools
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_3_6" id="__nav_1_3_6_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_3_6_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_1_3_6">
 <span class="md-nav__icon md-icon"></span>
-          Tools
-        </label>
+            Tools
+          </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/tools/controls/">
-        Controls
-      </a>
+<span class="md-ellipsis">
+    Controls
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/tools/command-console/">
-        Command Console
-      </a>
+<span class="md-ellipsis">
+    Command Console
+  </span>
+</a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/plugins/">
-        Plugins
-      </a>
+<span class="md-ellipsis">
+    Plugins
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/profile/">
-        Profile
-      </a>
+<span class="md-ellipsis">
+    Profile
+  </span>
+</a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../datum/">
-        Datum
-      </a>
+<span class="md-ellipsis">
+    Datum
+  </span>
+</a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_1_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../">Datum Filters</a>
-<label for="__nav_1_5">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Datum Filters
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-expanded="true" aria-labelledby="__nav_1_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_5">
 <span class="md-nav__icon md-icon"></span>
-          Datum Filters
-        </label>
+            Datum Filters
+          </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../chain/">
-        Filter Chain
-      </a>
+<span class="md-ellipsis">
+    Filter Chain
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../control-updater/">
-        Control Updater
-      </a>
+<span class="md-ellipsis">
+    Control Updater
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../downsample/">
-        Downsample
-      </a>
+<span class="md-ellipsis">
+    Downsample
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../expression/">
-        Expression
-      </a>
+<span class="md-ellipsis">
+    Expression
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../join/">
-        Join
-      </a>
+<span class="md-ellipsis">
+    Join
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../op-mode/">
-        Operational Mode
-      </a>
+<span class="md-ellipsis">
+    Operational Mode
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../parameter-expression/">
-        Parameter Expression
-      </a>
+<span class="md-ellipsis">
+    Parameter Expression
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../property/">
-        Property
-      </a>
+<span class="md-ellipsis">
+    Property
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../split/">
-        Split
-      </a>
+<span class="md-ellipsis">
+    Split
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../tariff/">
-        Tariff
-      </a>
+<span class="md-ellipsis">
+    Tariff
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../throttle/">
-        Throttle
-      </a>
+<span class="md-ellipsis">
+    Throttle
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../unchanged-property/">
-        Unchanged Property
-      </a>
+<span class="md-ellipsis">
+    Unchanged Property
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../unchanged/">
-        Unchanged
-      </a>
+<span class="md-ellipsis">
+    Unchanged
+  </span>
+</a>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Virtual Meter
-          <span class="md-nav__icon md-icon"></span>
+<span class="md-ellipsis">
+    Virtual Meter
+  </span>
+<span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Virtual Meter
-      </a>
+<span class="md-ellipsis">
+    Virtual Meter
+  </span>
+</a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
 <span class="md-nav__icon md-icon"></span>
@@ -347,39 +427,53 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#settings">
-    Settings
-  </a>
+<span class="md-ellipsis">
+      Settings
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#virtual-meter-settings">
-    Virtual Meter Settings
-  </a>
+<span class="md-ellipsis">
+      Virtual Meter Settings
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#virtual-meter-expression-settings">
-    Virtual Meter Expression Settings
-  </a>
+<span class="md-ellipsis">
+      Virtual Meter Expression Settings
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#filter-parameters">
-    Filter parameters
-  </a>
+<span class="md-ellipsis">
+      Filter parameters
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#expressions">
-    Expressions
-  </a>
+<span class="md-ellipsis">
+      Expressions
+    </span>
+</a>
 <nav aria-label="Expressions" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#expression-root-object">
-    Expression root object
-  </a>
+<span class="md-ellipsis">
+      Expression root object
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#expression-example-time-of-use-tariff-reading">
-    Expression example: time of use tariff reading
-  </a>
+<span class="md-ellipsis">
+      Expression example: time of use tariff reading
+    </span>
+</a>
 </li>
 </ul>
 </nav>
@@ -392,193 +486,259 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../solarflux/">
-        SolarFlux
-      </a>
+<span class="md-ellipsis">
+    SolarFlux
+  </span>
+</a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_7" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../sysadmin/">System Administration</a>
-<label for="__nav_1_7">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sysadmin/">
+<span class="md-ellipsis">
+    System Administration
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_7_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_7">
 <span class="md-nav__icon md-icon"></span>
-          System Administration
-        </label>
+            System Administration
+          </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../sysadmin/date-time/">
-        Date and Time
-      </a>
+<span class="md-ellipsis">
+    Date and Time
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../sysadmin/networking/">
-        Networking
-      </a>
+<span class="md-ellipsis">
+    Networking
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../sysadmin/packages/">
-        Package Maintenance
-      </a>
+<span class="md-ellipsis">
+    Package Maintenance
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../sysadmin/solarnode-service/">
-        SolarNode Service
-      </a>
+<span class="md-ellipsis">
+    SolarNode Service
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../sysadmin/solarssh/">
-        SolarSSH
-      </a>
+<span class="md-ellipsis">
+    SolarSSH
+  </span>
+</a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../networking/">
-        Networking
-      </a>
+<span class="md-ellipsis">
+    Networking
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../security-tokens/">
-        Security Tokens
-      </a>
+<span class="md-ellipsis">
+    Security Tokens
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../remote-access/">
-        Remote Access
-      </a>
+<span class="md-ellipsis">
+    Remote Access
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../expressions/">
-        Expressions
-      </a>
+<span class="md-ellipsis">
+    Expressions
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../op-modes/">
-        Operational Modes
-      </a>
+<span class="md-ellipsis">
+    Operational Modes
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../placeholders/">
-        Placeholders
-      </a>
+<span class="md-ellipsis">
+    Placeholders
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../configuration/">
-        Configuration
-      </a>
+<span class="md-ellipsis">
+    Configuration
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../settings/">
-        Settings Files
-      </a>
+<span class="md-ellipsis">
+    Settings Files
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../logging/">
-        Logging
-      </a>
+<span class="md-ellipsis">
+    Logging
+  </span>
+</a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../developers/">Developer Guide</a>
-<label for="__nav_2">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../developers/">
+<span class="md-ellipsis">
+    Developer Guide
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
-          Developer Guide
-        </label>
+            Developer Guide
+          </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../developers/osgi/">Plugins</a>
-<label for="__nav_2_2">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../developers/osgi/">
+<span class="md-ellipsis">
+    Plugins
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_2">
 <span class="md-nav__icon md-icon"></span>
-          Plugins
-        </label>
+            Plugins
+          </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/osgi/manifest/">
-        Manifest
-      </a>
+<span class="md-ellipsis">
+    Manifest
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/osgi/life-cycle/">
-        Life cycle
-      </a>
+<span class="md-ellipsis">
+    Life cycle
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/osgi/configuration-admin/">
-        Configuration Admin
-      </a>
+<span class="md-ellipsis">
+    Configuration Admin
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/osgi/blueprint/">
-        Blueprint
-      </a>
+<span class="md-ellipsis">
+    Blueprint
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/osgi/blueprint-compendium/">
-        Blueprint Compendium
-      </a>
+<span class="md-ellipsis">
+    Blueprint Compendium
+  </span>
+</a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../developers/settings/">Settings</a>
-<label for="__nav_2_3">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../developers/settings/">
+<span class="md-ellipsis">
+    Settings
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_3">
 <span class="md-nav__icon md-icon"></span>
-          Settings
-        </label>
+            Settings
+          </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/settings/provider/">
-        Settings Provider
-      </a>
+<span class="md-ellipsis">
+    Settings Provider
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/settings/specifier/">
-        Setting Specifier
-      </a>
+<span class="md-ellipsis">
+    Setting Specifier
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/settings/resource-handler/">
-        Setting Resource Handler
-      </a>
+<span class="md-ellipsis">
+    Setting Resource Handler
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/settings/singleton/">
-        Singleton Service
-      </a>
+<span class="md-ellipsis">
+    Singleton Service
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/settings/factory/">
-        Factory Service
-      </a>
+<span class="md-ellipsis">
+    Factory Service
+  </span>
+</a>
 </li>
 </ul>
 </nav>
@@ -586,79 +746,107 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
-          Services
-          <span class="md-nav__icon md-icon"></span>
+<span class="md-ellipsis">
+    Services
+  </span>
+<span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_4">
 <span class="md-nav__icon md-icon"></span>
-          Services
-        </label>
+            Services
+          </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/services/backup-manager/">
-        Backup Manager
-      </a>
+<span class="md-ellipsis">
+    Backup Manager
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/services/closeable-service/">
-        Closeable Service
-      </a>
+<span class="md-ellipsis">
+    Closeable Service
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/services/datum-data-source-poll-job/">
-        Datum Data Source Poll Job
-      </a>
+<span class="md-ellipsis">
+    Datum Data Source Poll Job
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/services/datum-data-source/">
-        Datum Data Source
-      </a>
+<span class="md-ellipsis">
+    Datum Data Source
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/services/datum-db/">
-        Datum Database
-      </a>
+<span class="md-ellipsis">
+    Datum Database
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/services/datum-queue/">
-        Datum Queue
-      </a>
+<span class="md-ellipsis">
+    Datum Queue
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/services/job-scheduler/">
-        Job Scheduler
-      </a>
+<span class="md-ellipsis">
+    Job Scheduler
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/services/placeholder-service/">
-        Placeholder Service
-      </a>
+<span class="md-ellipsis">
+    Placeholder Service
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/services/settings-db/">
-        Settings Database
-      </a>
+<span class="md-ellipsis">
+    Settings Database
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/services/settings-service/">
-        Settings Service
-      </a>
+<span class="md-ellipsis">
+    Settings Service
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/services/sql-database/">
-        SQL Database
-      </a>
+<span class="md-ellipsis">
+    SQL Database
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/services/task-executor/">
-        Task Executor
-      </a>
+<span class="md-ellipsis">
+    Task Executor
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../developers/services/task-scheduler/">
-        Task Scheduler
-      </a>
+<span class="md-ellipsis">
+    Task Scheduler
+  </span>
+</a>
 </li>
 </ul>
 </nav>
@@ -682,39 +870,53 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#settings">
-    Settings
-  </a>
+<span class="md-ellipsis">
+      Settings
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#virtual-meter-settings">
-    Virtual Meter Settings
-  </a>
+<span class="md-ellipsis">
+      Virtual Meter Settings
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#virtual-meter-expression-settings">
-    Virtual Meter Expression Settings
-  </a>
+<span class="md-ellipsis">
+      Virtual Meter Expression Settings
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#filter-parameters">
-    Filter parameters
-  </a>
+<span class="md-ellipsis">
+      Filter parameters
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#expressions">
-    Expressions
-  </a>
+<span class="md-ellipsis">
+      Expressions
+    </span>
+</a>
 <nav aria-label="Expressions" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#expression-root-object">
-    Expression root object
-  </a>
+<span class="md-ellipsis">
+      Expression root object
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#expression-example-time-of-use-tariff-reading">
-    Expression example: time of use tariff reading
-  </a>
+<span class="md-ellipsis">
+      Expression example: time of use tariff reading
+    </span>
+</a>
 </li>
 </ul>
 </nav>
@@ -746,34 +948,34 @@ time that has elapsed between the two samples.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Setting</th>
-<th align="left">Description</th>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Service Name</td>
-<td align="left">A unique ID for the filter, to be referenced by other components.</td>
+<td style="text-align: left;">Service Name</td>
+<td style="text-align: left;">A unique ID for the filter, to be referenced by other components.</td>
 </tr>
 <tr>
-<td align="left">Service Group</td>
-<td align="left">An optional service group name to assign.</td>
+<td style="text-align: left;">Service Group</td>
+<td style="text-align: left;">An optional service group name to assign.</td>
 </tr>
 <tr>
-<td align="left">Source ID</td>
-<td align="left">A case-insensitive <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">pattern</a> to match the input source ID(s) to filter. If omitted then datum for <em>all</em> source ID values will be filtered, otherwise only datum with <em>matching</em> source ID values will be filtered.</td>
+<td style="text-align: left;">Source ID</td>
+<td style="text-align: left;">A case-insensitive <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">pattern</a> to match the input source ID(s) to filter. If omitted then datum for <em>all</em> source ID values will be filtered, otherwise only datum with <em>matching</em> source ID values will be filtered.</td>
 </tr>
 <tr>
-<td align="left">Required Mode</td>
-<td align="left">If configured, an <a href="../../op-modes/">operational mode</a> that must be active for this filter to be applied.</td>
+<td style="text-align: left;">Required Mode</td>
+<td style="text-align: left;">If configured, an <a href="../../op-modes/">operational mode</a> that must be active for this filter to be applied.</td>
 </tr>
 <tr>
-<td align="left">Required Tag</td>
-<td align="left">Only apply the filter on datum with the given tag. A tag may be prefixed with <code>!</code> to invert the logic so that the filter only applies to datum <strong>without</strong> the given tag. Multiple tags can be defined using a <code>,</code> delimiter, in which case <strong>at least one</strong> of the configured tags must match to apply the filter.</td>
+<td style="text-align: left;">Required Tag</td>
+<td style="text-align: left;">Only apply the filter on datum with the given tag. A tag may be prefixed with <code>!</code> to invert the logic so that the filter only applies to datum <strong>without</strong> the given tag. Multiple tags can be defined using a <code>,</code> delimiter, in which case <strong>at least one</strong> of the configured tags must match to apply the filter.</td>
 </tr>
 <tr>
-<td align="left">Virtual Meters</td>
-<td align="left">Configure as many virtual meters as you like, using the <span class="keys"><kbd class="key-plus">+</kbd></span> and <span class="keys"><kbd class="key-minus">-</kbd></span> buttons to add/remove meter configurations.</td>
+<td style="text-align: left;">Virtual Meters</td>
+<td style="text-align: left;">Configure as many virtual meters as you like, using the <span class="keys"><kbd class="key-plus">+</kbd></span> and <span class="keys"><kbd class="key-minus">-</kbd></span> buttons to add/remove meter configurations.</td>
 </tr>
 </tbody>
 </table>
@@ -785,58 +987,58 @@ time that has elapsed between the two samples.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Setting</th>
-<th align="left">Description</th>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Property</td>
-<td align="left">The name of the <strong>input</strong> datum property to derive the virtual meter values from.</td>
+<td style="text-align: left;">Property</td>
+<td style="text-align: left;">The name of the <strong>input</strong> datum property to derive the virtual meter values from.</td>
 </tr>
 <tr>
-<td align="left">Property Type</td>
-<td align="left">The type of the <strong>input</strong> datum property. Typically this will be <code>Instantaneous</code> but when combined with an expression an <code>Accumulating</code> property can be used.</td>
+<td style="text-align: left;">Property Type</td>
+<td style="text-align: left;">The type of the <strong>input</strong> datum property. Typically this will be <code>Instantaneous</code> but when combined with an expression an <code>Accumulating</code> property can be used.</td>
 </tr>
 <tr>
-<td align="left">Reading Property</td>
-<td align="left">The name of the <strong>output</strong> meter accumulating datum property to generate. Leave empty for a default name derived from <strong>Property</strong> and <strong>Time Unit</strong>. For example, an instantaneous <code>irradiance</code> property using the <code>Hours</code> time unit would result in an accumulating <code>irradianceHours</code> property.</td>
+<td style="text-align: left;">Reading Property</td>
+<td style="text-align: left;">The name of the <strong>output</strong> meter accumulating datum property to generate. Leave empty for a default name derived from <strong>Property</strong> and <strong>Time Unit</strong>. For example, an instantaneous <code>irradiance</code> property using the <code>Hours</code> time unit would result in an accumulating <code>irradianceHours</code> property.</td>
 </tr>
 <tr>
-<td align="left">Time Unit</td>
-<td align="left">The time unit to record meter readings as. This value affects the name of the virtual meter reading property if <strong>Reading Property</strong> is left blank: it will be appended to the end of <strong>Property Name</strong>. It also affects the virtual meter output reading values, as they will be calculated in this time unit.</td>
+<td style="text-align: left;">Time Unit</td>
+<td style="text-align: left;">The time unit to record meter readings as. This value affects the name of the virtual meter reading property if <strong>Reading Property</strong> is left blank: it will be appended to the end of <strong>Property Name</strong>. It also affects the virtual meter output reading values, as they will be calculated in this time unit.</td>
 </tr>
 <tr>
-<td align="left">Max Age</td>
-<td align="left">The maximum time allowed between samples where the meter reading can advance. In case the node is not collecting samples for a period of time, this setting prevents the plugin from calculating an unexpectedly large reading value jump. For example if a node was turned off for a day, the first sample it captures when turned back on would otherwise advance the reading as if the associated instantaneous property had been active over that entire time. With this restriction, the node will record the new sample date and value, but not advance the meter reading until another sample is captured within this time period.</td>
+<td style="text-align: left;">Max Age</td>
+<td style="text-align: left;">The maximum time allowed between samples where the meter reading can advance. In case the node is not collecting samples for a period of time, this setting prevents the plugin from calculating an unexpectedly large reading value jump. For example if a node was turned off for a day, the first sample it captures when turned back on would otherwise advance the reading as if the associated instantaneous property had been active over that entire time. With this restriction, the node will record the new sample date and value, but not advance the meter reading until another sample is captured within this time period.</td>
 </tr>
 <tr>
-<td align="left">Decimal Scale</td>
-<td align="left">A maximum number of digits after the decimal point to round to. Set to <code>0</code> to round to whole numbers.</td>
+<td style="text-align: left;">Decimal Scale</td>
+<td style="text-align: left;">A maximum number of digits after the decimal point to round to. Set to <code>0</code> to round to whole numbers.</td>
 </tr>
 <tr>
-<td align="left">Track Only On Change</td>
-<td align="left">When enabled, then only update the previous reading date if the new reading value differs from the previous one.</td>
+<td style="text-align: left;">Track Only On Change</td>
+<td style="text-align: left;">When enabled, then only update the previous reading date if the new reading value differs from the previous one.</td>
 </tr>
 <tr>
-<td align="left">Rolling Average Count</td>
-<td align="left">A count of samples to average the property value from. When set to something greater than <code>1</code>, then apply a rolling average of this many property samples and output that value as the <em>instantaneous</em> source property value. This has the effect of smoothing the instantaneous values to an average over the  time period leading into each output sample. Defaults to <code>0</code> so no rolling average is applied.</td>
+<td style="text-align: left;">Rolling Average Count</td>
+<td style="text-align: left;">A count of samples to average the property value from. When set to something greater than <code>1</code>, then apply a rolling average of this many property samples and output that value as the <em>instantaneous</em> source property value. This has the effect of smoothing the instantaneous values to an average over the  time period leading into each output sample. Defaults to <code>0</code> so no rolling average is applied.</td>
 </tr>
 <tr>
-<td align="left">Add Instantaneous Difference</td>
-<td align="left">When enabled, then include an <strong>output</strong> instantaneous property of the difference between the current and previous reading values.</td>
+<td style="text-align: left;">Add Instantaneous Difference</td>
+<td style="text-align: left;">When enabled, then include an <strong>output</strong> instantaneous property of the difference between the current and previous reading values.</td>
 </tr>
 <tr>
-<td align="left">Instantaneous Difference Property</td>
-<td align="left">The derived <strong>output</strong> instantaneous datum property name to use when <strong>Add Instantaneous Difference</strong> is enabled. By default this property will be derived from the <strong>Reading Property</strong> value with <code>Diff</code> appended.</td>
+<td style="text-align: left;">Instantaneous Difference Property</td>
+<td style="text-align: left;">The derived <strong>output</strong> instantaneous datum property name to use when <strong>Add Instantaneous Difference</strong> is enabled. By default this property will be derived from the <strong>Reading Property</strong> value with <code>Diff</code> appended.</td>
 </tr>
 <tr>
-<td align="left">Reading Value</td>
-<td align="left">You can reset the virtual meter reading value with this setting. <img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26a0.svg" title=":warning:"/> <strong>Note</strong> this is an advanced operation. If you submit a value for this setting, the virtual meter reading will be reset to this value such that the next datum the reading is calculated for will use this as the current meter reading. This will impact the datum stream's reported aggregate values, so you should be very sure this is something you want to do. For example if the virtual meter was at <code>1000</code> and you reset it <code>0</code> then that will appear as a <code>-1000</code> drop in whatever the reading is measuring. If this occurs you can create a <code>Reset</code> <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#datum-auxiliary">Datum auxiliary record</a> to accomodate the reset value.</td>
+<td style="text-align: left;">Reading Value</td>
+<td style="text-align: left;">You can reset the virtual meter reading value with this setting. <img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:"/> <strong>Note</strong> this is an advanced operation. If you submit a value for this setting, the virtual meter reading will be reset to this value such that the next datum the reading is calculated for will use this as the current meter reading. This will impact the datum stream's reported aggregate values, so you should be very sure this is something you want to do. For example if the virtual meter was at <code>1000</code> and you reset it <code>0</code> then that will appear as a <code>-1000</code> drop in whatever the reading is measuring. If this occurs you can create a <code>Reset</code> <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#datum-auxiliary">Datum auxiliary record</a> to accomodate the reset value.</td>
 </tr>
 <tr>
-<td align="left">Expressions</td>
-<td align="left">Configure as many expressions as you like, using the <span class="keys"><kbd class="key-plus">+</kbd></span> and <span class="keys"><kbd class="key-minus">-</kbd></span> buttons to add/remove <a href="#virtual-meter-expression-settings">expression configurations</a>.</td>
+<td style="text-align: left;">Expressions</td>
+<td style="text-align: left;">Configure as many expressions as you like, using the <span class="keys"><kbd class="key-plus">+</kbd></span> and <span class="keys"><kbd class="key-minus">-</kbd></span> buttons to add/remove <a href="#virtual-meter-expression-settings">expression configurations</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -849,26 +1051,26 @@ calculated. See the <a href="#expressions">Expressions</a> section for more info
 <table>
 <thead>
 <tr>
-<th align="left">Setting</th>
-<th align="left">Description</th>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Property</td>
-<td align="left">The datum property to store the expression result in. This must match the <strong>Reading Property</strong> of a <a href="#virtual-meter-settings">meter configuration</a>. Keep in mind that if <strong>Reading Property</strong> is blank, the <em>implied</em> value is derived from <strong>Property</strong> and <strong>Time Unit</strong>.</td>
+<td style="text-align: left;">Property</td>
+<td style="text-align: left;">The datum property to store the expression result in. This must match the <strong>Reading Property</strong> of a <a href="#virtual-meter-settings">meter configuration</a>. Keep in mind that if <strong>Reading Property</strong> is blank, the <em>implied</em> value is derived from <strong>Property</strong> and <strong>Time Unit</strong>.</td>
 </tr>
 <tr>
-<td align="left">Property Type</td>
-<td align="left">The datum property type to use.</td>
+<td style="text-align: left;">Property Type</td>
+<td style="text-align: left;">The datum property type to use.</td>
 </tr>
 <tr>
-<td align="left">Expression</td>
-<td align="left">The expression to evaluate. See <a href="#expressions">below</a> for more info.</td>
+<td style="text-align: left;">Expression</td>
+<td style="text-align: left;">The expression to evaluate. See <a href="#expressions">below</a> for more info.</td>
 </tr>
 <tr>
-<td align="left">Expression Language</td>
-<td align="left">The <a href="../../expressions/">expression language</a> to write <strong>Expression</strong> in.</td>
+<td style="text-align: left;">Expression Language</td>
+<td style="text-align: left;">The <a href="../../expressions/">expression language</a> to write <strong>Expression</strong> in.</td>
 </tr>
 </tbody>
 </table>
@@ -879,18 +1081,18 @@ filter.</p>
 <table>
 <thead>
 <tr>
-<th align="left">Parameter</th>
-<th align="left">Description</th>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>{inputPropertyName}_diff</code></td>
-<td align="left">The difference between the current <strong>input</strong> property value and the previous input property value. The <code>{inputPropertyName}</code> part of the parameter name will be replaced by the actual input property name. For example <code>irradiance_diff</code>.</td>
+<td style="text-align: left;"><code>{inputPropertyName}_diff</code></td>
+<td style="text-align: left;">The difference between the current <strong>input</strong> property value and the previous input property value. The <code>{inputPropertyName}</code> part of the parameter name will be replaced by the actual input property name. For example <code>irradiance_diff</code>.</td>
 </tr>
 <tr>
-<td align="left"><code>{meterPropertyName}_diff</code></td>
-<td align="left">The difference between the current <strong>output</strong> meter property value and the previous output meter property value. The <code>{meterPropertyName}</code> part of the parameter name will be replaced by the actual output meter property name. For example <code>irradianceHours_diff</code>.</td>
+<td style="text-align: left;"><code>{meterPropertyName}_diff</code></td>
+<td style="text-align: left;">The difference between the current <strong>output</strong> meter property value and the previous output meter property value. The <code>{meterPropertyName}</code> part of the parameter name will be replaced by the actual output meter property name. For example <code>irradianceHours_diff</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -913,61 +1115,61 @@ the following properties:</p>
 <table>
 <thead>
 <tr>
-<th align="left">Property</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>config</code></td>
-<td align="left"><code>VirtualMeterConfig</code></td>
-<td align="left">A <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/src/net/solarnetwork/node/datum/filter/virt/VirtualMeterConfig.java"><code>VirtualMeterConfig</code></a> object for the virtual meter configuration the expression is evaluating for.</td>
+<td style="text-align: left;"><code>config</code></td>
+<td style="text-align: left;"><code>VirtualMeterConfig</code></td>
+<td style="text-align: left;">A <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/src/net/solarnetwork/node/datum/filter/virt/VirtualMeterConfig.java"><code>VirtualMeterConfig</code></a> object for the virtual meter configuration the expression is evaluating for.</td>
 </tr>
 <tr>
-<td align="left"><code>datum</code></td>
-<td align="left"><code>GeneralNodeDatum</code></td>
-<td align="left">A <a href="https://github.com/SolarNetwork/solarnetwork-common/blob/develop/net.solarnetwork.common/src/net/solarnetwork/domain/datum/Datum.java"><code>Datum</code></a> object, populated with data from all property and virtual meter configurations.</td>
+<td style="text-align: left;"><code>datum</code></td>
+<td style="text-align: left;"><code>GeneralNodeDatum</code></td>
+<td style="text-align: left;">A <a href="https://github.com/SolarNetwork/solarnetwork-common/blob/develop/net.solarnetwork.common/src/net/solarnetwork/domain/datum/Datum.java"><code>Datum</code></a> object, populated with data from all property and virtual meter configurations.</td>
 </tr>
 <tr>
-<td align="left"><code>props</code></td>
-<td align="left"><code>Map&lt;String,Object&gt;</code></td>
-<td align="left">Simple Map based access to the properties in <code>datum</code>, and transform parameters, to simplify expressions.</td>
+<td style="text-align: left;"><code>props</code></td>
+<td style="text-align: left;"><code>Map&lt;String,Object&gt;</code></td>
+<td style="text-align: left;">Simple Map based access to the properties in <code>datum</code>, and transform parameters, to simplify expressions.</td>
 </tr>
 <tr>
-<td align="left"><code>currDate</code></td>
-<td align="left"><code>long</code></td>
-<td align="left">The current datum timestamp, as a millisecond epoch number.</td>
+<td style="text-align: left;"><code>currDate</code></td>
+<td style="text-align: left;"><code>long</code></td>
+<td style="text-align: left;">The current datum timestamp, as a millisecond epoch number.</td>
 </tr>
 <tr>
-<td align="left"><code>prevDate</code></td>
-<td align="left"><code>long</code></td>
-<td align="left">The previous datum timestamp, as a millisecond epoch number.</td>
+<td style="text-align: left;"><code>prevDate</code></td>
+<td style="text-align: left;"><code>long</code></td>
+<td style="text-align: left;">The previous datum timestamp, as a millisecond epoch number.</td>
 </tr>
 <tr>
-<td align="left"><code>timeUnits</code></td>
-<td align="left"><code>decimal</code></td>
-<td align="left">A decimal number of the difference between <code>currDate</code> and <code>prevDate</code> in the virtual meter configuration's <strong>Time Unit</strong>, rounded to at most 12 decimal digits.</td>
+<td style="text-align: left;"><code>timeUnits</code></td>
+<td style="text-align: left;"><code>decimal</code></td>
+<td style="text-align: left;">A decimal number of the difference between <code>currDate</code> and <code>prevDate</code> in the virtual meter configuration's <strong>Time Unit</strong>, rounded to at most 12 decimal digits.</td>
 </tr>
 <tr>
-<td align="left"><code>currInput</code></td>
-<td align="left"><code>decimal</code></td>
-<td align="left">The current <strong>input</strong> property value.</td>
+<td style="text-align: left;"><code>currInput</code></td>
+<td style="text-align: left;"><code>decimal</code></td>
+<td style="text-align: left;">The current <strong>input</strong> property value.</td>
 </tr>
 <tr>
-<td align="left"><code>prevInput</code></td>
-<td align="left"><code>decimal</code></td>
-<td align="left">The previous <strong>input</strong> property value.</td>
+<td style="text-align: left;"><code>prevInput</code></td>
+<td style="text-align: left;"><code>decimal</code></td>
+<td style="text-align: left;">The previous <strong>input</strong> property value.</td>
 </tr>
 <tr>
-<td align="left"><code>inputDiff</code></td>
-<td align="left"><code>decimal</code></td>
-<td align="left">The difference between the <code>currInput</code> and <code>prevInput</code> values.</td>
+<td style="text-align: left;"><code>inputDiff</code></td>
+<td style="text-align: left;"><code>decimal</code></td>
+<td style="text-align: left;">The difference between the <code>currInput</code> and <code>prevInput</code> values.</td>
 </tr>
 <tr>
-<td align="left"><code>prevReading</code></td>
-<td align="left"><code>decimal</code></td>
-<td align="left">The previous <strong>output</strong> meter property value.</td>
+<td style="text-align: left;"><code>prevReading</code></td>
+<td style="text-align: left;"><code>decimal</code></td>
+<td style="text-align: left;">The previous <strong>output</strong> meter property value.</td>
 </tr>
 </tbody>
 </table>
@@ -975,24 +1177,24 @@ the following properties:</p>
 <table>
 <thead>
 <tr>
-<th align="left">Function</th>
-<th align="left">Arguments</th>
-<th align="left">Result</th>
-<th align="left">Description</th>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Arguments</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>has(name)</code></td>
-<td align="left"><code>String</code></td>
-<td align="left"><code>boolean</code></td>
-<td align="left">Returns <code>true</code> if a property named <code>name</code> is defined.</td>
+<td style="text-align: left;"><code>has(name)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Returns <code>true</code> if a property named <code>name</code> is defined.</td>
 </tr>
 <tr>
-<td align="left"><code>timeUnits(scale)</code></td>
-<td align="left"><code>int</code></td>
-<td align="left"><code>decimal</code></td>
-<td align="left">Like the <code>timeUnits</code> property but rounded to a specific number of decimal digits.</td>
+<td style="text-align: left;"><code>timeUnits(scale)</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>decimal</code></td>
+<td style="text-align: left;">Like the <code>timeUnits</code> property but rounded to a specific number of decimal digits.</td>
 </tr>
 </tbody>
 </table>
@@ -1012,34 +1214,34 @@ matches the Expression <strong>Property</strong> value):</p>
 <table>
 <thead>
 <tr>
-<th align="left">Setting</th>
-<th align="left">Notes</th>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Virtual Meter - Property</td>
-<td align="left">The <strong>input</strong> datum property is set to <code>wattHours</code> because we want to track changes in this property over time.</td>
+<td style="text-align: left;">Virtual Meter - Property</td>
+<td style="text-align: left;">The <strong>input</strong> datum property is set to <code>wattHours</code> because we want to track changes in this property over time.</td>
 </tr>
 <tr>
-<td align="left">Virtual Meter - Property Type</td>
-<td align="left">We use <code>Accumulating</code> here because that is the type of property <code>wattHours</code> is.</td>
+<td style="text-align: left;">Virtual Meter - Property Type</td>
+<td style="text-align: left;">We use <code>Accumulating</code> here because that is the type of property <code>wattHours</code> is.</td>
 </tr>
 <tr>
-<td align="left">Virtual Meter - Reading Property</td>
-<td align="left">The <strong>output</strong> reading property name. This must match the <strong>Expression - Property</strong> setting.</td>
+<td style="text-align: left;">Virtual Meter - Reading Property</td>
+<td style="text-align: left;">The <strong>output</strong> reading property name. This must match the <strong>Expression - Property</strong> setting.</td>
 </tr>
 <tr>
-<td align="left">Expression - Property</td>
-<td align="left">This must match the <strong>Virtual Meter - Reading Property</strong> we want to evaluate the expression for.</td>
+<td style="text-align: left;">Expression - Property</td>
+<td style="text-align: left;">This must match the <strong>Virtual Meter - Reading Property</strong> we want to evaluate the expression for.</td>
 </tr>
 <tr>
-<td align="left">Expression - Property Type</td>
-<td align="left">Typically this should be <code>Accumulating</code> since we are generating a meter reading style property.</td>
+<td style="text-align: left;">Expression - Property Type</td>
+<td style="text-align: left;">Typically this should be <code>Accumulating</code> since we are generating a meter reading style property.</td>
 </tr>
 <tr>
-<td align="left">Expression - Expression</td>
-<td align="left">The expression to evaluate. This expression looks for the <code>tou</code> property and when found the meter reading is incremented by the difference between the current and previous input <code>wattHours</code> property values multiplied by <code>tou</code>. If <code>tou</code> is not available, then the previous meter reading value is returned (leaving the reading unchanged).</td>
+<td style="text-align: left;">Expression - Expression</td>
+<td style="text-align: left;">The expression to evaluate. This expression looks for the <code>tou</code> property and when found the meter reading is incremented by the difference between the current and previous input <code>wattHours</code> property values multiplied by <code>tou</code>. If <code>tou</code> is not available, then the previous meter reading value is returned (leaving the reading unchanged).</td>
 </tr>
 </tbody>
 </table>
@@ -1047,42 +1249,42 @@ matches the Expression <strong>Property</strong> value):</p>
 <table>
 <thead>
 <tr>
-<th align="left">Property</th>
-<th align="left">Value</th>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>tou</code></td>
-<td align="left"><code>11.00</code></td>
+<td style="text-align: left;"><code>tou</code></td>
+<td style="text-align: left;"><code>11.00</code></td>
 </tr>
 <tr>
-<td align="left"><code>currDate</code></td>
-<td align="left"><code>1621380669005</code></td>
+<td style="text-align: left;"><code>currDate</code></td>
+<td style="text-align: left;"><code>1621380669005</code></td>
 </tr>
 <tr>
-<td align="left"><code>prevDate</code></td>
-<td align="left"><code>1621380609005</code></td>
+<td style="text-align: left;"><code>prevDate</code></td>
+<td style="text-align: left;"><code>1621380609005</code></td>
 </tr>
 <tr>
-<td align="left"><code>timeUnits</code></td>
-<td align="left"><code>0.016666666667</code></td>
+<td style="text-align: left;"><code>timeUnits</code></td>
+<td style="text-align: left;"><code>0.016666666667</code></td>
 </tr>
 <tr>
-<td align="left"><code>currInput</code></td>
-<td align="left"><code>6095574</code></td>
+<td style="text-align: left;"><code>currInput</code></td>
+<td style="text-align: left;"><code>6095574</code></td>
 </tr>
 <tr>
-<td align="left"><code>prevInput</code></td>
-<td align="left"><code>6095462</code></td>
+<td style="text-align: left;"><code>prevInput</code></td>
+<td style="text-align: left;"><code>6095462</code></td>
 </tr>
 <tr>
-<td align="left"><code>inputDiff</code></td>
-<td align="left"><code>112</code></td>
+<td style="text-align: left;"><code>inputDiff</code></td>
+<td style="text-align: left;"><code>112</code></td>
 </tr>
 <tr>
-<td align="left"><code>prevReading</code></td>
-<td align="left"><code>1022.782</code></td>
+<td style="text-align: left;"><code>prevReading</code></td>
+<td style="text-align: left;"><code>1022.782</code></td>
 </tr>
 </tbody>
 </table>
@@ -1090,31 +1292,32 @@ matches the Expression <strong>Property</strong> value):</p>
 <table>
 <thead>
 <tr>
-<th align="left">Expression</th>
-<th align="left">Result</th>
-<th align="left">Comment</th>
+<th style="text-align: left;">Expression</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Comment</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>inputDiff / 1000</code></td>
-<td align="left"><code>0.112</code></td>
-<td align="left">Convert the input Wh property difference to kWh.</td>
+<td style="text-align: left;"><code>inputDiff / 1000</code></td>
+<td style="text-align: left;"><code>0.112</code></td>
+<td style="text-align: left;">Convert the input Wh property difference to kWh.</td>
 </tr>
 <tr>
-<td align="left"><code>inputDiff / 1000 * tou</code></td>
-<td align="left"><code>1.232</code></td>
-<td align="left">Multiply the input kWh by the the $/kWh tariff value to calculate the cost for the elapsed time period.</td>
+<td style="text-align: left;"><code>inputDiff / 1000 * tou</code></td>
+<td style="text-align: left;"><code>1.232</code></td>
+<td style="text-align: left;">Multiply the input kWh by the the $/kWh tariff value to calculate the cost for the elapsed time period.</td>
 </tr>
 <tr>
-<td align="left"><code>prevReading + (inputDiff / 1000 * tou)</code></td>
-<td align="left"><code>1,024.014</code></td>
-<td align="left">Add the additional cost to the previous meter reading value to reach the new meter value.</td>
+<td style="text-align: left;"><code>prevReading + (inputDiff / 1000 * tou)</code></td>
+<td style="text-align: left;"><code>1,024.014</code></td>
+<td style="text-align: left;">Add the additional cost to the previous meter reading value to reach the new meter value.</td>
 </tr>
 </tbody>
 </table>
 </article>
 </div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
 </div>
 </main>
 <footer class="md-footer">
@@ -1135,8 +1338,8 @@ matches the Expression <strong>Property</strong> value):</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.ebd0bdb7.min.js"></script>
 <script src="../../../js/open_in_new_tab.js"></script>
 </body>
 </html>
