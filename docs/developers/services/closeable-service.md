@@ -4,7 +4,7 @@ A plugin can publish a `net.solarnetwork.service.CloseableService` and SolarNode
 `closeService()` method on it when that service is destroyed. This can be useful in some situations,
 to make sure resources are freed when a service is no longer needed.
 
-Blueprint does provide the `destroy-method` [stop hook](../blueprint/#startstop-hooks) that can be
+Blueprint does provide the `destroy-method` [stop hook](../osgi/blueprint.md#startstop-hooks) that can be
 used in many situations, however Blueprint does not allow this in all cases. For example a `<bean>`
 nested within a `<service>` element does not allow a `destroy-method`:
 
