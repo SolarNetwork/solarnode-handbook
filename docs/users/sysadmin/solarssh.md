@@ -1,7 +1,7 @@
 # SolarSSH
 
 The `sn-solarssh` package in SolarNodeOS provides a `solarssh` command-line tool for managing
-[SolarSSH](../remote-access.md#solarssh) connections.
+[SolarSSH](../remote-access.md) connections.
 
 ## Show SSH public key
 

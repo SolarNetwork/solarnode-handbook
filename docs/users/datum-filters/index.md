@@ -56,25 +56,26 @@ information on how to configure the Datum Queue.
 
 Global Datum Filters are applied to datum just before posting to SolarNetwork. Once an instance is
 created, it is automatically active and will be applied to datum. This differs from [User Datum
-Filters](#user-datum-filters), which must be explicitly added to a service to be used, either
+Filters][udf], which must be explicitly added to a service to be used, either
 dircectly or indirectly with a [Datum Filter Chain](chain.md).
 
 !!! note
 
 	Some filters support both [Global](../setup-app/settings/datum-filters.md#global-datum-filters)
-	and [User](../setup-app/settings/datum-filters.md#user-datum-filters) based filter
-	configuration, and often you can achieve the same overall result in multiple ways. Global
-	filters are convenient for the subset of filters that support Global configuration, but for
-	complex filtering often it can be easier to configure all filters as User filters, using the
-	[Global Datum Filter Chain](../setup-app/settings/datum-filters.md#global-datum-filter-chain) as
-	needed.
+	and [User][udf] based filter configuration, and often you can achieve the same overall result in
+	multiple ways. Global filters are convenient for the subset of filters that support Global
+	configuration, but for complex filtering often it can be easier to configure all filters as User
+	filters, using the [Global Datum Filter Chain][gdfc] as needed.
 
 ## Global Datum Filter Chain
 
 The Global Datum Filter Chain provides a way to apply explicit [User Datum
-Filters](../setup-app/settings/datum-filters.md#user-datum-filters) to datum just before posting to
+Filters][udf] to datum just before posting to
 SolarNetwork.
 
 ## SolarFlux Datum Filters
 
 TODO
+
+[gdfc]: ../setup-app/settings/datum-filters.md#global-datum-filter-chain
+[udf]: ../setup-app/settings/datum-filters.md#user-datum-filters
