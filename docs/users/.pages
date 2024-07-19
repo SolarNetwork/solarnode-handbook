@@ -11,6 +11,7 @@ nav:
     - security-tokens.md
     - remote-access.md
     - expressions.md
+    - metrics.md
     - op-modes.md
     - placeholders.md
     - configuration.md
