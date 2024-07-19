@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/op-mode/" rel="canonical"/>
-<link href="../join/" rel="prev"/>
+<link href="../metric-harvester/" rel="prev"/>
 <link href="../parameter-expression/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.0, mkdocs-material-9.5.23" name="generator"/>
@@ -215,6 +215,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/settings/datum-sources/">
+<span class="md-ellipsis">
+    Datum Sources
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/settings/logging/">
 <span class="md-ellipsis">
     Logging
@@ -267,6 +274,13 @@
 <a class="md-nav__link" href="../../setup-app/tools/command-console/">
 <span class="md-ellipsis">
     Command Console
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/tools/metrics/">
+<span class="md-ellipsis">
+    Metrics
   </span>
 </a>
 </li>
@@ -347,6 +361,13 @@
 <a class="md-nav__link" href="../join/">
 <span class="md-ellipsis">
     Join
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../metric-harvester/">
+<span class="md-ellipsis">
+    Metric Harvester
   </span>
 </a>
 </li>
@@ -569,6 +590,13 @@
 <a class="md-nav__link" href="../../expressions/">
 <span class="md-ellipsis">
     Expressions
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../metrics/">
+<span class="md-ellipsis">
+    Metrics
   </span>
 </a>
 </li>
@@ -922,13 +950,13 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="operational-mode-datum-filter"><span class="enumerate-headings-plugin enumerate-heading-plugin">26.</span> Operational Mode Datum Filter<a class="headerlink" href="#operational-mode-datum-filter" title="Permanent link">¶</a></h1>
+<h1 id="operational-mode-datum-filter"><span class="enumerate-headings-plugin enumerate-heading-plugin">29.</span> Operational Mode Datum Filter<a class="headerlink" href="#operational-mode-datum-filter" title="Permanent link">¶</a></h1>
 <p>The <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/README-OpMode.md">Operational Mode Datum Filter</a> provides a way to evaluate <a href="../../expressions/">expressions</a> to toggle
 <a href="../../op-modes/">operational modes</a>. When an expression evaluates to <code>true</code> the associated operational mode
 is activated. When an expression evaluates to <code>false</code> the associated operational mode is
 deactivated.</p>
 <p>This filter is provided by the <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/">Standard Datum Filters</a> plugin.</p>
-<h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">26.1</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
+<h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">29.1</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
 <figure>
 <p><img alt="Operational Mode filter component settings" loading="lazy" src="../../../images/users/datum-filters/opmode-filter-settings%402x.png" width="616"/></p>
 </figure>
@@ -968,7 +996,7 @@ deactivated.</p>
 </tbody>
 </table>
 <p>Use the <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove expression configurations.</p>
-<h2 id="expression-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">26.2</span> Expression settings<a class="headerlink" href="#expression-settings" title="Permanent link">¶</a></h2>
+<h2 id="expression-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">29.2</span> Expression settings<a class="headerlink" href="#expression-settings" title="Permanent link">¶</a></h2>
 <p>Each expression configuration contains the following settings:</p>
 <table>
 <thead>
@@ -1004,7 +1032,7 @@ deactivated.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="expire-setting"><span class="enumerate-headings-plugin enumerate-heading-plugin">26.2.1</span> Expire setting<a class="headerlink" href="#expire-setting" title="Permanent link">¶</a></h3>
+<h3 id="expire-setting"><span class="enumerate-headings-plugin enumerate-heading-plugin">29.2.1</span> Expire setting<a class="headerlink" href="#expire-setting" title="Permanent link">¶</a></h3>
 <p>When configured the expression will <strong>never deactivate the operational mode directly</strong>. When
 evaluating the given expression, if it evaluates to <code>true</code> the mode will be activated and configured
 to deactivate after this many seconds. If the operation mode was already active, the expiration will
@@ -1014,7 +1042,7 @@ motion is detected the light is turned on (if not already on) and a timer set to
 after so many seconds of no motion being detected.</p>
 <p>Note that the operational modes service might actually deactivate the given mode a short time
 <strong>after</strong> the configured expiration.</p>
-<h3 id="property-setting"><span class="enumerate-headings-plugin enumerate-heading-plugin">26.2.2</span> Property setting<a class="headerlink" href="#property-setting" title="Permanent link">¶</a></h3>
+<h3 id="property-setting"><span class="enumerate-headings-plugin enumerate-heading-plugin">29.2.2</span> Property setting<a class="headerlink" href="#property-setting" title="Permanent link">¶</a></h3>
 <p>A property does not have to be populated. If you provide a <strong>Property</strong> name to populate, the value
 of the datum property depends on property type configured:</p>
 <table>
@@ -1039,7 +1067,7 @@ of the datum property depends on property type configured:</p>
 </tr>
 </tbody>
 </table>
-<h2 id="expressions"><span class="enumerate-headings-plugin enumerate-heading-plugin">26.3</span> Expressions<a class="headerlink" href="#expressions" title="Permanent link">¶</a></h2>
+<h2 id="expressions"><span class="enumerate-headings-plugin enumerate-heading-plugin">29.3</span> Expressions<a class="headerlink" href="#expressions" title="Permanent link">¶</a></h2>
 <p>See the <a href="../../expressions/">Expressions</a> section for general expressions reference. The expression
 must evaluate to  a <strong>boolean</strong> (<code>true</code> or <code>false</code>) result. When it evaluates to <code>true</code> the
 configured operational mode will be <strong>activated</strong>. When it evaluates to <code>false</code> the operational mode
@@ -1087,7 +1115,7 @@ the following properties:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="expression-examples"><span class="enumerate-headings-plugin enumerate-heading-plugin">26.3.1</span> Expression examples<a class="headerlink" href="#expression-examples" title="Permanent link">¶</a></h3>
+<h3 id="expression-examples"><span class="enumerate-headings-plugin enumerate-heading-plugin">29.3.1</span> Expression examples<a class="headerlink" href="#expression-examples" title="Permanent link">¶</a></h3>
 <p>Assuming a datum sample with properties like the following:</p>
 <table>
 <thead>

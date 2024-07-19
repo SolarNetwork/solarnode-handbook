@@ -215,6 +215,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/settings/datum-sources/">
+<span class="md-ellipsis">
+    Datum Sources
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/settings/logging/">
 <span class="md-ellipsis">
     Logging
@@ -267,6 +274,13 @@
 <a class="md-nav__link" href="../../setup-app/tools/command-console/">
 <span class="md-ellipsis">
     Command Console
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/tools/metrics/">
+<span class="md-ellipsis">
+    Metrics
   </span>
 </a>
 </li>
@@ -347,6 +361,13 @@
 <a class="md-nav__link" href="../../datum-filters/join/">
 <span class="md-ellipsis">
     Join
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../datum-filters/metric-harvester/">
+<span class="md-ellipsis">
+    Metric Harvester
   </span>
 </a>
 </li>
@@ -551,6 +572,13 @@
 <a class="md-nav__link" href="../../expressions/">
 <span class="md-ellipsis">
     Expressions
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../metrics/">
+<span class="md-ellipsis">
+    Metrics
   </span>
 </a>
 </li>
@@ -886,7 +914,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="date-and-time"><span class="enumerate-headings-plugin enumerate-heading-plugin">37.</span> Date and Time<a class="headerlink" href="#date-and-time" title="Permanent link">¶</a></h1>
+<h1 id="date-and-time"><span class="enumerate-headings-plugin enumerate-heading-plugin">40.</span> Date and Time<a class="headerlink" href="#date-and-time" title="Permanent link">¶</a></h1>
 <p>SolarNodeOS includes date and time management functions through the <a href="https://manpages.debian.org/bullseye/systemd/timedatectl.1.en.html">timedatectl</a>
 command. Run <code>timedatectl status</code> to view information about the current date and time settings.</p>
 <div class="highlight"><span class="filename">Viewing the current date and time settings</span><pre><span></span><code>$<span class="w"> </span>timedatectl<span class="w"> </span>status
@@ -898,13 +926,13 @@ System<span class="w"> </span>clock<span class="w"> </span>synchronized:<span cl
 <span class="w">              </span>NTP<span class="w"> </span>service:<span class="w"> </span>active
 <span class="w">          </span>RTC<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nb">local</span><span class="w"> </span>TZ:<span class="w"> </span>no
 </code></pre></div>
-<h2 id="changing-the-local-time-zone"><span class="enumerate-headings-plugin enumerate-heading-plugin">37.1</span> Changing the local time zone<a class="headerlink" href="#changing-the-local-time-zone" title="Permanent link">¶</a></h2>
+<h2 id="changing-the-local-time-zone"><span class="enumerate-headings-plugin enumerate-heading-plugin">40.1</span> Changing the local time zone<a class="headerlink" href="#changing-the-local-time-zone" title="Permanent link">¶</a></h2>
 <p>SolarNodeOS uses the <code>UTC</code> time zone by default. If you would like to change this, use the
 <code>timedatectl set-timezone</code></p>
 <div class="highlight"><span class="filename">Changing the local time zone</span><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>timedatectl<span class="w"> </span>set-timezone<span class="w"> </span>Pacific/Auckland
 </code></pre></div>
 <p>You can list the available time zone names by running <code>timedatectl list-timezones</code>.</p>
-<h2 id="internet-time-synchronization"><span class="enumerate-headings-plugin enumerate-heading-plugin">37.2</span> Internet time synchronization<a class="headerlink" href="#internet-time-synchronization" title="Permanent link">¶</a></h2>
+<h2 id="internet-time-synchronization"><span class="enumerate-headings-plugin enumerate-heading-plugin">40.2</span> Internet time synchronization<a class="headerlink" href="#internet-time-synchronization" title="Permanent link">¶</a></h2>
 <p>SolarNodeOS uses the <a href="https://manpages.debian.org/bullseye/systemd-timesyncd/systemd-timesyncd.8.en.html">systemd-timesyncd</a> service to synchronize the node's clock
 with internet time servers. Normally no configuration is necessary. You can check the status of the network
 time synchronization with <a href="https://manpages.debian.org/bullseye/systemd/timedatectl.1.en.html">timedatectl</a> like:</p>
@@ -922,7 +950,7 @@ System<span class="w"> </span>clock<span class="w"> </span>synchronized:<span cl
 <p>For internet time synchronization to work, SolarNode needs to access Network Time Protocol
 (NTP) servers, using UDP over port 123.</p>
 </div>
-<h3 id="network-time-server-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">37.2.1</span> Network time server configuration<a class="headerlink" href="#network-time-server-configuration" title="Permanent link">¶</a></h3>
+<h3 id="network-time-server-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">40.2.1</span> Network time server configuration<a class="headerlink" href="#network-time-server-configuration" title="Permanent link">¶</a></h3>
 <p>The NTP servers that SolarNodeOS uses are configured in the <a href="https://manpages.debian.org/bullseye/systemd-timesyncd/timesyncd.conf.5.en.html">/etc/systemd/timesyncd.conf</a>
 file. The default configuration uses a pool of Debian servers, which should be suitable for most nodes.
 If you would like to change the configuration, edit the <code>timesyncd.conf</code> file and change the <code>NTP=</code> line,
@@ -930,7 +958,7 @@ for example</p>
 <div class="highlight"><span class="filename">Configuring the NTP servers to use</span><pre><span></span><code>[Time]
 NTP=my.ntp.example.com
 </code></pre></div>
-<h2 id="setting-the-date-and-time"><span class="enumerate-headings-plugin enumerate-heading-plugin">37.3</span> Setting the date and time<a class="headerlink" href="#setting-the-date-and-time" title="Permanent link">¶</a></h2>
+<h2 id="setting-the-date-and-time"><span class="enumerate-headings-plugin enumerate-heading-plugin">40.3</span> Setting the date and time<a class="headerlink" href="#setting-the-date-and-time" title="Permanent link">¶</a></h2>
 <p>In order to manually set the date and time, NTP time synchronization must be disabled with <code>timedatectl set-ntp false</code>.
 Then you can run <code>timedatectl set-time</code> to set the date:</p>
 <div class="highlight"><span class="filename">Manually changing the date and time</span><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>timedatectl<span class="w"> </span>set-ntp<span class="w"> </span><span class="nb">false</span>

@@ -215,6 +215,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../datum-sources/">
+<span class="md-ellipsis">
+    Datum Sources
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../logging/">
 <span class="md-ellipsis">
     Logging
@@ -324,6 +331,13 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../tools/metrics/">
+<span class="md-ellipsis">
+    Metrics
+  </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -401,6 +415,13 @@
 <a class="md-nav__link" href="../../../datum-filters/join/">
 <span class="md-ellipsis">
     Join
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../datum-filters/metric-harvester/">
+<span class="md-ellipsis">
+    Metric Harvester
   </span>
 </a>
 </li>
@@ -558,6 +579,13 @@
 <a class="md-nav__link" href="../../../expressions/">
 <span class="md-ellipsis">
     Expressions
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../metrics/">
+<span class="md-ellipsis">
+    Metrics
   </span>
 </a>
 </li>
@@ -900,9 +928,9 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="backups"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.</span> Backups<a class="headerlink" href="#backups" title="Permanent link">¶</a></h1>
+<h1 id="backups"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.</span> Backups<a class="headerlink" href="#backups" title="Permanent link">¶</a></h1>
 <p>This page allows you to backup and restore the configuration of your SolarNode.</p>
-<h2 id="settings-backup-restore"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.1</span> Settings Backup &amp; Restore<a class="headerlink" href="#settings-backup-restore" title="Permanent link">¶</a></h2>
+<h2 id="settings-backup-restore"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.1</span> Settings Backup &amp; Restore<a class="headerlink" href="#settings-backup-restore" title="Permanent link">¶</a></h2>
 <p>The Settings Backup &amp; Restore section provides a way to manage <a href="../../../settings/">Settings Files</a>
 and Settings Resources, both of which are backups for the configured settings in SolarNode.</p>
 <div class="admonition warning">
@@ -925,7 +953,7 @@ the date the settings backup was created.</p>
 <figure>
 <p><img alt="Settings import/export form" src="../../../../images/users/setup/settings-backup-restore-annotated%402x.png" width="728"/></p>
 </figure>
-<h2 id="full-backup-restore"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.2</span> Full Backup &amp; Restore<a class="headerlink" href="#full-backup-restore" title="Permanent link">¶</a></h2>
+<h2 id="full-backup-restore"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.2</span> Full Backup &amp; Restore<a class="headerlink" href="#full-backup-restore" title="Permanent link">¶</a></h2>
 <p>The Full Backup &amp; Restore section lets you manage SolarNode "full" backups. Each full backup contains a snapshot
 of the settings you have configured, the node's certificate, login credentials, custom plugins, and more.</p>
 <figure>
@@ -940,9 +968,9 @@ selected service's settings, click the <strong>Save Settings</strong> button to 
 <figure>
 <p><img alt="Full Backup/restore form" src="../../../../images/users/setup/settings-full-backup-restore-annotated%402x.png" width="728"/></p>
 </figure>
-<h2 id="backup-services"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.3</span> Backup Services<a class="headerlink" href="#backup-services" title="Permanent link">¶</a></h2>
+<h2 id="backup-services"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.3</span> Backup Services<a class="headerlink" href="#backup-services" title="Permanent link">¶</a></h2>
 <p>SolarNode supports configurable Backup Service plugins to manage the storage of backup resources.</p>
-<h3 id="file-system-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.3.1</span> File System Backup Service<a class="headerlink" href="#file-system-backup-service" title="Permanent link">¶</a></h3>
+<h3 id="file-system-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.3.1</span> File System Backup Service<a class="headerlink" href="#file-system-backup-service" title="Permanent link">¶</a></h3>
 <p>The File System Backup Service is the default Backup Service provided by SolarNode. It saves
 the backup onto the node itself. In order to be able to restore your settings if the node is damaged
 or lost, you must download a copy of a backup using the <strong>Download</strong> button, and save the file
@@ -975,7 +1003,7 @@ hardware failure.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="s3-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.3.2</span> S3 Backup Service<a class="headerlink" href="#s3-backup-service" title="Permanent link">¶</a></h3>
+<h3 id="s3-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.3.2</span> S3 Backup Service<a class="headerlink" href="#s3-backup-service" title="Permanent link">¶</a></h3>
 <p>The S3 Backup Service creates cloud-based backups in <a href="https://aws.amazon.com/s3/">AWS S3</a> (or any compatible provider). You
 must configure the credentials and S3 location details to use before any backups can be created.</p>
 <figure>

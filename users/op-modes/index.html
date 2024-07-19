@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://solarnetwork.github.io/solarnode-handbook/users/op-modes/" rel="canonical"/>
-<link href="../expressions/" rel="prev"/>
+<link href="../metrics/" rel="prev"/>
 <link href="../placeholders/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.0, mkdocs-material-9.5.23" name="generator"/>
@@ -215,6 +215,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../setup-app/settings/datum-sources/">
+<span class="md-ellipsis">
+    Datum Sources
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../setup-app/settings/logging/">
 <span class="md-ellipsis">
     Logging
@@ -267,6 +274,13 @@
 <a class="md-nav__link" href="../setup-app/tools/command-console/">
 <span class="md-ellipsis">
     Command Console
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../setup-app/tools/metrics/">
+<span class="md-ellipsis">
+    Metrics
   </span>
 </a>
 </li>
@@ -347,6 +361,13 @@
 <a class="md-nav__link" href="../datum-filters/join/">
 <span class="md-ellipsis">
     Join
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../datum-filters/metric-harvester/">
+<span class="md-ellipsis">
+    Metric Harvester
   </span>
 </a>
 </li>
@@ -504,6 +525,13 @@
 <a class="md-nav__link" href="../expressions/">
 <span class="md-ellipsis">
     Expressions
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../metrics/">
+<span class="md-ellipsis">
+    Metrics
   </span>
 </a>
 </li>
@@ -850,7 +878,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="operational-modes"><span class="enumerate-headings-plugin enumerate-heading-plugin">46.</span> Operational Modes<a class="headerlink" href="#operational-modes" title="Permanent link">¶</a></h1>
+<h1 id="operational-modes"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.</span> Operational Modes<a class="headerlink" href="#operational-modes" title="Permanent link">¶</a></h1>
 <p>SolarNode supports a concept called <strong>operational modes</strong>. Modes are simple names like <code>quiet</code> and
 <code>hyper</code> that can be either <strong>active</strong> or <strong>inactive</strong>. Any number of modes can be active at a given
 time. In theory both <code>quiet</code> and <code>hyper</code> could be active simultaneously. Modes can be named anything
@@ -864,11 +892,11 @@ prefix to the mode name, for example <code>!hyper</code> can be thought of as <e
 active"</em>. You can also specify exactly <code>!</code> to match only when <em>no</em> mode is active.</p>
 <p><a href="../datum-filters/">Datum Filters</a> also make use of operational modes, to toggle filters
 on and off dynamically.</p>
-<h2 id="automatic-expiration"><span class="enumerate-headings-plugin enumerate-heading-plugin">46.1</span> Automatic expiration<a class="headerlink" href="#automatic-expiration" title="Permanent link">¶</a></h2>
+<h2 id="automatic-expiration"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.1</span> Automatic expiration<a class="headerlink" href="#automatic-expiration" title="Permanent link">¶</a></h2>
 <p>Operational modes can be activated with an associated <strong>expiration date</strong>. The mode will remain
 active until the expiration date, at which time it will be automatically deactivated. A mode can
 always be manually deactivated before its associated expiration date.</p>
-<h2 id="operational-modes-management-api"><span class="enumerate-headings-plugin enumerate-heading-plugin">46.2</span> Operational Modes management API<a class="headerlink" href="#operational-modes-management-api" title="Permanent link">¶</a></h2>
+<h2 id="operational-modes-management-api"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.2</span> Operational Modes management API<a class="headerlink" href="#operational-modes-management-api" title="Permanent link">¶</a></h2>
 <p>The <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API#queue-instruction">SolarUser Instruction API</a> can be used to toggle operational modes on and off. The
 <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API-enumerated-types#enableoperationalmodes"><code>EnableOperationalModes</code></a> instruction activates modes and
 <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API-enumerated-types#disableoperationalmodes"><code>DisableOperationalModes</code></a> deactivates them.</p>

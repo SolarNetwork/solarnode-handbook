@@ -215,6 +215,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../setup-app/settings/datum-sources/">
+<span class="md-ellipsis">
+    Datum Sources
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../setup-app/settings/logging/">
 <span class="md-ellipsis">
     Logging
@@ -267,6 +274,13 @@
 <a class="md-nav__link" href="../setup-app/tools/command-console/">
 <span class="md-ellipsis">
     Command Console
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../setup-app/tools/metrics/">
+<span class="md-ellipsis">
+    Metrics
   </span>
 </a>
 </li>
@@ -347,6 +361,13 @@
 <a class="md-nav__link" href="../datum-filters/join/">
 <span class="md-ellipsis">
     Join
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../datum-filters/metric-harvester/">
+<span class="md-ellipsis">
+    Metric Harvester
   </span>
 </a>
 </li>
@@ -551,6 +572,13 @@
 <a class="md-nav__link" href="../expressions/">
 <span class="md-ellipsis">
     Expressions
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../metrics/">
+<span class="md-ellipsis">
+    Metrics
   </span>
 </a>
 </li>
@@ -886,16 +914,16 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="networking"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.</span> Networking<a class="headerlink" href="#networking" title="Permanent link">¶</a></h1>
+<h1 id="networking"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.</span> Networking<a class="headerlink" href="#networking" title="Permanent link">¶</a></h1>
 <p>SolarNode will attempt to automatically configure networking access from a local DHCP server. For
 many deployments the local network router is the DHCP server. SolarNode will identify itself with
 the name <code>solarnode</code>, so in many cases you can reach the SolarNode setup app at <a href="http://solarnode/">http://solarnode/</a>.</p>
-<h2 id="finding-solarnodes-network-address"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.1</span> Finding SolarNode's network address<a class="headerlink" href="#finding-solarnodes-network-address" title="Permanent link">¶</a></h2>
+<h2 id="finding-solarnodes-network-address"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.1</span> Finding SolarNode's network address<a class="headerlink" href="#finding-solarnodes-network-address" title="Permanent link">¶</a></h2>
 <p>To find what network address SolarNode is using, you have a few options:</p>
-<h3 id="consult-your-network-router"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.1.1</span> Consult your network router<a class="headerlink" href="#consult-your-network-router" title="Permanent link">¶</a></h3>
+<h3 id="consult-your-network-router"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.1.1</span> Consult your network router<a class="headerlink" href="#consult-your-network-router" title="Permanent link">¶</a></h3>
 <p>Your local network router is very likely to have a record of SolarNode's network connection. Log
 into the router's management UI and look for a device named <code>solarnode</code>.</p>
-<h3 id="connect-a-keyboard-and-screen"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.1.2</span> Connect a keyboard and screen<a class="headerlink" href="#connect-a-keyboard-and-screen" title="Permanent link">¶</a></h3>
+<h3 id="connect-a-keyboard-and-screen"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.1.2</span> Connect a keyboard and screen<a class="headerlink" href="#connect-a-keyboard-and-screen" title="Permanent link">¶</a></h3>
 <p>If your SolarNode supports connecting a keyboard and screen, you can log into the SolarNode command line
 console and run <code class="highlight">ip<span class="w"> </span>-br<span class="w"> </span>addr</code> to print out a brief summary of the current networking configuration:</p>
 <div class="highlight"><pre><span></span><code>$ ip -br addr
@@ -911,7 +939,7 @@ and a WiFi device <code>wlan0</code> that is not connected. You could reach that
 <p class="admonition-title">Tip</p>
 <p>You can get more details by running <code class="highlight">ip<span class="w"> </span>addr</code> (without the <code>-br</code> argument).</p>
 </div>
-<h2 id="wifi"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.2</span> WiFi<a class="headerlink" href="#wifi" title="Permanent link">¶</a></h2>
+<h2 id="wifi"><span class="enumerate-headings-plugin enumerate-heading-plugin">45.2</span> WiFi<a class="headerlink" href="#wifi" title="Permanent link">¶</a></h2>
 <p>If your device will use WiFi for network access, you will need to configure the network name and credentials to use.
 You can do that by creating a <code>wpa_supplicant.conf</code> file on the SolarNodeOS media (typically an SD card). For Raspberry Pi media, you can mount the SD card on your computer and it will mount the appropriate drive for you.</p>
 <p><img alt="macOS and Windows SOLARBOOT disk image icon" src="../../images/users/os-solarboot-disk-icon.png" width="435"/></p>

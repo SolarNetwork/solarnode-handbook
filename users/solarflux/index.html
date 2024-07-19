@@ -215,6 +215,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../setup-app/settings/datum-sources/">
+<span class="md-ellipsis">
+    Datum Sources
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../setup-app/settings/logging/">
 <span class="md-ellipsis">
     Logging
@@ -267,6 +274,13 @@
 <a class="md-nav__link" href="../setup-app/tools/command-console/">
 <span class="md-ellipsis">
     Command Console
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../setup-app/tools/metrics/">
+<span class="md-ellipsis">
+    Metrics
   </span>
 </a>
 </li>
@@ -347,6 +361,13 @@
 <a class="md-nav__link" href="../datum-filters/join/">
 <span class="md-ellipsis">
     Join
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../datum-filters/metric-harvester/">
+<span class="md-ellipsis">
+    Metric Harvester
   </span>
 </a>
 </li>
@@ -590,6 +611,13 @@
 <a class="md-nav__link" href="../expressions/">
 <span class="md-ellipsis">
     Expressions
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../metrics/">
+<span class="md-ellipsis">
+    Metrics
   </span>
 </a>
 </li>
@@ -964,16 +992,16 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="solarflux"><span class="enumerate-headings-plugin enumerate-heading-plugin">35.</span> SolarFlux<a class="headerlink" href="#solarflux" title="Permanent link">¶</a></h1>
+<h1 id="solarflux"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.</span> SolarFlux<a class="headerlink" href="#solarflux" title="Permanent link">¶</a></h1>
 <p>SolarFlux is the name of a real-time cloud-based service for <a href="../datum/">datum</a> using a
 publish/subscribe integration model. SolarNode supports publishing datum to SolarFlux and your own
 applications can subscribe to receive datum messages as they are published.</p>
 <p>SolarFlux is based on <a href="https://mqtt.org/">MQTT</a>. To integrate with SolarFlux you use a MQTT client application or library.
 See the <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarFlux-API#subscribing">SolarFlux Integration Guide</a> for more information.</p>
-<h2 id="solarflux-upload-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">35.1</span> SolarFlux Upload Service<a class="headerlink" href="#solarflux-upload-service" title="Permanent link">¶</a></h2>
+<h2 id="solarflux-upload-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.1</span> SolarFlux Upload Service<a class="headerlink" href="#solarflux-upload-service" title="Permanent link">¶</a></h2>
 <p>SolarNode provides the <a href="https://github.com/SolarNetwork/solarnetwork-node/tree/develop/net.solarnetwork.node.upload.flux">SolarFlux Upload Service</a> plugin that posts datum captured by
 SolarNode plugins to SolarFlux.</p>
-<h2 id="mqtt-message-format"><span class="enumerate-headings-plugin enumerate-heading-plugin">35.2</span> MQTT message format<a class="headerlink" href="#mqtt-message-format" title="Permanent link">¶</a></h2>
+<h2 id="mqtt-message-format"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.2</span> MQTT message format<a class="headerlink" href="#mqtt-message-format" title="Permanent link">¶</a></h2>
 <p>Each datum message is published as a <a href="http://cbor.io/">CBOR</a> encoded map by default, to a <a href="#mqtt-message-topics">MQTT
 topic</a> based on the datum's <strong>source ID</strong>. This is essentially a JSON object.
 The map keys are the datum property names. You can configure a <strong>Datum Encoder</strong> to encode datum
@@ -1004,7 +1032,7 @@ snapshot of all datum across all nodes and sources.</p>
 <span class="w">  </span><span class="nt">"watts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1958</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="mqtt-message-topics"><span class="enumerate-headings-plugin enumerate-heading-plugin">35.3</span> MQTT message topics<a class="headerlink" href="#mqtt-message-topics" title="Permanent link">¶</a></h2>
+<h2 id="mqtt-message-topics"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.3</span> MQTT message topics<a class="headerlink" href="#mqtt-message-topics" title="Permanent link">¶</a></h2>
 <p>The MQTT topic each datum is published to is derived from the node ID and datum source ID, according to this pattern:</p>
 <div class="highlight"><pre><span></span><code>node/N/datum/A/S
 </code></pre></div>
@@ -1034,15 +1062,15 @@ snapshot of all datum across all nodes and sources.</p>
 node/2/datum/0/Building1/Room1/Light1
 node/2/datum/0/Building1/Room1/Light2
 </code></pre></div>
-<h2 id="log-datum-stream"><span class="enumerate-headings-plugin enumerate-heading-plugin">35.4</span> Log datum stream<a class="headerlink" href="#log-datum-stream" title="Permanent link">¶</a></h2>
+<h2 id="log-datum-stream"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.4</span> Log datum stream<a class="headerlink" href="#log-datum-stream" title="Permanent link">¶</a></h2>
 <p>The <a href="https://github.com/SolarNetwork/solarnetwork-common/tree/develop/net.solarnetwork.common.log4j2#eventadmin-appender"><code>EventAdmin</code> Appender</a> is supported, and <a href="../logging/">log events</a> are turned into a datum
 stream and published to SolarFlux. The log timestamps are used as the datum timestamps.</p>
-<h3 id="log-datum-stream-topic-mapping"><span class="enumerate-headings-plugin enumerate-heading-plugin">35.4.1</span> Log datum stream topic mapping<a class="headerlink" href="#log-datum-stream-topic-mapping" title="Permanent link">¶</a></h3>
+<h3 id="log-datum-stream-topic-mapping"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.4.1</span> Log datum stream topic mapping<a class="headerlink" href="#log-datum-stream-topic-mapping" title="Permanent link">¶</a></h3>
 <p>The topic assigned to log events is <code>log/</code> with the log name appended. Period characters (<code>.</code>) in
 the log name are replaced with slash characters (<code>/</code>). For example, a log name
 <code>net.solarnetwork.node.datum.modbus.ModbusDatumDataSource</code> will be turned into the topic
 <code>log/net/solarnetwork/node/datum/modbus/ModbusDatumDataSource</code>.</p>
-<h3 id="log-datum-stream-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">35.4.2</span> Log datum stream properties<a class="headerlink" href="#log-datum-stream-properties" title="Permanent link">¶</a></h3>
+<h3 id="log-datum-stream-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.4.2</span> Log datum stream properties<a class="headerlink" href="#log-datum-stream-properties" title="Permanent link">¶</a></h3>
 <p>The datum stream consists of the following properties:</p>
 <table>
 <thead>
@@ -1092,7 +1120,7 @@ the log name are replaced with slash characters (<code>/</code>). For example, a
 </tr>
 </tbody>
 </table>
-<h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">35.5</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
+<h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.5</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
 <p>The SolarFlux Upload Service ships with default settings that work out-of-the-box without any
 configuration. There are many settings you can change to better suit your needs, however.</p>
 <figure>
@@ -1155,7 +1183,7 @@ configuration. There are many settings you can change to better suit your needs,
 </table>
 <p>For TLS-encrypted connections, SolarNode will make the node's own X.509 certificate available for
 client authentication.</p>
-<h3 id="filter-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">35.5.1</span> Filter settings<a class="headerlink" href="#filter-settings" title="Permanent link">¶</a></h3>
+<h3 id="filter-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.5.1</span> Filter settings<a class="headerlink" href="#filter-settings" title="Permanent link">¶</a></h3>
 <p>Each component can define any number of filters, which are used to manipulate the datum published to SolarFlux,
 such as:</p>
 <ul>
@@ -1226,7 +1254,7 @@ filters! If you define <strong>any</strong> include filters, you might want to a
 <code>^created$</code>. You might like to have <code>sourceId</code> removed to conserve bandwidth, given that value
 is part of the MQTT topic the datum is posted on and thus redundant.</p>
 </div>
-<h2 id="offline-message-persistence"><span class="enumerate-headings-plugin enumerate-heading-plugin">35.6</span> Offline message persistence<a class="headerlink" href="#offline-message-persistence" title="Permanent link">¶</a></h2>
+<h2 id="offline-message-persistence"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.6</span> Offline message persistence<a class="headerlink" href="#offline-message-persistence" title="Permanent link">¶</a></h2>
 <p>By default if the connection to the SolarFlux server is down for any reason, all messages that would
 normally be published to the server will be discarded. This is suitable for most applications that
 rely on SolarFlux to view real-time status updates only, and SolarNode uploads datum to SolarNet for
