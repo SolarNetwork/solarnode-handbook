@@ -829,7 +829,7 @@
 <article class="md-content__inner md-typeset">
 <h1><span class="enumerate-headings-plugin enumerate-heading-plugin">18.</span> Metrics</h1>
 <p>SolarNode includes a Metrics page where you can monitor the <a href="../../../metrics/">metrics</a> collected.</p>
-<p><img alt="SolarNode metrics screen" src="../../../../images/users/setup/setup-metrics%402x.png" width="1082"/></p>
+<p><img alt="SolarNode metrics screen" src="../../../../images/users/setup/setup-metrics%402x.png" width="1034"/></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In SolarNodeOS the <a href="https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-metrics-harvester/debian">solarnode-app-metrics-harvester</a>
@@ -839,9 +839,17 @@ database storage for the collected metrics.</p>
 </div>
 <p>The <strong>Latest Metrics</strong> section shows the most-recently collected metric per metric name. This section
 will update in real time as metrics are collected.</p>
+<p>The <strong>Metric Statistics</strong> section shows you some common metric statistics, aggregated over a date
+range of your choosing by filling in the form at the top of the section. You can also download the
+statistics as a CSV file using the download button on the right side of the form.</p>
 <p>The <strong>Metrics</strong> section shows all the metrics collected, ordered by time from newest to oldest. You
-can filter the shown metrics by name, and use the pagination links at the bottom to navigate through
-all the avilable metrics.</p>
+can filter the shown metrics by name or download the metrics as a CSV file using the form at the top
+of the section. The pagination links at the bottom let you navigate through all the avilable metrics.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page displays metric values rounded to at most 3 decimal places. If you export the metrics
+as CSV the values will not be rounded.</p>
+</div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
