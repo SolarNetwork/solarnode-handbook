@@ -25,6 +25,11 @@ $ sudo dpkg-reconfigure tzdata
 
 This will present a menu to choose the desired time zone. You can also list the available time zone names by running `timedatectl list-timezones`.
 
+!!! note "Why not `timedatectl set-timezone`?"
+
+	There are two time zone configuration files, `/etc/localtime` and `/etc/timezone`. These must be kept in sync, which `dpkg-reconfigure tzdata`
+	will do but `timedatectl set-timezone` will not.
+
 ## Internet time synchronization
 
 SolarNodeOS uses the [systemd-timesyncd][systemd-timesyncd-man] service to synchronize the node's clock
