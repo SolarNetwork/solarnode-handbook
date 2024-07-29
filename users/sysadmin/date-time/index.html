@@ -928,10 +928,15 @@ System<span class="w"> </span>clock<span class="w"> </span>synchronized:<span cl
 </code></pre></div>
 <h2 id="changing-the-local-time-zone"><span class="enumerate-headings-plugin enumerate-heading-plugin">40.1</span> Changing the local time zone<a class="headerlink" href="#changing-the-local-time-zone" title="Permanent link">¶</a></h2>
 <p>SolarNodeOS uses the <code>UTC</code> time zone by default. If you would like to change this, use the
-<code>timedatectl set-timezone</code></p>
-<div class="highlight"><span class="filename">Changing the local time zone</span><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>timedatectl<span class="w"> </span>set-timezone<span class="w"> </span>Pacific/Auckland
+<code>dpkg-reconfigure tzdata</code></p>
+<div class="highlight"><span class="filename">Changing the local time zone</span><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>tzdata
 </code></pre></div>
-<p>You can list the available time zone names by running <code>timedatectl list-timezones</code>.</p>
+<p>This will present a menu to choose the desired time zone. You can also list the available time zone names by running <code>timedatectl list-timezones</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Why not <code>timedatectl set-timezone</code>?</p>
+<p>There are two time zone configuration files, <code>/etc/localtime</code> and <code>/etc/timezone</code>. These must be kept in sync, which <code>dpkg-reconfigure tzdata</code>
+will do but <code>timedatectl set-timezone</code> will not.</p>
+</div>
 <h2 id="internet-time-synchronization"><span class="enumerate-headings-plugin enumerate-heading-plugin">40.2</span> Internet time synchronization<a class="headerlink" href="#internet-time-synchronization" title="Permanent link">¶</a></h2>
 <p>SolarNodeOS uses the <a href="https://manpages.debian.org/bullseye/systemd-timesyncd/systemd-timesyncd.8.en.html">systemd-timesyncd</a> service to synchronize the node's clock
 with internet time servers. Normally no configuration is necessary. You can check the status of the network

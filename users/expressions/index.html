@@ -1471,6 +1471,12 @@ multiplication. The following functions help with other math operations:</p>
 <td style="text-align: left;">Round numbers towards zero, to the nearest integer multiple of <code>significance</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;"><code>exp(n)</code></td>
+<td style="text-align: left;"><code>Number</code></td>
+<td style="text-align: left;"><code>Number</code></td>
+<td style="text-align: left;">Returns Euler's number <em>e</em> raised to the power of <code>n</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;"><code>floor(n)</code></td>
 <td style="text-align: left;"><code>Number</code></td>
 <td style="text-align: left;"><code>Number</code></td>
@@ -1481,6 +1487,18 @@ multiplication. The following functions help with other math operations:</p>
 <td style="text-align: left;"><code>Number</code>, <code>Number</code></td>
 <td style="text-align: left;"><code>Number</code></td>
 <td style="text-align: left;">Round a number smaller, to the nearest integer multiple of <code>significance</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>interp(x, x1, x2, y1, y2)</code></td>
+<td style="text-align: left;"><code>Number</code>, <code>Number</code>, <code>Number</code>, <code>Number</code>, <code>Number</code></td>
+<td style="text-align: left;"><code>Number</code></td>
+<td style="text-align: left;">Linearly interpolate <code>x</code> over the range <code>x1</code> to <code>x2</code>, mapped to output range from <code>y1</code> to <code>y2</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>interp(x, x1, x2, y1, y2, scale)</code></td>
+<td style="text-align: left;"><code>Number</code>, <code>Number</code>, <code>Number</code>, <code>Number</code>, <code>Number</code>, <code>Number</code></td>
+<td style="text-align: left;"><code>Number</code></td>
+<td style="text-align: left;">Linearly interpolate <code>x</code> over the range <code>x1</code> to <code>x2</code>, mapped to output range from <code>y1</code> to <code>y2</code> rounding to at most <code>scale</code> decimal places.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>max(collection)</code></td>
