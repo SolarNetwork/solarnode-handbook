@@ -132,8 +132,11 @@ multiplication. The following functions help with other math operations:
 | `ceil(n,significance)` | `Number`, `Number` | `Number` | Round a number larger, to the nearest integer multiple of `significance`. |
 | `down(n)` | `Number` | `Number` | Round numbers towards zero, to the nearest integer. |
 | `down(n,significance)` | `Number`, `Number` | `Number` | Round numbers towards zero, to the nearest integer multiple of `significance`. |
+| `exp(n)` | `Number` | `Number`| Returns Euler's number _e_ raised to the power of `n`. |
 | `floor(n)` | `Number` | `Number` | Round a number smaller, to the nearest integer. |
 | `floor(n,significance)` | `Number`, `Number` | `Number` | Round a number smaller, to the nearest integer multiple of `significance`. |
+| `interp(x, x1, x2, y1, y2)` | `Number`, `Number`, `Number`, `Number`, `Number` | `Number` | Linearly interpolate `x` over the range `x1` to `x2`, mapped to output range from `y1` to `y2`. |
+| `interp(x, x1, x2, y1, y2, scale)` | `Number`, `Number`, `Number`, `Number`, `Number`, `Number` | `Number` | Linearly interpolate `x` over the range `x1` to `x2`, mapped to output range from `y1` to `y2` rounding to at most `scale` decimal places. |
 | `max(collection)` | `Collection<Number>` | `Number` | Return the largest value from a set of numbers. |
 | `max(n1,n2)` | `Number`, `Number` | `Number` | Return the larger of two numbers. |
 | `min(collection)` | `Collection<Number>` | `Number` | Return the smallest value from a set of numbers. |
