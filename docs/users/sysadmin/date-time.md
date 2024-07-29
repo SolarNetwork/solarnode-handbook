@@ -17,13 +17,13 @@ System clock synchronized: yes
 ## Changing the local time zone
 
 SolarNodeOS uses the `UTC` time zone by default. If you would like to change this, use the
-`timedatectl set-timezone`
+`dpkg-reconfigure tzdata`
 
 ```sh title="Changing the local time zone"
-$ sudo timedatectl set-timezone Pacific/Auckland
+$ sudo dpkg-reconfigure tzdata
 ```
 
-You can list the available time zone names by running `timedatectl list-timezones`.
+This will present a menu to choose the desired time zone. You can also list the available time zone names by running `timedatectl list-timezones`.
 
 ## Internet time synchronization
 
