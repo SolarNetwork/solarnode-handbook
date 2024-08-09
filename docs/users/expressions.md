@@ -93,6 +93,31 @@ The following functions help with bitwise integer manipulation operations:
 	 All number arguments will be converted to `BigInteger` values for the bitwise operations, and
 	 `BigInteger` values are returned.
 
+#### Date time functions
+
+| Function | Arguments | Result | Description |
+|:---------|:----------|:-------|:------------|
+| `chronoUnit(name)` | `String` | `TemporalUnit` | Returns a `TemporalUnit` instance for a case-insensitive chronological unit name, one of `NANOS`, `MICROS`, `MILLIS`, `SECONDS`, `MINUTES`, `HOURS`, `HALF_DAYS`, `DAYS`, `WEEKS`, `MONTHS`, `YEARS`, `DECADES`, `CENTURIES`, `MILLENNIA` |
+| `date(year, month, day)` | `int`, `int`, `int` | `LocalDate` | Construct a date instance for a given year, month (1-12) and day (1-31). |
+| `date(year, month, day, hour,  minute)` | `int`, `int`, `int`, `int`, `int` | `LocalDateTime` | Construct a date and time instance for a given year, month (1-12), day (1-31), hour (0-23), and minute (0-59). |
+| `date(year, month, day, hour,  minute, second)` | `int`, `int`, `int`, `int`, `int`, `int` | `LocalDateTime` | Construct a date and time instance for a given year, month (1-12), day (1-31), hour (0-23), minute (0-59), and second (0-59). |
+| `datePlus(date, amount, unit)` | `Temporal`, `long`, `TemporalUnit|String` | `Temporal` | Add a chronological unit of time to a date. The `unit` can be a `TemporalUnit` instance or a valid name as documented in the `chronoUnit(name)` function above. For example: `datePlus(date(2024,8,10), 1, "days")` adds 1 day to `2024-08-10` resulting in `2024-08-11`. |
+| `datePlus(date,  amount)` | `Temporal`, `TemporalAmount|String` | `Temporal` | Add a duration to a date. The `amount` can be a `TemporalAmount` instance or a valid string representation as documented in the `duration(amount)` function below. For example: `datePlus(date(2024,8,10), "-P1Y")` subtracts 1 year from `2024-08-10` resulting in `2023-08-10`. |
+| `dateTruncate(date, unit)` | `Temporal`, `TemporalUnit|String` | `Temporal` | Round a date down (older) to a given unit. The `unit` can be a `TemporalUnit` instance or a valid name as documented in the `chronoUnit(name)` function above. For example `dateTruncate(date(2024,8,10), "months")` truncates the date `2024-08-10` to the month, resulting in `2024-08-01`. |
+| `dateTz(date)` | `LocalDate|LocalDateTime` | `ZonedDateTime` | Turns a local date, or local date and time, into an absolute date and time in the node device's time zone. If a `LocalDate` is given, the resulting time will be set to midnight of the given date. For example, for a node device in the `Pacific/Auckland` time zone `dateTz(date(2024,8,10))` returns `2024-08-10 00:00 +12:00`. |
+| `dateTz(date, zone)` | `LocalDate|LocalDateTime`, `ZoneId|String` | `ZonedDateTime` | Turn a local date, or local date and time, into an absolute date and time in a given time zone. If a `LocalDate` is given, the resulting time will be set to midnight of the given `date`. The `zone` can be a `ZoneId` instance or a valid zone identifier as documented in the `tz(zoneId)` function below. For example `dateTz(date(2024,8,10), "Pacific/Honolulu")` returns `2024-08-10 00:00 -10:00`. |
+| `duration(amount)` | `String` | `TemporalAmount` | Parse an ISO 8601 style period or duration into a `TemporalAmount`.  The period syntax supports `PnYnMnD` and `PnW`, where `n` is a number of years `Y`, months `M`, days `D`, or weeks `W`. For example `P1Y2M3D` represents one year and 2 months and 3 days, or `P7D` 7 days or `P4W` 4 weeks. The duration syntax supports `PnDTnHnMn.nS` where `n` is a number of days `D`, hours `H`, minutes `M`, or fractional seconds `S`. For example `PT15M` represents 15 minutes, `PT20.345S` 20.345 seconds, `-P6H3M` -6 hours -3 minutes, `P-6H3M` -6 hours +3 minutes. |
+| `now()` |  | `LocalDateTime` | Get the local date and time when invoked. |
+| `now(zone)` | `ZoneId|String` | `LocalDateTime` | Get the date and time in a given time zone when invoked. The `zone` can be a `ZoneId` instance or a valid zone identifier as documented in the `tz(zoneId)` function below. |
+| `nowTz()` |  | `ZonedDateTime` | Get the absolute date and time when invoked in the node device's time zone. |
+| `nowTz(zone)` | `ZoneId|String` | `ZonedDateTime` | Get the absolute date and time when invoked in the `zone` time zone. The `zone` can be a `ZoneId` instance or a valid zone identifier as documented in the `tz(zoneId)` function below. |
+| `timestamp()` |  | `Instant` | Get the absolute date and time when invoked, in the `UTC` time zone. |
+| `timestamp(date)` | `Temporal` | `Instant` | Convert a date or date and time into a timestamp in the node device's time zone. |
+| `timestamp(date, zone)` | `Temporal`, `ZoneId|String` | `Instant` | Convert a date or date and time into a timestamp in the `zone` time zone. The `zone` can be a `ZoneId` instance or a valid zone identifier as documented in the `tz(zoneId)` function below. |
+| `today()` |  | `LocalDate` | Get the local date when invoked in the node device's time zone. |
+| `today(zone)` | `ZoneId|String` | `LocalDate` | Get the local date when invoked in the `zone` time zone. The `zone` can be a `ZoneId` instance or a valid zone identifier as documented in the `tz(zoneId)` function below. |
+| `tz(zoneId)` | `String` | `ZoneId` | Parse a time zone identifier into a `ZoneId` instance. Identifiers like `Pacific/Auckland` and `-10:00` are supported. |
+
 #### Datum stream functions
 
 The following functions deal with datum streams. The `latest()` and `offset()` functions give you
@@ -108,15 +133,15 @@ access to all the variables and functions documented on this page with them as w
 | `hasMeta()`                  |  | `boolean` | Returns `true` if metadata for the current source ID is available. |
 | `hasMeta(source)`            | `String` | `boolean` | Returns `true` if `datumMeta(source)` would return a non-null value. |
 | `hasOffset(offset)`          | `int` | `boolean` | Returns `true` if a datum is available via the `offset(offset)` function. |
-| `hasOffset(source,offset)`   | `String`, `int` | `boolean` | Returns `true` if a datum with source ID `source` is available via the `offset(source,int)` function. |
+| `hasOffset(source, offset)`   | `String`, `int` | `boolean` | Returns `true` if a datum with source ID `source` is available via the `offset(source,int)` function. |
 | `latest(source)`             | `String` | `DatumExpressionRoot` | Provides access to the latest available datum matching the given source ID, or `null` if not available. This is a shortcut for calling `offset(source,0)`. |
 | `latestMatching(pattern)`    | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards].  |
 | `latestOthersMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards], excluding the current datum if its source ID happens to match the pattern.  |
-| `locMeta(locId,source)`      | `long`, `String` | `DatumMetadataOperations` | Get [datum metadata](#datum-metadata) for a specific location datum stream. |
+| `locMeta(locId, source)`      | `long`, `String` | `DatumMetadataOperations` | Get [datum metadata](#datum-metadata) for a specific location datum stream. |
 | `meta(source)`               | `String` | `DatumMetadataOperations` | Get [datum metadata](#datum-metadata) for a specific source ID. |
 | `metaMatching(pattern)`      | `String` | `Collection<DatumMetadataOperations>` | Find [datum metadata](#datum-metadata) for sources matching a given source ID [wildcard pattern][wildcards]. |
 | `offset(offset)`             | `int` | `DatumExpressionRoot` | Provides access to a datum from the same stream as the current datum, offset by `offset` in time, or `null` if not available. Offset `1` means the datum just before this datum, and so on. |
-| `offset(source,offset)`      | `String`, `int` | `DatumExpressionRoot` | Provides access to an offset from the latest available datum matching the given source ID, or `null` if not available. Offset `0` represents the "latest" datum, `1` the one before that, and so on. SolarNode only maintains a limited history for each source, do do not rely on more than a few datum to be available via this method. This history is also cleared when SolarNode restarts. |
+| `offset(source, offset)`      | `String`, `int` | `DatumExpressionRoot` | Provides access to an offset from the latest available datum matching the given source ID, or `null` if not available. Offset `0` represents the "latest" datum, `1` the one before that, and so on. SolarNode only maintains a limited history for each source, do do not rely on more than a few datum to be available via this method. This history is also cleared when SolarNode restarts. |
 | `selfAndLatestMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards], including the current datum. The current datum will always be the first datum returned. |
 
 
@@ -173,6 +198,7 @@ The following functions help with expression properties (variables):
 |:---------|:----------|:-------|:------------|
 | `has(name)` | `String` | `boolean` | Returns `true` if a property named `name` is defined. Can be used to prevent expression errors on datum property variables that are missing. |
 | `group(pattern)` | `String` | `Collection<Number>` | Creates a collection out of numbered properties whose `name` matches the given regular expression `pattern`. |
+| `sort(collection,reverse,name...)` | `Collection<?>`, `Boolean`, `String[]` | `Collection<?>` | Sort a collection, optionally in reverse, by optional properties, returning the sorted collection. The second and third arguments are optional. If no `name` values are provided, the elements of the collection must be comparable (for example strings or numbers) and will be sorted in their natural order. If one or more `name` values are provided, each `name` property will be extracted from the collection elements and compared with each other to determine the order. The extracted property values must be comparable. |
 
 ## Expression examples
 
