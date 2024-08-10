@@ -93,7 +93,10 @@ The following functions help with bitwise integer manipulation operations:
 	 All number arguments will be converted to `BigInteger` values for the bitwise operations, and
 	 `BigInteger` values are returned.
 
+
 #### Date time functions
+
+The following functions help with creating and manipulating dates. The `Temporal` type can be thought of as _some kind of date_ type: it could be a `LocalDate` (a date without any time zone), a `LocalDateTime` (a date and time without any time zone), a `ZonedDateTime` (a date and time in a specific time zone), or an `Instant` (a date and time in the `UTC` time zone).
 
 | Function | Arguments | Result | Description |
 |:---------|:----------|:-------|:------------|
@@ -117,6 +120,7 @@ The following functions help with bitwise integer manipulation operations:
 | `today()` |  | `LocalDate` | Get the local date when invoked in the node device's time zone. |
 | `today(zone)` | `ZoneId|String` | `LocalDate` | Get the local date when invoked in the `zone` time zone. The `zone` can be a `ZoneId` instance or a valid zone identifier as documented in the `tz(zoneId)` function below. |
 | `tz(zoneId)` | `String` | `ZoneId` | Parse a time zone identifier into a `ZoneId` instance. Identifiers like `Pacific/Auckland` and `-10:00` are supported. |
+
 
 #### Datum stream functions
 
@@ -181,6 +185,7 @@ multiplication. The following functions help with other math operations:
 All the [Datum Metadata](#datum-metadata) functions like `metadataAtPath(path)` can be invoked
 directly, operating on the node's own metadata instead of a datum stream's metadata.
 
+
 #### Operational functions
 
 The following functions deal with general SolarNode operations:
@@ -199,6 +204,74 @@ The following functions help with expression properties (variables):
 | `has(name)` | `String` | `boolean` | Returns `true` if a property named `name` is defined. Can be used to prevent expression errors on datum property variables that are missing. |
 | `group(pattern)` | `String` | `Collection<Number>` | Creates a collection out of numbered properties whose `name` matches the given regular expression `pattern`. |
 | `sort(collection,reverse,name...)` | `Collection<?>`, `Boolean`, `String[]` | `Collection<?>` | Sort a collection, optionally in reverse, by optional properties, returning the sorted collection. The second and third arguments are optional. If no `name` values are provided, the elements of the collection must be comparable (for example strings or numbers) and will be sorted in their natural order. If one or more `name` values are provided, each `name` property will be extracted from the collection elements and compared with each other to determine the order. The extracted property values must be comparable. |
+
+
+#### Tariff schedule functions
+
+The following functions help work with _tariff schedules_, which represent a set of time-based criteria with associated _tariffs_. A tariff in this scheme is nothing more than a set of one or more number values, each with an associated name.
+
+Here is an example schedule with 4 tariffs each with a single **price** rate. The `*` stands for **any value**:
+
+| Tariff | Month   | Day | Weekday | Time | price |
+|:-------|:--------|:----|:--------|:-----|------:|
+| **1**  | Jan-Dec | *   | Mon-Fri | 0-8  | 10.48 |
+| **2**  | Jan-Dec | *   | Mon-Fri | 8-24 | 11.00 |
+| **3**  | Jan-Dec | *   | Sat-Sun | 0-8  |  9.19 |
+| **4**  | Jan-Dec | *   | Sat-Sun | 8-24 | 11.21 |
+
+Assuming the above schedule were available with the identifier `my-schedule`, here is an example expression that finds the `price` rate at the time the expression is evaluated:
+
+```
+tariffSchedule('my-schedule')
+	.resolveTariff(now(), null)
+	.rates['price']
+	.amount
+```
+
+If the evuation time was `2024-08-10 13:00` then the expression would return `11.21` because that date matches tariff #4.
+
+You can use the [date time functions](#date-time-functions) to find tariffs that match arbitrary dates, such as a date 1 month in the future:
+
+```
+tariffSchedule('my-schedule')
+	.resolveTariff(datePlus(now(), 1, 'months'), null)
+	.rates['price']
+	.amount
+```
+
+Here are the available tariff schedule expression functions:
+
+| Function | Arguments | Result | Description |
+|:---------|:----------|:-------|:------------|
+| `tariffSchedule(id)` | `String` | `TariffSchedule` | Get the `TariffSchedule` associated with the `id` identifier value. |
+| `tariffScheduleGroup(groupId)` | `String` | `Collection<TariffSchedule>` | Get a collection of `TariffSchedule` objects associated with a `groupId` group identifier value. |
+
+##### `TariffSchedule` object functions
+
+The `TariffSchedule` object provides the following functions:
+
+| Function | Arguments | Result | Description |
+|:---------|:----------|:-------|:------------|
+| `resolveTariff(dateTime, parameters)` | `LocalDateTime`, `Map<String,?>` | `Tariff` | Resolve a `Tariff` for the given date and time, with an optional set of parameters (usually passing `null` is sufficient). |
+| `rules()` |  | `Collection<Tariff> ` | Get the complete colleciton of tariffs defined in the tariff schedule. |
+
+##### `Tariff` object properties
+
+The `Tariff` object provides the following properties:
+
+| Property | Type | Description |
+|:---------|:-----|:------------|
+| `rates` | `Map<String,Rate>` | A mapping of tariff rate names to associated rate values. |
+
+##### `Rate` object properties
+
+The `Rate` object provides the following properties:
+
+| Property | Type | Description |
+|:---------|:-----|:------------|
+| `amount` | `Number` | Get the value of the rate. |
+| `description` | `String` | An optional description for the rate. |
+| `id` | `String` | A unique identifier for the rate within the tariff. |
 
 ## Expression examples
 
