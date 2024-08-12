@@ -578,6 +578,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#date-time-functions">
+<span class="md-ellipsis">
+      Date time functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#datum-stream-functions">
 <span class="md-ellipsis">
       Datum stream functions
@@ -611,6 +618,38 @@
       Property functions
     </span>
 </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tariff-schedule-functions">
+<span class="md-ellipsis">
+      Tariff schedule functions
+    </span>
+</a>
+<nav aria-label="Tariff schedule functions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tariffschedule-object-functions">
+<span class="md-ellipsis">
+      TariffSchedule object functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tariff-object-properties">
+<span class="md-ellipsis">
+      Tariff object properties
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rate-object-properties">
+<span class="md-ellipsis">
+      Rate object properties
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1023,6 +1062,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#date-time-functions">
+<span class="md-ellipsis">
+      Date time functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#datum-stream-functions">
 <span class="md-ellipsis">
       Datum stream functions
@@ -1056,6 +1102,38 @@
       Property functions
     </span>
 </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tariff-schedule-functions">
+<span class="md-ellipsis">
+      Tariff schedule functions
+    </span>
+</a>
+<nav aria-label="Tariff schedule functions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tariffschedule-object-functions">
+<span class="md-ellipsis">
+      TariffSchedule object functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tariff-object-properties">
+<span class="md-ellipsis">
+      Tariff object properties
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rate-object-properties">
+<span class="md-ellipsis">
+      Rate object properties
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1314,7 +1392,141 @@ properties in all classifications.</p>
 <p>All number arguments will be converted to <code>BigInteger</code> values for the bitwise operations, and
  <code>BigInteger</code> values are returned.</p>
 </div>
-<h4 id="datum-stream-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.2</span> Datum stream functions<a class="headerlink" href="#datum-stream-functions" title="Permanent link">¶</a></h4>
+<h4 id="date-time-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.2</span> Date time functions<a class="headerlink" href="#date-time-functions" title="Permanent link">¶</a></h4>
+<p>The following functions help with creating and manipulating dates. The <code>Temporal</code> type can be thought of as <em>some kind of date</em> type: it could be a <code>LocalDate</code> (a date without any time zone), a <code>LocalDateTime</code> (a date and time without any time zone), a <code>ZonedDateTime</code> (a date and time in a specific time zone), or an <code>Instant</code> (a date and time in the <code>UTC</code> time zone).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Arguments</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>chronoUnit(name)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>TemporalUnit</code></td>
+<td style="text-align: left;">Returns a <code>TemporalUnit</code> instance for a case-insensitive chronological unit name, one of <code>NANOS</code>, <code>MICROS</code>, <code>MILLIS</code>, <code>SECONDS</code>, <code>MINUTES</code>, <code>HOURS</code>, <code>HALF_DAYS</code>, <code>DAYS</code>, <code>WEEKS</code>, <code>MONTHS</code>, <code>YEARS</code>, <code>DECADES</code>, <code>CENTURIES</code>, <code>MILLENNIA</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>date(year, month, day)</code></td>
+<td style="text-align: left;"><code>int</code>, <code>int</code>, <code>int</code></td>
+<td style="text-align: left;"><code>LocalDate</code></td>
+<td style="text-align: left;">Construct a date instance for a given year, month (1-12) and day (1-31).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>date(year, month, day, hour,  minute)</code></td>
+<td style="text-align: left;"><code>int</code>, <code>int</code>, <code>int</code>, <code>int</code>, <code>int</code></td>
+<td style="text-align: left;"><code>LocalDateTime</code></td>
+<td style="text-align: left;">Construct a date and time instance for a given year, month (1-12), day (1-31), hour (0-23), and minute (0-59).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>date(year, month, day, hour,  minute, second)</code></td>
+<td style="text-align: left;"><code>int</code>, <code>int</code>, <code>int</code>, <code>int</code>, <code>int</code>, <code>int</code></td>
+<td style="text-align: left;"><code>LocalDateTime</code></td>
+<td style="text-align: left;">Construct a date and time instance for a given year, month (1-12), day (1-31), hour (0-23), minute (0-59), and second (0-59).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>datePlus(date, amount, unit)</code></td>
+<td style="text-align: left;"><code>Temporal</code>, <code>long</code>, <code>TemporalUnit|String</code></td>
+<td style="text-align: left;"><code>Temporal</code></td>
+<td style="text-align: left;">Add a chronological unit of time to a date. The <code>unit</code> can be a <code>TemporalUnit</code> instance or a valid name as documented in the <code>chronoUnit(name)</code> function above. For example: <code>datePlus(date(2024,8,10), 1, "days")</code> adds 1 day to <code>2024-08-10</code> resulting in <code>2024-08-11</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>datePlus(date,  amount)</code></td>
+<td style="text-align: left;"><code>Temporal</code>, <code>TemporalAmount|String</code></td>
+<td style="text-align: left;"><code>Temporal</code></td>
+<td style="text-align: left;">Add a duration to a date. The <code>amount</code> can be a <code>TemporalAmount</code> instance or a valid string representation as documented in the <code>duration(amount)</code> function below. For example: <code>datePlus(date(2024,8,10), "-P1Y")</code> subtracts 1 year from <code>2024-08-10</code> resulting in <code>2023-08-10</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dateTruncate(date, unit)</code></td>
+<td style="text-align: left;"><code>Temporal</code>, <code>TemporalUnit|String</code></td>
+<td style="text-align: left;"><code>Temporal</code></td>
+<td style="text-align: left;">Round a date down (older) to a given unit. The <code>unit</code> can be a <code>TemporalUnit</code> instance or a valid name as documented in the <code>chronoUnit(name)</code> function above. For example <code>dateTruncate(date(2024,8,10), "months")</code> truncates the date <code>2024-08-10</code> to the month, resulting in <code>2024-08-01</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dateTz(date)</code></td>
+<td style="text-align: left;"><code>LocalDate|LocalDateTime</code></td>
+<td style="text-align: left;"><code>ZonedDateTime</code></td>
+<td style="text-align: left;">Turns a local date, or local date and time, into an absolute date and time in the node device's time zone. If a <code>LocalDate</code> is given, the resulting time will be set to midnight of the given date. For example, for a node device in the <code>Pacific/Auckland</code> time zone <code>dateTz(date(2024,8,10))</code> returns <code>2024-08-10 00:00 +12:00</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dateTz(date, zone)</code></td>
+<td style="text-align: left;"><code>LocalDate|LocalDateTime</code>, <code>ZoneId|String</code></td>
+<td style="text-align: left;"><code>ZonedDateTime</code></td>
+<td style="text-align: left;">Turn a local date, or local date and time, into an absolute date and time in a given time zone. If a <code>LocalDate</code> is given, the resulting time will be set to midnight of the given <code>date</code>. The <code>zone</code> can be a <code>ZoneId</code> instance or a valid zone identifier as documented in the <code>tz(zoneId)</code> function below. For example <code>dateTz(date(2024,8,10), "Pacific/Honolulu")</code> returns <code>2024-08-10 00:00 -10:00</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>duration(amount)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>TemporalAmount</code></td>
+<td style="text-align: left;">Parse an ISO 8601 style period or duration into a <code>TemporalAmount</code>.  The period syntax supports <code>PnYnMnD</code> and <code>PnW</code>, where <code>n</code> is a number of years <code>Y</code>, months <code>M</code>, days <code>D</code>, or weeks <code>W</code>. For example <code>P1Y2M3D</code> represents 1 year and 2 months and 3 days, or <code>P7D</code> 7 days, or <code>P4W</code> 4 weeks. The duration syntax supports <code>PnDTnHnMn.nS</code> where <code>n</code> is a number of days <code>D</code>, hours <code>H</code>, minutes <code>M</code>, or fractional seconds <code>S</code>. For example <code>PT15M</code> represents 15 minutes, <code>PT20.345S</code> 20.345 seconds, <code>-P6H3M</code> -6 hours -3 minutes, <code>P-6H3M</code> -6 hours +3 minutes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>now()</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>LocalDateTime</code></td>
+<td style="text-align: left;">Get the local date and time when invoked.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>now(zone)</code></td>
+<td style="text-align: left;"><code>ZoneId|String</code></td>
+<td style="text-align: left;"><code>LocalDateTime</code></td>
+<td style="text-align: left;">Get the date and time in a given time zone when invoked. The <code>zone</code> can be a <code>ZoneId</code> instance or a valid zone identifier as documented in the <code>tz(zoneId)</code> function below.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>nowTz()</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>ZonedDateTime</code></td>
+<td style="text-align: left;">Get the absolute date and time when invoked in the node device's time zone.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>nowTz(zone)</code></td>
+<td style="text-align: left;"><code>ZoneId|String</code></td>
+<td style="text-align: left;"><code>ZonedDateTime</code></td>
+<td style="text-align: left;">Get the absolute date and time when invoked in the <code>zone</code> time zone. The <code>zone</code> can be a <code>ZoneId</code> instance or a valid zone identifier as documented in the <code>tz(zoneId)</code> function below.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>timestamp()</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>Instant</code></td>
+<td style="text-align: left;">Get the absolute date and time when invoked, in the <code>UTC</code> time zone.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>timestamp(date)</code></td>
+<td style="text-align: left;"><code>Temporal</code></td>
+<td style="text-align: left;"><code>Instant</code></td>
+<td style="text-align: left;">Convert a date or date and time into a timestamp in the node device's time zone.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>timestamp(date, zone)</code></td>
+<td style="text-align: left;"><code>Temporal</code>, <code>ZoneId|String</code></td>
+<td style="text-align: left;"><code>Instant</code></td>
+<td style="text-align: left;">Convert a date or date and time into a timestamp in the <code>zone</code> time zone. The <code>zone</code> can be a <code>ZoneId</code> instance or a valid zone identifier as documented in the <code>tz(zoneId)</code> function below.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>today()</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>LocalDate</code></td>
+<td style="text-align: left;">Get the local date when invoked in the node device's time zone.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>today(zone)</code></td>
+<td style="text-align: left;"><code>ZoneId|String</code></td>
+<td style="text-align: left;"><code>LocalDate</code></td>
+<td style="text-align: left;">Get the local date when invoked in the <code>zone</code> time zone. The <code>zone</code> can be a <code>ZoneId</code> instance or a valid zone identifier as documented in the <code>tz(zoneId)</code> function below.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tz(zoneId)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>ZoneId</code></td>
+<td style="text-align: left;">Parse a time zone identifier into a <code>ZoneId</code> instance. Identifiers like <code>Pacific/Auckland</code> and <code>-10:00</code> are supported.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="datum-stream-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.3</span> Datum stream functions<a class="headerlink" href="#datum-stream-functions" title="Permanent link">¶</a></h4>
 <p>The following functions deal with datum streams. The <code>latest()</code> and <code>offset()</code> functions give you
 access to recently-captured datum from any SolarNode source, so you can refer to any datum stream
 being generated in SolarNode. They return another datum expression root object, which means you have
@@ -1366,7 +1578,7 @@ access to all the variables and functions documented on this page with them as w
 <td style="text-align: left;">Returns <code>true</code> if a datum is available via the <code>offset(offset)</code> function.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>hasOffset(source,offset)</code></td>
+<td style="text-align: left;"><code>hasOffset(source, offset)</code></td>
 <td style="text-align: left;"><code>String</code>, <code>int</code></td>
 <td style="text-align: left;"><code>boolean</code></td>
 <td style="text-align: left;">Returns <code>true</code> if a datum with source ID <code>source</code> is available via the <code>offset(source,int)</code> function.</td>
@@ -1390,7 +1602,7 @@ access to all the variables and functions documented on this page with them as w
 <td style="text-align: left;">Return a collection of the latest available datum matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>, excluding the current datum if its source ID happens to match the pattern.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>locMeta(locId,source)</code></td>
+<td style="text-align: left;"><code>locMeta(locId, source)</code></td>
 <td style="text-align: left;"><code>long</code>, <code>String</code></td>
 <td style="text-align: left;"><code>DatumMetadataOperations</code></td>
 <td style="text-align: left;">Get <a href="#datum-metadata">datum metadata</a> for a specific location datum stream.</td>
@@ -1414,7 +1626,7 @@ access to all the variables and functions documented on this page with them as w
 <td style="text-align: left;">Provides access to a datum from the same stream as the current datum, offset by <code>offset</code> in time, or <code>null</code> if not available. Offset <code>1</code> means the datum just before this datum, and so on.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>offset(source,offset)</code></td>
+<td style="text-align: left;"><code>offset(source, offset)</code></td>
 <td style="text-align: left;"><code>String</code>, <code>int</code></td>
 <td style="text-align: left;"><code>DatumExpressionRoot</code></td>
 <td style="text-align: left;">Provides access to an offset from the latest available datum matching the given source ID, or <code>null</code> if not available. Offset <code>0</code> represents the "latest" datum, <code>1</code> the one before that, and so on. SolarNode only maintains a limited history for each source, do do not rely on more than a few datum to be available via this method. This history is also cleared when SolarNode restarts.</td>
@@ -1427,7 +1639,7 @@ access to all the variables and functions documented on this page with them as w
 </tr>
 </tbody>
 </table>
-<h4 id="math-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.3</span> Math functions<a class="headerlink" href="#math-functions" title="Permanent link">¶</a></h4>
+<h4 id="math-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.4</span> Math functions<a class="headerlink" href="#math-functions" title="Permanent link">¶</a></h4>
 <p>Expressions support basic <a href="https://github.com/SolarNetwork/solarnetwork/wiki/Spring-Expression-Language-Syntax#mathematical-operators">math operators</a> like <code>+</code> for addition and <code>*</code> for
 multiplication. The following functions help with other math operations:</p>
 <table>
@@ -1574,10 +1786,10 @@ multiplication. The following functions help with other math operations:</p>
 </tr>
 </tbody>
 </table>
-<h4 id="node-metadata-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.4</span> Node metadata functions<a class="headerlink" href="#node-metadata-functions" title="Permanent link">¶</a></h4>
+<h4 id="node-metadata-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.5</span> Node metadata functions<a class="headerlink" href="#node-metadata-functions" title="Permanent link">¶</a></h4>
 <p>All the <a href="#datum-metadata">Datum Metadata</a> functions like <code>metadataAtPath(path)</code> can be invoked
 directly, operating on the node's own metadata instead of a datum stream's metadata.</p>
-<h4 id="operational-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.5</span> Operational functions<a class="headerlink" href="#operational-functions" title="Permanent link">¶</a></h4>
+<h4 id="operational-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.6</span> Operational functions<a class="headerlink" href="#operational-functions" title="Permanent link">¶</a></h4>
 <p>The following functions deal with general SolarNode operations:</p>
 <table>
 <thead>
@@ -1597,7 +1809,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h4 id="property-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.6</span> Property functions<a class="headerlink" href="#property-functions" title="Permanent link">¶</a></h4>
+<h4 id="property-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.7</span> Property functions<a class="headerlink" href="#property-functions" title="Permanent link">¶</a></h4>
 <p>The following functions help with expression properties (variables):</p>
 <table>
 <thead>
@@ -1620,6 +1832,171 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 <td style="text-align: left;"><code>String</code></td>
 <td style="text-align: left;"><code>Collection&lt;Number&gt;</code></td>
 <td style="text-align: left;">Creates a collection out of numbered properties whose <code>name</code> matches the given regular expression <code>pattern</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sort(collection,reverse,name...)</code></td>
+<td style="text-align: left;"><code>Collection&lt;?&gt;</code>, <code>Boolean</code>, <code>String[]</code></td>
+<td style="text-align: left;"><code>Collection&lt;?&gt;</code></td>
+<td style="text-align: left;">Sort a collection, optionally in reverse, by optional properties, returning the sorted collection. The second and third arguments are optional. If no <code>name</code> values are provided, the elements of the collection must be comparable (for example strings or numbers) and will be sorted in their natural order. If one or more <code>name</code> values are provided, each <code>name</code> property will be extracted from the collection elements and compared with each other to determine the order. The extracted property values must be comparable.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tariff-schedule-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.8</span> Tariff schedule functions<a class="headerlink" href="#tariff-schedule-functions" title="Permanent link">¶</a></h4>
+<p>The following functions help work with <em>tariff schedules</em>, which represent a set of time-based criteria with associated <em>tariffs</em>. A tariff in this scheme is nothing more than a set of one or more number values, each with an associated name.</p>
+<p>Here is an example schedule with 4 tariffs each with a single <strong>price</strong> rate. The <code>*</code> stands for <strong>any value</strong>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tariff</th>
+<th style="text-align: left;">Month</th>
+<th style="text-align: left;">Day</th>
+<th style="text-align: left;">Weekday</th>
+<th style="text-align: left;">Time</th>
+<th style="text-align: right;">price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;">Jan-Dec</td>
+<td style="text-align: left;">*</td>
+<td style="text-align: left;">Mon-Fri</td>
+<td style="text-align: left;">0-8</td>
+<td style="text-align: right;">10.48</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2</strong></td>
+<td style="text-align: left;">Jan-Dec</td>
+<td style="text-align: left;">*</td>
+<td style="text-align: left;">Mon-Fri</td>
+<td style="text-align: left;">8-24</td>
+<td style="text-align: right;">11.00</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3</strong></td>
+<td style="text-align: left;">Jan-Dec</td>
+<td style="text-align: left;">*</td>
+<td style="text-align: left;">Sat-Sun</td>
+<td style="text-align: left;">0-8</td>
+<td style="text-align: right;">9.19</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4</strong></td>
+<td style="text-align: left;">Jan-Dec</td>
+<td style="text-align: left;">*</td>
+<td style="text-align: left;">Sat-Sun</td>
+<td style="text-align: left;">8-24</td>
+<td style="text-align: right;">11.21</td>
+</tr>
+</tbody>
+</table>
+<p>Assuming the above schedule were available with the identifier <code>my-schedule</code>, here is an example expression that finds the <code>price</code> rate at the time the expression is evaluated:</p>
+<div class="highlight"><pre><span></span><code>tariffSchedule('my-schedule')
+    .resolveTariff(now(), null)
+    .rates['price']
+    .amount
+</code></pre></div>
+<p>If the evuation time was <code>2024-08-10 13:00</code> then the expression would return <code>11.21</code> because that date matches tariff #4.</p>
+<p>You can use the <a href="#date-time-functions">date time functions</a> to find tariffs that match arbitrary dates, such as a date 1 month in the future:</p>
+<div class="highlight"><pre><span></span><code>tariffSchedule('my-schedule')
+    .resolveTariff(datePlus(now(), 1, 'months'), null)
+    .rates['price']
+    .amount
+</code></pre></div>
+<p>Here are the available tariff schedule expression functions:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Arguments</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>tariffSchedule(id)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>TariffSchedule</code></td>
+<td style="text-align: left;">Get the <code>TariffSchedule</code> associated with the <code>id</code> identifier value.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tariffScheduleGroup(groupId)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>Collection&lt;TariffSchedule&gt;</code></td>
+<td style="text-align: left;">Get a collection of <code>TariffSchedule</code> objects associated with a <code>groupId</code> group identifier value.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="tariffschedule-object-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.8.1</span> <code>TariffSchedule</code> object functions<a class="headerlink" href="#tariffschedule-object-functions" title="Permanent link">¶</a></h5>
+<p>The <code>TariffSchedule</code> object provides the following functions:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Arguments</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>resolveTariff(dateTime, parameters)</code></td>
+<td style="text-align: left;"><code>LocalDateTime</code>, <code>Map&lt;String,?&gt;</code></td>
+<td style="text-align: left;"><code>Tariff</code></td>
+<td style="text-align: left;">Resolve a <code>Tariff</code> for the given date and time, with an optional set of parameters (usually passing <code>null</code> is sufficient).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>rules()</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>Collection&lt;Tariff&gt;</code></td>
+<td style="text-align: left;">Get the complete colleciton of tariffs defined in the tariff schedule.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="tariff-object-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.8.2</span> <code>Tariff</code> object properties<a class="headerlink" href="#tariff-object-properties" title="Permanent link">¶</a></h5>
+<p>The <code>Tariff</code> object provides the following properties:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>rates</code></td>
+<td style="text-align: left;"><code>Map&lt;String,Rate&gt;</code></td>
+<td style="text-align: left;">A mapping of tariff rate names to associated rate values.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="rate-object-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.8.3</span> <code>Rate</code> object properties<a class="headerlink" href="#rate-object-properties" title="Permanent link">¶</a></h5>
+<p>The <code>Rate</code> object provides the following properties:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>amount</code></td>
+<td style="text-align: left;"><code>Number</code></td>
+<td style="text-align: left;">Get the value of the rate.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>description</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;">An optional description for the rate.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;">A unique identifier for the rate within the tariff.</td>
 </tr>
 </tbody>
 </table>
