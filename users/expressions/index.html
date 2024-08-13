@@ -1701,6 +1701,12 @@ multiplication. The following functions help with other math operations:</p>
 <td style="text-align: left;">Round a number smaller, to the nearest integer multiple of <code>significance</code>.</td>
 </tr>
 <tr>
+<td style="text-align: left;"><code>fracPart(n,digits)</code></td>
+<td style="text-align: left;"><code>Number</code>, <code>Number</code></td>
+<td style="text-align: left;"><code>Number</code></td>
+<td style="text-align: left;">Extract the fractional portion of a decimal number. The optional <code>digits</code> value will round the result to at most this many digits. For example <code>fracPart(123.4567)</code> would return <code>4567</code>.</td>
+</tr>
+<tr>
 <td style="text-align: left;"><code>interp(x, x1, x2, y1, y2)</code></td>
 <td style="text-align: left;"><code>Number</code>, <code>Number</code>, <code>Number</code>, <code>Number</code>, <code>Number</code></td>
 <td style="text-align: left;"><code>Number</code></td>
@@ -1767,6 +1773,12 @@ multiplication. The following functions help with other math operations:</p>
 <td style="text-align: left;">Round a number away from zero to the nearest number with <code>digits</code> decimal digits.</td>
 </tr>
 <tr>
+<td style="text-align: left;"><code>scaled(n,places)</code></td>
+<td style="text-align: left;"><code>Number</code>, <code>Number</code></td>
+<td style="text-align: left;"><code>Number</code></td>
+<td style="text-align: left;">Shift the decimal point of a number by <code>places</code> digits. Shifts left if <code>n</code> is negative, otherwise right.</td>
+</tr>
+<tr>
 <td style="text-align: left;"><code>sum(collection)</code></td>
 <td style="text-align: left;"><code>Collection&lt;Number&gt;</code></td>
 <td style="text-align: left;"><code>Number</code></td>
@@ -1783,6 +1795,12 @@ multiplication. The following functions help with other math operations:</p>
 <td style="text-align: left;"><code>Number</code>, <code>Number</code></td>
 <td style="text-align: left;"><code>Number</code></td>
 <td style="text-align: left;">Round numbers away from zero, to the nearest integer multiple of <code>significance</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>wholePart(n)</code></td>
+<td style="text-align: left;"><code>Number</code></td>
+<td style="text-align: left;"><code>Number</code></td>
+<td style="text-align: left;">Extract the whole portion of a decimal number. For example <code>wholePart(123.4567)</code> would return <code>123</code>.</td>
 </tr>
 </tbody>
 </table>
