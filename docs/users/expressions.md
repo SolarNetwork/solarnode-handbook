@@ -164,6 +164,7 @@ multiplication. The following functions help with other math operations:
 | `exp(n)` | `Number` | `Number`| Returns Euler's number _e_ raised to the power of `n`. |
 | `floor(n)` | `Number` | `Number` | Round a number smaller, to the nearest integer. |
 | `floor(n,significance)` | `Number`, `Number` | `Number` | Round a number smaller, to the nearest integer multiple of `significance`. |
+| `fracPart(n,digits)` | `Number`, `Number` | `Number` | Extract the fractional portion of a decimal number. The optional `digits` value will round the result to at most this many digits. For example `fracPart(123.4567)` would return `4567`. |
 | `interp(x, x1, x2, y1, y2)` | `Number`, `Number`, `Number`, `Number`, `Number` | `Number` | Linearly interpolate `x` over the range `x1` to `x2`, mapped to output range from `y1` to `y2`. |
 | `interp(x, x1, x2, y1, y2, scale)` | `Number`, `Number`, `Number`, `Number`, `Number`, `Number` | `Number` | Linearly interpolate `x` over the range `x1` to `x2`, mapped to output range from `y1` to `y2` rounding to at most `scale` decimal places. |
 | `max(collection)` | `Collection<Number>` | `Number` | Return the largest value from a set of numbers. |
@@ -175,9 +176,11 @@ multiplication. The following functions help with other math operations:
 | `round(n,digits)` | `Number`, `Number` | `Number` | Round a number to the nearest number with `digits` decimal digits. |
 | `roundDown(n,digits)` | `Number`, `Number` | `Number` | Round a number towards zero to the nearest number with `digits` decimal digits. |
 | `roundUp(n,digits)` | `Number`, `Number` | `Number` | Round a number away from zero to the nearest number with `digits` decimal digits. |
+| `scaled(n,places)` | `Number`, `Number` | `Number` | Shift the decimal point of a number by `places` digits. Shifts left if `n` is negative, otherwise right. |
 | `sum(collection)` | `Collection<Number>` | `Number` | Calculate the sum of a collection of numbers. Useful when combined with the `group(pattern)` function. |
 | `up(n)` | `Number` | `Number` | Round numbers away from zero, to the nearest integer. |
 | `up(n,significance)` | `Number`, `Number` | `Number` | Round numbers away from zero, to the nearest integer multiple of `significance`. |
+| `wholePart(n)` | `Number` | `Number` | Extract the whole portion of a decimal number. For example `wholePart(123.4567)` would return `123`. |
 
 
 #### Node metadata functions
