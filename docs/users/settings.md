@@ -56,6 +56,7 @@ The Settings CSV format uses a quite general format and contains the following c
 | 3 | value | The setting value. |
 | 4 | flags | An integer bitmask of flags associated with the setting. See the [flags section](#setting-flags) for more info. |
 | 5 | modified | The date the setting was last modified, in `yyyy-MM-dd HH:mm:ss` format. |
+| 6 | notes | An arbitrary brief comment about the setting. |
 
 To understand the `key` and `type` values required for a given component requires consulting the
 documentation of the plugin that provides that component. You can get a pretty good picture of what
