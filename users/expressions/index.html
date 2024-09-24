@@ -592,6 +592,20 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#unfiltered-datum-stream-functions">
+<span class="md-ellipsis">
+      Unfiltered datum stream functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#datum-stream-metadata-functions">
+<span class="md-ellipsis">
+      Datum stream metadata functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#math-functions">
 <span class="md-ellipsis">
       Math functions
@@ -1076,6 +1090,20 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#unfiltered-datum-stream-functions">
+<span class="md-ellipsis">
+      Unfiltered datum stream functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#datum-stream-metadata-functions">
+<span class="md-ellipsis">
+      Datum stream metadata functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#math-functions">
 <span class="md-ellipsis">
       Math functions
@@ -1531,6 +1559,14 @@ properties in all classifications.</p>
 access to recently-captured datum from any SolarNode source, so you can refer to any datum stream
 being generated in SolarNode. They return another datum expression root object, which means you have
 access to all the variables and functions documented on this page with them as well.</p>
+<p>SolarNode only maintains a limited history for each source, so do not rely on more than a few datum
+to be available via these method. This history is also cleared when SolarNode restarts.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>These functions operate on datum <strong>after</strong> any configured <a href="../datum-filters/">datum filters</a> have
+been applied. See the <a href="#unfiltered-datum-stream-functions">Unfiltered datum stream functions</a>
+section for a set of similar functions that operate on datum <strong>before</strong> any filters are applied.</p>
+</div>
 <table>
 <thead>
 <tr>
@@ -1558,18 +1594,6 @@ access to all the variables and functions documented on this page with them as w
 <td style="text-align: left;"><code>String</code></td>
 <td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
 <td style="text-align: left;">Returns <code>true</code> if <code>latestOthersMatching(pattern)</code> returns a non-empty collection.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>hasMeta()</code></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><code>boolean</code></td>
-<td style="text-align: left;">Returns <code>true</code> if metadata for the current source ID is available.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>hasMeta(source)</code></td>
-<td style="text-align: left;"><code>String</code></td>
-<td style="text-align: left;"><code>boolean</code></td>
-<td style="text-align: left;">Returns <code>true</code> if <code>datumMeta(source)</code> would return a non-null value.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hasOffset(offset)</code></td>
@@ -1602,6 +1626,152 @@ access to all the variables and functions documented on this page with them as w
 <td style="text-align: left;">Return a collection of the latest available datum matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>, excluding the current datum if its source ID happens to match the pattern.</td>
 </tr>
 <tr>
+<td style="text-align: left;"><code>offset(offset)</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>DatumExpressionRoot</code></td>
+<td style="text-align: left;">Provides access to a datum from the same stream as the current datum, offset by <code>offset</code> in time, or <code>null</code> if not available. Offset <code>1</code> means the datum just before this datum, and so on.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>offset(source, offset)</code></td>
+<td style="text-align: left;"><code>String</code>, <code>int</code></td>
+<td style="text-align: left;"><code>DatumExpressionRoot</code></td>
+<td style="text-align: left;">Provides access to an offset from the latest available datum matching the given source ID, or <code>null</code> if not available. Offset <code>0</code> represents the "latest" datum, <code>1</code> the one before that, and so on.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>selfAndLatestMatching(pattern)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
+<td style="text-align: left;">Return a collection of the latest available datum matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>, including the current datum. The current datum will always be the first datum returned.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>slice(source, offset, count)</code></td>
+<td style="text-align: left;"><code>String</code>, <code>int</code>, <code>int</code></td>
+<td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
+<td style="text-align: left;">Return a subset of the <code>source</code> datum stream history starting from <code>offset</code> from the latest available datum and including at most <code>count</code> values going backwards in time. The current datum will always be the first datum returned.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="unfiltered-datum-stream-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.4</span> Unfiltered datum stream functions<a class="headerlink" href="#unfiltered-datum-stream-functions" title="Permanent link">¶</a></h4>
+<p>The following functions are similar to the <a href="#datum-stream-functions">datum stream functions</a> except
+they deal with <strong>unfiltered</strong> datum streams, that is the raw datum captured by SolarNode sources
+before any filters have been applied.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>One example where using the unfiltered datum stream functions is useful is when you have an
+expression that accesses a property from a datum stream that has a
+<a href="../datum-filters/downsample/">Downsample</a> filter applied to it. The <code>unfilteredLatest('meter/1')?.watts</code>
+expression would return the most recently <strong>captured</strong> <code>watts</code> value while
+<code>latest('meter/1')?.watts</code> would return the most recently <strong>downsampled</strong> <code>watts</code> value.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Arguments</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>hasUnfilteredLatest(source)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Returns <code>true</code> if a datum with source ID <code>source</code> is available via the <code>unfilteredLatest(source)</code> function.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hasUnfilteredLatestMatching(pattern)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
+<td style="text-align: left;">Returns <code>true</code> if <code>unfilteredLatestMatching(pattern)</code> returns a non-empty collection.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hasUnfilteredLatestOtherMatching(pattern)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
+<td style="text-align: left;">Returns <code>true</code> if <code>unfilteredLatestOthersMatching(pattern)</code> returns a non-empty collection.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hasUnfilteredOffset(offset)</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Returns <code>true</code> if a datum is available via the <code>offset(offset)</code> function.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hasUnfilteredOffset(source, offset)</code></td>
+<td style="text-align: left;"><code>String</code>, <code>int</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Returns <code>true</code> if a datum with source ID <code>source</code> is available via the <code>unfilteredOffset(source,int)</code> function.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>unfilteredLatest(source)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>DatumExpressionRoot</code></td>
+<td style="text-align: left;">Provides access to the latest available datum matching the given source ID, or <code>null</code> if not available. This is a shortcut for calling <code>unfilteredOffset(source,0)</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>unfilteredLatestMatching(pattern)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
+<td style="text-align: left;">Return a collection of the latest available datum matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>unfilteredLatestOthersMatching(pattern)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
+<td style="text-align: left;">Return a collection of the latest available datum matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>, excluding the current datum if its source ID happens to match the pattern.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>unfilteredOffset(offset)</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>DatumExpressionRoot</code></td>
+<td style="text-align: left;">Provides access to a datum from the same stream as the current datum, offset by <code>offset</code> in time, or <code>null</code> if not available. Offset <code>1</code> means the datum just before this datum, and so on.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>unfilteredOffset(source, offset)</code></td>
+<td style="text-align: left;"><code>String</code>, <code>int</code></td>
+<td style="text-align: left;"><code>DatumExpressionRoot</code></td>
+<td style="text-align: left;">Provides access to an offset from the latest available datum matching the given source ID, or <code>null</code> if not available. Offset <code>0</code> represents the "latest" datum, <code>1</code> the one before that, and so on.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>selfAndUnfilteredLatestMatching(pattern)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
+<td style="text-align: left;">Return a collection of the latest available datum matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>, including the current datum. The current datum will always be the first datum returned.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>unfilteredSlice(source, offset, count)</code></td>
+<td style="text-align: left;"><code>String</code>, <code>int</code>, <code>int</code></td>
+<td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
+<td style="text-align: left;">Return a subset of the <code>source</code> datum stream history starting from <code>offset</code> from the latest available datum and including at most <code>count</code> values going backwards in time. The current datum will always be the first datum returned.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="datum-stream-metadata-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.5</span> Datum stream metadata functions<a class="headerlink" href="#datum-stream-metadata-functions" title="Permanent link">¶</a></h4>
+<p>The following functions deal with datum stream metadata.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Arguments</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>hasMeta()</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Returns <code>true</code> if metadata for the current source ID is available.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hasMeta(source)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Returns <code>true</code> if <code>meta(source)</code> would return a non-null value.</td>
+</tr>
+<tr>
 <td style="text-align: left;"><code>locMeta(locId, source)</code></td>
 <td style="text-align: left;"><code>long</code>, <code>String</code></td>
 <td style="text-align: left;"><code>DatumMetadataOperations</code></td>
@@ -1619,27 +1789,9 @@ access to all the variables and functions documented on this page with them as w
 <td style="text-align: left;"><code>Collection&lt;DatumMetadataOperations&gt;</code></td>
 <td style="text-align: left;">Find <a href="#datum-metadata">datum metadata</a> for sources matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>.</td>
 </tr>
-<tr>
-<td style="text-align: left;"><code>offset(offset)</code></td>
-<td style="text-align: left;"><code>int</code></td>
-<td style="text-align: left;"><code>DatumExpressionRoot</code></td>
-<td style="text-align: left;">Provides access to a datum from the same stream as the current datum, offset by <code>offset</code> in time, or <code>null</code> if not available. Offset <code>1</code> means the datum just before this datum, and so on.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>offset(source, offset)</code></td>
-<td style="text-align: left;"><code>String</code>, <code>int</code></td>
-<td style="text-align: left;"><code>DatumExpressionRoot</code></td>
-<td style="text-align: left;">Provides access to an offset from the latest available datum matching the given source ID, or <code>null</code> if not available. Offset <code>0</code> represents the "latest" datum, <code>1</code> the one before that, and so on. SolarNode only maintains a limited history for each source, do do not rely on more than a few datum to be available via this method. This history is also cleared when SolarNode restarts.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>selfAndLatestMatching(pattern)</code></td>
-<td style="text-align: left;"><code>String</code></td>
-<td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
-<td style="text-align: left;">Return a collection of the latest available datum matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>, including the current datum. The current datum will always be the first datum returned.</td>
-</tr>
 </tbody>
 </table>
-<h4 id="math-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.4</span> Math functions<a class="headerlink" href="#math-functions" title="Permanent link">¶</a></h4>
+<h4 id="math-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.6</span> Math functions<a class="headerlink" href="#math-functions" title="Permanent link">¶</a></h4>
 <p>Expressions support basic <a href="https://github.com/SolarNetwork/solarnetwork/wiki/Spring-Expression-Language-Syntax#mathematical-operators">math operators</a> like <code>+</code> for addition and <code>*</code> for
 multiplication. The following functions help with other math operations:</p>
 <table>
@@ -1804,10 +1956,10 @@ multiplication. The following functions help with other math operations:</p>
 </tr>
 </tbody>
 </table>
-<h4 id="node-metadata-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.5</span> Node metadata functions<a class="headerlink" href="#node-metadata-functions" title="Permanent link">¶</a></h4>
+<h4 id="node-metadata-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.7</span> Node metadata functions<a class="headerlink" href="#node-metadata-functions" title="Permanent link">¶</a></h4>
 <p>All the <a href="#datum-metadata">Datum Metadata</a> functions like <code>metadataAtPath(path)</code> can be invoked
 directly, operating on the node's own metadata instead of a datum stream's metadata.</p>
-<h4 id="operational-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.6</span> Operational functions<a class="headerlink" href="#operational-functions" title="Permanent link">¶</a></h4>
+<h4 id="operational-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.8</span> Operational functions<a class="headerlink" href="#operational-functions" title="Permanent link">¶</a></h4>
 <p>The following functions deal with general SolarNode operations:</p>
 <table>
 <thead>
@@ -1827,7 +1979,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h4 id="property-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.7</span> Property functions<a class="headerlink" href="#property-functions" title="Permanent link">¶</a></h4>
+<h4 id="property-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.9</span> Property functions<a class="headerlink" href="#property-functions" title="Permanent link">¶</a></h4>
 <p>The following functions help with expression properties (variables):</p>
 <table>
 <thead>
@@ -1859,7 +2011,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h4 id="tariff-schedule-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.8</span> Tariff schedule functions<a class="headerlink" href="#tariff-schedule-functions" title="Permanent link">¶</a></h4>
+<h4 id="tariff-schedule-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.10</span> Tariff schedule functions<a class="headerlink" href="#tariff-schedule-functions" title="Permanent link">¶</a></h4>
 <p>The following functions help work with <em>tariff schedules</em>, which represent a set of time-based criteria with associated <em>tariffs</em>. A tariff in this scheme is nothing more than a set of one or more number values, each with an associated name.</p>
 <p>Here is an example schedule with 4 tariffs each with a single <strong>price</strong> rate. The <code>*</code> stands for <strong>any value</strong>:</p>
 <table>
@@ -1946,7 +2098,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h5 id="tariffschedule-object-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.8.1</span> <code>TariffSchedule</code> object functions<a class="headerlink" href="#tariffschedule-object-functions" title="Permanent link">¶</a></h5>
+<h5 id="tariffschedule-object-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.10.1</span> <code>TariffSchedule</code> object functions<a class="headerlink" href="#tariffschedule-object-functions" title="Permanent link">¶</a></h5>
 <p>The <code>TariffSchedule</code> object provides the following functions:</p>
 <table>
 <thead>
@@ -1972,7 +2124,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h5 id="tariff-object-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.8.2</span> <code>Tariff</code> object properties<a class="headerlink" href="#tariff-object-properties" title="Permanent link">¶</a></h5>
+<h5 id="tariff-object-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.10.2</span> <code>Tariff</code> object properties<a class="headerlink" href="#tariff-object-properties" title="Permanent link">¶</a></h5>
 <p>The <code>Tariff</code> object provides the following properties:</p>
 <table>
 <thead>
@@ -1990,7 +2142,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h5 id="rate-object-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.8.3</span> <code>Rate</code> object properties<a class="headerlink" href="#rate-object-properties" title="Permanent link">¶</a></h5>
+<h5 id="rate-object-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">48.1.3.10.3</span> <code>Rate</code> object properties<a class="headerlink" href="#rate-object-properties" title="Permanent link">¶</a></h5>
 <p>The <code>Rate</code> object provides the following properties:</p>
 <table>
 <thead>

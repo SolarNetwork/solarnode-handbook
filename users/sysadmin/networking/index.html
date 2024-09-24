@@ -1048,7 +1048,7 @@ Access Point</p>
 </code></pre></div>
 <p>Once enabled, if SolarNode cannot connect to the configured WiFi network, it will create its own
 <code>SolarNode</code> network. By default the password for this network is <code>solarnode</code>. The Access Point
-network configuration is defined in the <code>/etc/network/wpa_supplicant-wlan0.conf</code> file, in a
+network configuration is defined in the <code>/etc/wpa_supplicant/wpa_supplicant-wlan0.conf</code> file, in a
 section like this:</p>
 <div class="highlight"><pre><span></span><code>### access-point mode
 network={
@@ -1059,6 +1059,18 @@ network={
     frequency=2462
 }
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you do not have a <code>wpa_supplicant-wlan0.conf</code> file you can make a copy of the example
+provided by the <code>sn-wifi</code> package:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># copy the example</span>
+sudo<span class="w"> </span>cp<span class="w"> </span>/usr/share/solarnode/example/wpa_supplicant-wlan0.conf<span class="w">  </span>/etc/wpa_supplicant/
+
+<span class="c1"># set appropriate file permissions</span>
+sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+</code></pre></div>
+<p>Then edit the <code>/etc/wpa_supplicant/wpa_supplicant-wlan0.conf</code> as needed.</p>
+</div>
 <h2 id="firewall"><span class="enumerate-headings-plugin enumerate-heading-plugin">41.6</span> Firewall<a class="headerlink" href="#firewall" title="Permanent link">¶</a></h2>
 <p>SolarNodeOS uses the <a href="https://en.wikipedia.org/wiki/Nftables">nftables</a> system to provide an IP firewall to SolarNode. By
 default only the following incoming TCP ports are allowed:</p>
