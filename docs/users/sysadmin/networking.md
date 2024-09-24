@@ -104,7 +104,7 @@ sudo systemctl enable --now sn-wifi-autoap@wlan0
 
 Once enabled, if SolarNode cannot connect to the configured WiFi network, it will create its own
 `SolarNode` network. By default the password for this network is `solarnode`. The Access Point
-network configuration is defined in the `/etc/network/wpa_supplicant-wlan0.conf` file, in a
+network configuration is defined in the `/etc/wpa_supplicant/wpa_supplicant-wlan0.conf` file, in a
 section like this:
 
 ```
@@ -117,6 +117,21 @@ network={
     frequency=2462
 }
 ```
+
+!!! tip
+
+	If you do not have a `wpa_supplicant-wlan0.conf` file you can make a copy of the example
+	provided by the `sn-wifi` package:
+
+	```sh
+	# copy the example
+	sudo cp /usr/share/solarnode/example/wpa_supplicant-wlan0.conf  /etc/wpa_supplicant/
+
+	# set appropriate file permissions
+	sudo chmod 600 /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+	```
+
+	Then edit the `/etc/wpa_supplicant/wpa_supplicant-wlan0.conf` as needed.
 
 ## Firewall
 
