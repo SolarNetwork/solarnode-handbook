@@ -121,7 +121,6 @@ The following functions help with creating and manipulating dates. The `Temporal
 | `today(zone)` | `ZoneId|String` | `LocalDate` | Get the local date when invoked in the `zone` time zone. The `zone` can be a `ZoneId` instance or a valid zone identifier as documented in the `tz(zoneId)` function below. |
 | `tz(zoneId)` | `String` | `ZoneId` | Parse a time zone identifier into a `ZoneId` instance. Identifiers like `Pacific/Auckland` and `-10:00` are supported. |
 
-
 #### Datum stream functions
 
 The following functions deal with datum streams. The `latest()` and `offset()` functions give you
@@ -129,24 +128,73 @@ access to recently-captured datum from any SolarNode source, so you can refer to
 being generated in SolarNode. They return another datum expression root object, which means you have
 access to all the variables and functions documented on this page with them as well.
 
+SolarNode only maintains a limited history for each source, so do not rely on more than a few datum
+to be available via these method. This history is also cleared when SolarNode restarts.
+
+!!! tip
+
+	These functions operate on datum **after** any configured [datum filters][datum-filters] have
+	been applied. See the [Unfiltered datum stream functions](#unfiltered-datum-stream-functions)
+	section for a set of similar functions that operate on datum **before** any filters are applied.
+
+
 | Function | Arguments | Result | Description |
 |:---------|:----------|:-------|:------------|
 | `hasLatest(source)`          | `String` | `boolean` | Returns `true` if a datum with source ID `source` is available via the `latest(source)` function. |
 | `hasLatestMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Returns `true` if `latestMatching(pattern)` returns a non-empty collection. |
 | `hasLatestOtherMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Returns `true` if `latestOthersMatching(pattern)` returns a non-empty collection. |
-| `hasMeta()`                  |  | `boolean` | Returns `true` if metadata for the current source ID is available. |
-| `hasMeta(source)`            | `String` | `boolean` | Returns `true` if `datumMeta(source)` would return a non-null value. |
 | `hasOffset(offset)`          | `int` | `boolean` | Returns `true` if a datum is available via the `offset(offset)` function. |
 | `hasOffset(source, offset)`   | `String`, `int` | `boolean` | Returns `true` if a datum with source ID `source` is available via the `offset(source,int)` function. |
 | `latest(source)`             | `String` | `DatumExpressionRoot` | Provides access to the latest available datum matching the given source ID, or `null` if not available. This is a shortcut for calling `offset(source,0)`. |
 | `latestMatching(pattern)`    | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards].  |
 | `latestOthersMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards], excluding the current datum if its source ID happens to match the pattern.  |
+| `offset(offset)`             | `int` | `DatumExpressionRoot` | Provides access to a datum from the same stream as the current datum, offset by `offset` in time, or `null` if not available. Offset `1` means the datum just before this datum, and so on. |
+| `offset(source, offset)`      | `String`, `int` | `DatumExpressionRoot` | Provides access to an offset from the latest available datum matching the given source ID, or `null` if not available. Offset `0` represents the "latest" datum, `1` the one before that, and so on.  |
+| `selfAndLatestMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards], including the current datum. The current datum will always be the first datum returned. |
+| `slice(source, offset, count)` | `String`, `int`, `int` | `Collection<DatumExpressionRoot>` | Return a subset of the `source` datum stream history starting from `offset` from the latest available datum and including at most `count` values going backwards in time. The current datum will always be the first datum returned. |
+
+#### Unfiltered datum stream functions
+
+The following functions are similar to the [datum stream functions](#datum-stream-functions) except
+they deal with **unfiltered** datum streams, that is the raw datum captured by SolarNode sources
+before any filters have been applied.
+
+!!! tip
+
+	One example where using the unfiltered datum stream functions is useful is when you have an
+	expression that accesses a property from a datum stream that has a
+	[Downsample][downsample-filter] filter applied to it. The `unfilteredLatest('meter/1')?.watts`
+	expression would return the most recently **captured** `watts` value while
+	`latest('meter/1')?.watts` would return the most recently **downsampled** `watts` value.
+
+
+| Function | Arguments | Result | Description |
+|:---------|:----------|:-------|:------------|
+| `hasUnfilteredLatest(source)`          | `String` | `boolean` | Returns `true` if a datum with source ID `source` is available via the `unfilteredLatest(source)` function. |
+| `hasUnfilteredLatestMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Returns `true` if `unfilteredLatestMatching(pattern)` returns a non-empty collection. |
+| `hasUnfilteredLatestOtherMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Returns `true` if `unfilteredLatestOthersMatching(pattern)` returns a non-empty collection. |
+| `hasUnfilteredOffset(offset)`          | `int` | `boolean` | Returns `true` if a datum is available via the `offset(offset)` function. |
+| `hasUnfilteredOffset(source, offset)`   | `String`, `int` | `boolean` | Returns `true` if a datum with source ID `source` is available via the `unfilteredOffset(source,int)` function. |
+| `unfilteredLatest(source)`             | `String` | `DatumExpressionRoot` | Provides access to the latest available datum matching the given source ID, or `null` if not available. This is a shortcut for calling `unfilteredOffset(source,0)`. |
+| `unfilteredLatestMatching(pattern)`    | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards].  |
+| `unfilteredLatestOthersMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards], excluding the current datum if its source ID happens to match the pattern.  |
+| `unfilteredOffset(offset)`             | `int` | `DatumExpressionRoot` | Provides access to a datum from the same stream as the current datum, offset by `offset` in time, or `null` if not available. Offset `1` means the datum just before this datum, and so on. |
+| `unfilteredOffset(source, offset)`      | `String`, `int` | `DatumExpressionRoot` | Provides access to an offset from the latest available datum matching the given source ID, or `null` if not available. Offset `0` represents the "latest" datum, `1` the one before that, and so on. |
+| `selfAndUnfilteredLatestMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards], including the current datum. The current datum will always be the first datum returned. |
+| `unfilteredSlice(source, offset, count)` | `String`, `int`, `int` | `Collection<DatumExpressionRoot>` | Return a subset of the `source` datum stream history starting from `offset` from the latest available datum and including at most `count` values going backwards in time. The current datum will always be the first datum returned. |
+
+
+#### Datum stream metadata functions
+
+The following functions deal with datum stream metadata.
+
+| Function | Arguments | Result | Description |
+|:---------|:----------|:-------|:------------|
+| `hasMeta()`                  |  | `boolean` | Returns `true` if metadata for the current source ID is available. |
+| `hasMeta(source)`            | `String` | `boolean` | Returns `true` if `meta(source)` would return a non-null value. |
 | `locMeta(locId, source)`      | `long`, `String` | `DatumMetadataOperations` | Get [datum metadata](#datum-metadata) for a specific location datum stream. |
 | `meta(source)`               | `String` | `DatumMetadataOperations` | Get [datum metadata](#datum-metadata) for a specific source ID. |
 | `metaMatching(pattern)`      | `String` | `Collection<DatumMetadataOperations>` | Find [datum metadata](#datum-metadata) for sources matching a given source ID [wildcard pattern][wildcards]. |
-| `offset(offset)`             | `int` | `DatumExpressionRoot` | Provides access to a datum from the same stream as the current datum, offset by `offset` in time, or `null` if not available. Offset `1` means the datum just before this datum, and so on. |
-| `offset(source, offset)`      | `String`, `int` | `DatumExpressionRoot` | Provides access to an offset from the latest available datum matching the given source ID, or `null` if not available. Offset `0` represents the "latest" datum, `1` the one before that, and so on. SolarNode only maintains a limited history for each source, do do not rely on more than a few datum to be available via this method. This history is also cleared when SolarNode restarts. |
-| `selfAndLatestMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards], including the current datum. The current datum will always be the first datum returned. |
 
 
 #### Math functions
@@ -428,8 +476,10 @@ The following functions available on datum metadata objects support access to bo
 
 [datum]: datum.md
 [datum-class]: https://github.com/SolarNetwork/solarnetwork-common/blob/develop/net.solarnetwork.common/src/net/solarnetwork/domain/datum/Datum.java
+[datum-filters]: datum-filters/index.md
 [datum-prop-class]: datum.md#datum-property-classifications
 [DatumMetadataOperations]: https://github.com/SolarNetwork/solarnetwork-common/blob/develop/net.solarnetwork.common/src/net/solarnetwork/domain/datum/DatumMetadataOperations.java
+[downsample-filter]: datum-filters/downsample.md
 [expression-root]: https://github.com/SolarNetwork/solarnetwork/wiki/Spring-Expression-Language#root-object
 [expression-variable-names]: https://github.com/SolarNetwork/solarnetwork/wiki/Spring-Expression-Language#variable-names
 [sn-metadata]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#metadata
