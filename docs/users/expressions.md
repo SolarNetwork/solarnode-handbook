@@ -205,6 +205,7 @@ multiplication. The following functions help with other math operations:
 | Function | Arguments | Result | Description |
 |:---------|:----------|:-------|:------------|
 | `avg(collection)` | `Collection<Number>` | `Number` | Calculate the average (mean) of a collection of numbers. Useful when combined with the `group(pattern)` function. |
+| `cbrt(n)` | `Number` | `Number` | Calculate the cube root of a number. |
 | `ceil(n)` | `Number` | `Number` | Round a number larger, to the nearest integer. |
 | `ceil(n,significance)` | `Number`, `Number` | `Number` | Round a number larger, to the nearest integer multiple of `significance`. |
 | `down(n)` | `Number` | `Number` | Round numbers towards zero, to the nearest integer. |
@@ -220,11 +221,14 @@ multiplication. The following functions help with other math operations:
 | `min(collection)` | `Collection<Number>` | `Number` | Return the smallest value from a set of numbers. |
 | `min(n1,n2)` | `Number`, `Number` | `Number` | Return the smaler of two numbers. |
 | `mround(n,significance)` | `Number`, `Number` | `Number` | Round a number to the nearest integer multiple of `significance`. |
+| `pow(n,e)` | `Number`, `Number` | `Number` | Raise a number `n` to the power `p`. |
+| `rms(collection)` | `Collection<Number>` | `Number` | Calculate the root-mean-square of a collection of numbers. |
 | `round(n)` | `Number` | `Number` | Round a number to the nearest integer. |
 | `round(n,digits)` | `Number`, `Number` | `Number` | Round a number to the nearest number with `digits` decimal digits. |
 | `roundDown(n,digits)` | `Number`, `Number` | `Number` | Round a number towards zero to the nearest number with `digits` decimal digits. |
 | `roundUp(n,digits)` | `Number`, `Number` | `Number` | Round a number away from zero to the nearest number with `digits` decimal digits. |
 | `scaled(n,places)` | `Number`, `Number` | `Number` | Shift the decimal point of a number by `places` digits. Shifts left if `n` is negative, otherwise right. |
+| `sqrt(n)` | `Number` | `Number` | Calculate the square root of a number. |
 | `sum(collection)` | `Collection<Number>` | `Number` | Calculate the sum of a collection of numbers. Useful when combined with the `group(pattern)` function. |
 | `up(n)` | `Number` | `Number` | Round numbers away from zero, to the nearest integer. |
 | `up(n,significance)` | `Number`, `Number` | `Number` | Round numbers away from zero, to the nearest integer multiple of `significance`. |
