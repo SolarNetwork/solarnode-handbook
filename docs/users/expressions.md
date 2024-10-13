@@ -221,7 +221,7 @@ multiplication. The following functions help with other math operations:
 | `min(collection)` | `Collection<Number>` | `Number` | Return the smallest value from a set of numbers. |
 | `min(n1,n2)` | `Number`, `Number` | `Number` | Return the smaler of two numbers. |
 | `mround(n,significance)` | `Number`, `Number` | `Number` | Round a number to the nearest integer multiple of `significance`. |
-| `pow(n,e)` | `Number`, `Number` | `Number` | Raise a number `n` to the power `p`. |
+| `pow(n,p)` | `Number`, `Number` | `Number` | Raise a number `n` to the power `p`. |
 | `rms(collection)` | `Collection<Number>` | `Number` | Calculate the root-mean-square of a collection of numbers. |
 | `round(n)` | `Number` | `Number` | Round a number to the nearest integer. |
 | `round(n,digits)` | `Number`, `Number` | `Number` | Round a number to the nearest number with `digits` decimal digits. |
