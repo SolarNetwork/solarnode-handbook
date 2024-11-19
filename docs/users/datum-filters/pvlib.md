@@ -99,7 +99,7 @@ The supported metadata parameters are:
 ## Expressions
 
 Any number of [expressions][expr] can be configured on the **Expression** list. Expressions can
-reference datum properties as usually, and additionally any properties returned by the configured
+reference datum properties as usual, and additionally any properties returned by the configured
 command. For example, the default command returns many properties, like these:
 
 ```json
