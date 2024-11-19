@@ -1,0 +1,8 @@
+title: System
+nav:
+    - index.md
+    - certificates.md
+    - packages.md
+    - host-aliases.md
+    - restart.md
+    - reset.md

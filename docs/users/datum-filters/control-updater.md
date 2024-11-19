@@ -6,7 +6,9 @@ title: Control Updater
 The [Control Updater Datum Filter][src] provides a way to update controls with the result of an
 expression, optionally populating the expression result as a datum property.
 
-This filter is provided by the [Standard Datum Filters][sdf] plugin.
+This filter is provided by the [Standard Datum Filters][sdf] plugin, which is provided by the
+[`solarnode-app-datumfilters`][solarnode-app-datumfilters]
+[package](../setup-app/system/packages.md) in SolarNodeOS.
 
 ## Settings
 
