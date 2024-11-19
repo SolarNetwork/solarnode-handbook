@@ -168,27 +168,20 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/certificates/">
-<span class="md-ellipsis">
-    Certificates
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/setup-app/settings/">
 <span class="md-ellipsis">
     Settings
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_5">
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_4">
 <span class="md-nav__icon md-icon"></span>
             Settings
           </label>
@@ -246,6 +239,62 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/setup-app/system/">
+<span class="md-ellipsis">
+    System
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_5">
+<span class="md-nav__icon md-icon"></span>
+            System
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/certificates/">
+<span class="md-ellipsis">
+    Certificates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/packages/">
+<span class="md-ellipsis">
+    Packages
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/host-aliases/">
+<span class="md-ellipsis">
+    Host Aliases
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/restart/">
+<span class="md-ellipsis">
+    Restart
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/reset/">
+<span class="md-ellipsis">
+    Reset
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_3_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/setup-app/tools/">
@@ -286,13 +335,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/plugins/">
-<span class="md-ellipsis">
-    Plugins
-  </span>
-</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../users/setup-app/profile/">
@@ -389,6 +431,13 @@
 <a class="md-nav__link" href="../../../users/datum-filters/property/">
 <span class="md-ellipsis">
     Property
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/datum-filters/pvlib/">
+<span class="md-ellipsis">
+    POAI Calculator
   </span>
 </a>
 </li>
@@ -892,7 +941,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="job-scheduler"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.</span> Job Scheduler<a class="headerlink" href="#job-scheduler" title="Permanent link">¶</a></h1>
+<h1 id="job-scheduler"><span class="enumerate-headings-plugin enumerate-heading-plugin">79.</span> Job Scheduler<a class="headerlink" href="#job-scheduler" title="Permanent link">¶</a></h1>
 <p>SolarNode provides a <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/runtime/ManagedJobScheduler.html">ManagedJobScheduler</a> service that can automatically execute
 jobs exported by plugins that have user-defined schedules.</p>
 <div class="admonition tip">
@@ -901,17 +950,17 @@ jobs exported by plugins that have user-defined schedules.</p>
 the number of jobs that can execute simultaneously will be limited by its thread pool
 configuration.</p>
 </div>
-<h2 id="managed-jobs"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.1</span> Managed Jobs<a class="headerlink" href="#managed-jobs" title="Permanent link">¶</a></h2>
+<h2 id="managed-jobs"><span class="enumerate-headings-plugin enumerate-heading-plugin">79.1</span> Managed Jobs<a class="headerlink" href="#managed-jobs" title="Permanent link">¶</a></h2>
 <p>Any plugin simply needs to register a <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/job/ManagedJob.html">ManagedJob</a> service for the Job Scheduler to
 automatically schedule and execute the job. The schedule is provided by the <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/job/ManagedJob.html#getSchedule()"><code>getSchedle()</code></a>
 method, which can return a <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNode-Cron-Job-Syntax">cron expression</a> or a plain number representing a millisecond period.</p>
 <p>The <code>net.solarnetwork.node.job.SimpleManagedJob</code> class implements <code>ManagedJob</code> and can be used in
 most situations. It delegates the actual work to a <code>net.solarnetwork.node.job.JobService</code> API,
 discussed in the next section.</p>
-<h2 id="job-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.2</span> Job Service<a class="headerlink" href="#job-service" title="Permanent link">¶</a></h2>
+<h2 id="job-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">79.2</span> Job Service<a class="headerlink" href="#job-service" title="Permanent link">¶</a></h2>
 <p>The <code>ManagedJob</code> API delegates the actual task work to a <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/job/JobService.html"><code>JobService</code></a> API. The <code>executeJobService()</code>
 method will be invoked when the job executes.</p>
-<h2 id="example-managed-job"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.3</span> Example Managed Job<a class="headerlink" href="#example-managed-job" title="Permanent link">¶</a></h2>
+<h2 id="example-managed-job"><span class="enumerate-headings-plugin enumerate-heading-plugin">79.3</span> Example Managed Job<a class="headerlink" href="#example-managed-job" title="Permanent link">¶</a></h2>
 <p>Let's imagine you have a <code>com.example.Job</code> class that you would like to allow users to schedule. Your
 class would implement the <code>JobService</code> interface, and then you would provide a localized messages
 properties file and configure the service using <a href="../../osgi/blueprint/">OSGi Blueprint</a>.</p>

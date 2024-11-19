@@ -168,27 +168,20 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/certificates/">
-<span class="md-ellipsis">
-    Certificates
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/setup-app/settings/">
 <span class="md-ellipsis">
     Settings
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_5">
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_4">
 <span class="md-nav__icon md-icon"></span>
             Settings
           </label>
@@ -246,6 +239,62 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/setup-app/system/">
+<span class="md-ellipsis">
+    System
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_5">
+<span class="md-nav__icon md-icon"></span>
+            System
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/certificates/">
+<span class="md-ellipsis">
+    Certificates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/packages/">
+<span class="md-ellipsis">
+    Packages
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/host-aliases/">
+<span class="md-ellipsis">
+    Host Aliases
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/restart/">
+<span class="md-ellipsis">
+    Restart
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/reset/">
+<span class="md-ellipsis">
+    Reset
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_3_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/setup-app/tools/">
@@ -286,13 +335,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/plugins/">
-<span class="md-ellipsis">
-    Plugins
-  </span>
-</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../users/setup-app/profile/">
@@ -389,6 +431,13 @@
 <a class="md-nav__link" href="../../../users/datum-filters/property/">
 <span class="md-ellipsis">
     Property
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/datum-filters/pvlib/">
+<span class="md-ellipsis">
+    POAI Calculator
   </span>
 </a>
 </li>
@@ -864,7 +913,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="datum-queue"><span class="enumerate-headings-plugin enumerate-heading-plugin">73.</span> Datum Queue<a class="headerlink" href="#datum-queue" title="Permanent link">¶</a></h1>
+<h1 id="datum-queue"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.</span> Datum Queue<a class="headerlink" href="#datum-queue" title="Permanent link">¶</a></h1>
 <p>SolarNode has a <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/service/DatumQueue.html"><code>DatumQueue</code></a> service that acts as a central facility for processing
 all <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/domain/datum/NodeDatum.html"><code>NodeDatum</code></a> captured by all data source plugins deployed in the SolarNode runtime.
 The queue can be configured with various <em>filters</em> that can augment, modify, or discard the datum.
@@ -887,7 +936,7 @@ they will then still be processed by the queue but will <strong>not</strong> be 
 <span class="cm"> */</span>
 <span class="kt">boolean</span><span class="w"> </span><span class="nf">offer</span><span class="p">(</span><span class="n">NodeDatum</span><span class="w"> </span><span class="n">datum</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">persist</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="queue-observer"><span class="enumerate-headings-plugin enumerate-heading-plugin">73.1</span> Queue observer<a class="headerlink" href="#queue-observer" title="Permanent link">¶</a></h2>
+<h2 id="queue-observer"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.1</span> Queue observer<a class="headerlink" href="#queue-observer" title="Permanent link">¶</a></h2>
 <p>Plugins can also register observers on the <code>DatumQueue</code> that are notified of each datum that gets
 processed. The <code>addConsumer()</code> and <code>removeConsumer()</code> methods allow you to register/deregister
 observers:</p>

@@ -168,27 +168,20 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/certificates/">
-<span class="md-ellipsis">
-    Certificates
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/setup-app/settings/">
 <span class="md-ellipsis">
     Settings
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_5">
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_4">
 <span class="md-nav__icon md-icon"></span>
             Settings
           </label>
@@ -246,6 +239,62 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/setup-app/system/">
+<span class="md-ellipsis">
+    System
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_5">
+<span class="md-nav__icon md-icon"></span>
+            System
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/certificates/">
+<span class="md-ellipsis">
+    Certificates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/packages/">
+<span class="md-ellipsis">
+    Packages
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/host-aliases/">
+<span class="md-ellipsis">
+    Host Aliases
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/restart/">
+<span class="md-ellipsis">
+    Restart
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/reset/">
+<span class="md-ellipsis">
+    Reset
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_3_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/setup-app/tools/">
@@ -286,13 +335,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/plugins/">
-<span class="md-ellipsis">
-    Plugins
-  </span>
-</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../users/setup-app/profile/">
@@ -389,6 +431,13 @@
 <a class="md-nav__link" href="../../../users/datum-filters/property/">
 <span class="md-ellipsis">
     Property
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/datum-filters/pvlib/">
+<span class="md-ellipsis">
+    POAI Calculator
   </span>
 </a>
 </li>
@@ -864,7 +913,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="task-executor"><span class="enumerate-headings-plugin enumerate-heading-plugin">79.</span> Task Executor<a class="headerlink" href="#task-executor" title="Permanent link">¶</a></h1>
+<h1 id="task-executor"><span class="enumerate-headings-plugin enumerate-heading-plugin">84.</span> Task Executor<a class="headerlink" href="#task-executor" title="Permanent link">¶</a></h1>
 <p>To support asynchronous task execution, SolarNode makes several thread-pool based services available
 to plugins:</p>
 <ul>
@@ -894,7 +943,7 @@ declare a reference to them like this:</p>
 <span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">"taskExecutor"</span><span class="w"> </span><span class="na">interface=</span><span class="s">"org.springframework.core.task.AsyncListenableTaskExecutor"</span>
 <span class="w">        </span><span class="na">filter=</span><span class="s">"(function=node)"</span><span class="nt">/&gt;</span>
 </code></pre></div>
-<h2 id="thread-pool-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">79.1</span> Thread pool configuration<a class="headerlink" href="#thread-pool-configuration" title="Permanent link">¶</a></h2>
+<h2 id="thread-pool-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">84.1</span> Thread pool configuration<a class="headerlink" href="#thread-pool-configuration" title="Permanent link">¶</a></h2>
 <p>This thread pool is configured as a fixed-size pool with the number of threads set to the number of
 CPU cores detected at runtime, plus one. For example on a Raspberry Pi 4 there are 4 CPU cores so
 the thread pool would be configured with 5 threads.</p>

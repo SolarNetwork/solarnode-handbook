@@ -168,27 +168,20 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/certificates/">
-<span class="md-ellipsis">
-    Certificates
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/setup-app/settings/">
 <span class="md-ellipsis">
     Settings
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_5">
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_4">
 <span class="md-nav__icon md-icon"></span>
             Settings
           </label>
@@ -246,6 +239,62 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/setup-app/system/">
+<span class="md-ellipsis">
+    System
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_5">
+<span class="md-nav__icon md-icon"></span>
+            System
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/certificates/">
+<span class="md-ellipsis">
+    Certificates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/packages/">
+<span class="md-ellipsis">
+    Packages
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/host-aliases/">
+<span class="md-ellipsis">
+    Host Aliases
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/restart/">
+<span class="md-ellipsis">
+    Restart
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/reset/">
+<span class="md-ellipsis">
+    Reset
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_3_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/setup-app/tools/">
@@ -286,13 +335,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/plugins/">
-<span class="md-ellipsis">
-    Plugins
-  </span>
-</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../users/setup-app/profile/">
@@ -389,6 +431,13 @@
 <a class="md-nav__link" href="../../../users/datum-filters/property/">
 <span class="md-ellipsis">
     Property
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/datum-filters/pvlib/">
+<span class="md-ellipsis">
+    POAI Calculator
   </span>
 </a>
 </li>
@@ -886,7 +935,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="settings-provider"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.</span> Settings Provider<a class="headerlink" href="#settings-provider" title="Permanent link">¶</a></h1>
+<h1 id="settings-provider"><span class="enumerate-headings-plugin enumerate-heading-plugin">68.</span> Settings Provider<a class="headerlink" href="#settings-provider" title="Permanent link">¶</a></h1>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/SettingSpecifierProvider.html"><code>net.solarnetwork.settings.SettingSpecifierProvider</code></a> interface
 defines the way a class can declare themselves as a user-configurable component. The main elements
 of this API are:</p>
@@ -919,7 +968,7 @@ of this API are:</p>
 class or package name of the component (or a derivative of it) is used as the ID.</p>
 <p>The <code>getSettingSpecifiers()</code> method returns a list of all the configurable properties of the
 component, as a list of <a href="../specifier/">Setting Specifier</a> instances.</p>
-<h2 id="setting-accessors"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.1</span> Setting accessors<a class="headerlink" href="#setting-accessors" title="Permanent link">¶</a></h2>
+<h2 id="setting-accessors"><span class="enumerate-headings-plugin enumerate-heading-plugin">68.1</span> Setting accessors<a class="headerlink" href="#setting-accessors" title="Permanent link">¶</a></h2>
 <p>s
 <div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
 <span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">;</span>
@@ -956,7 +1005,7 @@ settings can accept any primitive or standard number type like <code>int</code> 
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="proxy-setting-accessors"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.1.1</span> Proxy setting accessors<a class="headerlink" href="#proxy-setting-accessors" title="Permanent link">¶</a></h3>
+<h3 id="proxy-setting-accessors"><span class="enumerate-headings-plugin enumerate-heading-plugin">68.1.1</span> Proxy setting accessors<a class="headerlink" href="#proxy-setting-accessors" title="Permanent link">¶</a></h3>
 <p>Sometimes you might like to expose a simple string setting but internally treat the string as a more
 complex type. For example a <code>Map</code> could be configured using a simple delimited string like <code>key1 =
 val1, key2 = val2</code>. For situations like this you can publish a <em>proxy</em> setting that manages a

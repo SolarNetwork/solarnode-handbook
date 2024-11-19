@@ -168,27 +168,20 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/certificates/">
-<span class="md-ellipsis">
-    Certificates
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/setup-app/settings/">
 <span class="md-ellipsis">
     Settings
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_5">
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_4">
 <span class="md-nav__icon md-icon"></span>
             Settings
           </label>
@@ -246,6 +239,62 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/setup-app/system/">
+<span class="md-ellipsis">
+    System
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_5">
+<span class="md-nav__icon md-icon"></span>
+            System
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/certificates/">
+<span class="md-ellipsis">
+    Certificates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/packages/">
+<span class="md-ellipsis">
+    Packages
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/host-aliases/">
+<span class="md-ellipsis">
+    Host Aliases
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/restart/">
+<span class="md-ellipsis">
+    Restart
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/setup-app/system/reset/">
+<span class="md-ellipsis">
+    Reset
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_3_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/setup-app/tools/">
@@ -286,13 +335,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/plugins/">
-<span class="md-ellipsis">
-    Plugins
-  </span>
-</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../users/setup-app/profile/">
@@ -389,6 +431,13 @@
 <a class="md-nav__link" href="../../../users/datum-filters/property/">
 <span class="md-ellipsis">
     Property
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/datum-filters/pvlib/">
+<span class="md-ellipsis">
+    POAI Calculator
   </span>
 </a>
 </li>
@@ -864,7 +913,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="life-cycle"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.</span> Life cycle<a class="headerlink" href="#life-cycle" title="Permanent link">¶</a></h1>
+<h1 id="life-cycle"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.</span> Life cycle<a class="headerlink" href="#life-cycle" title="Permanent link">¶</a></h1>
 <p>Plugins in SolarNode can be added to and removed from the platform at any time without restarting
 the SolarNode process, because of the <a href="https://en.wikipedia.org/wiki/OSGi#Life-cycle">Life Cycle</a> process OSGi manages. The life
 cycle of a plugin consists of a set of <em>states</em> and OSGi will transition a plugin's state over the
@@ -912,7 +961,7 @@ course of the plugin's life.</p>
 <p>Faisal.akeel, Public domain, via <a href="https://commons.wikimedia.org/wiki/File:OSGi_Bundle_Life-Cycle.svg">Wikimedia Common</a></p>
 </figcaption>
 </figure>
-<h2 id="activator"><span class="enumerate-headings-plugin enumerate-heading-plugin">58.1</span> Activator<a class="headerlink" href="#activator" title="Permanent link">¶</a></h2>
+<h2 id="activator"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.1</span> Activator<a class="headerlink" href="#activator" title="Permanent link">¶</a></h2>
 <p>A plugin can opt in to receiving callbacks for the start/stop state transitions by providing an
 <code>org.osgi.framework.BundleActivator</code> implementation and declaring that class in the
 <a href="../manifest/#common-attributes"><code>Bundle-Activator</code> manifest attribute</a>. This can be useful when a

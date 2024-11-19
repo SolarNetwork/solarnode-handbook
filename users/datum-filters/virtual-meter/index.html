@@ -168,27 +168,20 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../setup-app/certificates/">
-<span class="md-ellipsis">
-    Certificates
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../setup-app/settings/">
 <span class="md-ellipsis">
     Settings
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_5">
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_4">
 <span class="md-nav__icon md-icon"></span>
             Settings
           </label>
@@ -246,6 +239,62 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../setup-app/system/">
+<span class="md-ellipsis">
+    System
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_5">
+<span class="md-nav__icon md-icon"></span>
+            System
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/certificates/">
+<span class="md-ellipsis">
+    Certificates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/packages/">
+<span class="md-ellipsis">
+    Packages
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/host-aliases/">
+<span class="md-ellipsis">
+    Host Aliases
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/restart/">
+<span class="md-ellipsis">
+    Restart
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/reset/">
+<span class="md-ellipsis">
+    Reset
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_3_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../setup-app/tools/">
@@ -286,13 +335,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../setup-app/plugins/">
-<span class="md-ellipsis">
-    Plugins
-  </span>
-</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/profile/">
@@ -389,6 +431,13 @@
 <a class="md-nav__link" href="../property/">
 <span class="md-ellipsis">
     Property
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../pvlib/">
+<span class="md-ellipsis">
+    POAI Calculator
   </span>
 </a>
 </li>
@@ -956,7 +1005,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="virtual-meter-datum-filter"><span class="enumerate-headings-plugin enumerate-heading-plugin">37.</span> Virtual Meter Datum Filter<a class="headerlink" href="#virtual-meter-datum-filter" title="Permanent link">¶</a></h1>
+<h1 id="virtual-meter-datum-filter"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.</span> Virtual Meter Datum Filter<a class="headerlink" href="#virtual-meter-datum-filter" title="Permanent link">¶</a></h1>
 <p>The <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/README-VirtualMeter.md">Virtual Meter Datum Filter</a> provides a way to derive an accumulating "meter reading" value
 out of an instantaneous property value over time. For example, if you have an irradiance sensor that
 allows you to capture instantaneous W/m<sup>2</sup> power values, you could configure a virtual meter to
@@ -968,7 +1017,7 @@ result in an accumulating <code>irradianceHours</code> property. The value is ca
 between the <em>current</em> and the <em>previous</em> instantaneous property values, multiplied by the amount of
 time that has elapsed between the two samples.</p>
 <p>This filter is provided by the <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/">Standard Datum Filters</a> plugin.</p>
-<h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">37.1</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
+<h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.1</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
 <figure>
 <p><img alt="Virtual Meter Datum filter component settings" loading="lazy" src="../../../images/users/datum-filters/virtual-meter-filter-settings%402x.png" width="722"/></p>
 </figure>
@@ -1007,7 +1056,7 @@ time that has elapsed between the two samples.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="virtual-meter-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">37.2</span> Virtual Meter Settings<a class="headerlink" href="#virtual-meter-settings" title="Permanent link">¶</a></h2>
+<h2 id="virtual-meter-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.2</span> Virtual Meter Settings<a class="headerlink" href="#virtual-meter-settings" title="Permanent link">¶</a></h2>
 <p>The Virtual Meter settings define a single virutal meter.</p>
 <figure>
 <p><img alt="Virtual Meter Datum filter meter settings" loading="lazy" src="../../../images/users/datum-filters/virtual-meter-filter-meter-settings%402x.png" width="592"/></p>
@@ -1070,7 +1119,7 @@ time that has elapsed between the two samples.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="virtual-meter-expression-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">37.3</span> Virtual Meter Expression Settings<a class="headerlink" href="#virtual-meter-expression-settings" title="Permanent link">¶</a></h2>
+<h2 id="virtual-meter-expression-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.3</span> Virtual Meter Expression Settings<a class="headerlink" href="#virtual-meter-expression-settings" title="Permanent link">¶</a></h2>
 <p>A virtual meter can use expressions to customise how the output meter value reading value is
 calculated. See the <a href="#expressions">Expressions</a> section for more information.</p>
 <figure>
@@ -1102,7 +1151,7 @@ calculated. See the <a href="#expressions">Expressions</a> section for more info
 </tr>
 </tbody>
 </table>
-<h2 id="filter-parameters"><span class="enumerate-headings-plugin enumerate-heading-plugin">37.4</span> Filter parameters<a class="headerlink" href="#filter-parameters" title="Permanent link">¶</a></h2>
+<h2 id="filter-parameters"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.4</span> Filter parameters<a class="headerlink" href="#filter-parameters" title="Permanent link">¶</a></h2>
 <p>When the virtual meter filter is applied to a given datum, it will generate the following filter
 parameters, which will be available to other filters that are applied to the same datum <em>after</em> this
 filter.</p>
@@ -1124,7 +1173,7 @@ filter.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="expressions"><span class="enumerate-headings-plugin enumerate-heading-plugin">37.5</span> Expressions<a class="headerlink" href="#expressions" title="Permanent link">¶</a></h2>
+<h2 id="expressions"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.5</span> Expressions<a class="headerlink" href="#expressions" title="Permanent link">¶</a></h2>
 <p>Expressions can be configured to calculate the <strong>output</strong> meter datum property, instead of using the
 default averaging algorithm. If an expression configuration exists with a <strong>Property</strong> that matches
 a configured (or implied) meter configuration <strong>Reading Property</strong>, then the expression will be
@@ -1136,7 +1185,7 @@ expression language reference.</p>
 Typically this means it will calculate some differential value based on the amount of time that
 has elapsed and <strong>add</strong> that to the previous meter reading value.</p>
 </div>
-<h3 id="expression-root-object"><span class="enumerate-headings-plugin enumerate-heading-plugin">37.5.1</span> Expression root object<a class="headerlink" href="#expression-root-object" title="Permanent link">¶</a></h3>
+<h3 id="expression-root-object"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.5.1</span> Expression root object<a class="headerlink" href="#expression-root-object" title="Permanent link">¶</a></h3>
 <p>The root object is a <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/src/net/solarnetwork/node/datum/filter/virt/VirtualMeterExpressionRoot.java">virtual meter expression object</a> that lets you
 treat all datum properties, and filter parameters, as expression variables directly, along with
 the following properties:</p>
@@ -1226,7 +1275,7 @@ the following properties:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="expression-example-time-of-use-tariff-reading"><span class="enumerate-headings-plugin enumerate-heading-plugin">37.5.2</span> Expression example: time of use tariff reading<a class="headerlink" href="#expression-example-time-of-use-tariff-reading" title="Permanent link">¶</a></h3>
+<h3 id="expression-example-time-of-use-tariff-reading"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.5.2</span> Expression example: time of use tariff reading<a class="headerlink" href="#expression-example-time-of-use-tariff-reading" title="Permanent link">¶</a></h3>
 <p>Iagine you'd like to track a time-of-use cost associated with the energy readings captured by an
 energy meter. The <a href="../tariff/">Time-based Tariff Datum Filter</a> filter could be used to add a
 <code>tou</code> property to each datum, and then a virtual meter expression can be used to calculate a <code>cost</code>

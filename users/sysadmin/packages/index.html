@@ -168,27 +168,20 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../setup-app/certificates/">
-<span class="md-ellipsis">
-    Certificates
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../setup-app/settings/">
 <span class="md-ellipsis">
     Settings
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_5">
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_4">
 <span class="md-nav__icon md-icon"></span>
             Settings
           </label>
@@ -246,6 +239,62 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../setup-app/system/">
+<span class="md-ellipsis">
+    System
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_5">
+<span class="md-nav__icon md-icon"></span>
+            System
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/certificates/">
+<span class="md-ellipsis">
+    Certificates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/packages/">
+<span class="md-ellipsis">
+    Packages
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/host-aliases/">
+<span class="md-ellipsis">
+    Host Aliases
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/restart/">
+<span class="md-ellipsis">
+    Restart
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/reset/">
+<span class="md-ellipsis">
+    Reset
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_3_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../setup-app/tools/">
@@ -286,13 +335,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../setup-app/plugins/">
-<span class="md-ellipsis">
-    Plugins
-  </span>
-</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/profile/">
@@ -389,6 +431,13 @@
 <a class="md-nav__link" href="../../datum-filters/property/">
 <span class="md-ellipsis">
     Property
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../datum-filters/pvlib/">
+<span class="md-ellipsis">
+    POAI Calculator
   </span>
 </a>
 </li>
@@ -934,10 +983,10 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="package-maintenance"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.</span> Package Maintenance<a class="headerlink" href="#package-maintenance" title="Permanent link">¶</a></h1>
+<h1 id="package-maintenance"><span class="enumerate-headings-plugin enumerate-heading-plugin">47.</span> Package Maintenance<a class="headerlink" href="#package-maintenance" title="Permanent link">¶</a></h1>
 <p>SolarNodeOS supports a <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNodeOS">wide variety of software packages</a>. You can install new packages as
 well as apply package updates as they become available. The <a href="https://manpages.debian.org/bullseye/apt/apt.8.en.html">apt</a> command performs these tasks.</p>
-<h2 id="update-package-metadata"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.1</span> Update package metadata<a class="headerlink" href="#update-package-metadata" title="Permanent link">¶</a></h2>
+<h2 id="update-package-metadata"><span class="enumerate-headings-plugin enumerate-heading-plugin">47.1</span> Update package metadata<a class="headerlink" href="#update-package-metadata" title="Permanent link">¶</a></h2>
 <p>For SolarNodeOS to know what packages, or package updates, are available, you need to periodically
 update the available package information. This is done with the <code>apt update</code> command:</p>
 <div class="highlight"><span class="filename">Update package information</span><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="c1"># (1)!</span>
@@ -946,11 +995,11 @@ update the available package information. This is done with the <code>apt update
 <li>The <code>sudo</code> command runs other commands with <a href="../#administrator-access">administrative privledges</a>.
    It will prompt you for your user account password (typically the <code>solar</code> user).</li>
 </ol>
-<h2 id="list-installed-packages"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.2</span> List installed packages<a class="headerlink" href="#list-installed-packages" title="Permanent link">¶</a></h2>
+<h2 id="list-installed-packages"><span class="enumerate-headings-plugin enumerate-heading-plugin">47.2</span> List installed packages<a class="headerlink" href="#list-installed-packages" title="Permanent link">¶</a></h2>
 <p>Use the <code>apt list</code> command to list the installed packages:</p>
 <div class="highlight"><span class="filename">Listing the installed packages</span><pre><span></span><code>apt<span class="w"> </span>list<span class="w"> </span>--installed
 </code></pre></div>
-<h2 id="update-packages"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.3</span> Update packages<a class="headerlink" href="#update-packages" title="Permanent link">¶</a></h2>
+<h2 id="update-packages"><span class="enumerate-headings-plugin enumerate-heading-plugin">47.3</span> Update packages<a class="headerlink" href="#update-packages" title="Permanent link">¶</a></h2>
 <p>To see if there are any package updates available, run <code>apt list</code> like this:</p>
 <div class="highlight"><span class="filename">List packages with updates available</span><pre><span></span><code>apt<span class="w"> </span>list<span class="w"> </span>--upgradable
 </code></pre></div>
@@ -967,7 +1016,7 @@ by those packages, but it will never remove an existing package. Sometimes you w
 allow packages to be removed during the upgrade process; to do that use the <code>apt full-upgrade</code>
 command.</p>
 </div>
-<h2 id="search-for-packages"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.4</span> Search for packages<a class="headerlink" href="#search-for-packages" title="Permanent link">¶</a></h2>
+<h2 id="search-for-packages"><span class="enumerate-headings-plugin enumerate-heading-plugin">47.4</span> Search for packages<a class="headerlink" href="#search-for-packages" title="Permanent link">¶</a></h2>
 <p>Use the <code>apt search</code> command to search for packages. By default this will match package names and
 their descriptions. You can search just for package names by including a <code>--names-only</code> argument.</p>
 <div class="highlight"><span class="filename">Search for packages</span><pre><span></span><code><span class="c1"># search for "name" across package names and descriptions</span>
@@ -979,11 +1028,11 @@ apt<span class="w"> </span>search<span class="w"> </span>--names-only<span class
 <span class="c1"># multiple search terms are logically "and"-ed together</span>
 apt<span class="w"> </span>search<span class="w"> </span>name1<span class="w"> </span>name2
 </code></pre></div>
-<h2 id="install-packages"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.5</span> Install packages<a class="headerlink" href="#install-packages" title="Permanent link">¶</a></h2>
+<h2 id="install-packages"><span class="enumerate-headings-plugin enumerate-heading-plugin">47.5</span> Install packages<a class="headerlink" href="#install-packages" title="Permanent link">¶</a></h2>
 <p>The <code>apt install</code> command will install an available package, or an individual package update.</p>
 <div class="highlight"><span class="filename">Install package</span><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mypackage
 </code></pre></div>
-<h2 id="remove-packages"><span class="enumerate-headings-plugin enumerate-heading-plugin">42.6</span> Remove packages<a class="headerlink" href="#remove-packages" title="Permanent link">¶</a></h2>
+<h2 id="remove-packages"><span class="enumerate-headings-plugin enumerate-heading-plugin">47.6</span> Remove packages<a class="headerlink" href="#remove-packages" title="Permanent link">¶</a></h2>
 <p>You can remove packages with the <code>apt remove</code> command. That command will preserve any system
 configuration associated with the package(s); if you would like to also remove that you can
 use the <code>apt purge</code> command.</p>

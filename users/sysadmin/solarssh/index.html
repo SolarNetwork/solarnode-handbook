@@ -168,27 +168,20 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../setup-app/certificates/">
-<span class="md-ellipsis">
-    Certificates
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../setup-app/settings/">
 <span class="md-ellipsis">
     Settings
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_5">
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_4">
 <span class="md-nav__icon md-icon"></span>
             Settings
           </label>
@@ -246,6 +239,62 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../setup-app/system/">
+<span class="md-ellipsis">
+    System
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_5">
+<span class="md-nav__icon md-icon"></span>
+            System
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/certificates/">
+<span class="md-ellipsis">
+    Certificates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/packages/">
+<span class="md-ellipsis">
+    Packages
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/host-aliases/">
+<span class="md-ellipsis">
+    Host Aliases
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/restart/">
+<span class="md-ellipsis">
+    Restart
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup-app/system/reset/">
+<span class="md-ellipsis">
+    Reset
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_3_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../setup-app/tools/">
@@ -286,13 +335,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../setup-app/plugins/">
-<span class="md-ellipsis">
-    Plugins
-  </span>
-</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../setup-app/profile/">
@@ -389,6 +431,13 @@
 <a class="md-nav__link" href="../../datum-filters/property/">
 <span class="md-ellipsis">
     Property
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../datum-filters/pvlib/">
+<span class="md-ellipsis">
+    POAI Calculator
   </span>
 </a>
 </li>
@@ -906,26 +955,26 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="solarssh"><span class="enumerate-headings-plugin enumerate-heading-plugin">44.</span> SolarSSH<a class="headerlink" href="#solarssh" title="Permanent link">¶</a></h1>
+<h1 id="solarssh"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.</span> SolarSSH<a class="headerlink" href="#solarssh" title="Permanent link">¶</a></h1>
 <p>The <code>sn-solarssh</code> package in SolarNodeOS provides a <code>solarssh</code> command-line tool for managing
 <a href="../../remote-access/">SolarSSH</a> connections.</p>
-<h2 id="show-ssh-public-key"><span class="enumerate-headings-plugin enumerate-heading-plugin">44.1</span> Show SSH public key<a class="headerlink" href="#show-ssh-public-key" title="Permanent link">¶</a></h2>
+<h2 id="show-ssh-public-key"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.1</span> Show SSH public key<a class="headerlink" href="#show-ssh-public-key" title="Permanent link">¶</a></h2>
 <p>To view the node's public SSH key, you can execute <code>solarssh showkey</code>.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>solarssh<span class="w"> </span>showkey
 ssh-ed25519<span class="w"> </span>AAAAC3NzaC1lZDI1NTE5AAAAIG7DWIuC2MVHy/gfD32sCayoVFpGVbZ8VXuQubmKjwyx<span class="w"> </span>SolarNode
 </code></pre></div>
-<h2 id="list-solarssh-sessions"><span class="enumerate-headings-plugin enumerate-heading-plugin">44.2</span> List SolarSSH sessions<a class="headerlink" href="#list-solarssh-sessions" title="Permanent link">¶</a></h2>
+<h2 id="list-solarssh-sessions"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.2</span> List SolarSSH sessions<a class="headerlink" href="#list-solarssh-sessions" title="Permanent link">¶</a></h2>
 <p>Run <code>solarssh list</code> to view all available SolarSSH sessions.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>solarssh<span class="w"> </span>list
 b0ae36e0-06ae-4d3d-b34e-9bf2ca8049f1,ssh.solarnetwork.net,8022,43340
 </code></pre></div>
-<h2 id="view-solarssh-session-status"><span class="enumerate-headings-plugin enumerate-heading-plugin">44.3</span> View SolarSSH session status<a class="headerlink" href="#view-solarssh-session-status" title="Permanent link">¶</a></h2>
+<h2 id="view-solarssh-session-status"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.3</span> View SolarSSH session status<a class="headerlink" href="#view-solarssh-session-status" title="Permanent link">¶</a></h2>
 <p>Using the output of <code>solarssh list</code> you can view the SSH connection status of a specific SSH
 session with <code>solarssh status</code>, like this:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>solarssh<span class="w"> </span>-c<span class="w"> </span>b0ae36e0-06ae-4d3d-b34e-9bf2ca8049f1,ssh.solarnetwork.net,8022,43340<span class="w"> </span>status
 active
 </code></pre></div>
-<h2 id="stop-solarssh-session"><span class="enumerate-headings-plugin enumerate-heading-plugin">44.4</span> Stop SolarSSH session<a class="headerlink" href="#stop-solarssh-session" title="Permanent link">¶</a></h2>
+<h2 id="stop-solarssh-session"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.4</span> Stop SolarSSH session<a class="headerlink" href="#stop-solarssh-session" title="Permanent link">¶</a></h2>
 <p>You can force a SolarSSH session to end using <code>solarssh stop</code>, like this:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>solarssh<span class="w"> </span>-c<span class="w"> </span>b0ae36e0-06ae-4d3d-b34e-9bf2ca8049f1,ssh.solarnetwork.net,8022,43340<span class="w"> </span>stop
 </code></pre></div>

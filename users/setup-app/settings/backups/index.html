@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://solarnetwork.github.io/solarnode-handbook/users/setup-app/settings/backups/" rel="canonical"/>
 <link href="../op-modes/" rel="prev"/>
-<link href="../../tools/" rel="next"/>
+<link href="../../system/" rel="next"/>
 <link href="../../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.0, mkdocs-material-9.5.23" name="generator"/>
 <title>Backups - SolarNode Handbook</title>
@@ -168,27 +168,20 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../certificates/">
-<span class="md-ellipsis">
-    Certificates
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_1_3_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../">
 <span class="md-ellipsis">
     Settings
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_5">
+<nav aria-expanded="true" aria-labelledby="__nav_1_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_4">
 <span class="md-nav__icon md-icon"></span>
             Settings
           </label>
@@ -300,6 +293,62 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../system/">
+<span class="md-ellipsis">
+    System
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_3_5">
+<span class="md-nav__icon md-icon"></span>
+            System
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../system/certificates/">
+<span class="md-ellipsis">
+    Certificates
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../system/packages/">
+<span class="md-ellipsis">
+    Packages
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../system/host-aliases/">
+<span class="md-ellipsis">
+    Host Aliases
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../system/restart/">
+<span class="md-ellipsis">
+    Restart
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../system/reset/">
+<span class="md-ellipsis">
+    Reset
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_3_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../tools/">
@@ -340,13 +389,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../plugins/">
-<span class="md-ellipsis">
-    Plugins
-  </span>
-</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../profile/">
@@ -443,6 +485,13 @@
 <a class="md-nav__link" href="../../../datum-filters/property/">
 <span class="md-ellipsis">
     Property
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../datum-filters/pvlib/">
+<span class="md-ellipsis">
+    POAI Calculator
   </span>
 </a>
 </li>
@@ -928,9 +977,9 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="backups"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.</span> Backups<a class="headerlink" href="#backups" title="Permanent link">¶</a></h1>
+<h1 id="backups"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.</span> Backups<a class="headerlink" href="#backups" title="Permanent link">¶</a></h1>
 <p>This page allows you to backup and restore the configuration of your SolarNode.</p>
-<h2 id="settings-backup-restore"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.1</span> Settings Backup &amp; Restore<a class="headerlink" href="#settings-backup-restore" title="Permanent link">¶</a></h2>
+<h2 id="settings-backup-restore"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.1</span> Settings Backup &amp; Restore<a class="headerlink" href="#settings-backup-restore" title="Permanent link">¶</a></h2>
 <p>The Settings Backup &amp; Restore section provides a way to manage <a href="../../../settings/">Settings Files</a>
 and Settings Resources, both of which are backups for the configured settings in SolarNode.</p>
 <div class="admonition warning">
@@ -953,7 +1002,7 @@ the date the settings backup was created.</p>
 <figure>
 <p><img alt="Settings import/export form" src="../../../../images/users/setup/settings-backup-restore-annotated%402x.png" width="728"/></p>
 </figure>
-<h2 id="full-backup-restore"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.2</span> Full Backup &amp; Restore<a class="headerlink" href="#full-backup-restore" title="Permanent link">¶</a></h2>
+<h2 id="full-backup-restore"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.2</span> Full Backup &amp; Restore<a class="headerlink" href="#full-backup-restore" title="Permanent link">¶</a></h2>
 <p>The Full Backup &amp; Restore section lets you manage SolarNode "full" backups. Each full backup contains a snapshot
 of the settings you have configured, the node's certificate, login credentials, custom plugins, and more.</p>
 <figure>
@@ -968,9 +1017,9 @@ selected service's settings, click the <strong>Save Settings</strong> button to 
 <figure>
 <p><img alt="Full Backup/restore form" src="../../../../images/users/setup/settings-full-backup-restore-annotated%402x.png" width="728"/></p>
 </figure>
-<h2 id="backup-services"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.3</span> Backup Services<a class="headerlink" href="#backup-services" title="Permanent link">¶</a></h2>
+<h2 id="backup-services"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.3</span> Backup Services<a class="headerlink" href="#backup-services" title="Permanent link">¶</a></h2>
 <p>SolarNode supports configurable Backup Service plugins to manage the storage of backup resources.</p>
-<h3 id="file-system-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.3.1</span> File System Backup Service<a class="headerlink" href="#file-system-backup-service" title="Permanent link">¶</a></h3>
+<h3 id="file-system-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.3.1</span> File System Backup Service<a class="headerlink" href="#file-system-backup-service" title="Permanent link">¶</a></h3>
 <p>The File System Backup Service is the default Backup Service provided by SolarNode. It saves
 the backup onto the node itself. In order to be able to restore your settings if the node is damaged
 or lost, you must download a copy of a backup using the <strong>Download</strong> button, and save the file
@@ -1003,7 +1052,7 @@ hardware failure.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="s3-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.3.2</span> S3 Backup Service<a class="headerlink" href="#s3-backup-service" title="Permanent link">¶</a></h3>
+<h3 id="s3-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.3.2</span> S3 Backup Service<a class="headerlink" href="#s3-backup-service" title="Permanent link">¶</a></h3>
 <p>The S3 Backup Service creates cloud-based backups in <a href="https://aws.amazon.com/s3/">AWS S3</a> (or any compatible provider). You
 must configure the credentials and S3 location details to use before any backups can be created.</p>
 <figure>
