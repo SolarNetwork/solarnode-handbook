@@ -1645,19 +1645,19 @@ properties in all classifications.</p>
 <td style="text-align: left;"><code>datePlus(date, amount, unit)</code></td>
 <td style="text-align: left;"><code>Temporal</code>, <code>long</code>, <code>TemporalUnit|String</code></td>
 <td style="text-align: left;"><code>Temporal</code></td>
-<td style="text-align: left;">Add a chronological unit of time to a date. The <code>unit</code> can be a <code>TemporalUnit</code> instance or a valid name as documented in the <code>chronoUnit(name)</code> function above. For example: <code>datePlus(date(2024,8,10), 1, "days")</code> adds 1 day to <code>2024-08-10</code> resulting in <code>2024-08-11</code>.</td>
+<td style="text-align: left;">Add a chronological unit of time to a date. The <code>unit</code> can be a <code>TemporalUnit</code> instance or a valid name as documented in the <code>chronoUnit(name)</code> function. For example: <code>datePlus(date(2024,8,10), 1, "days")</code> adds 1 day to <code>2024-08-10</code> resulting in <code>2024-08-11</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>datePlus(date,  amount)</code></td>
 <td style="text-align: left;"><code>Temporal</code>, <code>TemporalAmount|String</code></td>
 <td style="text-align: left;"><code>Temporal</code></td>
-<td style="text-align: left;">Add a duration to a date. The <code>amount</code> can be a <code>TemporalAmount</code> instance or a valid string representation as documented in the <code>duration(amount)</code> function below. For example: <code>datePlus(date(2024,8,10), "-P1Y")</code> subtracts 1 year from <code>2024-08-10</code> resulting in <code>2023-08-10</code>.</td>
+<td style="text-align: left;">Add a duration to a date. The <code>amount</code> can be a <code>TemporalAmount</code> instance or a valid string representation as documented in the <code>duration(amount)</code> function. For example: <code>datePlus(date(2024,8,10), "-P1Y")</code> subtracts 1 year from <code>2024-08-10</code> resulting in <code>2023-08-10</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>dateTruncate(date, unit)</code></td>
 <td style="text-align: left;"><code>Temporal</code>, <code>TemporalUnit|String</code></td>
 <td style="text-align: left;"><code>Temporal</code></td>
-<td style="text-align: left;">Round a date down (older) to a given unit. The <code>unit</code> can be a <code>TemporalUnit</code> instance or a valid name as documented in the <code>chronoUnit(name)</code> function above. For example <code>dateTruncate(date(2024,8,10), "months")</code> truncates the date <code>2024-08-10</code> to the month, resulting in <code>2024-08-01</code>.</td>
+<td style="text-align: left;">Round a date down (older) to a given unit. The <code>unit</code> can be a <code>TemporalUnit</code> instance or a valid name as documented in the <code>chronoUnit(name)</code> function. For example <code>dateTruncate(date(2024,8,10), "months")</code> truncates the date <code>2024-08-10</code> to the month, resulting in <code>2024-08-01</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>dateTz(date)</code></td>
