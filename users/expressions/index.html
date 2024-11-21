@@ -632,6 +632,31 @@
       Date time functions
     </span>
 </a>
+<nav aria-label="Date time functions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#date-creation-functions">
+<span class="md-ellipsis">
+      Date creation functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#date-manipulation-functions">
+<span class="md-ellipsis">
+      Date manipulation functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#date-range-functions">
+<span class="md-ellipsis">
+      Date range functions
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#datum-stream-functions">
@@ -1130,6 +1155,31 @@
       Date time functions
     </span>
 </a>
+<nav aria-label="Date time functions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#date-creation-functions">
+<span class="md-ellipsis">
+      Date creation functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#date-manipulation-functions">
+<span class="md-ellipsis">
+      Date manipulation functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#date-range-functions">
+<span class="md-ellipsis">
+      Date range functions
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#datum-stream-functions">
@@ -1471,6 +1521,7 @@ properties in all classifications.</p>
 </div>
 <h4 id="date-time-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.1.3.2</span> Date time functions<a class="headerlink" href="#date-time-functions" title="Permanent link">¶</a></h4>
 <p>The following functions help with creating and manipulating dates. The <code>Temporal</code> type can be thought of as <em>some kind of date</em> type: it could be a <code>LocalDate</code> (a date without any time zone), a <code>LocalDateTime</code> (a date and time without any time zone), a <code>ZonedDateTime</code> (a date and time in a specific time zone), or an <code>Instant</code> (a date and time in the <code>UTC</code> time zone).</p>
+<h5 id="date-creation-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.1.3.2.1</span> Date creation functions<a class="headerlink" href="#date-creation-functions" title="Permanent link">¶</a></h5>
 <table>
 <thead>
 <tr>
@@ -1485,7 +1536,13 @@ properties in all classifications.</p>
 <td style="text-align: left;"><code>chronoUnit(name)</code></td>
 <td style="text-align: left;"><code>String</code></td>
 <td style="text-align: left;"><code>TemporalUnit</code></td>
-<td style="text-align: left;">Returns a <code>TemporalUnit</code> instance for a case-insensitive chronological unit name, one of <code>NANOS</code>, <code>MICROS</code>, <code>MILLIS</code>, <code>SECONDS</code>, <code>MINUTES</code>, <code>HOURS</code>, <code>HALF_DAYS</code>, <code>DAYS</code>, <code>WEEKS</code>, <code>MONTHS</code>, <code>YEARS</code>, <code>DECADES</code>, <code>CENTURIES</code>, <code>MILLENNIA</code></td>
+<td style="text-align: left;">Returns a <code>TemporalUnit</code> instance for a case-insensitive chronological unit name, one of <code>NANOS</code>, <code>MICROS</code>, <code>MILLIS</code>, <code>SECONDS</code>, <code>MINUTES</code>, <code>HOURS</code>, <code>HALF_DAYS</code>, <code>DAYS</code>, <code>WEEKS</code>, <code>MONTHS</code>, <code>YEARS</code>, <code>DECADES</code>, <code>CENTURIES</code>, <code>MILLENNIA</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>date(value)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>LocalDate</code></td>
+<td style="text-align: left;">Construct a date instance from a string in the form <code>YYYY-MM-DD</code>, for example <code>date('2024-11-21')</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>date(year, month, day)</code></td>
@@ -1505,6 +1562,85 @@ properties in all classifications.</p>
 <td style="text-align: left;"><code>LocalDateTime</code></td>
 <td style="text-align: left;">Construct a date and time instance for a given year, month (1-12), day (1-31), hour (0-23), minute (0-59), and second (0-59).</td>
 </tr>
+<tr>
+<td style="text-align: left;"><code>duration(amount)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>TemporalAmount</code></td>
+<td style="text-align: left;">Parse an ISO 8601 style period or duration into a <code>TemporalAmount</code>.  The period syntax supports <code>PnYnMnD</code> and <code>PnW</code>, where <code>n</code> is a number of years <code>Y</code>, months <code>M</code>, days <code>D</code>, or weeks <code>W</code>. For example <code>P1Y2M3D</code> represents 1 year and 2 months and 3 days, or <code>P7D</code> 7 days, or <code>P4W</code> 4 weeks. The duration syntax supports <code>PnDTnHnMn.nS</code> where <code>n</code> is a number of days <code>D</code>, hours <code>H</code>, minutes <code>M</code>, or fractional seconds <code>S</code>. For example <code>PT15M</code> represents 15 minutes, <code>PT20.345S</code> 20.345 seconds, <code>-P6H3M</code> -6 hours -3 minutes, <code>P-6H3M</code> -6 hours +3 minutes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>now()</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>LocalDateTime</code></td>
+<td style="text-align: left;">Get the local date and time when invoked.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>now(zone)</code></td>
+<td style="text-align: left;"><code>ZoneId|String</code></td>
+<td style="text-align: left;"><code>LocalDateTime</code></td>
+<td style="text-align: left;">Get the date and time in a given time zone when invoked. The <code>zone</code> can be a <code>ZoneId</code> instance or a valid zone identifier as documented in the <code>tz(zoneId)</code> function below.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>nowTz()</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>ZonedDateTime</code></td>
+<td style="text-align: left;">Get the absolute date and time when invoked in the node device's time zone.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>nowTz(zone)</code></td>
+<td style="text-align: left;"><code>ZoneId|String</code></td>
+<td style="text-align: left;"><code>ZonedDateTime</code></td>
+<td style="text-align: left;">Get the absolute date and time when invoked in the <code>zone</code> time zone. The <code>zone</code> can be a <code>ZoneId</code> instance or a valid zone identifier as documented in the <code>tz(zoneId)</code> function below.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>time(value)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>LocalTime</code></td>
+<td style="text-align: left;">Construct a time instance from a string in the form <code>HH:mm:ss.SSS</code>. Only the <code>HH:mm</code> portion is required. For example <code>time('13:45')</code> or <code>time('13:45:43')</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>timestamp()</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>Instant</code></td>
+<td style="text-align: left;">Get the absolute date and time when invoked, in the <code>UTC</code> time zone.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>timestamp(value)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>Instant</code></td>
+<td style="text-align: left;">Construct an absolute date and time instance from a string in ISO 8601 form like <code>YYYY-MM-DDTHH:mm:ss.SSS+00:00</code>. Only the <code>YYYY-MM-DD</code> portion is required. For example <code>timestamp('2024-11-21T13:45:43')</code> or <code>timestamp('2024-11-21T13:45:43+13:00')</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>today()</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>LocalDate</code></td>
+<td style="text-align: left;">Get the local date when invoked in the node device's time zone.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>today(zone)</code></td>
+<td style="text-align: left;"><code>ZoneId|String</code></td>
+<td style="text-align: left;"><code>LocalDate</code></td>
+<td style="text-align: left;">Get the local date when invoked in the <code>zone</code> time zone. The <code>zone</code> can be a <code>ZoneId</code> instance or a valid zone identifier as documented in the <code>tz(zoneId)</code> function below.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tz(zoneId)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>ZoneId</code></td>
+<td style="text-align: left;">Parse a time zone identifier into a <code>ZoneId</code> instance. Identifiers like <code>Pacific/Auckland</code> and <code>-10:00</code> are supported.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="date-manipulation-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.1.3.2.2</span> Date manipulation functions<a class="headerlink" href="#date-manipulation-functions" title="Permanent link">¶</a></h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Arguments</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;"><code>datePlus(date, amount, unit)</code></td>
 <td style="text-align: left;"><code>Temporal</code>, <code>long</code>, <code>TemporalUnit|String</code></td>
@@ -1536,12 +1672,6 @@ properties in all classifications.</p>
 <td style="text-align: left;">Turn a local date, or local date and time, into an absolute date and time in a given time zone. If a <code>LocalDate</code> is given, the resulting time will be set to midnight of the given <code>date</code>. The <code>zone</code> can be a <code>ZoneId</code> instance or a valid zone identifier as documented in the <code>tz(zoneId)</code> function below. For example <code>dateTz(date(2024,8,10), "Pacific/Honolulu")</code> returns <code>2024-08-10 00:00 -10:00</code>.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>duration(amount)</code></td>
-<td style="text-align: left;"><code>String</code></td>
-<td style="text-align: left;"><code>TemporalAmount</code></td>
-<td style="text-align: left;">Parse an ISO 8601 style period or duration into a <code>TemporalAmount</code>.  The period syntax supports <code>PnYnMnD</code> and <code>PnW</code>, where <code>n</code> is a number of years <code>Y</code>, months <code>M</code>, days <code>D</code>, or weeks <code>W</code>. For example <code>P1Y2M3D</code> represents 1 year and 2 months and 3 days, or <code>P7D</code> 7 days, or <code>P4W</code> 4 weeks. The duration syntax supports <code>PnDTnHnMn.nS</code> where <code>n</code> is a number of days <code>D</code>, hours <code>H</code>, minutes <code>M</code>, or fractional seconds <code>S</code>. For example <code>PT15M</code> represents 15 minutes, <code>PT20.345S</code> 20.345 seconds, <code>-P6H3M</code> -6 hours -3 minutes, <code>P-6H3M</code> -6 hours +3 minutes.</td>
-</tr>
-<tr>
 <td style="text-align: left;"><code>local(date)</code></td>
 <td style="text-align: left;"><code>ZonedDateTime</code></td>
 <td style="text-align: left;"><code>LocalDateTime</code></td>
@@ -1560,36 +1690,6 @@ properties in all classifications.</p>
 <td style="text-align: left;">Get the local time from a zoned date and time.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>now()</code></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><code>LocalDateTime</code></td>
-<td style="text-align: left;">Get the local date and time when invoked.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>now(zone)</code></td>
-<td style="text-align: left;"><code>ZoneId|String</code></td>
-<td style="text-align: left;"><code>LocalDateTime</code></td>
-<td style="text-align: left;">Get the date and time in a given time zone when invoked. The <code>zone</code> can be a <code>ZoneId</code> instance or a valid zone identifier as documented in the <code>tz(zoneId)</code> function below.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>nowTz()</code></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><code>ZonedDateTime</code></td>
-<td style="text-align: left;">Get the absolute date and time when invoked in the node device's time zone.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>nowTz(zone)</code></td>
-<td style="text-align: left;"><code>ZoneId|String</code></td>
-<td style="text-align: left;"><code>ZonedDateTime</code></td>
-<td style="text-align: left;">Get the absolute date and time when invoked in the <code>zone</code> time zone. The <code>zone</code> can be a <code>ZoneId</code> instance or a valid zone identifier as documented in the <code>tz(zoneId)</code> function below.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>timestamp()</code></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><code>Instant</code></td>
-<td style="text-align: left;">Get the absolute date and time when invoked, in the <code>UTC</code> time zone.</td>
-</tr>
-<tr>
 <td style="text-align: left;"><code>timestamp(date)</code></td>
 <td style="text-align: left;"><code>Temporal</code></td>
 <td style="text-align: left;"><code>Instant</code></td>
@@ -1601,23 +1701,60 @@ properties in all classifications.</p>
 <td style="text-align: left;"><code>Instant</code></td>
 <td style="text-align: left;">Convert a date or date and time into a timestamp in the <code>zone</code> time zone. The <code>zone</code> can be a <code>ZoneId</code> instance or a valid zone identifier as documented in the <code>tz(zoneId)</code> function below.</td>
 </tr>
+</tbody>
+</table>
+<h5 id="date-range-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.1.3.2.3</span> Date range functions<a class="headerlink" href="#date-range-functions" title="Permanent link">¶</a></h5>
+<table>
+<thead>
 <tr>
-<td style="text-align: left;"><code>today()</code></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><code>LocalDate</code></td>
-<td style="text-align: left;">Get the local date when invoked in the node device's time zone.</td>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Arguments</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>durationBetween(date1,date1)</code></td>
+<td style="text-align: left;"><code>Temporal</code>, <code>Temporal</code></td>
+<td style="text-align: left;"><code>Duration</code></td>
+<td style="text-align: left;">Calculate the duration between two dates.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>today(zone)</code></td>
-<td style="text-align: left;"><code>ZoneId|String</code></td>
-<td style="text-align: left;"><code>LocalDate</code></td>
-<td style="text-align: left;">Get the local date when invoked in the <code>zone</code> time zone. The <code>zone</code> can be a <code>ZoneId</code> instance or a valid zone identifier as documented in the <code>tz(zoneId)</code> function below.</td>
+<td style="text-align: left;"><code>secondsBetween(date1,date1)</code></td>
+<td style="text-align: left;"><code>Temporal</code>, <code>Temporal</code></td>
+<td style="text-align: left;"><code>long</code></td>
+<td style="text-align: left;">Calculate the number of whole seconds between two dates.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>tz(zoneId)</code></td>
-<td style="text-align: left;"><code>String</code></td>
-<td style="text-align: left;"><code>ZoneId</code></td>
-<td style="text-align: left;">Parse a time zone identifier into a <code>ZoneId</code> instance. Identifiers like <code>Pacific/Auckland</code> and <code>-10:00</code> are supported.</td>
+<td style="text-align: left;"><code>minutesBetween(date1,date1)</code></td>
+<td style="text-align: left;"><code>Temporal</code>, <code>Temporal</code></td>
+<td style="text-align: left;"><code>long</code></td>
+<td style="text-align: left;">Calculate the number of whole minutes between two dates.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hoursBetween(date1,date1)</code></td>
+<td style="text-align: left;"><code>Temporal</code>, <code>Temporal</code></td>
+<td style="text-align: left;"><code>long</code></td>
+<td style="text-align: left;">Calculate the number of whole hours between two dates.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>daysBetween(date1,date1)</code></td>
+<td style="text-align: left;"><code>Temporal</code>, <code>Temporal</code></td>
+<td style="text-align: left;"><code>long</code></td>
+<td style="text-align: left;">Calculate the number of whole days between two dates.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>monthsBetween(date1,date1)</code></td>
+<td style="text-align: left;"><code>Temporal</code>, <code>Temporal</code></td>
+<td style="text-align: left;"><code>double</code></td>
+<td style="text-align: left;">Calculate the number of fractional months between two dates.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>yearsBetween(date1,date1)</code></td>
+<td style="text-align: left;"><code>Temporal</code>, <code>Temporal</code></td>
+<td style="text-align: left;"><code>double</code></td>
+<td style="text-align: left;">Calculate the number of fractional years between two dates.</td>
 </tr>
 </tbody>
 </table>
