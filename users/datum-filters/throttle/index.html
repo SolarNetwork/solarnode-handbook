@@ -914,16 +914,19 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="throttle-datum-filter"><span class="enumerate-headings-plugin enumerate-heading-plugin">39.</span> Throttle Datum Filter<a class="headerlink" href="#throttle-datum-filter" title="Permanent link">¶</a></h1>
-<p>The <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/README-Throttle.md">Throttle Datum Filter</a> provides a way to throttle <strong>entire datum</strong> over time, so that they
-are posted to SolarNetwork less frequently than a plugin that collects the data produces them. This
+<p>The <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/README-Throttle.md">Throttle Datum Filter</a> provides a way to throttle <strong>entire datum</strong> over time. This
 can be useful if you need a plugin to collect data at a high frequency for use internally by
 SolarNode but don't need to save such high resolution of data in SolarNetwork. For example, a plugin
 that monitors a device and responds quickly to changes in the data might be configured to sample
 data every second, but you only want to capture that data once per minute in SolarNetwork.</p>
 <p>The general idea for filtering datum is to configure rules that define which datum <strong>sources</strong> you
 want to filter, along with <strong>time limit</strong> to throttle matching datum by. Any datum matching the
-sources that are captured faster than the time limit will filtered and <strong>not</strong> uploaded to
-SolarNetwork.</p>
+sources that are captured faster than the time limit will be discarded.</p>
+<div class="admonition tip">
+<p class="admonition-title">Discard mode</p>
+<p>The time limit can be set to <code>-1</code> to represent <em>infinity</em>. The effect of this is that all
+matching datum will always be discarded.</p>
+</div>
 <p>This filter is provided by the <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/">Standard Datum Filters</a> plugin.</p>
 <h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">39.1</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
 <figure>
@@ -960,7 +963,7 @@ SolarNetwork.</p>
 </tr>
 <tr>
 <td style="text-align: left;">Limit Seconds</td>
-<td style="text-align: left;">A throttle limit, in seconds, to apply to matching datum. The throttle limit is applied to datum by source ID. Before each datum is uploaded to SolarNetwork, the filter will check how long has elapsed since a datum with the same source ID was uploaded. If the elapsed time is less than the configured limit, the datum will not be uploaded.</td>
+<td style="text-align: left;">A throttle limit, in seconds, to apply to matching datum. The throttle limit is applied to datum by source ID. The filter will check how long has elapsed since a datum with the same source ID was processed. If the elapsed time is less than the configured limit, the datum will be discarded. If the limit is set to <code>-1</code> then the limit is <em>infinite</em> and all matching datum will always be discarded.</td>
 </tr>
 </tbody>
 </table>
