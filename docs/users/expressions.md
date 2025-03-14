@@ -119,6 +119,13 @@ The following functions help with creating and manipulating dates. The `Temporal
 | `today(zone)` | `ZoneId|String` | `LocalDate` | Get the local date when invoked in the `zone` time zone. The `zone` can be a `ZoneId` instance or a valid zone identifier as documented in the `tz(zoneId)` function below. |
 | `tz(zoneId)` | `String` | `ZoneId` | Parse a time zone identifier into a `ZoneId` instance. Identifiers like `Pacific/Auckland` and `-10:00` are supported. |
 
+##### Date formatting functions
+
+| Function | Arguments | Result | Description |
+|:---------|:----------|:-------|:------------|
+| `formatDate(date, pattern, zone)` | `Temporal`, `String`, `ZoneId` | `String` | Format a date (`LocalDate`, `LocalTime`, `LocalDateTime`, `ZonedDateTime`, `Instant`) as a string, using a [pattern template][date-pat]. The `zone` argument is optional and defaults to `UTC` if not specified. You can use the `tz(zoneId)` function to pass a specific time zone. |
+
+
 ##### Date manipulation functions
 
 | Function | Arguments | Result | Description |
@@ -503,6 +510,7 @@ The following functions available on datum metadata objects support access to bo
 | `hasMetadataAtPath(path)` | `String` | `boolean` | Returns `true` if `metadataAtPath(path)` would return a non-null value. |
 
 
+[date-pat]: https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/format/DateTimeFormatterBuilder.html#appendPattern(java.lang.String)
 [datum]: datum.md
 [datum-class]: https://github.com/SolarNetwork/solarnetwork-common/blob/develop/net.solarnetwork.common/src/net/solarnetwork/domain/datum/Datum.java
 [datum-filters]: datum-filters/index.md
