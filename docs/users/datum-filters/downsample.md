@@ -10,6 +10,17 @@ included. In addition minimum and maximum values of each averaged property are a
 
 This filter is provided by the [Standard Datum Filters][sdf] plugin.
 
+## Downsample property handling
+
+The method of deriving a downsample property value depends on the [property classification][dprops]
+of each property.
+
+| Class. | Description | Method |
+|:-------|:------------|:-------|
+| `i`    | instantaneous | The **average** of the collected values is used. Optional _minimum_ and _maximum_ property values can also be generated. |
+| `a`    | accumulating  | The **most recent** (last seen) of the collected values is used. |
+| `s`    | status        | The **most recent** (last seen) of the collected values is used. |
+
 ## Settings
 
 <figure markdown>
@@ -33,5 +44,6 @@ clock-aligned based on the period configured. For example if `300` is configured
 the resolved timestamps would have times exactly at `00:00`, `00:05`, `00:10` and so on.
 
 --8<-- "snippets/users/datum-filters/base-filter-settings-links.md"
+[dprops]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#datum-property-classifications
 [sdf]: https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/
 [src]: https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/README-Downsample.md
