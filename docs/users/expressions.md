@@ -299,6 +299,20 @@ The following functions help with expression properties (variables):
 | `sort(collection,reverse,name...)` | `Collection<?>`, `Boolean`, `String[]` | `Collection<?>` | Sort a collection, optionally in reverse, by optional properties, returning the sorted collection. The second and third arguments are optional. If no `name` values are provided, the elements of the collection must be comparable (for example strings or numbers) and will be sorted in their natural order. If one or more `name` values are provided, each `name` property will be extracted from the collection elements and compared with each other to determine the order. The extracted property values must be comparable. |
 
 
+#### Local State functions
+
+The following functions work with [Local State](./setup-app/settings/local-state.md):
+
+| Function | Arguments | Result | Description |
+|:---------|:----------|:-------|:------------|
+| `getAndSaveLocalState(key, value)` | `String`, `Object` | `Object` | Save `value` to the state entity for key `key`. The type will be automatically detected based on `value`. Creates the state entity if it does not already exist, otherwise replaces its value. Returns the **previously** persisted state value (or `null` if creating the first time). |
+| `getAndSaveLocalState(key, type, value)` | `String`, `Strin`, `Object` | `Object` | Save `value` to the state entity for key `key` using the type identifier `type`. Creates the state entity if it does not already exist, otherwise replaces its value. Returns the **previously** persisted state value (or `null` if creating the first time). |
+| `localState(key, default)` | `String`, `[Object]` | `Object` | Look up the value of a state entity based on its `key`. The `default` argument is optional. If a state value for `key` is not available then `default` will be returned if provided, otherwise `null`. |
+| `saveLocalState(key, value)` | `String`, `Object` | `Object` | Save `value` to the state entity for key `key`. The type will be automatically detected based on `value`. Creates the state entity if it does not already exist, otherwise replaces its value. Returns `value`. |
+| `saveLocalState(key, type, value)` | `String`, `String`, `Object` | `Object` | Save `value` to the state entity for key `key` using the type identifier `type`. Creates the state entity if it does not already exist, otherwise replaces its value. Returns `value`. |
+| `saveLocalState(key, value, expected)` | `String`, `Object`, `Object` | `Object` | Conditionally save `value` to the state entity for key `key`, if the state entity does not already exist **or** its value is currently equal to `expected`. The type will be automatically detected based on `value`. Returns the final persisted state value, which will be either `value` or its previous (unchanged) value. |
+| `saveLocalState(key, type, value, expected)` | `String`, `String`, `Object`, `Object` | `Object` | Conditionally save `value` to the state entity for key `key` using the type identifier `type`, if the state entity does not already exist **or** its value is currently equal to `expected`. Returns the final persisted state value, which will be either `value` or its previous (unchanged) value. |
+
 #### Tariff schedule functions
 
 The following functions help work with _tariff schedules_, which represent a set of time-based criteria with associated _tariffs_. A tariff in this scheme is nothing more than a set of one or more number values, each with an associated name.

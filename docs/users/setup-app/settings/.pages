@@ -7,4 +7,5 @@ nav:
     - datum-sources.md
     - logging.md
     - op-modes.md
+    - local-state.md
     - backups.md
