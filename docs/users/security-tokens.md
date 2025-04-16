@@ -50,7 +50,7 @@ generated token. You will need to copy and save the token to a safe and secure p
 Security tokens can be configured with a **Security Policy** that restricts the types of functions or data the
 token has permission to access.
 
-| Policy | User | Node | Description |
+| Policy | User | Data | Description |
 |:-------|:-----|:-----|:------------|
 | [API Paths](#api-paths) | :white_check_mark: | :white_check_mark: | Restrict the token to specific API methods. |
 | [Expiry](#expiry) | :white_check_mark: | :white_check_mark: | Make the token invalid after a specific date. |
