@@ -56,7 +56,7 @@ token has permission to access.
 | [Expiry](#expiry) | :white_check_mark: | :white_check_mark: | Make the token invalid after a specific date. |
 | [Minimum Aggregation](#minimum-aggregation) |  | :white_check_mark: | Restrict the data aggregation level allowed. |
 | [Node IDs](#node-ids) |  | :white_check_mark: | Restrict to specific node IDs. |
-| [Refresh Allowed](#refresh-allowed) | :white_check_mark: | :white_check_mark: | Make the token invalid after a specific date. |
+| [Refresh Allowed](#refresh-allowed) | :white_check_mark: | :white_check_mark: | Allow refreshing pre-signed token keys. |
 | [Source IDs](#source-ids) |  | :white_check_mark: | Restrict to specific datum source IDs. |
 | [Node Metadata](#node-metadata) |  | :white_check_mark: | Restrict to specific node metadata. |
 | [User Metadata](#user-metadata) |  | :white_check_mark: | Restrict to specific user metadata. |
