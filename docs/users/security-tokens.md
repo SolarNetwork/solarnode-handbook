@@ -88,7 +88,8 @@ not included then all node metadata is allowed.
 
 ### Refresh Allowed
 
-The Refresh Allowed policy grants applications given a signing key rather than the token's private password can refresh the key as long as the token has not expired.
+The Refresh Allowed policy grants applications given a signing key rather than the token's private
+password the ability to refresh the key as long as the token has not expired.
 
 ### Source IDs
 
