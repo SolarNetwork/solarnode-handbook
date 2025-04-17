@@ -124,7 +124,7 @@ The component settings should look like this:
   ![Parameter Expression filter settings](../../images/recipes/peak-tracking-parameter-filter@2x.png){width=890 loading=lazy}
 </figure>
 
-# Expression
+## Expression
 
 The next step is to configure an [Expression](../../users/datum-filters/expression.md) filter to
 calculate our desired `wattsMax_p15` datum property. It will make use of the `p15min_changed`
@@ -185,7 +185,7 @@ The component settings should look like this:
   ![Expression filter settings](../../images/recipes/peak-tracking-expression-filter@2x.png){width=1204 loading=lazy}
 </figure>
 
-# Downsample
+## Downsample
 
 The next step is to configure an [Downsample](../../users/datum-filters/downsample.md) filter to
 aggregate our 1-second resolution meter readings down to 5-minute readings. This allows us to
