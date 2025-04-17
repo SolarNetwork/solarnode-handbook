@@ -1104,7 +1104,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="job-scheduler"><span class="enumerate-headings-plugin enumerate-heading-plugin">87.</span> Job Scheduler<a class="headerlink" href="#job-scheduler" title="Permanent link">¶</a></h1>
+<h1 id="job-scheduler"><span class="enumerate-headings-plugin enumerate-heading-plugin">85.</span> Job Scheduler<a class="headerlink" href="#job-scheduler" title="Permanent link">¶</a></h1>
 <p>SolarNode provides a <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/runtime/ManagedJobScheduler.html">ManagedJobScheduler</a> service that can automatically execute
 jobs exported by plugins that have user-defined schedules.</p>
 <div class="admonition tip">
@@ -1113,17 +1113,17 @@ jobs exported by plugins that have user-defined schedules.</p>
 the number of jobs that can execute simultaneously will be limited by its thread pool
 configuration.</p>
 </div>
-<h2 id="managed-jobs"><span class="enumerate-headings-plugin enumerate-heading-plugin">87.1</span> Managed Jobs<a class="headerlink" href="#managed-jobs" title="Permanent link">¶</a></h2>
+<h2 id="managed-jobs"><span class="enumerate-headings-plugin enumerate-heading-plugin">85.1</span> Managed Jobs<a class="headerlink" href="#managed-jobs" title="Permanent link">¶</a></h2>
 <p>Any plugin simply needs to register a <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/job/ManagedJob.html">ManagedJob</a> service for the Job Scheduler to
 automatically schedule and execute the job. The schedule is provided by the <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/job/ManagedJob.html#getSchedule()"><code>getSchedle()</code></a>
 method, which can return a <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNode-Cron-Job-Syntax">cron expression</a> or a plain number representing a millisecond period.</p>
 <p>The <code>net.solarnetwork.node.job.SimpleManagedJob</code> class implements <code>ManagedJob</code> and can be used in
 most situations. It delegates the actual work to a <code>net.solarnetwork.node.job.JobService</code> API,
 discussed in the next section.</p>
-<h2 id="job-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">87.2</span> Job Service<a class="headerlink" href="#job-service" title="Permanent link">¶</a></h2>
+<h2 id="job-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">85.2</span> Job Service<a class="headerlink" href="#job-service" title="Permanent link">¶</a></h2>
 <p>The <code>ManagedJob</code> API delegates the actual task work to a <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/job/JobService.html"><code>JobService</code></a> API. The <code>executeJobService()</code>
 method will be invoked when the job executes.</p>
-<h2 id="example-managed-job"><span class="enumerate-headings-plugin enumerate-heading-plugin">87.3</span> Example Managed Job<a class="headerlink" href="#example-managed-job" title="Permanent link">¶</a></h2>
+<h2 id="example-managed-job"><span class="enumerate-headings-plugin enumerate-heading-plugin">85.3</span> Example Managed Job<a class="headerlink" href="#example-managed-job" title="Permanent link">¶</a></h2>
 <p>Let's imagine you have a <code>com.example.Job</code> class that you would like to allow users to schedule. Your
 class would implement the <code>JobService</code> interface, and then you would provide a localized messages
 properties file and configure the service using <a href="../../osgi/blueprint/">OSGi Blueprint</a>.</p>
