@@ -302,7 +302,7 @@ The following functions help with expression properties (variables):
 
 #### Local State functions
 
-The following functions work with [Local State](./setup-app/settings/local-state.md):
+The following functions work with [Local State](./local-state.md):
 
 | Function | Arguments | Result | Description |
 |:---------|:----------|:-------|:------------|
