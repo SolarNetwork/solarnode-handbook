@@ -744,9 +744,17 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../../recipes/datum-filters/daily-limit-tracking/">
+<span class="md-ellipsis">
+    Daily Limit Tracking
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../../recipes/datum-filters/peak-tracking/">
 <span class="md-ellipsis">
-    Peak tracking
+    Peak Tracking
     
   </span>
 </a>
@@ -1076,7 +1084,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="datum-queue"><span class="enumerate-headings-plugin enumerate-heading-plugin">84.</span> Datum Queue<a class="headerlink" href="#datum-queue" title="Permanent link">¶</a></h1>
+<h1 id="datum-queue"><span class="enumerate-headings-plugin enumerate-heading-plugin">85.</span> Datum Queue<a class="headerlink" href="#datum-queue" title="Permanent link">¶</a></h1>
 <p>SolarNode has a <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/service/DatumQueue.html"><code>DatumQueue</code></a> service that acts as a central facility for processing
 all <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/domain/datum/NodeDatum.html"><code>NodeDatum</code></a> captured by all data source plugins deployed in the SolarNode runtime.
 The queue can be configured with various <em>filters</em> that can augment, modify, or discard the datum.
@@ -1099,7 +1107,7 @@ they will then still be processed by the queue but will <strong>not</strong> be 
 <span class="cm"> */</span>
 <span class="kt">boolean</span><span class="w"> </span><span class="nf">offer</span><span class="p">(</span><span class="n">NodeDatum</span><span class="w"> </span><span class="n">datum</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">persist</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="queue-observer"><span class="enumerate-headings-plugin enumerate-heading-plugin">84.1</span> Queue observer<a class="headerlink" href="#queue-observer" title="Permanent link">¶</a></h2>
+<h2 id="queue-observer"><span class="enumerate-headings-plugin enumerate-heading-plugin">85.1</span> Queue observer<a class="headerlink" href="#queue-observer" title="Permanent link">¶</a></h2>
 <p>Plugins can also register observers on the <code>DatumQueue</code> that are notified of each datum that gets
 processed. The <code>addConsumer()</code> and <code>removeConsumer()</code> methods allow you to register/deregister
 observers:</p>

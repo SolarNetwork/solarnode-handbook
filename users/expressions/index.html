@@ -994,9 +994,17 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../recipes/datum-filters/daily-limit-tracking/">
+<span class="md-ellipsis">
+    Daily Limit Tracking
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../recipes/datum-filters/peak-tracking/">
 <span class="md-ellipsis">
-    Peak tracking
+    Peak Tracking
     
   </span>
 </a>
@@ -2526,6 +2534,12 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 <td style="text-align: left;"><code>String</code>, <code>String</code>, <code>Object</code></td>
 <td style="text-align: left;"><code>Object</code></td>
 <td style="text-align: left;">Save <code>value</code> to the state entity for key <code>key</code> using the type identifier <code>type</code>. Creates the state entity if it does not already exist, otherwise replaces its value. Returns the <strong>previously</strong> persisted state value (or <code>null</code> if creating the first time).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hasLocalState(key)</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Returns <code>true</code> if a state entity for key <code>key</code> exists, otherwise <code>false</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>localState(key, default)</code></td>
