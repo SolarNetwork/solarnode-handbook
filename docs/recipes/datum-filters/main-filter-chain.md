@@ -32,6 +32,12 @@ The overall steps of this recipe are:
  * configure the [Datum Queue](../../users/datum-filters/index.md#datum-queue) to use the `Chain - Main` filter
  * add a filter to the Main filter chain
 
+!!! tip "Download recipe settings"
+
+	You can download a complete [settings CSV](../../data/recipes/main-filter-chain-settings.csv){:download="solarnode-main-filter-chain-recipe-settings.csv"}
+	file of this recipe, then [import](../../users/setup-app/settings/backups.md#settings-backup-restore) that
+	into your own SolarNode.
+
 ## Create a Datum Filter Chain component
 
 The first step is to create a Datum Filter Chain.

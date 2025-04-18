@@ -1,4 +1,4 @@
-# Peak tracking
+# Peak Tracking
 
 The goal of this recipe is to track the _peak_ (maximum) value of a property within a moving bounded
 time period, such as every 15 minutes. We want to monitor the property at a higher frequency than
@@ -68,6 +68,12 @@ The overall steps of this recipe are:
 <figure markdown>
   ![Datum Filters settings page](../../images/recipes/peak-tracking-filters@2x.png){width=958 loading=lazy}
 </figure>
+
+!!! tip "Download recipe settings"
+
+	You can download a complete [settings CSV](../../data/recipes/peak-tracking-settings.csv){:download="solarnode-peak-tracking-recipe-settings.csv"}
+	file of this recipe, then [import](../../users/setup-app/settings/backups.md#settings-backup-restore) that
+	into your own SolarNode.
 
 ## Parameter Expression
 
@@ -157,7 +163,7 @@ Add a new **Expression** by clicking on the **+** button next to **Expressions**
 
 The expression is this:
 
-```javascript
+```js linenums="1"
 has('watts') && has('p15min_changed') && p15min_changed
 ? saveLocalState('p15min-mtr1-watts-max', watts)
 : has('watts') && has('p15min_changed')
@@ -268,5 +274,5 @@ shot, the **MAX(watts)** column is a `MAX()` calculation on the `watts` values c
 	that you would have to compare instead.
 
 <figure markdown>
-  ![Expression filter settings](../../images/recipes/peak-tracking-spreadsheet@2x.png){width=745 loading=lazy}
+  ![Peak tracking Local State entities listing](../../images/recipes/peak-tracking-spreadsheet@2x.png){width=745 loading=lazy}
 </figure>
