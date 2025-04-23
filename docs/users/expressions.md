@@ -180,16 +180,16 @@ to be available via these method. This history is also cleared when SolarNode re
 | Function | Arguments | Result | Description |
 |:---------|:----------|:-------|:------------|
 | `hasLatest(source)`          | `String` | `boolean` | Returns `true` if a datum with source ID `source` is available via the `latest(source)` function. |
-| `hasLatestMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Returns `true` if `latestMatching(pattern)` returns a non-empty collection. |
-| `hasLatestOtherMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Returns `true` if `latestOthersMatching(pattern)` returns a non-empty collection. |
+| `hasLatestMatching(pattern)` | `String • Collection<String>` | `Collection<DatumExpressionRoot>` | Returns `true` if `latestMatching(pattern)` returns a non-empty collection. |
+| `hasLatestOtherMatching(pattern)` | `String • Collection<String>` | `Collection<DatumExpressionRoot>` | Returns `true` if `latestOthersMatching(pattern)` returns a non-empty collection. |
 | `hasOffset(offset)`          | `int` | `boolean` | Returns `true` if a datum is available via the `offset(offset)` function. |
 | `hasOffset(source, offset)`   | `String`, `int` | `boolean` | Returns `true` if a datum with source ID `source` is available via the `offset(source,int)` function. |
 | `latest(source)`             | `String` | `DatumExpressionRoot` | Provides access to the latest available datum matching the given source ID, or `null` if not available. This is a shortcut for calling `offset(source,0)`. |
-| `latestMatching(pattern)`    | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards].  |
-| `latestOthersMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards], excluding the current datum if its source ID happens to match the pattern.  |
+| `latestMatching(pattern)`    | `String • Collection<String>` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching the given source ID [wildcard pattern(s)][wildcards].  |
+| `latestOthersMatching(pattern)` | `String • Collection<String>` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching the given source ID [wildcard pattern(s)][wildcards], excluding the current datum if its source ID happens to match the pattern.  |
 | `offset(offset)`             | `int` | `DatumExpressionRoot` | Provides access to a datum from the same stream as the current datum, offset by `offset` in time, or `null` if not available. Offset `1` means the datum just before this datum, and so on. |
 | `offset(source, offset)`      | `String`, `int` | `DatumExpressionRoot` | Provides access to an offset from the latest available datum matching the given source ID, or `null` if not available. Offset `0` represents the "latest" datum, `1` the one before that, and so on.  |
-| `selfAndLatestMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards], including the current datum. The current datum will always be the first datum returned. |
+| `selfAndLatestMatching(pattern)` | `String • Collection<String>` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching the given source ID [wildcard pattern(s)][wildcards], including the current datum. The current datum will always be the first datum returned. |
 | `slice(source, offset, count)` | `String`, `int`, `int` | `Collection<DatumExpressionRoot>` | Return a subset of the `source` datum stream history starting from `offset` from the latest available datum and including at most `count` values going backwards in time. The current datum will always be the first datum returned. |
 
 #### Unfiltered datum stream functions
@@ -210,16 +210,16 @@ before any filters have been applied.
 | Function | Arguments | Result | Description |
 |:---------|:----------|:-------|:------------|
 | `hasUnfilteredLatest(source)`          | `String` | `boolean` | Returns `true` if a datum with source ID `source` is available via the `unfilteredLatest(source)` function. |
-| `hasUnfilteredLatestMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Returns `true` if `unfilteredLatestMatching(pattern)` returns a non-empty collection. |
+| `hasUnfilteredLatestMatching(pattern)` | `String • Collection<String>` | `Collection<DatumExpressionRoot>` | Returns `true` if `unfilteredLatestMatching(pattern)` returns a non-empty collection. |
 | `hasUnfilteredLatestOtherMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Returns `true` if `unfilteredLatestOthersMatching(pattern)` returns a non-empty collection. |
 | `hasUnfilteredOffset(offset)`          | `int` | `boolean` | Returns `true` if a datum is available via the `offset(offset)` function. |
 | `hasUnfilteredOffset(source, offset)`   | `String`, `int` | `boolean` | Returns `true` if a datum with source ID `source` is available via the `unfilteredOffset(source,int)` function. |
 | `unfilteredLatest(source)`             | `String` | `DatumExpressionRoot` | Provides access to the latest available datum matching the given source ID, or `null` if not available. This is a shortcut for calling `unfilteredOffset(source,0)`. |
-| `unfilteredLatestMatching(pattern)`    | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards].  |
-| `unfilteredLatestOthersMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards], excluding the current datum if its source ID happens to match the pattern.  |
+| `unfilteredLatestMatching(pattern)`    | `String • Collection<String>` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching the given source ID [wildcard pattern(s)][wildcards].  |
+| `unfilteredLatestOthersMatching(pattern)` | `String • Collection<String>` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching the given source ID [wildcard pattern(s)][wildcards], excluding the current datum if its source ID happens to match the pattern.  |
 | `unfilteredOffset(offset)`             | `int` | `DatumExpressionRoot` | Provides access to a datum from the same stream as the current datum, offset by `offset` in time, or `null` if not available. Offset `1` means the datum just before this datum, and so on. |
 | `unfilteredOffset(source, offset)`      | `String`, `int` | `DatumExpressionRoot` | Provides access to an offset from the latest available datum matching the given source ID, or `null` if not available. Offset `0` represents the "latest" datum, `1` the one before that, and so on. |
-| `selfAndUnfilteredLatestMatching(pattern)` | `String` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching a given source ID [wildcard pattern][wildcards], including the current datum. The current datum will always be the first datum returned. |
+| `selfAndUnfilteredLatestMatching(pattern)` | `String • Collection<String>` | `Collection<DatumExpressionRoot>` | Return a collection of the latest available datum matching the given source ID [wildcard pattern(s)][wildcards], including the current datum. The current datum will always be the first datum returned. |
 | `unfilteredSlice(source, offset, count)` | `String`, `int`, `int` | `Collection<DatumExpressionRoot>` | Return a subset of the `source` datum stream history starting from `offset` from the latest available datum and including at most `count` values going backwards in time. The current datum will always be the first datum returned. |
 
 
@@ -479,6 +479,7 @@ examples:
 | Expression | Result | Comment |
 |:-----------|:-------|:--------|
 | `sum(latestMatching('solar*').?[amps>1].![amps * volts])` | `2160` | Returns the sum power of the latest `solar` and `solar2` datum. The `solar1` power is omitted because its `amps` property is not greater than `1`, so we end up with `(6 * 240) + (3 * 240) = 2160`. |
+| `sum(latestMatching({'solar1', 'solar2'}).![amps * volts])` | `2160` | Returns the sum power of the latest `solar1` and `solar2` datum, so we end up with `(1 * 240) + (3 * 240) = 960`. |
 
 
 ## Datum metadata
