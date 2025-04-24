@@ -2049,13 +2049,13 @@ section for a set of similar functions that operate on datum <strong>before</str
 </tr>
 <tr>
 <td style="text-align: left;"><code>hasLatestMatching(pattern)</code></td>
-<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>String • Collection&lt;String&gt;</code></td>
 <td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
 <td style="text-align: left;">Returns <code>true</code> if <code>latestMatching(pattern)</code> returns a non-empty collection.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hasLatestOtherMatching(pattern)</code></td>
-<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>String • Collection&lt;String&gt;</code></td>
 <td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
 <td style="text-align: left;">Returns <code>true</code> if <code>latestOthersMatching(pattern)</code> returns a non-empty collection.</td>
 </tr>
@@ -2079,15 +2079,15 @@ section for a set of similar functions that operate on datum <strong>before</str
 </tr>
 <tr>
 <td style="text-align: left;"><code>latestMatching(pattern)</code></td>
-<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>String • Collection&lt;String&gt;</code></td>
 <td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
-<td style="text-align: left;">Return a collection of the latest available datum matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>.</td>
+<td style="text-align: left;">Return a collection of the latest available datum matching the given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern(s)</a>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>latestOthersMatching(pattern)</code></td>
-<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>String • Collection&lt;String&gt;</code></td>
 <td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
-<td style="text-align: left;">Return a collection of the latest available datum matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>, excluding the current datum if its source ID happens to match the pattern.</td>
+<td style="text-align: left;">Return a collection of the latest available datum matching the given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern(s)</a>, excluding the current datum if its source ID happens to match the pattern.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>offset(offset)</code></td>
@@ -2103,9 +2103,9 @@ section for a set of similar functions that operate on datum <strong>before</str
 </tr>
 <tr>
 <td style="text-align: left;"><code>selfAndLatestMatching(pattern)</code></td>
-<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>String • Collection&lt;String&gt;</code></td>
 <td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
-<td style="text-align: left;">Return a collection of the latest available datum matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>, including the current datum. The current datum will always be the first datum returned.</td>
+<td style="text-align: left;">Return a collection of the latest available datum matching the given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern(s)</a>, including the current datum. The current datum will always be the first datum returned.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>slice(source, offset, count)</code></td>
@@ -2145,7 +2145,7 @@ expression would return the most recently <strong>captured</strong> <code>watts<
 </tr>
 <tr>
 <td style="text-align: left;"><code>hasUnfilteredLatestMatching(pattern)</code></td>
-<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>String • Collection&lt;String&gt;</code></td>
 <td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
 <td style="text-align: left;">Returns <code>true</code> if <code>unfilteredLatestMatching(pattern)</code> returns a non-empty collection.</td>
 </tr>
@@ -2175,15 +2175,15 @@ expression would return the most recently <strong>captured</strong> <code>watts<
 </tr>
 <tr>
 <td style="text-align: left;"><code>unfilteredLatestMatching(pattern)</code></td>
-<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>String • Collection&lt;String&gt;</code></td>
 <td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
-<td style="text-align: left;">Return a collection of the latest available datum matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>.</td>
+<td style="text-align: left;">Return a collection of the latest available datum matching the given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern(s)</a>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>unfilteredLatestOthersMatching(pattern)</code></td>
-<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>String • Collection&lt;String&gt;</code></td>
 <td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
-<td style="text-align: left;">Return a collection of the latest available datum matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>, excluding the current datum if its source ID happens to match the pattern.</td>
+<td style="text-align: left;">Return a collection of the latest available datum matching the given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern(s)</a>, excluding the current datum if its source ID happens to match the pattern.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>unfilteredOffset(offset)</code></td>
@@ -2199,9 +2199,9 @@ expression would return the most recently <strong>captured</strong> <code>watts<
 </tr>
 <tr>
 <td style="text-align: left;"><code>selfAndUnfilteredLatestMatching(pattern)</code></td>
-<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;"><code>String • Collection&lt;String&gt;</code></td>
 <td style="text-align: left;"><code>Collection&lt;DatumExpressionRoot&gt;</code></td>
-<td style="text-align: left;">Return a collection of the latest available datum matching a given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern</a>, including the current datum. The current datum will always be the first datum returned.</td>
+<td style="text-align: left;">Return a collection of the latest available datum matching the given source ID <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#wildcard-patterns">wildcard pattern(s)</a>, including the current datum. The current datum will always be the first datum returned.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>unfilteredSlice(source, offset, count)</code></td>
@@ -2879,6 +2879,11 @@ examples:</p>
 <td style="text-align: left;"><code>sum(latestMatching('solar*').?[amps&gt;1].![amps * volts])</code></td>
 <td style="text-align: left;"><code>2160</code></td>
 <td style="text-align: left;">Returns the sum power of the latest <code>solar</code> and <code>solar2</code> datum. The <code>solar1</code> power is omitted because its <code>amps</code> property is not greater than <code>1</code>, so we end up with <code>(6 * 240) + (3 * 240) = 2160</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sum(latestMatching({'solar1', 'solar2'}).![amps * volts])</code></td>
+<td style="text-align: left;"><code>2160</code></td>
+<td style="text-align: left;">Returns the sum power of the latest <code>solar1</code> and <code>solar2</code> datum, so we end up with <code>(1 * 240) + (3 * 240) = 960</code>.</td>
 </tr>
 </tbody>
 </table>
