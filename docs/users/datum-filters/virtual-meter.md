@@ -80,6 +80,68 @@ filter.
 | `{inputPropertyName}_diff` | The difference between the current **input** property value and the previous input property value. The `{inputPropertyName}` part of the parameter name will be replaced by the actual input property name. For example `irradiance_diff`. |
 | `{meterPropertyName}_diff` | The difference between the current **output** meter property value and the previous output meter property value. The `{meterPropertyName}` part of the parameter name will be replaced by the actual output meter property name. For example `irradianceHours_diff`. |
 
+## Virtual meter metadata
+
+Virtual meters require keeping track of the meter reading value over time along with the previously
+captured value. This plugin manages three [Local State](../local-state.md) entities per virtual meter.
+The entity keys are based on this pattern:
+
+```
+vm:SOURCE_ID.METER_PROPERTY_NAME:METADATA_NAME
+```
+
+The CAPITALIZED parameters in that pattern represent:
+
+| Parameter | Description |
+|:----------|:------------|
+| `SOURCE_ID` | The source ID of the datum being filtered. |
+| `METER_PROPERTY_NAME` | The **output** reading property name, either explicitly configured or derived from the input property name + time unit. |
+| `METADATA_NAME` | One of `date`, `value`, or `reading`, representing the millisecond Unix epoch timestamp, the input value, and the output reading of the virtual meter.  |
+
+For example, continuing the `irradianceHours` example evaulating against a datum with a source ID `meter/1`,
+the local state entities managed by the virtual meter would look like:
+
+| Local State key | Type | Value |
+|:----------------|:-----|------:|
+| `vm:meter/1.irradianceHours:date`    | `Int64`   | `1745877900000` |
+| `vm:meter/1.irradianceHours:value`   | `Decimal` | `1361` |
+| `vm:meter/1.irradianceHours:reading` | `Decimal` | `12390980.1231` |
+
+### Resetting metadata
+
+You can manually update the local state entities associated with a virtual meter. The filter caches this information
+internally, however, and will overwrite any changes you save, unless you follow these steps:
+
+ 1. **Disable the filter from executing.** This can typically be accomplished by renaming its **Service Name** to
+    something that does not match any referring components, such as adding a `__` prefix.
+ 2. **Update the local state.** Update the local state associated with the meter. You can change any of the values,
+    but be sure to follow the same syntax as expected by the filter (for example the `:date` state must be a
+	millisecond epoch date value).
+ 3. **Restart SolarNode.** This will force the cache to be cleared.
+ 4. **Enable the filter.** Once SolarNode is available again, undo whatever change you made in step 1, for example
+    rename the **Service Name** back to its original value.
+
+### Virtual meter legacy metadata
+
+Virtual meters used to keep track of their metadata using the [SolarNetwork datum metadata API][meta-api], storing
+three metadata properties under a property key named for the virtual meter property name. For
+example, continuing the `irradianceHours` example, an example set of datum metadata would look like:
+
+```json
+{
+  "pm": {
+    "irradianceHours": {
+      "vm-date": 123123123123,
+      "vm-value": "1361",
+      "vm-reading": "12390980.1231"
+    }
+  }
+}
+```
+
+This metadata will be automatically copied to Local State entities, after which the metadata will not be
+updated any more.
+
 ## Expressions
 
 Expressions can be configured to calculate the **output** meter datum property, instead of using the
@@ -176,6 +238,7 @@ Then here are some example expressions and the results they would produce:
 [src]: https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/README-VirtualMeter.md
 [datum-aux]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#datum-auxiliary
 [expr]: ../expressions.md
+[meta-api]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarIn-API#node-datum-metadata-add
 [tariff-filter]: ./tariff.md
 [Datum]: https://github.com/SolarNetwork/solarnetwork-common/blob/develop/net.solarnetwork.common/src/net/solarnetwork/domain/datum/Datum.java
 [VirtualMeterConfig]: https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/src/net/solarnetwork/node/datum/filter/virt/VirtualMeterConfig.java
