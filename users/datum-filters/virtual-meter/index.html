@@ -575,6 +575,31 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#virtual-meter-metadata">
+<span class="md-ellipsis">
+      Virtual meter metadata
+    </span>
+</a>
+<nav aria-label="Virtual meter metadata" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resetting-metadata">
+<span class="md-ellipsis">
+      Resetting metadata
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#virtual-meter-legacy-metadata">
+<span class="md-ellipsis">
+      Virtual meter legacy metadata
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#expressions">
 <span class="md-ellipsis">
       Expressions
@@ -1145,6 +1170,31 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#virtual-meter-metadata">
+<span class="md-ellipsis">
+      Virtual meter metadata
+    </span>
+</a>
+<nav aria-label="Virtual meter metadata" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resetting-metadata">
+<span class="md-ellipsis">
+      Resetting metadata
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#virtual-meter-legacy-metadata">
+<span class="md-ellipsis">
+      Virtual meter legacy metadata
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#expressions">
 <span class="md-ellipsis">
       Expressions
@@ -1341,7 +1391,93 @@ filter.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="expressions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.5</span> Expressions<a class="headerlink" href="#expressions" title="Permanent link">¶</a></h2>
+<h2 id="virtual-meter-metadata"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.5</span> Virtual meter metadata<a class="headerlink" href="#virtual-meter-metadata" title="Permanent link">¶</a></h2>
+<p>Virtual meters require keeping track of the meter reading value over time along with the previously
+captured value. This plugin manages three <a href="../../local-state/">Local State</a> entities per virtual meter.
+The entity keys are based on this pattern:</p>
+<div class="highlight"><pre><span></span><code>vm:SOURCE_ID.METER_PROPERTY_NAME:METADATA_NAME
+</code></pre></div>
+<p>The CAPITALIZED parameters in that pattern represent:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>SOURCE_ID</code></td>
+<td style="text-align: left;">The source ID of the datum being filtered.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>METER_PROPERTY_NAME</code></td>
+<td style="text-align: left;">The <strong>output</strong> reading property name, either explicitly configured or derived from the input property name + time unit.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>METADATA_NAME</code></td>
+<td style="text-align: left;">One of <code>date</code>, <code>value</code>, or <code>reading</code>, representing the millisecond Unix epoch timestamp, the input value, and the output reading of the virtual meter.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, continuing the <code>irradianceHours</code> example evaulating against a datum with a source ID <code>meter/1</code>,
+the local state entities managed by the virtual meter would look like:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Local State key</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>vm:meter/1.irradianceHours:date</code></td>
+<td style="text-align: left;"><code>Int64</code></td>
+<td style="text-align: right;"><code>1745877900000</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>vm:meter/1.irradianceHours:value</code></td>
+<td style="text-align: left;"><code>Decimal</code></td>
+<td style="text-align: right;"><code>1361</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>vm:meter/1.irradianceHours:reading</code></td>
+<td style="text-align: left;"><code>Decimal</code></td>
+<td style="text-align: right;"><code>12390980.1231</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="resetting-metadata"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.5.1</span> Resetting metadata<a class="headerlink" href="#resetting-metadata" title="Permanent link">¶</a></h3>
+<p>You can manually update the local state entities associated with a virtual meter. The filter caches this information
+internally, however, and will overwrite any changes you save, unless you follow these steps:</p>
+<ol>
+<li><strong>Disable the filter from executing.</strong> This can typically be accomplished by renaming its <strong>Service Name</strong> to
+    something that does not match any referring components, such as adding a <code>__</code> prefix.</li>
+<li><strong>Update the local state.</strong> Update the local state associated with the meter. You can change any of the values,
+    but be sure to follow the same syntax as expected by the filter (for example the <code>:date</code> state must be a
+    millisecond epoch date value).</li>
+<li><strong>Restart SolarNode.</strong> This will force the cache to be cleared.</li>
+<li><strong>Enable the filter.</strong> Once SolarNode is available again, undo whatever change you made in step 1, for example
+    rename the <strong>Service Name</strong> back to its original value.</li>
+</ol>
+<h3 id="virtual-meter-legacy-metadata"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.5.2</span> Virtual meter legacy metadata<a class="headerlink" href="#virtual-meter-legacy-metadata" title="Permanent link">¶</a></h3>
+<p>Virtual meters used to keep track of their metadata using the <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarIn-API#node-datum-metadata-add">SolarNetwork datum metadata API</a>, storing
+three metadata properties under a property key named for the virtual meter property name. For
+example, continuing the <code>irradianceHours</code> example, an example set of datum metadata would look like:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"pm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"irradianceHours"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"vm-date"</span><span class="p">:</span><span class="w"> </span><span class="mi">123123123123</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"vm-value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1361"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"vm-reading"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12390980.1231"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This metadata will be automatically copied to Local State entities, after which the metadata will not be
+updated any more.</p>
+<h2 id="expressions"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.6</span> Expressions<a class="headerlink" href="#expressions" title="Permanent link">¶</a></h2>
 <p>Expressions can be configured to calculate the <strong>output</strong> meter datum property, instead of using the
 default averaging algorithm. If an expression configuration exists with a <strong>Property</strong> that matches
 a configured (or implied) meter configuration <strong>Reading Property</strong>, then the expression will be
@@ -1353,7 +1489,7 @@ expression language reference.</p>
 Typically this means it will calculate some differential value based on the amount of time that
 has elapsed and <strong>add</strong> that to the previous meter reading value.</p>
 </div>
-<h3 id="expression-root-object"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.5.1</span> Expression root object<a class="headerlink" href="#expression-root-object" title="Permanent link">¶</a></h3>
+<h3 id="expression-root-object"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.6.1</span> Expression root object<a class="headerlink" href="#expression-root-object" title="Permanent link">¶</a></h3>
 <p>The root object is a <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/src/net/solarnetwork/node/datum/filter/virt/VirtualMeterExpressionRoot.java">virtual meter expression object</a> that lets you
 treat all datum properties, and filter parameters, as expression variables directly, along with
 the following properties:</p>
@@ -1443,7 +1579,7 @@ the following properties:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="expression-example-time-of-use-tariff-reading"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.5.2</span> Expression example: time of use tariff reading<a class="headerlink" href="#expression-example-time-of-use-tariff-reading" title="Permanent link">¶</a></h3>
+<h3 id="expression-example-time-of-use-tariff-reading"><span class="enumerate-headings-plugin enumerate-heading-plugin">43.6.2</span> Expression example: time of use tariff reading<a class="headerlink" href="#expression-example-time-of-use-tariff-reading" title="Permanent link">¶</a></h3>
 <p>Iagine you'd like to track a time-of-use cost associated with the energy readings captured by an
 energy meter. The <a href="../tariff/">Time-based Tariff Datum Filter</a> filter could be used to add a
 <code>tou</code> property to each datum, and then a virtual meter expression can be used to calculate a <code>cost</code>
