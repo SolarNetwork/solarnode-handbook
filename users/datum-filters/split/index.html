@@ -9,9 +9,9 @@
 <link href="../pvlib/" rel="prev"/>
 <link href="../tariff/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.11" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.12" name="generator"/>
 <title>Split - SolarNode Handbook</title>
-<link href="../../../assets/stylesheets/main.4af4bdda.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.2afb09e1.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1110,7 +1110,7 @@ stream</a> into multiple new derived datum streams.</p>
 streams: <code>/meter/1/power</code> and <code>/meter/1/energy</code>. Properties with names containing <code>current</code>,
 <code>voltage</code>, or <code>power</code> (case-insensitive) will be copied to <code>/meter/1/power</code>. Properties with names
 containing <code>hour</code> (case-insensitive) will be copied to <code>/meter/1/energy</code>.</p>
-<p>Each filter configuration contains the following overall settings:</p>
+<p>In addition to the <a href="../#common-datum-filter-settings">Common Settings</a>, the following general settings are available:</p>
 <table>
 <thead>
 <tr>
@@ -1120,29 +1120,15 @@ containing <code>hour</code> (case-insensitive) will be copied to <code>/meter/1
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Service Name</td>
-<td style="text-align: left;">A unique ID for the filter, to be referenced by other components.</td>
+<td style="text-align: left;">Swallow Input</td>
+<td style="text-align: left;">If enabled, then discard input datum after splitting. Otherwise leave the input datum as is.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Service Group</td>
-<td style="text-align: left;">An optional service group name to assign.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Source ID</td>
-<td style="text-align: left;">A case-insensitive <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">pattern</a> to match the input source ID(s) to filter. If omitted then datum for <em>all</em> source ID values will be filtered, otherwise only datum with <em>matching</em> source ID values will be filtered.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Required Mode</td>
-<td style="text-align: left;">If configured, an <a href="../../op-modes/">operational mode</a> that must be active for this filter to be applied.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Required Tag</td>
-<td style="text-align: left;">Only apply the filter on datum with the given tag. A tag may be prefixed with <code>!</code> to invert the logic so that the filter only applies to datum <strong>without</strong> the given tag. Multiple tags can be defined using a <code>,</code> delimiter, in which case <strong>at least one</strong> of the configured tags must match to apply the filter.</td>
+<td style="text-align: left;">Property Source Mappings</td>
+<td style="text-align: left;">A list of property name <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">regular expression</a> with associated source IDs to copy matching properties to.</td>
 </tr>
 </tbody>
 </table>
-<p>| Swallow Input      | If enabled, then discard input datum after splitting. Otherwise leave the input datum as is. |
-| Property Source Mappings |  A list of property name <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">regular expression</a> with associated source IDs to copy matching properties to. |</p>
 <h2 id="property-source-mappings-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">38.2</span> Property Source Mappings settings<a class="headerlink" href="#property-source-mappings-settings" title="Permanent link">¶</a></h2>
 <p>Use the <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove Property Source Mapping configurations.</p>
 <p>Each property source mapping configuration contains the following settings:</p>

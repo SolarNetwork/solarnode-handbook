@@ -9,9 +9,9 @@
 <link href="../tariff/" rel="prev"/>
 <link href="../unchanged-property/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.11" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.12" name="generator"/>
 <title>Throttle - SolarNode Handbook</title>
-<link href="../../../assets/stylesheets/main.4af4bdda.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.2afb09e1.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1103,7 +1103,7 @@ matching datum will always be discarded.</p>
 <figure>
 <p><img alt="Trottle Datum filter component settings" loading="lazy" src="../../../images/users/datum-filters/throttle-filter-settings%402x.png" width="600"/></p>
 </figure>
-<p>Each filter configuration contains the following overall settings:</p>
+<p>In addition to the <a href="../#common-datum-filter-settings">Common Settings</a>, the following general settings are available:</p>
 <table>
 <thead>
 <tr>
@@ -1113,28 +1113,11 @@ matching datum will always be discarded.</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Service Name</td>
-<td style="text-align: left;">A unique ID for the filter, to be referenced by other components.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Service Group</td>
-<td style="text-align: left;">An optional service group name to assign.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Source ID</td>
-<td style="text-align: left;">A case-insensitive <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">pattern</a> to match the input source ID(s) to filter. If omitted then datum for <em>all</em> source ID values will be filtered, otherwise only datum with <em>matching</em> source ID values will be filtered.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Required Mode</td>
-<td style="text-align: left;">If configured, an <a href="../../op-modes/">operational mode</a> that must be active for this filter to be applied.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Required Tag</td>
-<td style="text-align: left;">Only apply the filter on datum with the given tag. A tag may be prefixed with <code>!</code> to invert the logic so that the filter only applies to datum <strong>without</strong> the given tag. Multiple tags can be defined using a <code>,</code> delimiter, in which case <strong>at least one</strong> of the configured tags must match to apply the filter.</td>
+<td style="text-align: left;">Limit Seconds</td>
+<td style="text-align: left;">A throttle limit, in seconds, to apply to matching datum. The throttle limit is applied to datum by source ID. The filter will check how long has elapsed since a datum with the same source ID was processed. If the elapsed time is less than the configured limit, the datum will be discarded. If the limit is set to <code>-1</code> then the limit is <em>infinite</em> and all matching datum will always be discarded.</td>
 </tr>
 </tbody>
 </table>
-<p>| Limit Seconds      | A throttle limit, in seconds, to apply to matching datum. The throttle limit is applied to datum by source ID. The filter will check how long has elapsed since a datum with the same source ID was processed. If the elapsed time is less than the configured limit, the datum will be discarded. If the limit is set to <code>-1</code> then the limit is <em>infinite</em> and all matching datum will always be discarded. |</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

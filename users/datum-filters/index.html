@@ -9,9 +9,9 @@
 <link href="../datum/" rel="prev"/>
 <link href="chain/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.11" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.12" name="generator"/>
 <title>Datum Filters - SolarNode Handbook</title>
-<link href="../../assets/stylesheets/main.4af4bdda.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.2afb09e1.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1069,6 +1069,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#common-datum-filter-settings">
+<span class="md-ellipsis">
+      Common Datum Filter Settings
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#solarflux-datum-filters">
 <span class="md-ellipsis">
       SolarFlux Datum Filters
@@ -1147,7 +1154,39 @@ filters, using the <a href="../setup-app/settings/datum-filters/#global-datum-fi
 <p>The Global Datum Filter Chain provides a way to apply explicit <a href="../setup-app/settings/datum-filters/#user-datum-filters">User Datum
 Filters</a> to datum just before posting to
 SolarNetwork.</p>
-<h2 id="solarflux-datum-filters"><span class="enumerate-headings-plugin enumerate-heading-plugin">27.4</span> SolarFlux Datum Filters<a class="headerlink" href="#solarflux-datum-filters" title="Permanent link">¶</a></h2>
+<h2 id="common-datum-filter-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">27.4</span> Common Datum Filter Settings<a class="headerlink" href="#common-datum-filter-settings" title="Permanent link">¶</a></h2>
+<p>Filters generally share the following common settings:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Service Name</td>
+<td style="text-align: left;">A unique ID for the filter, to be referenced by other components.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Service Group</td>
+<td style="text-align: left;">An optional service group name to assign.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Source ID</td>
+<td style="text-align: left;">A case-insensitive <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">pattern</a> to match the input source ID(s) to filter. If omitted then datum for <em>all</em> source ID values will be filtered, otherwise only datum with <em>matching</em> source ID values will be filtered.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Required Mode</td>
+<td style="text-align: left;">If configured, an <a href="../op-modes/">operational mode</a> that must be active for this filter to be applied.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Required Tag</td>
+<td style="text-align: left;">Only apply the filter on datum with the given tag. A tag may be prefixed with <code>!</code> to invert the logic so that the filter only applies to datum <strong>without</strong> the given tag. Multiple tags can be defined using a <code>,</code> delimiter, in which case <strong>at least one</strong> of the configured tags must match to apply the filter.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="solarflux-datum-filters"><span class="enumerate-headings-plugin enumerate-heading-plugin">27.5</span> SolarFlux Datum Filters<a class="headerlink" href="#solarflux-datum-filters" title="Permanent link">¶</a></h2>
 <p>TODO</p>
 </article>
 </div>

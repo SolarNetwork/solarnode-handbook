@@ -9,9 +9,9 @@
 <link href="../split/" rel="prev"/>
 <link href="../throttle/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.11" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.12" name="generator"/>
 <title>Tariff - SolarNode Handbook</title>
-<link href="../../../assets/stylesheets/main.4af4bdda.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.2afb09e1.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1142,7 +1142,7 @@ tariff schedule defined with various time constraints.</p>
 <figure>
 <p><img alt="Tariff filter component settings" loading="lazy" src="../../../images/users/datum-filters/tariff-filter-settings%402x.png" width="742"/></p>
 </figure>
-<p>Each filter configuration contains the following overall settings:</p>
+<p>In addition to the <a href="../#common-datum-filter-settings">Common Settings</a>, the following general settings are available:</p>
 <table>
 <thead>
 <tr>
@@ -1152,33 +1152,31 @@ tariff schedule defined with various time constraints.</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Service Name</td>
-<td style="text-align: left;">A unique ID for the filter, to be referenced by other components.</td>
+<td style="text-align: left;">Metadata Service</td>
+<td style="text-align: left;">The <strong>Service Name</strong> of the Metadata Service to obtain the tariff schedule from. See <a href="#metadata-service">below</a> for more information.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Service Group</td>
-<td style="text-align: left;">An optional service group name to assign.</td>
+<td style="text-align: left;">Metadata Path</td>
+<td style="text-align: left;">The metadata path that will resolve the tariff schedule from the configured Metadata Service.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Source ID</td>
-<td style="text-align: left;">A case-insensitive <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">pattern</a> to match the input source ID(s) to filter. If omitted then datum for <em>all</em> source ID values will be filtered, otherwise only datum with <em>matching</em> source ID values will be filtered.</td>
+<td style="text-align: left;">Language</td>
+<td style="text-align: left;">An IETF BCP 47 language tag to parse the tariff data with. If not configured then the default system language will be assumed.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Required Mode</td>
-<td style="text-align: left;">If configured, an <a href="../../op-modes/">operational mode</a> that must be active for this filter to be applied.</td>
+<td style="text-align: left;">First Match</td>
+<td style="text-align: left;">If enabled, then apply only the <strong>first</strong> tariff that matches a given datum date. If disabled, then apply <strong>all</strong> tariffs that match.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Required Tag</td>
-<td style="text-align: left;">Only apply the filter on datum with the given tag. A tag may be prefixed with <code>!</code> to invert the logic so that the filter only applies to datum <strong>without</strong> the given tag. Multiple tags can be defined using a <code>,</code> delimiter, in which case <strong>at least one</strong> of the configured tags must match to apply the filter.</td>
+<td style="text-align: left;">Schedule Cache</td>
+<td style="text-align: left;">The amount of seconds to cache the tariff schedule obtained from the configured Metadata Service.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tariff Evaluator</td>
+<td style="text-align: left;">The <strong>Service Name</strong> of a <em>Time-based Tariff Evaluator</em> service to evaluate each tariff to determine if it should apply to a given datum. If not configured a default algorithm is used that matches all non-empty constraints in an inclusive manner, except for the time-of-day constraint which uses an exclusive upper bound.</td>
 </tr>
 </tbody>
 </table>
-<p>| Metadata Service   | The <strong>Service Name</strong> of the Metadata Service to obtain the tariff schedule from. See <a href="#metadata-service">below</a> for more information. |
-| Metadata Path      | The metadata path that will resolve the tariff schedule from the configured Metadata Service. |
-| Language           | An IETF BCP 47 language tag to parse the tariff data with. If not configured then the default system language will be assumed.
-| First Match        | If enabled, then apply only the <strong>first</strong> tariff that matches a given datum date. If disabled, then apply <strong>all</strong> tariffs that match. |
-| Schedule Cache     | The amount of seconds to cache the tariff schedule obtained from the configured Metadata Service.
-| Tariff Evaluator   | The <strong>Service Name</strong> of a <em>Time-based Tariff Evaluator</em> service to evaluate each tariff to determine if it should apply to a given datum. If not configured a default algorithm is used that matches all non-empty constraints in an inclusive manner, except for the time-of-day constraint which uses an exclusive upper bound. |</p>
 <h2 id="metadata-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">39.2</span> Metadata Service<a class="headerlink" href="#metadata-service" title="Permanent link">¶</a></h2>
 <p>SolarNode provides a <a href="../../user-metadata-service/">User Metadata Service</a> component that this filter
 can use for the Metadata Service setting. This allows you to configure the tariff schedule as user

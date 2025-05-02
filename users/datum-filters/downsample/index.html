@@ -9,9 +9,9 @@
 <link href="../control-updater/" rel="prev"/>
 <link href="../expression/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.11" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.12" name="generator"/>
 <title>Downsample - SolarNode Handbook</title>
-<link href="../../../assets/stylesheets/main.4af4bdda.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.2afb09e1.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -1159,6 +1159,7 @@ of each property.</p>
 <figure>
 <p><img alt="Downsample filter component settings" loading="lazy" src="../../../images/users/datum-filters/downsample-filter-settings%402x.png" width="934"/></p>
 </figure>
+<p>In addition to the <a href="../#common-datum-filter-settings">Common Settings</a>, the following general settings are available:</p>
 <table>
 <thead>
 <tr>
@@ -1168,33 +1169,31 @@ of each property.</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Service Name</td>
-<td style="text-align: left;">A unique ID for the filter, to be referenced by other components.</td>
+<td style="text-align: left;">Sample Count</td>
+<td style="text-align: left;">The number of samples to average over.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Service Group</td>
-<td style="text-align: left;">An optional service group name to assign.</td>
+<td style="text-align: left;">Sample Duration</td>
+<td style="text-align: left;">A duration in seconds to collect samples within before generating an averaged output. Overrides the <strong>Sample Count</strong> setting. See the <a href="#sample-duration">note below</a> on how the sample times become clock-aligned.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Source ID</td>
-<td style="text-align: left;">A case-insensitive <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">pattern</a> to match the input source ID(s) to filter. If omitted then datum for <em>all</em> source ID values will be filtered, otherwise only datum with <em>matching</em> source ID values will be filtered.</td>
+<td style="text-align: left;">Decimal Scale</td>
+<td style="text-align: left;">A maximum number of digits after the decimal point to round to. Set to<code>0</code> to round to whole numbers.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Required Mode</td>
-<td style="text-align: left;">If configured, an <a href="../../op-modes/">operational mode</a> that must be active for this filter to be applied.</td>
+<td style="text-align: left;">Property Excludes</td>
+<td style="text-align: left;">A list of property names to exclude.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Required Tag</td>
-<td style="text-align: left;">Only apply the filter on datum with the given tag. A tag may be prefixed with <code>!</code> to invert the logic so that the filter only applies to datum <strong>without</strong> the given tag. Multiple tags can be defined using a <code>,</code> delimiter, in which case <strong>at least one</strong> of the configured tags must match to apply the filter.</td>
+<td style="text-align: left;">Min Property Template</td>
+<td style="text-align: left;">A string format to use for computed minimum property values. Use <code>%s</code> as the placeholder for the original property name, e.g. <code>%s_min</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Max Property Template</td>
+<td style="text-align: left;">A string format to use for computed maximum property values. Use <code>%s</code> as the placeholder for the original property name, e.g. <code>%s_max</code>.</td>
 </tr>
 </tbody>
 </table>
-<p>| Sample Count          | The number of samples to average over. |
-| Sample Duration       | A duration in seconds to collect samples within before generating an averaged output. Overrides the <strong>Sample Count</strong> setting. See the <a href="#sample-duration">note below</a> on how the sample times become clock-aligned. |
-| Decimal Scale         | A maximum number of digits after the decimal point to round to. Set to<code>0</code> to round to whole numbers. |
-| Property Excludes     | A list of property names to exclude. |
-| Min Property Template | A string format to use for computed minimum property values. Use <code>%s</code> as the placeholder for the original property name, e.g. <code>%s_min</code>. |
-| Max Property Template | A string format to use for computed maximum property values. Use <code>%s</code> as the placeholder for the original property name, e.g. <code>%s_max</code>. |</p>
 <h3 id="sample-duration"><span class="enumerate-headings-plugin enumerate-heading-plugin">30.2.1</span> Sample Duration<a class="headerlink" href="#sample-duration" title="Permanent link">¶</a></h3>
 <p>When this setting is configured, the resolved timestamp of each downsampled datum will be
 clock-aligned based on the period configured. For example if <code>300</code> is configured, then
