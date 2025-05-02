@@ -27,9 +27,10 @@ of each property.
   ![Downsample filter component settings](../../images/users/datum-filters/downsample-filter-settings%402x.png){width=934 loading=lazy}
 </figure>
 
+In addition to the [Common Settings][datumfilter-common-settings], the following general settings are available:
+
 | Setting            | Description                                                       |
 |:-------------------|:------------------------------------------------------------------|
---8<-- "snippets/users/datum-filters/base-filter-settings.md"
 | Sample Count          | The number of samples to average over. |
 | Sample Duration       | A duration in seconds to collect samples within before generating an averaged output. Overrides the **Sample Count** setting. See the [note below](#sample-duration) on how the sample times become clock-aligned. |
 | Decimal Scale         | A maximum number of digits after the decimal point to round to. Set to`0` to round to whole numbers. |

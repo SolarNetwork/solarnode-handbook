@@ -15,11 +15,10 @@ This filter is provided by the [Metrics Harvester][src] plugin, which is include
   ![Metric Harvester component settings](../../images/users/datum-filters/metric-harvester-settings@2x.png){width=936 loading=lazy}
 </figure>
 
-Each filter configuration contains the following overall settings:
+In addition to the [Common Settings][datumfilter-common-settings], the following general settings are available:
 
 | Setting            | Description                                                       |
 |:-------------------|:------------------------------------------------------------------|
---8<-- "snippets/users/datum-filters/base-filter-settings.md"
 | Properties         | A list of datum property configurations. See [Property settings](#property-settings) for more information. |
 | Expressions        | A list of expression configurations. See [Expression settings](#property-settings) for more information. |
 

@@ -16,11 +16,10 @@ This filter is provided by the [Standard Datum Filters][sdf] plugin.
   ![Operational Mode filter component settings](../../images/users/datum-filters/opmode-filter-settings%402x.png){width=616 loading=lazy}
 </figure>
 
-Each filter configuration contains the following overall settings:
+In addition to the [Common Settings][datumfilter-common-settings], the following general settings are available:
 
 | Setting             | Description                                                       |
 |:--------------------|:------------------------------------------------------------------|
---8<-- "snippets/users/datum-filters/base-filter-settings.md"
 | Expressions         |  A list of expression configurations that are evaluated to toggle operational modes. |
 
 Use the <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove expression configurations.

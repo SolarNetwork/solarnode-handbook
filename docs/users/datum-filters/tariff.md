@@ -15,11 +15,10 @@ This filter is provided by the [Tariff Filter][tariff] plugin.
   ![Tariff filter component settings](../../images/users/datum-filters/tariff-filter-settings@2x.png){width=742 loading=lazy}
 </figure>
 
-Each filter configuration contains the following overall settings:
+In addition to the [Common Settings][datumfilter-common-settings], the following general settings are available:
 
 | Setting            | Description |
 |:-------------------|:------------|
---8<-- "snippets/users/datum-filters/base-filter-settings.md"
 | Metadata Service   | The **Service Name** of the Metadata Service to obtain the tariff schedule from. See [below](#metadata-service) for more information. |
 | Metadata Path      | The metadata path that will resolve the tariff schedule from the configured Metadata Service. |
 | Language           | An IETF BCP 47 language tag to parse the tariff data with. If not configured then the default system language will be assumed.

@@ -73,9 +73,18 @@ The Global Datum Filter Chain provides a way to apply explicit [User Datum
 Filters][udf] to datum just before posting to
 SolarNetwork.
 
+## Common Datum Filter Settings
+
+Filters generally share the following common settings:
+
+| Setting            | Description                                                       |
+|:-------------------|:------------------------------------------------------------------|
+--8<-- "snippets/users/datum-filters/base-filter-settings.md"
+
 ## SolarFlux Datum Filters
 
 TODO
 
 [gdfc]: ../setup-app/settings/datum-filters.md#global-datum-filter-chain
 [udf]: ../setup-app/settings/datum-filters.md#user-datum-filters
+--8<-- "snippets/users/datum-filters/base-filter-settings-links.md"

@@ -14,11 +14,10 @@ This filter is provided by the [Standard Datum Filters][sdf] plugin.
   ![Join filter component settings](../../images/users/datum-filters/join-filter-settings%402x.png){width=718 loading=lazy}
 </figure>
 
-Each filter configuration contains the following overall settings:
+In addition to the [Common Settings][datumfilter-common-settings], the following general settings are available:
 
 | Setting             | Description                                                       |
 |:--------------------|:------------------------------------------------------------------|
---8<-- "snippets/users/datum-filters/base-filter-settings.md"
 | Output Source ID    | The source ID of the merged datum stream. [Placeholders][placeholders] are allowed. |
 | Coalesce Threshold  | When `2` or more then wait until datum from this many _different_ source IDs have been encountered before generating an output datum. Once a coalesced datum has been generated the tracking of input sources resets and another datum will only be generated after the threshold is met again. If `1` or less, then generate output datum for all input datum. |
 | Swallow Input       | If enabled, then filter out input datum after merging. Otherwise leave the input datum as-is. |

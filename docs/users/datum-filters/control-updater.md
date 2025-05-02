@@ -19,11 +19,10 @@ This filter is provided by the [Standard Datum Filters][sdf] plugin, which is pr
 otherwise.</caption>
 </figure>
 
-Each filter configuration contains the following overall settings:
+In addition to the [Common Settings][datumfilter-common-settings], the following general settings are available:
 
 | Setting            | Description                                                       |
 |:-------------------|:------------------------------------------------------------------|
---8<-- "snippets/users/datum-filters/base-filter-settings.md"
 | Control Configurations | A list of control expression configurations. |
 
 Each control configuration contains the following settings:

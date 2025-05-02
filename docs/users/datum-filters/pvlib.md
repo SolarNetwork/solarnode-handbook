@@ -19,15 +19,10 @@ This filter is provided by the [pvlib Datum Filters][pf] plugin, which is provid
   ![pvlib filter component settings](../../images/users/datum-filters/pvlib-poa-filter-settings@2x.png){width=718 loading=lazy}
 </figure>
 
-Each filter configuration contains the following overall settings:
+In addition to the [Common Settings][datumfilter-common-settings], the following general settings are available:
 
 | Setting            | Description                                                       |
 |:-------------------|:------------------------------------------------------------------|
-| Service Name       | A unique ID for the filter, to be referenced by other components. |
-| Service Group      | An optional service group name to assign. |
-| Source ID          | The source ID(s) to filter. |
-| Required Mode      | If configured, an [operational mode][opmodes] that must be active for this filter to be applied. |
-| Required Tag       | Only apply the filter on datum with the given tag. A tag may be prefixed with `!` to invert the logic so that the filter only applies to datum **without** the given tag. Multiple tags can be defined using a `,` delimiter, in which case **at least one** of the configured tags must match to apply the filter. |
 | Metadata Service   | The **Service Name** of the Metadata Service to obtain the PV parameters from. See [Metadata Parameters](#metadata-parameters) for more information. |
 | Metadata Path      | The [metadata path][meta-path] that will resolve the PV parameters from the configured **Metadata Service**. See [Metadata Parameters](#metadata-parameters) for more information. |
 | Alternate Metadata Path | An alternate [metadata path][meta-path] to resolve the PV parameters from the configured **Metadata Service**. See [Metadata Parameters](#metadata-parameters) for more information. |

@@ -23,11 +23,10 @@ This filter is provided by the [Standard Datum Filters][sdf] plugin.
   ![Virtual Meter Datum filter component settings](../../images/users/datum-filters/virtual-meter-filter-settings@2x.png){width=722 loading=lazy}
 </figure>
 
-Each filter configuration contains the following overall settings:
+In addition to the [Common Settings][datumfilter-common-settings], the following general settings are available:
 
 | Setting            | Description |
 |:-------------------|:------------|
---8<-- "snippets/users/datum-filters/base-filter-settings.md"
 | Virtual Meters | Configure as many virtual meters as you like, using the ++plus++ and ++minus++ buttons to add/remove meter configurations. |
 
 ## Virtual Meter Settings

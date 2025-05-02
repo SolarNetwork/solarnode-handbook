@@ -20,11 +20,10 @@ streams: `/meter/1/power` and `/meter/1/energy`. Properties with names containin
 `voltage`, or `power` (case-insensitive) will be copied to `/meter/1/power`. Properties with names
 containing `hour` (case-insensitive) will be copied to `/meter/1/energy`.
 
-Each filter configuration contains the following overall settings:
+In addition to the [Common Settings][datumfilter-common-settings], the following general settings are available:
 
 | Setting            | Description |
 |:-------------------|:------------|
---8<-- "snippets/users/datum-filters/base-filter-settings.md"
 | Swallow Input      | If enabled, then discard input datum after splitting. Otherwise leave the input datum as is. |
 | Property Source Mappings |  A list of property name [regular expression][regex] with associated source IDs to copy matching properties to. |
 

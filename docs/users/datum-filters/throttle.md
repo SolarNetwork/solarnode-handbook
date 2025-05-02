@@ -26,11 +26,10 @@ This filter is provided by the [Standard Datum Filters][sdf] plugin.
   ![Trottle Datum filter component settings](../../images/users/datum-filters/throttle-filter-settings@2x.png){width=600 loading=lazy}
 </figure>
 
-Each filter configuration contains the following overall settings:
+In addition to the [Common Settings][datumfilter-common-settings], the following general settings are available:
 
 | Setting            | Description |
 |:-------------------|:------------|
---8<-- "snippets/users/datum-filters/base-filter-settings.md"
 | Limit Seconds      | A throttle limit, in seconds, to apply to matching datum. The throttle limit is applied to datum by source ID. The filter will check how long has elapsed since a datum with the same source ID was processed. If the elapsed time is less than the configured limit, the datum will be discarded. If the limit is set to `-1` then the limit is _infinite_ and all matching datum will always be discarded. |
 
 --8<-- "snippets/users/datum-filters/base-filter-settings-links.md"
