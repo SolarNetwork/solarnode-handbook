@@ -187,7 +187,7 @@ points to consider:
 
  * The cached messages will be posted with the MQTT _retained_ flag set to `false`.
  * The cached messages will be posted in an unspecified order.
- * The cached messages may be posted more than once, regardless of the configured _Reliabiliy_
+ * The cached messages may be posted more than once, regardless of the configured _Reliability_
    setting.
 
 [cbor]: http://cbor.io/
