@@ -61,7 +61,7 @@ The overall steps of this recipe are:
    15min Period` to track 15-minute periods as a parameter value.
  * add an [Expression](../../users/datum-filters/expression.md) filter `EXP - 15min Peak` to
    calculate the `wattsMax_p15` property
- * add a [Downsample](../../users/datum-filters/downsample.md) tiler `DWS - Meter` to downsample
+ * add a [Downsample](../../users/datum-filters/downsample.md) filter `DWS - Meter` to downsample
    the 1-second resolution meter data down to 5-minute resolution
  * add all three of these added filters to the `Main` filter chain
 
