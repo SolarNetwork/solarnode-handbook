@@ -659,6 +659,63 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ethernet-static-ip-address">
+<span class="md-ellipsis">
+      Ethernet static IP address
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ethernet-internet-sharing">
+<span class="md-ellipsis">
+      Ethernet internet sharing
+    </span>
+</a>
+<nav aria-label="Ethernet internet sharing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ip-forwarding-firewall-changes">
+<span class="md-ellipsis">
+      IP forwarding firewall changes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lan-static-ip-addressing">
+<span class="md-ellipsis">
+      LAN static IP addressing
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lan-dhcp-addressing">
+<span class="md-ellipsis">
+      LAN DHCP addressing
+    </span>
+</a>
+<nav aria-label="LAN DHCP addressing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dhcp-reserved-ip-addresses">
+<span class="md-ellipsis">
+      DHCP reserved IP addresses
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dns-server">
+<span class="md-ellipsis">
+      DNS server
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1127,6 +1184,63 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ethernet-static-ip-address">
+<span class="md-ellipsis">
+      Ethernet static IP address
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ethernet-internet-sharing">
+<span class="md-ellipsis">
+      Ethernet internet sharing
+    </span>
+</a>
+<nav aria-label="Ethernet internet sharing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ip-forwarding-firewall-changes">
+<span class="md-ellipsis">
+      IP forwarding firewall changes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lan-static-ip-addressing">
+<span class="md-ellipsis">
+      LAN static IP addressing
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lan-dhcp-addressing">
+<span class="md-ellipsis">
+      LAN DHCP addressing
+    </span>
+</a>
+<nav aria-label="LAN DHCP addressing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dhcp-reserved-ip-addresses">
+<span class="md-ellipsis">
+      DHCP reserved IP addresses
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dns-server">
+<span class="md-ellipsis">
+      DNS server
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1172,6 +1286,138 @@ network={
 }
 </code></pre></div>
 <p>Change the <code>country=nz</code> to match your own country code.</p>
+<h2 id="ethernet-static-ip-address"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.3</span> Ethernet static IP address<a class="headerlink" href="#ethernet-static-ip-address" title="Permanent link">¶</a></h2>
+<p>By default SolarNode relies on a DHCP server to supply it with a dynamic IP address.
+To configure a static IP address, edit the <code>/etc/systemd/network/10-eth.network</code> file
+and configure it along these lines:</p>
+<div class="highlight"><pre><span></span><code>[Network]
+DNS=1.1.1.1
+DNS=8.8.8.8
+
+[Address]
+Address=10.1.10.9/24
+
+[Route]
+Gateway=10.1.10.1
+</code></pre></div>
+<h2 id="ethernet-internet-sharing"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.4</span> Ethernet internet sharing<a class="headerlink" href="#ethernet-internet-sharing" title="Permanent link">¶</a></h2>
+<p>For devices with two ethernet ports, you can connect one port to a wide-area network (with access to
+the internet) and the other to a local-area network, and provide the local-area network with access
+to the internet with SolarNode acting as the router (gateway) to the wide-area network.</p>
+<p>For this guide we assume that the wide-area network (WAN) interface is <code>eth0</code> and the local-area
+network (LAN) is <code>eth1</code>.  The WAN interface can be configured as DHCP (the default) or with a static
+IP as outlined above.</p>
+<p>You can choose to use static IP addressing or DHCP for the LAN, as outlined in the subsequent
+sections.</p>
+<h3 id="ip-forwarding-firewall-changes"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.4.1</span> IP forwarding firewall changes<a class="headerlink" href="#ip-forwarding-firewall-changes" title="Permanent link">¶</a></h3>
+<p>The SolarNode <a href="../sysadmin/networking/#firewall">firewall</a> must be configured to allow LAN devices
+access to the WAN. Edit the <code>/etc/nftables.conf</code> file to change this line:</p>
+<div class="highlight"><pre><span></span><code>add rule ip filter FORWARD counter reject
+</code></pre></div>
+<p>to this:</p>
+<div class="highlight"><pre><span></span><code>add rule ip filter FORWARD counter accept
+</code></pre></div>
+<p>Then reload the firewall settings with:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nftables
+</code></pre></div>
+<h3 id="lan-static-ip-addressing"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.4.2</span> LAN static IP addressing<a class="headerlink" href="#lan-static-ip-addressing" title="Permanent link">¶</a></h3>
+<p>If you prefer to use static IP addresses for the LAN devices, or cannot use DHCP for any reason, you
+can configure all LAN devices with static IP addresses within the subnet of your LAN. For this guide
+we will use <code>192.168.100.1/24</code> for SolarNode's IP address and network mask, but you could use any
+available network range. Create a <code>/etc/systemd/network/11-eth.network</code> file with the following:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">SolarNodeOS 12</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>[Match]
+Name=eth1
+
+[Network]
+IPForward=yes
+IPMasquerade=both
+
+[Address]
+Address=192.168.100.1/24
+</code></pre></div>
+</div>
+</div>
+</input></div>
+<p>To reload the network settings run:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl restart systemd-networkd
+</code></pre></div>
+<h3 id="lan-dhcp-addressing"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.4.3</span> LAN DHCP addressing<a class="headerlink" href="#lan-dhcp-addressing" title="Permanent link">¶</a></h3>
+<p>Instead of using static IP addresses on the LAN devices, you SolarNode can operate a DHCP server for
+the LAN. For this example the DHCP server will dynamically assign IP addresses to LAN devices,
+starting at <code>192.168.100.100</code>. Create a <code>/etc/systemd/network/11-eth.network</code> file with the
+following:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">SolarNodeOS 12</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>[Match]
+Name=eth1
+
+[Network]
+IPForward=yes
+IPMasquerade=both
+DHCPServer=yes
+
+[Address]
+Address=192.168.100.1/24
+
+[DHCPServer]
+PoolOffset=100
+</code></pre></div>
+<p>More options are available, see <a href="https://www.freedesktop.org/software/systemd/man/252/systemd.network.html#%5BDHCPServer%5D%20Section%20Options">here</a>.</p>
+</div>
+</div>
+</input></div>
+<h4 id="dhcp-reserved-ip-addresses"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.4.3.1</span> DHCP reserved IP addresses<a class="headerlink" href="#dhcp-reserved-ip-addresses" title="Permanent link">¶</a></h4>
+<p>If you would like consistent IP addresses assigned to LAN devices while using DHCP, you can
+configure specific IP addresses based on the device MAC addresses. Just add
+<code>[DHCPServerStaticLease]</code> sections to the network configuration, one for each device you want to
+assign a specific IP address to. For example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">SolarNodeOS 12</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>[Match]
+Name=eth1
+
+[Network]
+IPForward=yes
+IPMasquerade=both
+DHCPServer=yes
+
+[Address]
+Address=192.168.100.1/24
+
+[DHCPServer]
+PoolOffset=100
+
+[DHCPServerStaticLease]
+MACAddress=00:01:c0:0b:06:08
+Address=192.168.100.10
+</code></pre></div>
+</div>
+</div>
+</input></div>
+<h2 id="dns-server"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.5</span> DNS server<a class="headerlink" href="#dns-server" title="Permanent link">¶</a></h2>
+<p>You can configure SolarNode as a DNS server for the local network. This can be useful when sharing a
+wide-area network connection with a local network. First you must allow DNS queries through the
+firewall, so edit the <code>/etc/nftables.conf</code> file to add the following, just before the <code># Allow DHCP</code>
+line:</p>
+<div class="highlight"><pre><span></span><code># Allow DNS queries
+add rule ip filter INPUT udp dport 53 counter accept
+</code></pre></div>
+<p>Reload the firewall configuration with</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nftables
+</code></pre></div>
+<p>Then edit the <code>/etc/systemd/resolved.conf</code> file to add a <code>DNSStubListenerExtra</code>
+line for SolarNode's LAN address, for example:</p>
+<div class="highlight"><pre><span></span><code>DNSStubListenerExtra=192.168.100.1
+</code></pre></div>
+<p>Then reload the configuration with:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>systemd-resolved
+</code></pre></div>
+<p>For more details on the <code>resolved.conf</code> file see <a href="https://www.freedesktop.org/software/systemd/man/252/resolved.conf.html">here</a>.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
