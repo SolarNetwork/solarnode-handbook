@@ -3,6 +3,7 @@ nav:
     - index.md
     - getting-started.md
     - setup-app
+    - cli.md
     - datum.md
     - datum-filters
     - solarflux.md
