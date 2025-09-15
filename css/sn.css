@@ -66,6 +66,15 @@
 	--md-code-font: "Source Code Pro";
 }
 
+[data-md-color-scheme="default"] {
+	--md-primary-fg-color:#f7c819;
+}
+
+[data-md-color-scheme="slate"] {
+	--md-default-fg-color: hsla(var(--md-hue),15%,90%,0.87);
+	--md-primary-fg-color:#f7c819;
+}
+
 /** Lighten up heading enumerations */
 .enumerate-headings-plugin {
 	filter: opacity(35%);
