@@ -9,9 +9,9 @@
 <link href="../job-scheduler/" rel="prev"/>
 <link href="../settings-db/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.12" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.18" name="generator"/>
 <title>Placeholder Service - SolarNode Handbook</title>
-<link href="../../../assets/stylesheets/main.2afb09e1.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -379,6 +379,14 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/cli/">
+<span class="md-ellipsis">
+    Command Line Tool
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../../users/datum/">
 <span class="md-ellipsis">
     Datum
@@ -387,7 +395,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/datum-filters/">
 <span class="md-ellipsis">
@@ -395,12 +403,12 @@
     
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_5">
+<nav aria-expanded="false" aria-labelledby="__nav_1_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_6">
 <span class="md-nav__icon md-icon"></span>
             Datum Filters
           </label>
@@ -545,7 +553,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1_8" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/sysadmin/">
 <span class="md-ellipsis">
@@ -553,12 +561,12 @@
     
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+<label class="md-nav__link" for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_7_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_7">
+<nav aria-expanded="false" aria-labelledby="__nav_1_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_8">
 <span class="md-nav__icon md-icon"></span>
             System Administration
           </label>
@@ -1134,7 +1142,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="placeholder-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">87.</span> Placeholder Service<a class="headerlink" href="#placeholder-service" title="Permanent link">¶</a></h1>
+<h1 id="placeholder-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">88.</span> Placeholder Service<a class="headerlink" href="#placeholder-service" title="Permanent link">¶</a></h1>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/service/PlaceholderService.html">Placeholder Service</a> API provides components a way to resolve variables in
 strings, known as <em>placeholders</em>, whose values are managed outside the component itself. For example
 a datum data source plugin could use the Placeholder Service to support resolving placeholders in a
@@ -1142,11 +1150,11 @@ configurable Source ID property.</p>
 <p>SolarNode provides a <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/service/support/SettingsPlaceholderService.html">Placeholder Service implementation</a> that resolves
 both dynamic placeholders from the <a href="../settings-db/">Settings Database</a> (using the setting namespace
 <code>placeholder</code>), and static placeholders from a configurable file or directory location.</p>
-<h2 id="use"><span class="enumerate-headings-plugin enumerate-heading-plugin">87.1</span> Use<a class="headerlink" href="#use" title="Permanent link">¶</a></h2>
+<h2 id="use"><span class="enumerate-headings-plugin enumerate-heading-plugin">88.1</span> Use<a class="headerlink" href="#use" title="Permanent link">¶</a></h2>
 <p>Call the <code>resolvePlaceholders(s, parameters)</code> method to resolve all placeholders on the String <code>s</code>.
 The <code>parameters</code> argument can be used to provide additional placeholder values, or you can pass just
 pass <code>null</code> to rely solely on the placeholders available in the service already.</p>
-<h3 id="example"><span class="enumerate-headings-plugin enumerate-heading-plugin">87.1.1</span> Example<a class="headerlink" href="#example" title="Permanent link">¶</a></h3>
+<h3 id="example"><span class="enumerate-headings-plugin enumerate-heading-plugin">88.1.1</span> Example<a class="headerlink" href="#example" title="Permanent link">¶</a></h3>
 <p>Here is an imaginary class that is constructed with an optional <code>PlaceholderService</code>, and then when
 the <code>go()</code> method is called uses that to resolve placeholders in the string <code>{building}/temp</code> and
 return the result:</p>
@@ -1170,7 +1178,7 @@ return the result:</p>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="blueprint"><span class="enumerate-headings-plugin enumerate-heading-plugin">87.2</span> Blueprint<a class="headerlink" href="#blueprint" title="Permanent link">¶</a></h2>
+<h2 id="blueprint"><span class="enumerate-headings-plugin enumerate-heading-plugin">88.2</span> Blueprint<a class="headerlink" href="#blueprint" title="Permanent link">¶</a></h2>
 <p>To use the Placeholder Service in your component, add either an <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/service/OptionalService.html">Optional Service</a>
 or explicit reference to your plugin's <a href="../../osgi/blueprint/">Blueprint</a> XML file like this
 (depending on what your plugin requires):</p>
@@ -1195,7 +1203,7 @@ or explicit reference to your plugin's <a href="../../osgi/blueprint/">Blueprint
 <span class="w">    </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">ref=</span><span class="s">"placeholderService"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/bean&gt;</span>
 </code></pre></div>
-<h2 id="configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">87.3</span> Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
+<h2 id="configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">88.3</span> Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
 <p>The Placeholder Service supports the following <a href="../../../users/configuration/">configuration
 properties</a> in the <code>net.solarnetwork.node.core</code> namespace:</p>
 <div class="props-explicit-col-widths">
@@ -1239,8 +1247,8 @@ properties</a> in the <code>net.solarnetwork.node.core</code> namespace:</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
 <script src="../../../js/open_in_new_tab.js"></script>
 </body>
 </html>

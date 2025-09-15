@@ -9,9 +9,9 @@
 <link href="../" rel="prev"/>
 <link href="../specifier/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.12" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.18" name="generator"/>
 <title>Settings Provider - SolarNode Handbook</title>
-<link href="../../../assets/stylesheets/main.2afb09e1.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -379,6 +379,14 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/cli/">
+<span class="md-ellipsis">
+    Command Line Tool
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../../users/datum/">
 <span class="md-ellipsis">
     Datum
@@ -387,7 +395,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/datum-filters/">
 <span class="md-ellipsis">
@@ -395,12 +403,12 @@
     
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_5">
+<nav aria-expanded="false" aria-labelledby="__nav_1_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_6">
 <span class="md-nav__icon md-icon"></span>
             Datum Filters
           </label>
@@ -545,7 +553,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1_8" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../users/sysadmin/">
 <span class="md-ellipsis">
@@ -553,12 +561,12 @@
     
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+<label class="md-nav__link" for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_7_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_7">
+<nav aria-expanded="false" aria-labelledby="__nav_1_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_8">
 <span class="md-nav__icon md-icon"></span>
             System Administration
           </label>
@@ -1106,7 +1114,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="settings-provider"><span class="enumerate-headings-plugin enumerate-heading-plugin">75.</span> Settings Provider<a class="headerlink" href="#settings-provider" title="Permanent link">¶</a></h1>
+<h1 id="settings-provider"><span class="enumerate-headings-plugin enumerate-heading-plugin">76.</span> Settings Provider<a class="headerlink" href="#settings-provider" title="Permanent link">¶</a></h1>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/SettingSpecifierProvider.html"><code>net.solarnetwork.settings.SettingSpecifierProvider</code></a> interface
 defines the way a class can declare themselves as a user-configurable component. The main elements
 of this API are:</p>
@@ -1139,7 +1147,7 @@ of this API are:</p>
 class or package name of the component (or a derivative of it) is used as the ID.</p>
 <p>The <code>getSettingSpecifiers()</code> method returns a list of all the configurable properties of the
 component, as a list of <a href="../specifier/">Setting Specifier</a> instances.</p>
-<h2 id="setting-accessors"><span class="enumerate-headings-plugin enumerate-heading-plugin">75.1</span> Setting accessors<a class="headerlink" href="#setting-accessors" title="Permanent link">¶</a></h2>
+<h2 id="setting-accessors"><span class="enumerate-headings-plugin enumerate-heading-plugin">76.1</span> Setting accessors<a class="headerlink" href="#setting-accessors" title="Permanent link">¶</a></h2>
 <p>s
 <div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
 <span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">;</span>
@@ -1176,7 +1184,7 @@ settings can accept any primitive or standard number type like <code>int</code> 
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="proxy-setting-accessors"><span class="enumerate-headings-plugin enumerate-heading-plugin">75.1.1</span> Proxy setting accessors<a class="headerlink" href="#proxy-setting-accessors" title="Permanent link">¶</a></h3>
+<h3 id="proxy-setting-accessors"><span class="enumerate-headings-plugin enumerate-heading-plugin">76.1.1</span> Proxy setting accessors<a class="headerlink" href="#proxy-setting-accessors" title="Permanent link">¶</a></h3>
 <p>Sometimes you might like to expose a simple string setting but internally treat the string as a more
 complex type. For example a <code>Map</code> could be configured using a simple delimited string like <code>key1 =
 val1, key2 = val2</code>. For situations like this you can publish a <em>proxy</em> setting that manages a
@@ -1220,8 +1228,8 @@ complex data type as a string, and en/decode the complex type in your component 
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
 <script src="../../../js/open_in_new_tab.js"></script>
 </body>
 </html>
