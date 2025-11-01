@@ -274,6 +274,16 @@ multiplication. The following functions help with other math operations:
 | `wholePart(n)` | `Number` | `Number` | Extract the whole portion of a decimal number. For example `wholePart(123.4567)` would return `123`. |
 
 
+#### String functions
+
+The following functions deal with string manipulation.
+
+| Function | Arguments | Result | Description |
+|:---------|:----------|:-------|:------------|
+| `regexMatches(s, regex)` | `String`, `String` | `boolean` | Search `s` using a [regular expression][regex] `regex`, returning `true` if a match is found. A match can occur anywhere within `s` so use `^` and `$` to anchor the search to the start and end of the string, as needed. For example `regexMatches("foo/bar", "^foo/")` would return `true`. |
+| `regexReplace(s, regex, r)` | `String`, `String`, `String` | `String` | Search `s` using a [regular expression][regex] `regex`, replacing all matches with `r`. Capture groups are supported, for example `regexReplace("thing/123", "^.*/(\d+)$", "\1")` would return `"123"`. |
+
+
 #### Node metadata functions
 
 All the [Datum Metadata](#datum-metadata) functions like `metadataAtPath(path)` can be invoked
@@ -296,7 +306,7 @@ The following functions help with expression properties (variables):
 | Function | Arguments | Result | Description |
 |:---------|:----------|:-------|:------------|
 | `has(name)` | `String` | `boolean` | Returns `true` if a property named `name` is defined. Can be used to prevent expression errors on datum property variables that are missing. |
-| `group(pattern)` | `String` | `Collection<Number>` | Creates a collection out of numbered properties whose `name` matches the given regular expression `pattern`. |
+| `group(pattern)` | `String` | `Collection<Number>` | Creates a collection out of numbered properties whose `name` matches the given [regular expression][regex] `pattern`. |
 | `sort(collection,reverse,name...)` | `Collection<?>`, `Boolean`, `String[]` | `Collection<?>` | Sort a collection, optionally in reverse, by optional properties, returning the sorted collection. The second and third arguments are optional. If no `name` values are provided, the elements of the collection must be comparable (for example strings or numbers) and will be sorted in their natural order. If one or more `name` values are provided, each `name` property will be extracted from the collection elements and compared with each other to determine the order. The extracted property values must be comparable. |
 
 
@@ -544,6 +554,7 @@ The following functions available on datum metadata objects support access to bo
 [downsample-filter]: datum-filters/downsample.md
 [expression-root]: https://github.com/SolarNetwork/solarnetwork/wiki/Spring-Expression-Language#root-object
 [expression-variable-names]: https://github.com/SolarNetwork/solarnetwork/wiki/Spring-Expression-Language#variable-names
+[regex]: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html
 [sn-metadata]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#metadata
 [sn-metadata-path]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#metadata-filter-key-paths
 [sn-placeholders]: placeholders.md
