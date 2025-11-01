@@ -764,6 +764,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#string-functions">
+<span class="md-ellipsis">
+      String functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#node-metadata-functions">
 <span class="md-ellipsis">
       Node metadata functions
@@ -1406,6 +1413,13 @@
 <a class="md-nav__link" href="#math-functions">
 <span class="md-ellipsis">
       Math functions
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#string-functions">
+<span class="md-ellipsis">
+      String functions
     </span>
 </a>
 </li>
@@ -2452,10 +2466,36 @@ multiplication. The following functions help with other math operations:</p>
 </tr>
 </tbody>
 </table>
-<h4 id="node-metadata-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.7</span> Node metadata functions<a class="headerlink" href="#node-metadata-functions" title="Permanent link">¶</a></h4>
+<h4 id="string-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.7</span> String functions<a class="headerlink" href="#string-functions" title="Permanent link">¶</a></h4>
+<p>The following functions deal with string manipulation.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Arguments</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>regexMatches(s, regex)</code></td>
+<td style="text-align: left;"><code>String</code>, <code>String</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Search <code>s</code> using a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html">regular expression</a> <code>regex</code>, returning <code>true</code> if a match is found. A match can occur anywhere within <code>s</code> so use <code>^</code> and <code>$</code> to anchor the search to the start and end of the string, as needed. For example <code>regexMatches("foo/bar", "^foo/")</code> would return <code>true</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>regexReplace(s, regex, r)</code></td>
+<td style="text-align: left;"><code>String</code>, <code>String</code>, <code>String</code></td>
+<td style="text-align: left;"><code>String</code></td>
+<td style="text-align: left;">Search <code>s</code> using a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html">regular expression</a> <code>regex</code>, replacing all matches with <code>r</code>. Capture groups are supported, for example <code>regexReplace("thing/123", "^.*/(\d+)$", "\1")</code> would return <code>"123"</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="node-metadata-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.8</span> Node metadata functions<a class="headerlink" href="#node-metadata-functions" title="Permanent link">¶</a></h4>
 <p>All the <a href="#datum-metadata">Datum Metadata</a> functions like <code>metadataAtPath(path)</code> can be invoked
 directly, operating on the node's own metadata instead of a datum stream's metadata.</p>
-<h4 id="operational-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.8</span> Operational functions<a class="headerlink" href="#operational-functions" title="Permanent link">¶</a></h4>
+<h4 id="operational-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.9</span> Operational functions<a class="headerlink" href="#operational-functions" title="Permanent link">¶</a></h4>
 <p>The following functions deal with general SolarNode operations:</p>
 <table>
 <thead>
@@ -2475,7 +2515,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h4 id="property-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.9</span> Property functions<a class="headerlink" href="#property-functions" title="Permanent link">¶</a></h4>
+<h4 id="property-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.10</span> Property functions<a class="headerlink" href="#property-functions" title="Permanent link">¶</a></h4>
 <p>The following functions help with expression properties (variables):</p>
 <table>
 <thead>
@@ -2497,7 +2537,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 <td style="text-align: left;"><code>group(pattern)</code></td>
 <td style="text-align: left;"><code>String</code></td>
 <td style="text-align: left;"><code>Collection&lt;Number&gt;</code></td>
-<td style="text-align: left;">Creates a collection out of numbered properties whose <code>name</code> matches the given regular expression <code>pattern</code>.</td>
+<td style="text-align: left;">Creates a collection out of numbered properties whose <code>name</code> matches the given <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html">regular expression</a> <code>pattern</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>sort(collection,reverse,name...)</code></td>
@@ -2507,7 +2547,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h4 id="local-state-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.10</span> Local State functions<a class="headerlink" href="#local-state-functions" title="Permanent link">¶</a></h4>
+<h4 id="local-state-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.11</span> Local State functions<a class="headerlink" href="#local-state-functions" title="Permanent link">¶</a></h4>
 <p>The following functions work with <a href="../local-state/">Local State</a>:</p>
 <table>
 <thead>
@@ -2581,7 +2621,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h4 id="tariff-schedule-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.11</span> Tariff schedule functions<a class="headerlink" href="#tariff-schedule-functions" title="Permanent link">¶</a></h4>
+<h4 id="tariff-schedule-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.12</span> Tariff schedule functions<a class="headerlink" href="#tariff-schedule-functions" title="Permanent link">¶</a></h4>
 <p>The following functions help work with <em>tariff schedules</em>, which represent a set of time-based criteria with associated <em>tariffs</em>. A tariff in this scheme is nothing more than a set of one or more number values, each with an associated name.</p>
 <p>Here is an example schedule with 4 tariffs each with a single <strong>price</strong> rate. The <code>*</code> stands for <strong>any value</strong>:</p>
 <table>
@@ -2668,7 +2708,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h5 id="tariffschedule-object-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.11.1</span> <code>TariffSchedule</code> object functions<a class="headerlink" href="#tariffschedule-object-functions" title="Permanent link">¶</a></h5>
+<h5 id="tariffschedule-object-functions"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.12.1</span> <code>TariffSchedule</code> object functions<a class="headerlink" href="#tariffschedule-object-functions" title="Permanent link">¶</a></h5>
 <p>The <code>TariffSchedule</code> object provides the following functions:</p>
 <table>
 <thead>
@@ -2694,7 +2734,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h5 id="tariff-object-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.11.2</span> <code>Tariff</code> object properties<a class="headerlink" href="#tariff-object-properties" title="Permanent link">¶</a></h5>
+<h5 id="tariff-object-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.12.2</span> <code>Tariff</code> object properties<a class="headerlink" href="#tariff-object-properties" title="Permanent link">¶</a></h5>
 <p>The <code>Tariff</code> object provides the following properties:</p>
 <table>
 <thead>
@@ -2712,7 +2752,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tr>
 </tbody>
 </table>
-<h5 id="rate-object-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.11.3</span> <code>Rate</code> object properties<a class="headerlink" href="#rate-object-properties" title="Permanent link">¶</a></h5>
+<h5 id="rate-object-properties"><span class="enumerate-headings-plugin enumerate-heading-plugin">55.1.3.12.3</span> <code>Rate</code> object properties<a class="headerlink" href="#rate-object-properties" title="Permanent link">¶</a></h5>
 <p>The <code>Rate</code> object provides the following properties:</p>
 <table>
 <thead>
