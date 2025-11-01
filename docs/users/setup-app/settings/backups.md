@@ -33,18 +33,33 @@ the date the settings backup was created.
   ![Settings import/export form](../../../images/users/setup/settings-backup-restore-annotated@2x.png){width=728}
 </figure>
 
+## CSV Backup & Restore
+
+Some services provide CSV file backups, and can automatically maintain a history of these backups.
+The CSV Backup & Restore lets you export and import these backup files. Pick a **Service** from the
+drop-down menu, and then you can export that service's current CSV settings or one of its previous
+backups using the **Export to file** button. Use the **Import from file** button to import a CSV
+file for that service, and optionally activate the **Full replace** checkbox to completely replace
+the service's CSV settings, rather than just update existing or add new settings.
+
+<figure markdown>
+  ![CSV backup import/export form](../../../images/users/setup/csv-backup-restore-ui@2x.png){width=956 loading=lazy}
+</figure>
+
+
 ## Full Backup & Restore
 
-The Full Backup & Restore section lets you manage SolarNode "full" backups. Each full backup contains a snapshot
-of the settings you have configured, the node's certificate, login credentials, custom plugins, and more.
+The Full Backup & Restore section lets you manage SolarNode "full" backups. Each full backup
+contains a snapshot of the settings you have configured, the node's certificate, login credentials,
+custom plugins, and more.
 
 <figure markdown>
   ![Full Backup/restore form](../../../images/users/setup/settings-full-backup-restore@2x.png){width=728}
 </figure>
 
-The **Backup Service** shows a list of the available [Backup Services](#backup-services). Each service
-has its own settings that must be configured for the service to operate. After changing any of the
-selected service's settings, click the **Save Settings** button to save those changes.
+The **Backup Service** shows a list of the available [Backup Services](#backup-services). Each
+service has its own settings that must be configured for the service to operate. After changing any
+of the selected service's settings, click the **Save Settings** button to save those changes.
 
 The **Backup** button allows you to create a new backup.
 
