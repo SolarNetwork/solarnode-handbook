@@ -277,6 +277,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#csv-backup-restore">
+<span class="md-ellipsis">
+      CSV Backup &amp; Restore
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#full-backup-restore">
 <span class="md-ellipsis">
       Full Backup &amp; Restore
@@ -1118,6 +1125,13 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#csv-backup-restore">
+<span class="md-ellipsis">
+      CSV Backup &amp; Restore
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#full-backup-restore">
 <span class="md-ellipsis">
       Full Backup &amp; Restore
@@ -1181,24 +1195,35 @@ the date the settings backup was created.</p>
 <figure>
 <p><img alt="Settings import/export form" src="../../../../images/users/setup/settings-backup-restore-annotated%402x.png" width="728"/></p>
 </figure>
-<h2 id="full-backup-restore"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.2</span> Full Backup &amp; Restore<a class="headerlink" href="#full-backup-restore" title="Permanent link">¶</a></h2>
-<p>The Full Backup &amp; Restore section lets you manage SolarNode "full" backups. Each full backup contains a snapshot
-of the settings you have configured, the node's certificate, login credentials, custom plugins, and more.</p>
+<h2 id="csv-backup-restore"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.2</span> CSV Backup &amp; Restore<a class="headerlink" href="#csv-backup-restore" title="Permanent link">¶</a></h2>
+<p>Some services provide CSV file backups, and can automatically maintain a history of these backups.
+The CSV Backup &amp; Restore lets you export and import these backup files. Pick a <strong>Service</strong> from the
+drop-down menu, and then you can export that service's current CSV settings or one of its previous
+backups using the <strong>Export to file</strong> button. Use the <strong>Import from file</strong> button to import a CSV
+file for that service, and optionally activate the <strong>Full replace</strong> checkbox to completely replace
+the service's CSV settings, rather than just update existing or add new settings.</p>
+<figure>
+<p><img alt="CSV backup import/export form" loading="lazy" src="../../../../images/users/setup/csv-backup-restore-ui%402x.png" width="956"/></p>
+</figure>
+<h2 id="full-backup-restore"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.3</span> Full Backup &amp; Restore<a class="headerlink" href="#full-backup-restore" title="Permanent link">¶</a></h2>
+<p>The Full Backup &amp; Restore section lets you manage SolarNode "full" backups. Each full backup
+contains a snapshot of the settings you have configured, the node's certificate, login credentials,
+custom plugins, and more.</p>
 <figure>
 <p><img alt="Full Backup/restore form" src="../../../../images/users/setup/settings-full-backup-restore%402x.png" width="728"/></p>
 </figure>
-<p>The <strong>Backup Service</strong> shows a list of the available <a href="#backup-services">Backup Services</a>. Each service
-has its own settings that must be configured for the service to operate. After changing any of the
-selected service's settings, click the <strong>Save Settings</strong> button to save those changes.</p>
+<p>The <strong>Backup Service</strong> shows a list of the available <a href="#backup-services">Backup Services</a>. Each
+service has its own settings that must be configured for the service to operate. After changing any
+of the selected service's settings, click the <strong>Save Settings</strong> button to save those changes.</p>
 <p>The <strong>Backup</strong> button allows you to create a new backup.</p>
 <p>The <strong>Backups</strong> menu allows you to download or restore any available backup.</p>
 <p>The <strong>Import</strong> button allows you to upload a previously downloaded backup file.</p>
 <figure>
 <p><img alt="Full Backup/restore form" src="../../../../images/users/setup/settings-full-backup-restore-annotated%402x.png" width="728"/></p>
 </figure>
-<h2 id="backup-services"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.3</span> Backup Services<a class="headerlink" href="#backup-services" title="Permanent link">¶</a></h2>
+<h2 id="backup-services"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.4</span> Backup Services<a class="headerlink" href="#backup-services" title="Permanent link">¶</a></h2>
 <p>SolarNode supports configurable Backup Service plugins to manage the storage of backup resources.</p>
-<h3 id="file-system-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.3.1</span> File System Backup Service<a class="headerlink" href="#file-system-backup-service" title="Permanent link">¶</a></h3>
+<h3 id="file-system-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.4.1</span> File System Backup Service<a class="headerlink" href="#file-system-backup-service" title="Permanent link">¶</a></h3>
 <p>The File System Backup Service is the default Backup Service provided by SolarNode. It saves
 the backup onto the node itself. In order to be able to restore your settings if the node is damaged
 or lost, you must download a copy of a backup using the <strong>Download</strong> button, and save the file
@@ -1231,7 +1256,7 @@ hardware failure.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="s3-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.3.2</span> S3 Backup Service<a class="headerlink" href="#s3-backup-service" title="Permanent link">¶</a></h3>
+<h3 id="s3-backup-service"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.4.2</span> S3 Backup Service<a class="headerlink" href="#s3-backup-service" title="Permanent link">¶</a></h3>
 <p>The S3 Backup Service creates cloud-based backups in <a href="https://aws.amazon.com/s3/">AWS S3</a> (or any compatible provider). You
 must configure the credentials and S3 location details to use before any backups can be created.</p>
 <figure>

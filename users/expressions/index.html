@@ -2488,7 +2488,7 @@ multiplication. The following functions help with other math operations:</p>
 <td style="text-align: left;"><code>regexReplace(s, regex, r)</code></td>
 <td style="text-align: left;"><code>String</code>, <code>String</code>, <code>String</code></td>
 <td style="text-align: left;"><code>String</code></td>
-<td style="text-align: left;">Search <code>s</code> using a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html">regular expression</a> <code>regex</code>, replacing all matches with <code>r</code>. Capture groups are supported, for example <code>regexReplace("thing/123", "^.*/(\d+)$", "\1")</code> would return <code>"123"</code>.</td>
+<td style="text-align: left;">Search <code>s</code> using a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html">regular expression</a> <code>regex</code>, replacing all matches with <code>r</code>. Capture groups are supported, refer to them using <code>$n</code> in <code>r</code>. For example <code>regexReplace("thing/123", "^.*/(\d+)$", "$1")</code> would return <code>"123"</code>.</td>
 </tr>
 </tbody>
 </table>
