@@ -1112,7 +1112,7 @@ stream</a> into multiple new derived datum streams.</p>
 <p>This filter is provided by the <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/">Standard Datum Filters</a> plugin.</p>
 <h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">39.1</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
 <figure>
-<p><img alt="Split filter component settings" loading="lazy" src="../../../images/users/datum-filters/split-filter-settings%402x.png" width="714"/></p>
+<p><img alt="Split filter component settings" loading="lazy" src="../../../images/users/datum-filters/split-filter-settings%402x.png" width="1024"/></p>
 </figure>
 <p>In the example screen shot shown above, the <code>/power/meter/1</code> datum stream is split into two datum
 streams: <code>/meter/1/power</code> and <code>/meter/1/energy</code>. Properties with names containing <code>current</code>,
@@ -1129,7 +1129,11 @@ containing <code>hour</code> (case-insensitive) will be copied to <code>/meter/1
 <tbody>
 <tr>
 <td style="text-align: left;">Swallow Input</td>
-<td style="text-align: left;">If enabled, then discard input datum after splitting. Otherwise leave the input datum as is.</td>
+<td style="text-align: left;">If enabled then discard input datum after splitting. Otherwise leave the input datum as is.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Persist Output</td>
+<td style="text-align: left;">If enabled then process and persist output datum after splitting. Otherwise process output datum but do not persist them.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Property Source Mappings</td>
@@ -1155,6 +1159,10 @@ containing <code>hour</code> (case-insensitive) will be copied to <code>/meter/1
 <tr>
 <td style="text-align: left;">Source ID</td>
 <td style="text-align: left;">The destination source ID to copy the matching properties to. Supports <a href="../../placeholders/">placeholders</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rename</td>
+<td style="text-align: left;">An optional property name template to rename output properties with. Supports a <code>{p}</code> parameter for an input property name and pattern <em>capture groups</em> from <strong>Property</strong> are available starting with <code>{1}</code>. For example a <strong>Property</strong> pattern <code>^(.*)_s1</code> with a <strong>Rename</strong> template <code>{1}</code> would map an input property <code>watts_s1</code> to <code>watts</code>.</td>
 </tr>
 </tbody>
 </table>
