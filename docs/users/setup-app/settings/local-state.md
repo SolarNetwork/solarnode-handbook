@@ -26,7 +26,7 @@ To **delete** a Local State entity, click on its link to open the edit dialog, t
 ## CSV Backups
 
 The Local State data is automatically backed up on a configurable schedule. You can adjust the schedule under
-**Settings > Services > Local State Local Backup**. Use the [CSV Backup & Restore](./backups.md#csv-backup--restore) form to
+**Settings > Services > Local State Local Backup**. Use the [CSV Backup & Restore](./backups.md#csv-backup-restore) form to
 download the current Local State database, or one of the automatic backups, as a CSV file.
 
 <figure markdown>

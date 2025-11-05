@@ -12,7 +12,7 @@ This filter is provided by the [Standard Datum Filters][sdf] plugin.
 ## Settings
 
 <figure markdown>
-  ![Split filter component settings](../../images/users/datum-filters/split-filter-settings%402x.png){width=714 loading=lazy}
+  ![Split filter component settings](../../images/users/datum-filters/split-filter-settings@2x.png){width=1024 loading=lazy}
 </figure>
 
 In the example screen shot shown above, the `/power/meter/1` datum stream is split into two datum
@@ -24,7 +24,8 @@ In addition to the [Common Settings][datumfilter-common-settings], the following
 
 | Setting            | Description |
 |:-------------------|:------------|
-| Swallow Input      | If enabled, then discard input datum after splitting. Otherwise leave the input datum as is. |
+| Swallow Input      | If enabled then discard input datum after splitting. Otherwise leave the input datum as is. |
+| Persist Output     | If enabled then process and persist output datum after splitting. Otherwise process output datum but do not persist them. |
 | Property Source Mappings |  A list of property name [regular expression][regex] with associated source IDs to copy matching properties to. |
 
 ## Property Source Mappings settings
@@ -37,6 +38,7 @@ Each property source mapping configuration contains the following settings:
 |:----------|:------------|
 | Property  | A property name case-sensitive [regular expression][regex] to match on the input datum stream. You can enable case-insensitive matching by including a `(?i)` prefix. |
 | Source ID | The destination source ID to copy the matching properties to. Supports [placeholders][placeholders]. |
+| Rename    | An optional property name template to rename output properties with. Supports a `{p}` parameter for an input property name and pattern _capture groups_ from **Property** are available starting with `{1}`. For example a **Property** pattern `^(.*)_s1` with a **Rename** template `{1}` would map an input property `watts_s1` to `watts`. |
 
 !!! tip
 
