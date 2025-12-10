@@ -518,6 +518,14 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../datum-filters/timeout/">
+<span class="md-ellipsis">
+    Timeout
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../datum-filters/unchanged-property/">
 <span class="md-ellipsis">
     Unchanged Property
@@ -1220,12 +1228,12 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="logging"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.</span> Logging<a class="headerlink" href="#logging" title="Permanent link">¶</a></h1>
+<h1 id="logging"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.</span> Logging<a class="headerlink" href="#logging" title="Permanent link">¶</a></h1>
 <p>Logging in SolarNode is configured in the <code>/etc/solarnode/log4j2.xml</code> file, which is in the <a href="https://logging.apache.org/log4j/2.x/manual/configuration.html#configuration-with-xml">log4j
 configuration format</a>. The <a href="https://github.com/SolarNetwork/solarnode-os-packages/blob/develop/solarnode-base/debian/usr/share/solarnode/conf/log4j2-example.xml">default configuration</a> in SolarNodeOS
 sets the overall verbosity to <code>INFO</code> and logs to a temporary storage area
 <code>/run/solarnode/log/solarnode.log</code>.</p>
-<h2 id="logging-concepts"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.1</span> Logging concepts<a class="headerlink" href="#logging-concepts" title="Permanent link">¶</a></h2>
+<h2 id="logging-concepts"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.1</span> Logging concepts<a class="headerlink" href="#logging-concepts" title="Permanent link">¶</a></h2>
 <p>Log messages have the following general properties:</p>
 <table>
 <thead>
@@ -1263,7 +1271,7 @@ sets the overall verbosity to <code>INFO</code> and logs to a temporary storage 
 </tr>
 </tbody>
 </table>
-<h2 id="logger-namespaces"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.2</span> Logger namespaces<a class="headerlink" href="#logger-namespaces" title="Permanent link">¶</a></h2>
+<h2 id="logger-namespaces"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.2</span> Logger namespaces<a class="headerlink" href="#logger-namespaces" title="Permanent link">¶</a></h2>
 <p>The <strong>Logger</strong> component outlined in the previous section allows a lot of flexibility to configure
 what gets logged in SolarNode. Setting the level on a given namespace impacts that namespace as well
 as all namespaces <em>beneath</em> it, meaning all other loggers that share the same namespace prefix.</p>
@@ -1287,11 +1295,11 @@ example:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"net.solarnetwork.node.io.modbus"</span><span class="w">                            </span><span class="na">level=</span><span class="s">"debug"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"net.solarnetwork.node.io.modbus.serial.SerialModbusNetwork"</span><span class="w"> </span><span class="na">level=</span><span class="s">"trace"</span><span class="nt">/&gt;</span>
 </code></pre></div>
-<h2 id="logging-ui"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.3</span> Logging UI<a class="headerlink" href="#logging-ui" title="Permanent link">¶</a></h2>
+<h2 id="logging-ui"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.3</span> Logging UI<a class="headerlink" href="#logging-ui" title="Permanent link">¶</a></h2>
 <p>The SolarNode UI supports configuring logger levels dynamically, without having to change the
 logging configuration file. See the <a href="../setup-app/settings/logging/">Setup App / Settings / Logging</a>
 page for more information.</p>
-<h2 id="storage-constraints"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.4</span> Storage constraints<a class="headerlink" href="#storage-constraints" title="Permanent link">¶</a></h2>
+<h2 id="storage-constraints"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.4</span> Storage constraints<a class="headerlink" href="#storage-constraints" title="Permanent link">¶</a></h2>
 <p>The default SolarNode configuration automatically rotates log files based on size, and limits the
 number of historic log files kept around, to that its associated storage space is not filled up.
 When a log file reaches the file limit, it is renamed to include a <code>-i.log</code> suffix, where <code>i</code> is an
@@ -1305,7 +1313,7 @@ at most <strong>5 MB</strong> each, the configuration would look like this:</p>
 <span class="nt">&lt;/Policies&gt;</span>
 <span class="nt">&lt;DefaultRolloverStrategy</span><span class="w"> </span><span class="na">max=</span><span class="s">"9"</span><span class="nt">/&gt;</span>
 </code></pre></div>
-<h2 id="persistent-logging"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.5</span> Persistent logging<a class="headerlink" href="#persistent-logging" title="Permanent link">¶</a></h2>
+<h2 id="persistent-logging"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.5</span> Persistent logging<a class="headerlink" href="#persistent-logging" title="Permanent link">¶</a></h2>
 <p>By default SolarNode logs to temporary (RAM) storage that is discarded when the node reboots. The
 configuration can be changed so that logs are written directly to persistent storage if you would
 like to have the logs persisted across reboots, or would like to preserve more log history than can
@@ -1323,7 +1331,7 @@ easy location to use is <code>/var/lib/solarnode/var/log</code>, like this:</p>
 Consumer-grade SD cards in particular can fail quickly if SolarNode is writting a lot of information,
 such as verbose logging. Use of this configuration should be used with caution.</p>
 </div>
-<h2 id="logging-example-split-across-multiple-files"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.6</span> Logging example: split across multiple files<a class="headerlink" href="#logging-example-split-across-multiple-files" title="Permanent link">¶</a></h2>
+<h2 id="logging-example-split-across-multiple-files"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.6</span> Logging example: split across multiple files<a class="headerlink" href="#logging-example-split-across-multiple-files" title="Permanent link">¶</a></h2>
 <p>Sometimes it can be useful to turn on verbose logging for some area of SolarNode, but have those
 messages go to a different file so they don't clog up the main <code>solarnode.log</code> file. This can be
 done by configuring additional <em>appender</em> configurations.</p>
@@ -1421,7 +1429,7 @@ needs):</p>
 <li>The <strong>root-level</strong> appender is the "default" destination for log messages, unless overridden
    by a specific appender like we did for the <code>Filter</code>, <code>MQTT</code>, and <code>Flux</code> appenders above.</li>
 </ol>
-<h3 id="separate-file-configuration-notes"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.6.1</span> Separate file configuration notes<a class="headerlink" href="#separate-file-configuration-notes" title="Permanent link">¶</a></h3>
+<h3 id="separate-file-configuration-notes"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.6.1</span> Separate file configuration notes<a class="headerlink" href="#separate-file-configuration-notes" title="Permanent link">¶</a></h3>
 <p>The various <code>&lt;AppenderRef&gt;</code> elements configure the appender name to write the messages to.</p>
 <p>The various <code>additivity="false"</code> attributes disable appender <em>additivity</em> which means the log
 message will only be written to one appender, instead of being written to <strong>all</strong>
@@ -1429,14 +1437,14 @@ configured appenders in the hierarchy (for example the root-level appender).</p>
 <p>The <code>immediateFlush="false"</code> turns on buffered logging, which means log messages are buffered in RAM
 before being flushed to disk. This is more forgiving to the disk, at the expense of a delay before
 the messages appear.</p>
-<h2 id="enable-mqtt-wire-logging"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.7</span> Enable MQTT wire logging<a class="headerlink" href="#enable-mqtt-wire-logging" title="Permanent link">¶</a></h2>
+<h2 id="enable-mqtt-wire-logging"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.7</span> Enable MQTT wire logging<a class="headerlink" href="#enable-mqtt-wire-logging" title="Permanent link">¶</a></h2>
 <p>MQTT wire logging means the raw MQTT packets send and received over MQTT connections will be logged
 in an easy-to-read but very verbose format. For the MQTT wire logging to be enabled, it must be
 activated with a special configuration file. Create the
 <code>/etc/solarnode/services/net.solarnetwork.common.mqtt.netty.cfg</code> file with this content:</p>
 <div class="highlight"><pre><span></span><code>wireLogging = true
 </code></pre></div>
-<h3 id="mqtt-wire-log-namespace"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.7.1</span> MQTT wire log namespace<a class="headerlink" href="#mqtt-wire-log-namespace" title="Permanent link">¶</a></h3>
+<h3 id="mqtt-wire-log-namespace"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.7.1</span> MQTT wire log namespace<a class="headerlink" href="#mqtt-wire-log-namespace" title="Permanent link">¶</a></h3>
 <p>MQTT wire logs use a namespace prefix <code>net.solarnetwork.mqtt.</code> followed by the connection's host
 name or IP address and port. For example SolarIn messages would use
 <code>net.solarnetwork.mqtt.queue.solarnetwork.net:8883</code> and SolarFlux messages would use

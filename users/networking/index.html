@@ -518,6 +518,14 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../datum-filters/timeout/">
+<span class="md-ellipsis">
+    Timeout
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../datum-filters/unchanged-property/">
 <span class="md-ellipsis">
     Unchanged Property
@@ -1256,16 +1264,16 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="networking"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.</span> Networking<a class="headerlink" href="#networking" title="Permanent link">¶</a></h1>
+<h1 id="networking"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.</span> Networking<a class="headerlink" href="#networking" title="Permanent link">¶</a></h1>
 <p>SolarNode will attempt to automatically configure networking access from a local DHCP server. For
 many deployments the local network router is the DHCP server. SolarNode will identify itself with
 the name <code>solarnode</code>, so in many cases you can reach the SolarNode setup app at <a href="http://solarnode/">http://solarnode/</a>.</p>
-<h2 id="finding-solarnodes-network-address"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.1</span> Finding SolarNode's network address<a class="headerlink" href="#finding-solarnodes-network-address" title="Permanent link">¶</a></h2>
+<h2 id="finding-solarnodes-network-address"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.1</span> Finding SolarNode's network address<a class="headerlink" href="#finding-solarnodes-network-address" title="Permanent link">¶</a></h2>
 <p>To find what network address SolarNode is using, you have a few options:</p>
-<h3 id="consult-your-network-router"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.1.1</span> Consult your network router<a class="headerlink" href="#consult-your-network-router" title="Permanent link">¶</a></h3>
+<h3 id="consult-your-network-router"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.1.1</span> Consult your network router<a class="headerlink" href="#consult-your-network-router" title="Permanent link">¶</a></h3>
 <p>Your local network router is very likely to have a record of SolarNode's network connection. Log
 into the router's management UI and look for a device named <code>solarnode</code>.</p>
-<h3 id="connect-a-keyboard-and-screen"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.1.2</span> Connect a keyboard and screen<a class="headerlink" href="#connect-a-keyboard-and-screen" title="Permanent link">¶</a></h3>
+<h3 id="connect-a-keyboard-and-screen"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.1.2</span> Connect a keyboard and screen<a class="headerlink" href="#connect-a-keyboard-and-screen" title="Permanent link">¶</a></h3>
 <p>If your SolarNode supports connecting a keyboard and screen, you can log into the SolarNode command line
 console and run <code class="highlight">ip<span class="w"> </span>-br<span class="w"> </span>addr</code> to print out a brief summary of the current networking configuration:</p>
 <div class="highlight"><pre><span></span><code>$ ip -br addr
@@ -1281,7 +1289,7 @@ and a WiFi device <code>wlan0</code> that is not connected. You could reach that
 <p class="admonition-title">Tip</p>
 <p>You can get more details by running <code class="highlight">ip<span class="w"> </span>addr</code> (without the <code>-br</code> argument).</p>
 </div>
-<h2 id="wifi"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.2</span> WiFi<a class="headerlink" href="#wifi" title="Permanent link">¶</a></h2>
+<h2 id="wifi"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.2</span> WiFi<a class="headerlink" href="#wifi" title="Permanent link">¶</a></h2>
 <p>If your device will use WiFi for network access, you will need to configure the network name and credentials to use.
 You can do that by creating a <code>wpa_supplicant.conf</code> file on the SolarNodeOS media (typically an SD card). For Raspberry Pi media, you can mount the SD card on your computer and it will mount the appropriate drive for you.</p>
 <p><img alt="macOS and Windows SOLARBOOT disk image icon" src="../../images/users/os-solarboot-disk-icon.png" width="435"/></p>
@@ -1294,7 +1302,7 @@ network={
 }
 </code></pre></div>
 <p>Change the <code>country=nz</code> to match your own country code.</p>
-<h2 id="ethernet-static-ip-address"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.3</span> Ethernet static IP address<a class="headerlink" href="#ethernet-static-ip-address" title="Permanent link">¶</a></h2>
+<h2 id="ethernet-static-ip-address"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.3</span> Ethernet static IP address<a class="headerlink" href="#ethernet-static-ip-address" title="Permanent link">¶</a></h2>
 <p>By default SolarNode relies on a DHCP server to supply it with a dynamic IP address.
 To configure a static IP address, edit the <code>/etc/systemd/network/10-eth.network</code> file
 and configure it along these lines:</p>
@@ -1308,7 +1316,7 @@ Address=10.1.10.9/24
 [Route]
 Gateway=10.1.10.1
 </code></pre></div>
-<h2 id="ethernet-internet-sharing"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.4</span> Ethernet internet sharing<a class="headerlink" href="#ethernet-internet-sharing" title="Permanent link">¶</a></h2>
+<h2 id="ethernet-internet-sharing"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.4</span> Ethernet internet sharing<a class="headerlink" href="#ethernet-internet-sharing" title="Permanent link">¶</a></h2>
 <p>For devices with two ethernet ports, you can connect one port to a wide-area network (with access to
 the internet) and the other to a local-area network, and provide the local-area network with access
 to the internet with SolarNode acting as the router (gateway) to the wide-area network.</p>
@@ -1317,7 +1325,7 @@ network (LAN) is <code>eth1</code>.  The WAN interface can be configured as DHCP
 IP as outlined above.</p>
 <p>You can choose to use static IP addressing or DHCP for the LAN, as outlined in the subsequent
 sections.</p>
-<h3 id="ip-forwarding-firewall-changes"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.4.1</span> IP forwarding firewall changes<a class="headerlink" href="#ip-forwarding-firewall-changes" title="Permanent link">¶</a></h3>
+<h3 id="ip-forwarding-firewall-changes"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.4.1</span> IP forwarding firewall changes<a class="headerlink" href="#ip-forwarding-firewall-changes" title="Permanent link">¶</a></h3>
 <p>The SolarNode <a href="../sysadmin/networking/#firewall">firewall</a> must be configured to allow LAN devices
 access to the WAN. Edit the <code>/etc/nftables.conf</code> file to change this line:</p>
 <div class="highlight"><pre><span></span><code>add rule ip filter FORWARD counter reject
@@ -1328,7 +1336,7 @@ access to the WAN. Edit the <code>/etc/nftables.conf</code> file to change this 
 <p>Then reload the firewall settings with:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nftables
 </code></pre></div>
-<h3 id="lan-static-ip-addressing"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.4.2</span> LAN static IP addressing<a class="headerlink" href="#lan-static-ip-addressing" title="Permanent link">¶</a></h3>
+<h3 id="lan-static-ip-addressing"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.4.2</span> LAN static IP addressing<a class="headerlink" href="#lan-static-ip-addressing" title="Permanent link">¶</a></h3>
 <p>If you prefer to use static IP addresses for the LAN devices, or cannot use DHCP for any reason, you
 can configure all LAN devices with static IP addresses within the subnet of your LAN. For this guide
 we will use <code>192.168.100.1/24</code> for SolarNode's IP address and network mask, but you could use any
@@ -1352,7 +1360,7 @@ Address=192.168.100.1/24
 <p>To reload the network settings run:</p>
 <div class="highlight"><pre><span></span><code>sudo systemctl restart systemd-networkd
 </code></pre></div>
-<h3 id="lan-dhcp-addressing"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.4.3</span> LAN DHCP addressing<a class="headerlink" href="#lan-dhcp-addressing" title="Permanent link">¶</a></h3>
+<h3 id="lan-dhcp-addressing"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.4.3</span> LAN DHCP addressing<a class="headerlink" href="#lan-dhcp-addressing" title="Permanent link">¶</a></h3>
 <p>Instead of using static IP addresses on the LAN devices, you SolarNode can operate a DHCP server for
 the LAN. For this example the DHCP server will dynamically assign IP addresses to LAN devices,
 starting at <code>192.168.100.100</code>. Create a <code>/etc/systemd/network/11-eth.network</code> file with the
@@ -1378,7 +1386,7 @@ PoolOffset=100
 </div>
 </div>
 </input></div>
-<h4 id="dhcp-reserved-ip-addresses"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.4.3.1</span> DHCP reserved IP addresses<a class="headerlink" href="#dhcp-reserved-ip-addresses" title="Permanent link">¶</a></h4>
+<h4 id="dhcp-reserved-ip-addresses"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.4.3.1</span> DHCP reserved IP addresses<a class="headerlink" href="#dhcp-reserved-ip-addresses" title="Permanent link">¶</a></h4>
 <p>If you would like consistent IP addresses assigned to LAN devices while using DHCP, you can
 configure specific IP addresses based on the device MAC addresses. Just add
 <code>[DHCPServerStaticLease]</code> sections to the network configuration, one for each device you want to
@@ -1407,7 +1415,7 @@ Address=192.168.100.10
 </div>
 </div>
 </input></div>
-<h2 id="dns-server"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.5</span> DNS server<a class="headerlink" href="#dns-server" title="Permanent link">¶</a></h2>
+<h2 id="dns-server"><span class="enumerate-headings-plugin enumerate-heading-plugin">53.5</span> DNS server<a class="headerlink" href="#dns-server" title="Permanent link">¶</a></h2>
 <p>You can configure SolarNode as a DNS server for the local network. This can be useful when sharing a
 wide-area network connection with a local network. First you must allow DNS queries through the
 firewall, so edit the <code>/etc/nftables.conf</code> file to add the following, just before the <code># Allow DHCP</code>

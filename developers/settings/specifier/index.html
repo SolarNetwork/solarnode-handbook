@@ -518,6 +518,14 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/datum-filters/timeout/">
+<span class="md-ellipsis">
+    Timeout
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../../users/datum-filters/unchanged-property/">
 <span class="md-ellipsis">
     Unchanged Property
@@ -1320,7 +1328,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="setting-specifier"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.</span> Setting Specifier<a class="headerlink" href="#setting-specifier" title="Permanent link">¶</a></h1>
+<h1 id="setting-specifier"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.</span> Setting Specifier<a class="headerlink" href="#setting-specifier" title="Permanent link">¶</a></h1>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/SettingSpecifier.html"><code>net.solarnetwork.settings.SettingSpecifier</code></a> API defines metadata for a
 single configurable property in the Settings API. The API looks like this:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">SettingSpecifier</span><span class="w"> </span><span class="p">{</span>
@@ -1359,10 +1367,10 @@ setting <em>types</em>.</p>
 view or change that property's value. The <a href="../../services/settings-service/">Settings Service</a>
 provides methods for managing setting values.</p>
 </div>
-<h2 id="settings-playpen"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.1</span> Settings Playpen<a class="headerlink" href="#settings-playpen" title="Permanent link">¶</a></h2>
+<h2 id="settings-playpen"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.1</span> Settings Playpen<a class="headerlink" href="#settings-playpen" title="Permanent link">¶</a></h2>
 <p>The <a href="https://github.com/SolarNetwork/solarnetwork-node/tree/develop/net.solarnetwork.node.settings.playpen">Settings Playpen</a> plugin demonstrates most of the available setting types, and is a
 great way to see how the settings can be used.</p>
-<h2 id="text-field"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.2</span> Text Field<a class="headerlink" href="#text-field" title="Permanent link">¶</a></h2>
+<h2 id="text-field"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.2</span> Text Field<a class="headerlink" href="#text-field" title="Permanent link">¶</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/TextFieldSettingSpecifier.html"><code>TextFieldSettingSpecifier</code></a> defines a simple string-based
 configurable property and is the most common setting type. The setting defines a <code>key</code> that maps to
 a setter method on its associated component class. In the SolarNode UI a text field is rendered as
@@ -1384,7 +1392,7 @@ component accessor methods.</p>
 <p>For example a <code>Map&lt;String, String&gt;</code> setting could be published as a text field setting that
 en/decodes the <code>Map</code> into a delimited string value, for example <code>name=Test, color=red</code>.</p>
 </div>
-<h3 id="secure-text-field"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.2.1</span> Secure Text Field<a class="headerlink" href="#secure-text-field" title="Permanent link">¶</a></h3>
+<h3 id="secure-text-field"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.2.1</span> Secure Text Field<a class="headerlink" href="#secure-text-field" title="Permanent link">¶</a></h3>
 <p>The <code>BasicTextFieldSettingSpecifier</code> can also be used for "secure" text fields where the field's
 content is obscured from view. In the SolarNode UI a secure text field is rendered as an HTML
 password form input like this:</p>
@@ -1395,7 +1403,7 @@ password form input like this:</p>
 <span class="c1">// or without any default value</span>
 <span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="title"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.3</span> Title<a class="headerlink" href="#title" title="Permanent link">¶</a></h2>
+<h2 id="title"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.3</span> Title<a class="headerlink" href="#title" title="Permanent link">¶</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/TitleSettingSpecifier.html"><code>TitleSettingSpecifier</code></a> defines a simple read-only string-based
 configurable property. The setting defines a <code>key</code> that maps to a setter method on its associated
 component class. In the SolarNode UI the default value is rendered as plain text, like this:</p>
@@ -1404,14 +1412,14 @@ component class. In the SolarNode UI the default value is rendered as plain text
 implementation of this API. A standard title setting is created like this:</p>
 <div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTitleSettingSpecifier</span><span class="p">(</span><span class="s">"status"</span><span class="p">,</span><span class="w"> </span><span class="s">"Status is good."</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="html-title"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.3.1</span> HTML Title<a class="headerlink" href="#html-title" title="Permanent link">¶</a></h3>
+<h3 id="html-title"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.3.1</span> HTML Title<a class="headerlink" href="#html-title" title="Permanent link">¶</a></h3>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/TitleSettingSpecifier.html"><code>TitleSettingSpecifier</code></a> supports HTML markup. In the SolarNode UI the
 default value is rendered directly into HTML, like this:</p>
 <p><img alt="Title setting as HTML text" src="../../../images/developers/settings/title-markup-setting.png" width="366"/></p>
 <div class="highlight"><pre><span></span><code><span class="c1">// pass `true` as the 4th argument to enable HTML markup in the status value</span>
 <span class="k">new</span><span class="w"> </span><span class="n">BasicTitleSettingSpecifier</span><span class="p">(</span><span class="s">"status"</span><span class="p">,</span><span class="w"> </span><span class="s">"Status is &lt;b&gt;good&lt;/b&gt;."</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="text-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.4</span> Text Area<a class="headerlink" href="#text-area" title="Permanent link">¶</a></h2>
+<h2 id="text-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.4</span> Text Area<a class="headerlink" href="#text-area" title="Permanent link">¶</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/TextAreaSettingSpecifier.html"><code>TextAreaSettingSpecifier</code></a> defines a simple string-based
 configurable property for a larger text value, loaded as an external file using the
 <a href="../resource-handler/">SettingResourceHandler</a> API. In the SolarNode UI a text area is rendered
@@ -1424,7 +1432,7 @@ of this API. A standard text field setting is created like this:</p>
 <span class="c1">// or without any default value</span>
 <span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="direct-text-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.4.1</span> Direct Text Area<a class="headerlink" href="#direct-text-area" title="Permanent link">¶</a></h3>
+<h3 id="direct-text-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.4.1</span> Direct Text Area<a class="headerlink" href="#direct-text-area" title="Permanent link">¶</a></h3>
 <p>The <code>BasicTextAreaSettingSpecifier</code> can also be used for "direct" text areas where the field's
 content is not uploaded as an external file. In the SolarNode UI a direct text area is rendered as
 an HTML form text area, like this:</p>
@@ -1435,7 +1443,7 @@ an HTML form text area, like this:</p>
 <span class="c1">// or without any default value</span>
 <span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="toggle"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.5</span> Toggle<a class="headerlink" href="#toggle" title="Permanent link">¶</a></h2>
+<h2 id="toggle"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.5</span> Toggle<a class="headerlink" href="#toggle" title="Permanent link">¶</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/ToggleSettingSpecifier.html"><code>ToggleSettingSpecifier</code></a> defines a boolean configurable property. In
 the SolarNode UI a toggle setting is rendered as an HTML form button, like this:</p>
 <p><img alt="Toggle setting as an HTML form field" src="../../../images/developers/settings/toggle-setting.png" width="142"/></p>
@@ -1445,7 +1453,7 @@ of this API. A standard toggle setting is created like this:</p>
 
 <span class="k">new</span><span class="w"> </span><span class="n">BasicToggleSettingSpecifier</span><span class="p">(</span><span class="s">"enabled"</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w">  </span><span class="c1">// default "on"</span>
 </code></pre></div>
-<h2 id="slider"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.6</span> Slider<a class="headerlink" href="#slider" title="Permanent link">¶</a></h2>
+<h2 id="slider"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.6</span> Slider<a class="headerlink" href="#slider" title="Permanent link">¶</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/SliderSettingSpecifier.html"><code>SliderSettingSpecifier</code></a> defines a number-based configuration property
 with minimum and maximum values enforced, and a <em>step</em> limit. In the SolarNode UI a
 slider is rendered as an HTML widget, like this:</p>
@@ -1458,7 +1466,7 @@ of this API. A standard Slider setting is created like this:</p>
 <span class="c1">// default value 5.0, range between 0-11 in 0.5 increments</span>
 <span class="k">new</span><span class="w"> </span><span class="n">BasicSliderSettingSpecifier</span><span class="p">(</span><span class="s">"volume"</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="radio-group"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.7</span> Radio Group<a class="headerlink" href="#radio-group" title="Permanent link">¶</a></h2>
+<h2 id="radio-group"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.7</span> Radio Group<a class="headerlink" href="#radio-group" title="Permanent link">¶</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/RadioGroupSettingSpecifier.html"><code>RadioGroupSettingSpecifier</code></a> defines a configurable property that
 accepts a single value from a fixed set of possible values. In the SolarNode UI a radio group is
 rendered as a set of HTML radio input form fields, like this:</p>
@@ -1475,7 +1483,7 @@ of this API. A standard RadioGroup setting is created like this:</p>
 <span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">BasicRadioGroupSettingSpecifier</span><span class="p">(</span><span class="s">"option"</span><span class="p">,</span><span class="w"> </span><span class="n">vals</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
 <span class="n">radio</span><span class="p">.</span><span class="na">setValueTitles</span><span class="p">(</span><span class="n">radioValues</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="multi-value"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.8</span> Multi-value<a class="headerlink" href="#multi-value" title="Permanent link">¶</a></h2>
+<h2 id="multi-value"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.8</span> Multi-value<a class="headerlink" href="#multi-value" title="Permanent link">¶</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/MultiValueSettingSpecifier.html"><code>MultiValueSettingSpecifier</code></a> defines a configurable property that
 accepts a single value from a fixed set of possible values. In the SolarNode UI a multi-value
 setting is rendered as an HTML select form field, like this:</p>
@@ -1492,7 +1500,7 @@ of this API. A standard MultiValue setting is created like this:</p>
 <span class="w">        </span><span class="n">vals</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
 <span class="n">menu</span><span class="p">.</span><span class="na">setValueTitles</span><span class="p">(</span><span class="n">menuValues</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="file"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.9</span> File<a class="headerlink" href="#file" title="Permanent link">¶</a></h2>
+<h2 id="file"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.9</span> File<a class="headerlink" href="#file" title="Permanent link">¶</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/settings/FileSettingSpecifier.html"><code>FileSettingSpecifier</code></a> defines a file-based resource property, loaded as
 an external file using the <a href="../resource-handler/">SettingResourceHandler</a> API. In the SolarNode UI a
 file setting is rendered as an HTML file input, like this:</p>
@@ -1507,7 +1515,7 @@ of this API. A standard file setting is created like this:</p>
 <span class="k">new</span><span class="w"> </span><span class="n">BasicFileSettingSpecifier</span><span class="p">(</span><span class="s">"document-list"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">".txt"</span><span class="p">,</span><span class="w"> </span><span class="s">"text/*"</span><span class="p">)),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="dynamic-list"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.10</span> Dynamic List<a class="headerlink" href="#dynamic-list" title="Permanent link">¶</a></h2>
+<h2 id="dynamic-list"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.10</span> Dynamic List<a class="headerlink" href="#dynamic-list" title="Permanent link">¶</a></h2>
 <p>A Dynamic List setting allows the user to manage a list of homogeneous items, adding or subtracting items as desired.
 The items can be literals like strings, or arbitrary objects that define their own settings. In the SolarNode UI a
 dynamic list setting is rendered as a pair of HTML buttons to remove and add items, like this:</p>
@@ -1581,7 +1589,7 @@ SolarNode will use this accessor to request a specific size for the dynamic list
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/support/SettingUtils.html"><code>SettingUtils.dynamicListSettingSpecifier()</code></a> method simplifies the creation of a
 <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/GroupSettingSpecifier.html"><code>GroupSettingSpecifier</code></a> that represents a dynamic list (the examples in the
 following sections demonstrate this).</p>
-<h3 id="simple-dynamic-list"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.10.1</span> Simple Dynamic List<a class="headerlink" href="#simple-dynamic-list" title="Permanent link">¶</a></h3>
+<h3 id="simple-dynamic-list"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.10.1</span> Simple Dynamic List<a class="headerlink" href="#simple-dynamic-list" title="Permanent link">¶</a></h3>
 <p>A <em>simple</em> Dynamic List is a dynamic list of string or number values.</p>
 <p><img alt="Simple dynamic list setting in an HTML form" src="../../../images/developers/settings/dynamic-list-simple-setting.png" width="420"/></p>
 <div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
@@ -1599,7 +1607,7 @@ following sections demonstrate this).</p>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">results</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="complex-dynamic-list"><span class="enumerate-headings-plugin enumerate-heading-plugin">77.10.2</span> Complex Dynamic List<a class="headerlink" href="#complex-dynamic-list" title="Permanent link">¶</a></h3>
+<h3 id="complex-dynamic-list"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.10.2</span> Complex Dynamic List<a class="headerlink" href="#complex-dynamic-list" title="Permanent link">¶</a></h3>
 <p>A <em>complex</em> Dynamic List is a dynamic list of arbitrary object values. The main difference in terms
 of the necessary settings structure required, compared to a Simple Dynamic List, is that a
 group-of-groups is used.</p>

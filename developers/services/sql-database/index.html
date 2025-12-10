@@ -518,6 +518,14 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/datum-filters/timeout/">
+<span class="md-ellipsis">
+    Timeout
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../../users/datum-filters/unchanged-property/">
 <span class="md-ellipsis">
     Unchanged Property
@@ -1120,12 +1128,12 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="sql-database"><span class="enumerate-headings-plugin enumerate-heading-plugin">91.</span> SQL Database<a class="headerlink" href="#sql-database" title="Permanent link">¶</a></h1>
+<h1 id="sql-database"><span class="enumerate-headings-plugin enumerate-heading-plugin">92.</span> SQL Database<a class="headerlink" href="#sql-database" title="Permanent link">¶</a></h1>
 <p>The SolarNode runtime provides a local SQL database that is used to hold application settings, data
 sampled from devices, or anything really. Some data is designed to live only in this local store
 (such as settings) while other data eventually gets pushed up into the SolarNet cloud. This document
 describes the most common aspects of the local database.</p>
-<h2 id="database-implementation"><span class="enumerate-headings-plugin enumerate-heading-plugin">91.1</span> Database implementation<a class="headerlink" href="#database-implementation" title="Permanent link">¶</a></h2>
+<h2 id="database-implementation"><span class="enumerate-headings-plugin enumerate-heading-plugin">92.1</span> Database implementation<a class="headerlink" href="#database-implementation" title="Permanent link">¶</a></h2>
 <p>The database is provided by either the <a href="https://h2database.com/">H2</a>
 or <a href="https://db.apache.org/derby/">Apache Derby</a> embedded SQL
 database engine.</p>
@@ -1144,7 +1152,7 @@ persisted copy of the database can be loaded back into RAM. This pattern works w
 <li>Aside from settings, which change infrequently, most data stays locally only a
     short time before getting pushed into the SolarNet cloud.</li>
 </ol>
-<h2 id="low-level-access-jdbc"><span class="enumerate-headings-plugin enumerate-heading-plugin">91.2</span> Low level access: JDBC<a class="headerlink" href="#low-level-access-jdbc" title="Permanent link">¶</a></h2>
+<h2 id="low-level-access-jdbc"><span class="enumerate-headings-plugin enumerate-heading-plugin">92.2</span> Low level access: JDBC<a class="headerlink" href="#low-level-access-jdbc" title="Permanent link">¶</a></h2>
 <p>A standard <a href="https://en.wikipedia.org/wiki/Java_Database_Connectivity">JDBC</a> stack is available and normal SQL queries are used to access the database.
 The <a href="https://github.com/brettwooldridge/HikariCP">Hikari</a> JDBC connection pool provides a <code>javax.sql.DataSource</code> for direct JDBC
 access. The pool is configured by <a href="../../../users/configuration/">factory configuration</a> files in the
@@ -1169,7 +1177,7 @@ declare references to these APIs like this:</p>
 <span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">"txManager"</span><span class="w"> </span><span class="na">interface=</span><span class="s">"org.springframework.transaction.PlatformTransactionManager"</span>
 <span class="w">        </span><span class="na">filter=</span><span class="s">"(db=node)"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
-<h2 id="high-level-access-data-access-object-dao"><span class="enumerate-headings-plugin enumerate-heading-plugin">91.3</span> High level access: Data Access Object (DAO)<a class="headerlink" href="#high-level-access-data-access-object-dao" title="Permanent link">¶</a></h2>
+<h2 id="high-level-access-data-access-object-dao"><span class="enumerate-headings-plugin enumerate-heading-plugin">92.3</span> High level access: Data Access Object (DAO)<a class="headerlink" href="#high-level-access-data-access-object-dao" title="Permanent link">¶</a></h2>
 <p>The SolarNode runtime also provides some Data Access Object (DAO) services that
 make storing some typical data easier:</p>
 <ul>

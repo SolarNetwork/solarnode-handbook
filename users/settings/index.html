@@ -518,6 +518,14 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../datum-filters/timeout/">
+<span class="md-ellipsis">
+    Timeout
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../datum-filters/unchanged-property/">
 <span class="md-ellipsis">
     Unchanged Property
@@ -1170,7 +1178,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="settings-files"><span class="enumerate-headings-plugin enumerate-heading-plugin">61.</span> Settings Files<a class="headerlink" href="#settings-files" title="Permanent link">¶</a></h1>
+<h1 id="settings-files"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.</span> Settings Files<a class="headerlink" href="#settings-files" title="Permanent link">¶</a></h1>
 <p>SolarNode plugins support configurable properties, called <em>settings</em>. The SolarNode setup app allows
 you to manage settings through simple web forms.</p>
 <p>Settings can also be exported and imported in a CSV format, and can be applied when SolarNode starts
@@ -1194,7 +1202,7 @@ component in SolarNode.</p>
 <strong>Settings &gt; Backups</strong> screen in the
 <a href="../setup-app/settings/backups/#settings-backup-restore">Settings Backup &amp; Restore</a> section:</p>
 <p><img alt="SolarNode settings import/export form" src="../../images/users/setup/settings-backup-restore%402x.png" width="728"/></p>
-<h2 id="settings-csv-example"><span class="enumerate-headings-plugin enumerate-heading-plugin">61.1</span> Settings CSV example<a class="headerlink" href="#settings-csv-example" title="Permanent link">¶</a></h2>
+<h2 id="settings-csv-example"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.1</span> Settings CSV example<a class="headerlink" href="#settings-csv-example" title="Permanent link">¶</a></h2>
 <p>Here's an example snippet of a settings CSV file:</p>
 <div class="highlight"><pre><span></span><code>net.solarnetwork.node.io.modbus.1,serialParams.baudRate,19200,0,2014-03-01 21:01:31
 net.solarnetwork.node.io.modbus.1,serialParams.parityString,even,0,2014-03-01 21:01:31
@@ -1203,7 +1211,7 @@ net.solarnetwork.node.io.modbus.FACTORY,1,1,0,2014-03-01 21:00:31
 </code></pre></div>
 <p>These settings all belong to a <code>net.solarnetwork.node.io.modbus</code> component. The meaning
 of the CSV columns is discussed in the following section.</p>
-<h2 id="settings-csv-syntax"><span class="enumerate-headings-plugin enumerate-heading-plugin">61.2</span> Settings CSV syntax<a class="headerlink" href="#settings-csv-syntax" title="Permanent link">¶</a></h2>
+<h2 id="settings-csv-syntax"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.2</span> Settings CSV syntax<a class="headerlink" href="#settings-csv-syntax" title="Permanent link">¶</a></h2>
 <p>Settings files are CSV (comma separated values) files, easily exported from spreadsheet applications
 like Microsoft Excel or Google Sheets. The CSV <strong>must</strong> include a header row, which is skipped. All
 other rows will be processed as settings.</p>
@@ -1254,7 +1262,7 @@ documentation of the plugin that provides that component. You can get a pretty g
 the values are by exporting the settings after configuring a component in SolarNode. Typically the
 <code>key</code> value will mirror a plugin's Java package name, and <code>type</code> follows a JavaScript-like property
 accessor syntax representing a configurable property on the component.</p>
-<h3 id="setting-property-syntax"><span class="enumerate-headings-plugin enumerate-heading-plugin">61.2.1</span> Setting property syntax<a class="headerlink" href="#setting-property-syntax" title="Permanent link">¶</a></h3>
+<h3 id="setting-property-syntax"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.2.1</span> Setting property syntax<a class="headerlink" href="#setting-property-syntax" title="Permanent link">¶</a></h3>
 <p>The <code>type</code> setting value usually defines a component property using a JavaScript-like syntax with
 these rules:</p>
 <table>
@@ -1290,7 +1298,7 @@ these rules:</p>
 </table>
 <p>These rules can be combined into complex expressions, for example <code>propIncludes[0].name</code> or
 <code>delegate.connectionFactory.propertyFilters['UID']</code>.</p>
-<h3 id="setting-flags"><span class="enumerate-headings-plugin enumerate-heading-plugin">61.2.2</span> Setting flags<a class="headerlink" href="#setting-flags" title="Permanent link">¶</a></h3>
+<h3 id="setting-flags"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.2.2</span> Setting flags<a class="headerlink" href="#setting-flags" title="Permanent link">¶</a></h3>
 <p>Each setting has a set of flags that can be associated with it. The following table outlines the
 bit offset for each flag along with a description:</p>
 <table>
@@ -1316,7 +1324,7 @@ bit offset for each flag along with a description:</p>
 </table>
 <p><strong>Note</strong> these are bit offsets, so the decimal value to ignore modification date is <code>1</code>, to mark
 as volatile is <code>2</code>, and for both is <code>3</code>.</p>
-<h3 id="component-factories"><span class="enumerate-headings-plugin enumerate-heading-plugin">61.2.3</span> Component factories<a class="headerlink" href="#component-factories" title="Permanent link">¶</a></h3>
+<h3 id="component-factories"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.2.3</span> Component factories<a class="headerlink" href="#component-factories" title="Permanent link">¶</a></h3>
 <p>Many plugins provide <em>component factories</em> which allow you to configure any number of <em>instances</em> of
 that component. Each component <em>instance</em> is assigned a unique <em>identifier</em> when it is created. In
 the SolarNode setup app, the component instance identifiers appear throughout the UI:</p>
@@ -1342,7 +1350,7 @@ net.solarnetwork.node.io.modbus.HVAC,serialParams.portName,/dev/ttyUSB0,0,2014-0
 net.solarnetwork.node.io.modbus.FACTORY,Lighting,Lighting,0,2014-03-01 21:00:31
 net.solarnetwork.node.io.modbus.FACTORY,HVAC,HVAC,0,2014-03-01 21:00:31
 </code></pre></div>
-<h2 id="auto-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">61.3</span> Auto settings<a class="headerlink" href="#auto-settings" title="Permanent link">¶</a></h2>
+<h2 id="auto-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">62.3</span> Auto settings<a class="headerlink" href="#auto-settings" title="Permanent link">¶</a></h2>
 <p>SolarNode settings can also be configured through Auto Settings, applied when SolarNode starts up,
 by placing Settings CSV files in the <code>/etc/solarnode/auto-settings.d</code> directory. These settings are
 applied only if they don't already exist or the modified date in the settings file is newer than the
