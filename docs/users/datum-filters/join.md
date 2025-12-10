@@ -11,7 +11,7 @@ This filter is provided by the [Standard Datum Filters][sdf] plugin.
 ## Settings
 
 <figure markdown>
-  ![Join filter component settings](../../images/users/datum-filters/join-filter-settings@2x.png){width=1024 loading=lazy}
+  ![Join filter component settings](../../images/users/datum-filters/join-filter-settings@2x.png){width=882 loading=lazy}
 </figure>
 
 In addition to the [Common Settings][datumfilter-common-settings], the following general settings are available:
@@ -20,11 +20,12 @@ In addition to the [Common Settings][datumfilter-common-settings], the following
 |:--------------------|:------------------------------------------------------------------|
 | Output Source ID    | The source ID of the merged datum stream. [Placeholders][placeholders] are allowed. |
 | Coalesce Threshold  | When `2` or more then wait until datum from this many _different_ source IDs have been encountered before generating an output datum. Once a coalesced datum has been generated the tracking of input sources resets and another datum will only be generated after the threshold is met again. If `1` or less, then generate output datum for all input datum. |
+| Coalesce Timeout    | When greater than `0` and **Coalesce Threshold** is `2` or more then wait at most this amount of milliseconds for all source IDs to be coalesced before generating a datum out of whatever source IDs have been seen since the last generated datum. If the coalesce threshold is satisfied before this timeout occurs, a datum will be generated as normal. This means a datum will always be generated at at least this frequency, but the datum may not contain properties from all sources. |
 | Swallow Input       | If enabled, then filter out input datum after merging. Otherwise leave the input datum as-is. |
 | Persist Output     | If enabled then process and persist output datum after merging. Otherwise process output datum but do not persist them. |
 | Source Property Mappings |  A list of source IDs with associated property name templates to rename the properties with. Each template must contain a `{p}` parameter which will be replaced by the property names merged from datum encountered with the associated source ID. For example `{p}_s1` would map an input property `watts` to `watts_s1`. |
 
-Use the <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove expression configurations.
+Use the <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove source property configurations.
 
 ## Source Property Mappings settings
 
