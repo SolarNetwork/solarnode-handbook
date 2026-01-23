@@ -9,7 +9,7 @@ property values captured from a device. In the SolarNode [Setup App](setup-app/i
 datum data source component might present a configurable list of expression settings like this:
 
 <figure markdown>
-  ![Example expression settings](../images/users/expression-example-settings%402x.png){width=706 loading=lazy}
+  ![Example expression settings](../images/users/expression-example-settings%402x.png){width=856 loading=lazy}
 </figure>
 
 In this example, each time the data source captures a datum from the device it is communicating with

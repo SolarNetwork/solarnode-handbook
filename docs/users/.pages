@@ -5,6 +5,7 @@ nav:
     - setup-app
     - cli.md
     - datum.md
+    - datum-sources
     - datum-filters
     - solarflux.md
     - sysadmin
