@@ -397,9 +397,9 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../datum-filters/">
+<a class="md-nav__link" href="../datum-sources/">
 <span class="md-ellipsis">
-    Datum Filters
+    Datum Sources
     
   </span>
 </a>
@@ -409,6 +409,36 @@
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_6_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_6">
+<span class="md-nav__icon md-icon"></span>
+            Datum Sources
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../datum-sources/modbus/">
+<span class="md-ellipsis">
+    Modbus Device
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../datum-filters/">
+<span class="md-ellipsis">
+    Datum Filters
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_7">
 <span class="md-nav__icon md-icon"></span>
             Datum Filters
           </label>
@@ -552,20 +582,12 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../solarflux/">
-<span class="md-ellipsis">
-    SolarFlux
-    
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_8" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../sysadmin/">
+<a class="md-nav__link" href="../controls/">
 <span class="md-ellipsis">
-    System Administration
+    Controls
     
   </span>
 </a>
@@ -575,6 +597,74 @@
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_8_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_8">
+<span class="md-nav__icon md-icon"></span>
+            Controls
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../controls/modbus/">
+<span class="md-ellipsis">
+    Modbus Control
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../io/">
+<span class="md-ellipsis">
+    I/O Integrations
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_9">
+<span class="md-nav__icon md-icon"></span>
+            I/O Integrations
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../io/modbus/">
+<span class="md-ellipsis">
+    Modbus
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../solarflux/">
+<span class="md-ellipsis">
+    SolarFlux
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_11" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../sysadmin/">
+<span class="md-ellipsis">
+    System Administration
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_11" id="__nav_1_11_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_11">
 <span class="md-nav__icon md-icon"></span>
             System Administration
           </label>
@@ -1114,7 +1204,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="operational-modes"><span class="enumerate-headings-plugin enumerate-heading-plugin">59.</span> Operational Modes<a class="headerlink" href="#operational-modes" title="Permanent link">¶</a></h1>
+<h1 id="operational-modes"><span class="enumerate-headings-plugin enumerate-heading-plugin">65.</span> Operational Modes<a class="headerlink" href="#operational-modes" title="Permanent link">¶</a></h1>
 <p>SolarNode supports a concept called <strong>operational modes</strong>. Modes are simple names like <code>quiet</code> and
 <code>hyper</code> that can be either <strong>active</strong> or <strong>inactive</strong>. Any number of modes can be active at a given
 time. In theory both <code>quiet</code> and <code>hyper</code> could be active simultaneously. Modes can be named anything
@@ -1128,11 +1218,11 @@ prefix to the mode name, for example <code>!hyper</code> can be thought of as <e
 active"</em>. You can also specify exactly <code>!</code> to match only when <em>no</em> mode is active.</p>
 <p><a href="../datum-filters/">Datum Filters</a> also make use of operational modes, to toggle filters
 on and off dynamically.</p>
-<h2 id="automatic-expiration"><span class="enumerate-headings-plugin enumerate-heading-plugin">59.1</span> Automatic expiration<a class="headerlink" href="#automatic-expiration" title="Permanent link">¶</a></h2>
+<h2 id="automatic-expiration"><span class="enumerate-headings-plugin enumerate-heading-plugin">65.1</span> Automatic expiration<a class="headerlink" href="#automatic-expiration" title="Permanent link">¶</a></h2>
 <p>Operational modes can be activated with an associated <strong>expiration date</strong>. The mode will remain
 active until the expiration date, at which time it will be automatically deactivated. A mode can
 always be manually deactivated before its associated expiration date.</p>
-<h2 id="operational-modes-management-api"><span class="enumerate-headings-plugin enumerate-heading-plugin">59.2</span> Operational Modes management API<a class="headerlink" href="#operational-modes-management-api" title="Permanent link">¶</a></h2>
+<h2 id="operational-modes-management-api"><span class="enumerate-headings-plugin enumerate-heading-plugin">65.2</span> Operational Modes management API<a class="headerlink" href="#operational-modes-management-api" title="Permanent link">¶</a></h2>
 <p>The <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API#queue-instruction">SolarUser Instruction API</a> can be used to toggle operational modes on and off. The
 <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API-enumerated-types#enableoperationalmodes"><code>EnableOperationalModes</code></a> instruction activates modes and
 <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API-enumerated-types#disableoperationalmodes"><code>DisableOperationalModes</code></a> deactivates them.</p>

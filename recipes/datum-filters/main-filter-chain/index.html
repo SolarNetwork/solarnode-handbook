@@ -397,9 +397,9 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/datum-filters/">
+<a class="md-nav__link" href="../../../users/datum-sources/">
 <span class="md-ellipsis">
-    Datum Filters
+    Datum Sources
     
   </span>
 </a>
@@ -409,6 +409,36 @@
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_6_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_6">
+<span class="md-nav__icon md-icon"></span>
+            Datum Sources
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/datum-sources/modbus/">
+<span class="md-ellipsis">
+    Modbus Device
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/datum-filters/">
+<span class="md-ellipsis">
+    Datum Filters
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_7">
 <span class="md-nav__icon md-icon"></span>
             Datum Filters
           </label>
@@ -552,20 +582,12 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/solarflux/">
-<span class="md-ellipsis">
-    SolarFlux
-    
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_8" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/sysadmin/">
+<a class="md-nav__link" href="../../../users/controls/">
 <span class="md-ellipsis">
-    System Administration
+    Controls
     
   </span>
 </a>
@@ -575,6 +597,74 @@
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_8_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_8">
+<span class="md-nav__icon md-icon"></span>
+            Controls
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/controls/modbus/">
+<span class="md-ellipsis">
+    Modbus Control
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/io/">
+<span class="md-ellipsis">
+    I/O Integrations
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_9">
+<span class="md-nav__icon md-icon"></span>
+            I/O Integrations
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/io/modbus/">
+<span class="md-ellipsis">
+    Modbus
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/solarflux/">
+<span class="md-ellipsis">
+    SolarFlux
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_11" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/sysadmin/">
+<span class="md-ellipsis">
+    System Administration
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_11" id="__nav_1_11_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_11">
 <span class="md-nav__icon md-icon"></span>
             System Administration
           </label>
@@ -1156,7 +1246,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="main-filter-chain"><span class="enumerate-headings-plugin enumerate-heading-plugin">66.</span> Main Filter Chain<a class="headerlink" href="#main-filter-chain" title="Permanent link">¶</a></h1>
+<h1 id="main-filter-chain"><span class="enumerate-headings-plugin enumerate-heading-plugin">72.</span> Main Filter Chain<a class="headerlink" href="#main-filter-chain" title="Permanent link">¶</a></h1>
 <p>When you are first getting started with filters in SolarNode there are several different approaches
 you can take to get the filters "wired up" and actively processing datum. This recipe outlines one
 specific approach: configuring a <a href="../../../users/datum-filters/chain/">Datum Filter Chain</a> on the
@@ -1179,7 +1269,7 @@ processing pipeline in SolarNode.</p>
 <p>Check out the <a href="../../../users/datum-filters/">Datum Filters</a> page for general information
 about filters, the Datum Queue, and how datum are processed in SolarNode.</p>
 </div>
-<h2 id="overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">66.1</span> Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<h2 id="overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">72.1</span> Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
 <p>The overall steps of this recipe are:</p>
 <ul>
 <li>configure a <a href="../../../users/datum-filters/chain/">Datum Filter Chain</a> named <code>Chain - Main</code></li>
@@ -1192,7 +1282,7 @@ about filters, the Datum Queue, and how datum are processed in SolarNode.</p>
 file of this recipe, then <a href="../../../users/setup-app/settings/backups/#settings-backup-restore">import</a> that
 into your own SolarNode.</p>
 </div>
-<h2 id="create-a-datum-filter-chain-component"><span class="enumerate-headings-plugin enumerate-heading-plugin">66.2</span> Create a Datum Filter Chain component<a class="headerlink" href="#create-a-datum-filter-chain-component" title="Permanent link">¶</a></h2>
+<h2 id="create-a-datum-filter-chain-component"><span class="enumerate-headings-plugin enumerate-heading-plugin">72.2</span> Create a Datum Filter Chain component<a class="headerlink" href="#create-a-datum-filter-chain-component" title="Permanent link">¶</a></h2>
 <p>The first step is to create a Datum Filter Chain.</p>
 <ol>
 <li>Start by navigating to the <strong>Settings &gt; Datum Filters</strong> page.</li>
@@ -1218,7 +1308,7 @@ the maintenance of filter comopnents easier in the future. For this guide we use
 <strong>Service Name</strong> setting. You may need to hit <span class="keys"><kbd class="key-tab">Tab</kbd></span> or click outside the form field for the
 button to become enabled.</p>
 </div>
-<h2 id="configure-the-datum-queue-filter"><span class="enumerate-headings-plugin enumerate-heading-plugin">66.3</span> Configure the Datum Queue filter<a class="headerlink" href="#configure-the-datum-queue-filter" title="Permanent link">¶</a></h2>
+<h2 id="configure-the-datum-queue-filter"><span class="enumerate-headings-plugin enumerate-heading-plugin">72.3</span> Configure the Datum Queue filter<a class="headerlink" href="#configure-the-datum-queue-filter" title="Permanent link">¶</a></h2>
 <p>The <a href="../../../users/datum-filters/#datum-queue">Datum Queue</a> supports configuring just <strong>one</strong> filter.
 Using a filter chain makes perfect sense in this situation, so you can actually configure any number of filters
 to execute on the queue.</p>
@@ -1238,7 +1328,7 @@ to execute on the queue.</p>
 <p>Congratulations! At this point, the <code>Chain - Main</code> filter chain, which we might simply refer to as
 the "Main filter chain", is integrated with the Datum Queue and ready to be configured with other
 filters.</p>
-<h2 id="add-a-filter-to-the-main-filter-chain"><span class="enumerate-headings-plugin enumerate-heading-plugin">66.4</span> Add a filter to the Main filter chain<a class="headerlink" href="#add-a-filter-to-the-main-filter-chain" title="Permanent link">¶</a></h2>
+<h2 id="add-a-filter-to-the-main-filter-chain"><span class="enumerate-headings-plugin enumerate-heading-plugin">72.4</span> Add a filter to the Main filter chain<a class="headerlink" href="#add-a-filter-to-the-main-filter-chain" title="Permanent link">¶</a></h2>
 <p>The Datum Filter Chain does not actually do anything itself to the datum it processes. You must
 configure other filters to perform useful functions, then you can <em>add</em> those filters to a chain.
 For this guide, let's say you have some meter datum sources configured that take readings every 10s
@@ -1259,7 +1349,7 @@ end up with the <code>Main</code> chain and the <code>Meters</code> downsample f
 <figure>
 <p><img alt="Adding a filter to a filter chain component" loading="lazy" src="../../../images/users/datum-filters/datum-filter-chain-add-filter%402x.png" width="875"/></p>
 </figure>
-<h2 id="parting-thoughts"><span class="enumerate-headings-plugin enumerate-heading-plugin">66.5</span> Parting thoughts<a class="headerlink" href="#parting-thoughts" title="Permanent link">¶</a></h2>
+<h2 id="parting-thoughts"><span class="enumerate-headings-plugin enumerate-heading-plugin">72.5</span> Parting thoughts<a class="headerlink" href="#parting-thoughts" title="Permanent link">¶</a></h2>
 <p>If you need to add more filters in the future, repeat the steps from the previous section: configure
 the new filter and then add it to the <code>Main</code> filter chain. Keep in mind that the filters you
 configure will execute in the same order as you define them in the chain. This becomes important

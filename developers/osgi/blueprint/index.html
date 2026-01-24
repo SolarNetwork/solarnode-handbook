@@ -397,9 +397,9 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/datum-filters/">
+<a class="md-nav__link" href="../../../users/datum-sources/">
 <span class="md-ellipsis">
-    Datum Filters
+    Datum Sources
     
   </span>
 </a>
@@ -409,6 +409,36 @@
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_6_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_6">
+<span class="md-nav__icon md-icon"></span>
+            Datum Sources
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/datum-sources/modbus/">
+<span class="md-ellipsis">
+    Modbus Device
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/datum-filters/">
+<span class="md-ellipsis">
+    Datum Filters
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_7">
 <span class="md-nav__icon md-icon"></span>
             Datum Filters
           </label>
@@ -552,20 +582,12 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/solarflux/">
-<span class="md-ellipsis">
-    SolarFlux
-    
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_8" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/sysadmin/">
+<a class="md-nav__link" href="../../../users/controls/">
 <span class="md-ellipsis">
-    System Administration
+    Controls
     
   </span>
 </a>
@@ -575,6 +597,74 @@
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_8_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_8">
+<span class="md-nav__icon md-icon"></span>
+            Controls
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/controls/modbus/">
+<span class="md-ellipsis">
+    Modbus Control
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/io/">
+<span class="md-ellipsis">
+    I/O Integrations
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_9">
+<span class="md-nav__icon md-icon"></span>
+            I/O Integrations
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/io/modbus/">
+<span class="md-ellipsis">
+    Modbus
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/solarflux/">
+<span class="md-ellipsis">
+    SolarFlux
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_11" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/sysadmin/">
+<span class="md-ellipsis">
+    System Administration
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_11" id="__nav_1_11_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_11">
 <span class="md-nav__icon md-icon"></span>
             System Administration
           </label>
@@ -1264,7 +1354,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="blueprint"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.</span> Blueprint<a class="headerlink" href="#blueprint" title="Permanent link">¶</a></h1>
+<h1 id="blueprint"><span class="enumerate-headings-plugin enumerate-heading-plugin">80.</span> Blueprint<a class="headerlink" href="#blueprint" title="Permanent link">¶</a></h1>
 <p>SolarNode supports the OSGi Blueprint Container Specification so plugins can declare their service
 dependencies and register their services by way of an XML file deployed with the plugin. If you are
 familiar with the <a href="https://docs.spring.io/spring-framework/docs/5.3.0/reference/html/core.html#beans-factory-metadata">Spring Framework's XML configuration</a>, you will find Blueprint
@@ -1276,7 +1366,7 @@ Blueprint specification, which is directly derived from Spring Framework.</p>
 most common parts used in SolarNode. Refer to the <a href="https://docs.osgi.org/specification/osgi.cmpn/7.0.0/service.blueprint.html">Blueprint Container
 Specification</a> for full details of the specification.</p>
 </div>
-<h2 id="example"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.1</span> Example<a class="headerlink" href="#example" title="Permanent link">¶</a></h2>
+<h2 id="example"><span class="enumerate-headings-plugin enumerate-heading-plugin">80.1</span> Example<a class="headerlink" href="#example" title="Permanent link">¶</a></h2>
 <p>Imagine you are working on a plugin and have a <code>com.example.Greeter</code> interface you would like to
 register as a service for other plugins to use, and an implementation of that service in
  <code>com.example.HelloGreeter</code> that relies on the <a href="../../services/placeholder-service/">Placeholder
@@ -1353,11 +1443,11 @@ run like this:</p>
 
 <span class="nt">&lt;/blueprint&gt;</span>
 </code></pre></div>
-<h2 id="blueprint-xml-resources"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.2</span> Blueprint XML Resources<a class="headerlink" href="#blueprint-xml-resources" title="Permanent link">¶</a></h2>
+<h2 id="blueprint-xml-resources"><span class="enumerate-headings-plugin enumerate-heading-plugin">80.2</span> Blueprint XML Resources<a class="headerlink" href="#blueprint-xml-resources" title="Permanent link">¶</a></h2>
 <p>Blueprint XML documents are added to a plugin's <code>OSGI-INF/blueprint</code> classpath location. A plugin
 can provide any number of Blueprint XML documents there, but often a single file is sufficient and
 a common convention in SolarNode is to name it <code>module.xml</code>.</p>
-<h2 id="xml-syntax"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.3</span> XML Syntax<a class="headerlink" href="#xml-syntax" title="Permanent link">¶</a></h2>
+<h2 id="xml-syntax"><span class="enumerate-headings-plugin enumerate-heading-plugin">80.3</span> XML Syntax<a class="headerlink" href="#xml-syntax" title="Permanent link">¶</a></h2>
 <p>A minimal Blueprint XML file is structured like this:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="nt">&lt;blueprint</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://www.osgi.org/xmlns/blueprint/v1.0.0"</span>
@@ -1370,7 +1460,7 @@ a common convention in SolarNode is to name it <code>module.xml</code>.</p>
 
 <span class="nt">&lt;/blueprint&gt;</span>
 </code></pre></div>
-<h3 id="service-references"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.3.1</span> Service References<a class="headerlink" href="#service-references" title="Permanent link">¶</a></h3>
+<h3 id="service-references"><span class="enumerate-headings-plugin enumerate-heading-plugin">80.3.1</span> Service References<a class="headerlink" href="#service-references" title="Permanent link">¶</a></h3>
 <p>To make use of services registered by SolarNode plugins, you declare a <em>reference</em> to that service
 so you may refer to it elsewhere within the Blueprint XML. For example, imagine you wanted to use
 the <a href="../../services/placeholder-service/">Placeholder Service</a> in your component. You would obtain a
@@ -1380,7 +1470,7 @@ reference to that like this:</p>
 </code></pre></div>
 <p>The <code>id</code> attribute allows you to refer to this service elsewhere in your Blueprint XML, while
 <code>interface</code> declares the fully-qualified Java interface of the service you want to use.</p>
-<h3 id="components"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.3.2</span> Components<a class="headerlink" href="#components" title="Permanent link">¶</a></h3>
+<h3 id="components"><span class="enumerate-headings-plugin enumerate-heading-plugin">80.3.2</span> Components<a class="headerlink" href="#components" title="Permanent link">¶</a></h3>
 <p>Components in Blueprint are Java classes you would like instantiated when your plugin starts. They are
 declared using a <code>&lt;bean&gt;</code> element in Blueprint XML. You can assign each component a unique identifier using
 an <code>id</code> attribute, and then you can refer to that component in other components.</p>
@@ -1422,7 +1512,7 @@ an <code>id</code> attribute, and then you can refer to that component in other 
 <span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"minimum"</span><span class="w"> </span><span class="na">value=</span><span class="s">"10"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/bean&gt;</span>
 </code></pre></div>
-<h4 id="constructor-arguments"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.3.2.1</span> Constructor Arguments<a class="headerlink" href="#constructor-arguments" title="Permanent link">¶</a></h4>
+<h4 id="constructor-arguments"><span class="enumerate-headings-plugin enumerate-heading-plugin">80.3.2.1</span> Constructor Arguments<a class="headerlink" href="#constructor-arguments" title="Permanent link">¶</a></h4>
 <p>If your component requires any constructor arguments, they can be specified with nested <code>&lt;argument&gt;</code>
 elements in Blueprint. The <code>&lt;argument&gt;</code> value can be specified as a reference to another component
 using a <code>ref</code> attribute whose value is the <code>id</code> of that component, or as a literal value using a
@@ -1432,7 +1522,7 @@ using a <code>ref</code> attribute whose value is the <code>id</code> of that co
 <span class="w">    </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">ref=</span><span class="s">"placeholderService"</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">value=</span><span class="s">"10"</span><span class="nt">&gt;</span>
 </code></pre></div>
-<h4 id="property-accessors"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.3.2.2</span> Property Accessors<a class="headerlink" href="#property-accessors" title="Permanent link">¶</a></h4>
+<h4 id="property-accessors"><span class="enumerate-headings-plugin enumerate-heading-plugin">80.3.2.2</span> Property Accessors<a class="headerlink" href="#property-accessors" title="Permanent link">¶</a></h4>
 <p>You can configure mutable class properties on a component with nested <code>&lt;property name=""&gt;</code> elements
 in Blueprint. A <em>mutable property</em> is a Java setter method. For example an <code>int</code> property <code>minimum</code>
 would be associated with a Java setter method <code class="highlight"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMinimum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span></code>.</p>
@@ -1444,7 +1534,7 @@ using a <code>ref</code> attribute whose value is the <code>id</code> of that co
 <span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"placeholderService"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"placeholderService"</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">name=</span><span class="s">"minimum"</span><span class="w"> </span><span class="na">value=</span><span class="s">"10"</span><span class="nt">&gt;</span>
 </code></pre></div>
-<h4 id="startstop-hooks"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.3.2.3</span> Start/Stop Hooks<a class="headerlink" href="#startstop-hooks" title="Permanent link">¶</a></h4>
+<h4 id="startstop-hooks"><span class="enumerate-headings-plugin enumerate-heading-plugin">80.3.2.3</span> Start/Stop Hooks<a class="headerlink" href="#startstop-hooks" title="Permanent link">¶</a></h4>
 <p>Blueprint can invoke a method on your component when it has finished instantiating and configuring
 the object (when the plugin starts), and another when it destroys the instance (when the plugin is
 stopped). You simply provide the name of the method you would like Blueprint to call in the
@@ -1453,7 +1543,7 @@ stopped). You simply provide the name of the method you would like Blueprint to 
 <span class="w">    </span><span class="na">init-method=</span><span class="s">"startup"</span>
 <span class="w">    </span><span class="na">destroy-method=</span><span class="s">"shutdown"</span><span class="nt">&gt;</span>
 </code></pre></div>
-<h3 id="service-registration"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.3.3</span> Service Registration<a class="headerlink" href="#service-registration" title="Permanent link">¶</a></h3>
+<h3 id="service-registration"><span class="enumerate-headings-plugin enumerate-heading-plugin">80.3.3</span> Service Registration<a class="headerlink" href="#service-registration" title="Permanent link">¶</a></h3>
 <p>You can make any component available to other plugins by <em>registering</em> the component with a
 <code>&lt;service&gt;</code> element that declares what interface(s) your component provides. Once registered, other
 plugins can make use of your component, for example by declaring a <code>&lt;referenece&gt;</code> to your component
@@ -1504,7 +1594,7 @@ Blueprint:</p>
 </div>
 </div>
 </input></input></div>
-<h4 id="multiple-service-interfaces"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.3.3.1</span> Multiple Service Interfaces<a class="headerlink" href="#multiple-service-interfaces" title="Permanent link">¶</a></h4>
+<h4 id="multiple-service-interfaces"><span class="enumerate-headings-plugin enumerate-heading-plugin">80.3.3.1</span> Multiple Service Interfaces<a class="headerlink" href="#multiple-service-interfaces" title="Permanent link">¶</a></h4>
 <p>You can advertise any number of service interfaces that your component supports, by nesting an <code>&lt;interfaces&gt;</code>
 element within the <code>&lt;service&gt;</code> element, in place of the <code>interface</code> attribute. For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;service</span><span class="w"> </span><span class="na">ref=</span><span class="s">"myComponent"</span><span class="nt">&gt;</span>
@@ -1514,7 +1604,7 @@ element within the <code>&lt;service&gt;</code> element, in place of the <code>i
 <span class="w">    </span><span class="nt">&lt;/interfaces&gt;</span>
 <span class="nt">&lt;/service&gt;</span>
 </code></pre></div>
-<h4 id="export-service-packages"><span class="enumerate-headings-plugin enumerate-heading-plugin">74.3.3.2</span> Export service packages<a class="headerlink" href="#export-service-packages" title="Permanent link">¶</a></h4>
+<h4 id="export-service-packages"><span class="enumerate-headings-plugin enumerate-heading-plugin">80.3.3.2</span> Export service packages<a class="headerlink" href="#export-service-packages" title="Permanent link">¶</a></h4>
 <p>For a registered service to be of any use to another plugin, the package the service is defined in
 <em>must</em> be <a href="../manifest/#package-exports">exported</a> by the plugin hosting that package. That is
 because the plugin wishing to add a <a href="#service-references">reference</a> to the service will need to

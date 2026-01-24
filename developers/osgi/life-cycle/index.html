@@ -397,9 +397,9 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/datum-filters/">
+<a class="md-nav__link" href="../../../users/datum-sources/">
 <span class="md-ellipsis">
-    Datum Filters
+    Datum Sources
     
   </span>
 </a>
@@ -409,6 +409,36 @@
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_6_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_6">
+<span class="md-nav__icon md-icon"></span>
+            Datum Sources
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/datum-sources/modbus/">
+<span class="md-ellipsis">
+    Modbus Device
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/datum-filters/">
+<span class="md-ellipsis">
+    Datum Filters
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_7">
 <span class="md-nav__icon md-icon"></span>
             Datum Filters
           </label>
@@ -552,20 +582,12 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/solarflux/">
-<span class="md-ellipsis">
-    SolarFlux
-    
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_8" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/sysadmin/">
+<a class="md-nav__link" href="../../../users/controls/">
 <span class="md-ellipsis">
-    System Administration
+    Controls
     
   </span>
 </a>
@@ -575,6 +597,74 @@
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_8_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_8">
+<span class="md-nav__icon md-icon"></span>
+            Controls
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/controls/modbus/">
+<span class="md-ellipsis">
+    Modbus Control
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/io/">
+<span class="md-ellipsis">
+    I/O Integrations
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_9">
+<span class="md-nav__icon md-icon"></span>
+            I/O Integrations
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/io/modbus/">
+<span class="md-ellipsis">
+    Modbus
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../users/solarflux/">
+<span class="md-ellipsis">
+    SolarFlux
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_11" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../users/sysadmin/">
+<span class="md-ellipsis">
+    System Administration
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1_11" id="__nav_1_11_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_11">
 <span class="md-nav__icon md-icon"></span>
             System Administration
           </label>
@@ -1100,7 +1190,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="life-cycle"><span class="enumerate-headings-plugin enumerate-heading-plugin">72.</span> Life cycle<a class="headerlink" href="#life-cycle" title="Permanent link">¶</a></h1>
+<h1 id="life-cycle"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.</span> Life cycle<a class="headerlink" href="#life-cycle" title="Permanent link">¶</a></h1>
 <p>Plugins in SolarNode can be added to and removed from the platform at any time without restarting
 the SolarNode process, because of the <a href="https://en.wikipedia.org/wiki/OSGi#Life-cycle">Life Cycle</a> process OSGi manages. The life
 cycle of a plugin consists of a set of <em>states</em> and OSGi will transition a plugin's state over the
@@ -1148,7 +1238,7 @@ course of the plugin's life.</p>
 <p>Faisal.akeel, Public domain, via <a href="https://commons.wikimedia.org/wiki/File:OSGi_Bundle_Life-Cycle.svg">Wikimedia Common</a></p>
 </figcaption>
 </figure>
-<h2 id="activator"><span class="enumerate-headings-plugin enumerate-heading-plugin">72.1</span> Activator<a class="headerlink" href="#activator" title="Permanent link">¶</a></h2>
+<h2 id="activator"><span class="enumerate-headings-plugin enumerate-heading-plugin">78.1</span> Activator<a class="headerlink" href="#activator" title="Permanent link">¶</a></h2>
 <p>A plugin can opt in to receiving callbacks for the start/stop state transitions by providing an
 <code>org.osgi.framework.BundleActivator</code> implementation and declaring that class in the
 <a href="../manifest/#common-attributes"><code>Bundle-Activator</code> manifest attribute</a>. This can be useful when a
