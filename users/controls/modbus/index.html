@@ -1390,10 +1390,9 @@ such as numbers or strings.</p>
 <p>This datum source is provided by the <a href="https://github.com/SolarNetwork/solarnetwork-node/tree/develop/net.solarnetwork.node.control.modbus">Modbus Control</a> plugin, which is included in the
 <a href="https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-modbus/debian">solarnode-app-modbus</a> package in SolarNodeOS.</p>
 <h2 id="use"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.1</span> Use<a class="headerlink" href="#use" title="Permanent link">¶</a></h2>
-<p>Once installed, a new <strong>Modbus Control</strong> component will appear on the
-<strong>Settings</strong> page on your SolarNode. Click on the <strong>Manage</strong> button to configure
-devices. You'll need to add one configuration for each Modbus device you want to
-control.</p>
+<p>Once installed, a new <strong>Modbus Control</strong> component will appear on the <a href="../../setup-app/settings/components/">Settings &gt;
+Components</a> page on your SolarNode. Click on the <strong>Manage</strong> button to configure devices.
+You'll need to add one configuration for each Modbus device you want to control.</p>
 <p>Using this plugin you'll define one SolarNode control per Modbus register
 (or registers, for data types that require more than one). For example you
 might define a <code>/thermostat/temp/comfort</code> control that writes a temperature
@@ -1403,9 +1402,9 @@ display the latest readings obtained from the configured Modbus registers.</p>
 <p>Each Modbus Control component is specific to one Modbus device. You can add
 as many components as you like, if you want to control multiple devices.</p>
 <h2 id="csv-configurer"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.2</span> CSV Configurer<a class="headerlink" href="#csv-configurer" title="Permanent link">¶</a></h2>
-<p>This plugin also provides a <strong>Modbus Control CSV Configurer</strong> component will appear on the main
-settings page. This component lets you upload a Modbus Control CSV Configuration file to configure
-all Modbus Control components, without having to use the settings form.</p>
+<p>This plugin also provides a <strong>Modbus Control CSV Configurer</strong> component will appear on the
+<a href="../../setup-app/settings/services/">Settings &gt; Services</a> page. This component lets you upload a Modbus Control CSV Configuration file
+to configure all Modbus Control components, without having to use the <a href="#settings">settings</a> form.</p>
 <figure>
 <p><img alt="CSV Configuration example" loading="lazy" src="../../../images/users/controls/modbus-control-csv-configurer-settings%402x.png" width="872"/></p>
 </figure>
