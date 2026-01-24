@@ -15,7 +15,7 @@ to collect data from.
 
 ## Serial (RTU)
 
-The Modbus serial connection allows you to connect to a Modbus RTU server on a serial port.
+The Modbus serial connection allows you to connect to Modbus RTU devices on a serial network.
 
 <figure markdown>
   ![Modbus serial connection settings](../../images/users/io/modbus-rtu-settings@2x.png){width=870 loading=lazy}
@@ -50,8 +50,8 @@ Each configuration contains the following overall settings:
 
 ## TCP
 
-The Modbus TCP connection allows you to connect to a Modbus server on a specific IP address (or hostname)
-and port number.
+The Modbus TCP connection allows you to connect to a Modbus device on a specific IP address (or hostname)
+and port number using the TCP protocol.
 
 <figure markdown>
   ![Modbus TCP connection settings](../../images/users/io/modbus-tcp-settings@2x.png){width=870 loading=lazy}
