@@ -45,7 +45,7 @@ Each configuration contains the following overall settings:
 | Reply Timeout      | The maximum amount of time to wait for a Modbus message reply, in milliseconds. |
 | Send Delay         | A minimum delay to introduce between Modbus messages, in milliseconds. Some devices cannot handle messages at a high rate. Configure a positive integer to force a minimum delay between successive messages. |
 | Max Ports          | The maximum number of serial ports that can be opened at once, or `0` for no limit. |
-| Wire Logging       | Toggle wire-level message logging. `TRACE` level [logging](../setup-app/settings/logging.md) must also be enabled for `the net.solarnetwork.io.modbus.X` log name. |
+| Wire Logging       | Toggle wire-level message logging. `TRACE` level [logging](../setup-app/settings/logging.md) must also be enabled for the `net.solarnetwork.io.modbus.X` log name. |
 | CLI Publishing     | Toggle [command line interface messages](../setup-app/tools/command-console.md) to help troubleshoot Modbus issues. |
 
 ## TCP
@@ -69,7 +69,7 @@ Each configuration contains the following overall settings:
 | Reply Timeout      | The maximum amount of time to wait for a Modbus message reply, in milliseconds. |
 | Send Delay         | A minimum delay to introduce between Modbus messages, in milliseconds. Some devices cannot handle messages at a high rate. Configure a positive integer to force a minimum delay between successive messages. |
 | Max Threads        | The maximum number of client network threads to support, or `0` for no limit. For some networks this may limit the number of ports that can be opened. |
-| Wire Logging       | Toggle wire-level message logging. `TRACE` level [logging](../setup-app/settings/logging.md) must also be enabled for `the net.solarnetwork.io.modbus.X` log name. |
+| Wire Logging       | Toggle wire-level message logging. `TRACE` level [logging](../setup-app/settings/logging.md) must also be enabled for the `net.solarnetwork.io.modbus.X` log name. |
 | CLI Publishing     | Toggle [command line interface messages](../setup-app/tools/command-console.md) to help troubleshoot Modbus issues. |
 
 [components]: ../setup-app/settings/components.md
