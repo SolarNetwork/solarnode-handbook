@@ -7,6 +7,8 @@ nav:
     - datum.md
     - datum-sources
     - datum-filters
+    - controls
+    - io
     - solarflux.md
     - sysadmin
     - networking.md
