@@ -8,10 +8,9 @@ This datum source is provided by the [Modbus Control][src] plugin, which is incl
 
 ## Use
 
-Once installed, a new **Modbus Control** component will appear on the
-**Settings** page on your SolarNode. Click on the **Manage** button to configure
-devices. You'll need to add one configuration for each Modbus device you want to
-control.
+Once installed, a new **Modbus Control** component will appear on the [Settings >
+Components][components] page on your SolarNode. Click on the **Manage** button to configure devices.
+You'll need to add one configuration for each Modbus device you want to control.
 
 Using this plugin you'll define one SolarNode control per Modbus register
 (or registers, for data types that require more than one). For example you
@@ -27,9 +26,9 @@ as many components as you like, if you want to control multiple devices.
 
 ## CSV Configurer
 
-This plugin also provides a **Modbus Control CSV Configurer** component will appear on the main
-settings page. This component lets you upload a Modbus Control CSV Configuration file to configure
-all Modbus Control components, without having to use the settings form.
+This plugin also provides a **Modbus Control CSV Configurer** component will appear on the
+[Settings > Services][services] page. This component lets you upload a Modbus Control CSV Configuration file
+to configure all Modbus Control components, without having to use the [settings](#settings) form.
 
 <figure markdown>
   ![CSV Configuration example](../../images/users/controls/modbus-control-csv-configurer-settings@2x.png){width=872 loading=lazy}
@@ -191,10 +190,12 @@ is a specialized variation of `SetControlParameter` where a single instruction p
 the **Control ID** you configured for the control and the desired integer percentage as the
 parameter value.
 
+[components]: ../setup-app/settings/components.md
 [DemandBalanceGeneration]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API-enumerated-types#demandbalancegeneration
 [instr-api]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API#queue-instruction
 [modbus-conn]: ../io/modbus.md
 [pkg]: https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-modbus/debian
+[services]: ../setup-app/settings/services.md
 [SetControlParameter]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API-enumerated-types#setcontrolparameter
 [sheet-example]: https://docs.google.com/spreadsheets/d/1qZIdzCzSwuTMEs1hg6HabkFih4Gqw-eBjd43HZ0R5ng
 [src]: https://github.com/SolarNetwork/solarnetwork-node/tree/develop/net.solarnetwork.node.control.modbus

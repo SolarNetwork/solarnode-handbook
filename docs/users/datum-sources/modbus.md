@@ -288,7 +288,6 @@ however, so the filter "knows" which datum are sub-samples and which are "normal
 
 
 [components]: ../setup-app/settings/components.md
-[sheet-example]: https://docs.google.com/spreadsheets/d/1nMHfiGQa0la1AI8Ch3T0-PeZIEsWZymRDyi1PdUl7z4
 [expr]: ../expressions.md
 [DownsampleFilter]: ../datum-filters/downsample.md
 [ExpressionRoot]: https://github.com/SolarNetwork/solarnetwork-node/tree/develop/net.solarnetwork.node.datum.modbus/src/net/solarnetwork/node/datum/modbus/ExpressionRoot.java
@@ -299,6 +298,7 @@ however, so the filter "knows" which datum are sub-samples and which are "normal
 [modbus-conn]: ../io/modbus.md
 [pkg]: https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-modbus/debian
 [services]: ../setup-app/settings/services.md
+[sheet-example]: https://docs.google.com/spreadsheets/d/1nMHfiGQa0la1AI8Ch3T0-PeZIEsWZymRDyi1PdUl7z4
 [sn-cron-syntax]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarNode-Cron-Job-Syntax
 [sn-expressions]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarNode-Expressions
 [src]: https://github.com/SolarNetwork/solarnetwork-node/tree/develop/net.solarnetwork.node.datum.modbus
