@@ -1,9 +1,9 @@
 # Modbus Control
 
-This project provides SolarNode plugin that can be used to set arbitrary Modbus register values,
-such as numbers or strings.
+SolarNode can be update arbitrary Modbus register values on Modbus devices with the
+**Modbus Control** component.
 
-This datum source is provided by the [Modbus Control][src] plugin, which is included in the
+This component is provided by the [Modbus Control][src] plugin, which is included in the
 [solarnode-app-modbus][pkg] package in SolarNodeOS.
 
 ## Use

@@ -1,7 +1,7 @@
 # Modbus Device
 
-This project provides SolarNode plugin that can collect arbitrary data from Modbus enabled devices.
-This is an advanced plugin that requires specific low-level knowledge of the device you want to
+SolarNode can collect arbitrary data from Modbus devices with the **Modbus Device** component. This
+is an advanced component that requires specific low-level knowledge of the device you want to
 collect data from.
 
 This datum source is provided by the [Modbus Datum Source][src] plugin, which is included in the
