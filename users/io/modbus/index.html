@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://solarnetwork.github.io/solarnode-handbook/users/io/modbus/" rel="canonical"/>
-<link href="../" rel="prev"/>
+<link href="../modbus-server/" rel="prev"/>
 <link href="../../solarflux/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.18" name="generator"/>
@@ -631,6 +631,14 @@
             I/O Integrations
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../modbus-server/">
+<span class="md-ellipsis">
+    Modbus Server
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -1218,20 +1226,23 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="modbus"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.</span> Modbus<a class="headerlink" href="#modbus" title="Permanent link">¶</a></h1>
+<h1 id="modbus"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.</span> Modbus<a class="headerlink" href="#modbus" title="Permanent link">¶</a></h1>
 <p>SolarNode supports Modbus integration through serial port (RTU) and TCP networks.</p>
 <p>This integration is provided by the <a href="https://github.com/SolarNetwork/solarnetwork-node/tree/develop/net.solarnetwork.node.io.modbus.nifty">Modbus Communication Support (Nifty Modbus)</a> and
 <a href="https://github.com/SolarNetwork/solarnetwork-node/tree/develop/net.solarnetwork.node.io.modbus.nifty.jsc">Modbus Communication Support - Serial (Nifty Modbus JSC)</a> plugins, which are included in the
 <a href="https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-io-modbus-nifty-jsc/debian">solarnode-app-io-modbus-nifty-jsc</a> package in SolarNodeOS.</p>
-<h2 id="use"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.1</span> Use<a class="headerlink" href="#use" title="Permanent link">¶</a></h2>
-<p>Once installed, new <strong>Modbus serial connection</strong> and <strong>Modbus TCP connection</strong> components will
+<h2 id="use"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.1</span> Use<a class="headerlink" href="#use" title="Permanent link">¶</a></h2>
+<p>Once installed, <strong>Modbus serial connection</strong> and <strong>Modbus TCP connection</strong> components will
 appear on the <a href="../../setup-app/settings/components/">Settings &gt; Components</a> page on your SolarNode. Click on the <strong>Manage</strong>
-button to configure networks. You'll need to add one configuration for each Modbus network you want
+button to configure networks. You will need to add one configuration for each Modbus network you want
 to collect data from.</p>
-<h2 id="serial-rtu"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.2</span> Serial (RTU)<a class="headerlink" href="#serial-rtu" title="Permanent link">¶</a></h2>
+<figure>
+<p><img alt="Modbus connection components" loading="lazy" src="../../../images/users/io/modbus-connections-components%402x.png" width="860"/></p>
+</figure>
+<h2 id="serial-rtu"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.2</span> Serial (RTU)<a class="headerlink" href="#serial-rtu" title="Permanent link">¶</a></h2>
 <p>The Modbus serial connection allows you to connect to Modbus RTU devices on a serial network.</p>
 <figure>
-<p><img alt="Modbus serial connection settings" loading="lazy" src="../../../images/users/io/modbus-rtu-settings%402x.png" width="870"/></p>
+<p><img alt="Modbus serial connection settings" loading="lazy" src="../../../images/users/io/modbus-rtu-connection-settings%402x.png" width="870"/></p>
 </figure>
 <p>Each configuration contains the following overall settings:</p>
 <table>
@@ -1332,11 +1343,11 @@ to collect data from.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="tcp"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.3</span> TCP<a class="headerlink" href="#tcp" title="Permanent link">¶</a></h2>
+<h2 id="tcp"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.3</span> TCP<a class="headerlink" href="#tcp" title="Permanent link">¶</a></h2>
 <p>The Modbus TCP connection allows you to connect to a Modbus device on a specific IP address (or hostname)
 and port number using the TCP protocol.</p>
 <figure>
-<p><img alt="Modbus TCP connection settings" loading="lazy" src="../../../images/users/io/modbus-tcp-settings%402x.png" width="870"/></p>
+<p><img alt="Modbus TCP connection settings" loading="lazy" src="../../../images/users/io/modbus-tcp-connection-settings%402x.png" width="870"/></p>
 </figure>
 <p>Each configuration contains the following overall settings:</p>
 <table>

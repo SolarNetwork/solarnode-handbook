@@ -752,6 +752,14 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../io/modbus-server/">
+<span class="md-ellipsis">
+    Modbus Server
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../io/modbus/">
 <span class="md-ellipsis">
     Modbus
@@ -1392,15 +1400,17 @@ such as numbers or strings.</p>
 <h2 id="use"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.1</span> Use<a class="headerlink" href="#use" title="Permanent link">¶</a></h2>
 <p>Once installed, a new <strong>Modbus Control</strong> component will appear on the <a href="../../setup-app/settings/components/">Settings &gt;
 Components</a> page on your SolarNode. Click on the <strong>Manage</strong> button to configure devices.
-You'll need to add one configuration for each Modbus device you want to control.</p>
-<p>Using this plugin you'll define one SolarNode control per Modbus register
-(or registers, for data types that require more than one). For example you
-might define a <code>/thermostat/temp/comfort</code> control that writes a temperature
-value as a 32-bit floating point value to two Modbus registers.</p>
-<p>A status indicator will appear at the top of the device settings, which will
-display the latest readings obtained from the configured Modbus registers.</p>
-<p>Each Modbus Control component is specific to one Modbus device. You can add
-as many components as you like, if you want to control multiple devices.</p>
+You will need to add one configuration for each Modbus device you want to control.</p>
+<figure>
+<p><img alt="Modbus Control component" loading="lazy" src="../../../images/users/controls/modbus-control-component%402x.png" width="860"/></p>
+</figure>
+<p>Using this plugin You will define one SolarNode control per Modbus register (or registers, for data
+types that require more than one). For example you might define a <code>/thermostat/temp/comfort</code> control
+that writes a temperature value as a 32-bit floating point value to two Modbus registers.</p>
+<p>A status indicator will appear at the top of the device settings, which will display the latest
+readings obtained from the configured Modbus registers.</p>
+<p>Each Modbus Control component is specific to one Modbus device. You can add as many components as
+you like, if you want to control multiple devices.</p>
 <h2 id="csv-configurer"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.2</span> CSV Configurer<a class="headerlink" href="#csv-configurer" title="Permanent link">¶</a></h2>
 <p>This plugin also provides a <strong>Modbus Control CSV Configurer</strong> component will appear on the
 <a href="../../setup-app/settings/services/">Settings &gt; Services</a> page. This component lets you upload a Modbus Control CSV Configuration file

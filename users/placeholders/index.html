@@ -632,6 +632,14 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../io/modbus-server/">
+<span class="md-ellipsis">
+    Modbus Server
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../io/modbus/">
 <span class="md-ellipsis">
     Modbus
@@ -1218,7 +1226,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="placeholders"><span class="enumerate-headings-plugin enumerate-heading-plugin">66.</span> Placeholders<a class="headerlink" href="#placeholders" title="Permanent link">¶</a></h1>
+<h1 id="placeholders"><span class="enumerate-headings-plugin enumerate-heading-plugin">67.</span> Placeholders<a class="headerlink" href="#placeholders" title="Permanent link">¶</a></h1>
 <p>SolarNode supports <em>placeholders</em> in some setting values, such as datum data source IDs. These allow
 you to define a set of parameters that can be consistently applied to many settings.</p>
 <p>For example, imagine you manage many SolarNode devices across different buildings or sites. You'd
@@ -1228,7 +1236,7 @@ placeholder <code>building</code> and then configure the source IDs like <code>/
 you'd define the <code>building</code> placeholder with a building-specific value, so at runtime the nodes
 would resolve actual source ID values with those names replacing the <code>{building}</code> placeholder,
 for example <code>/OFFICE1/meter</code>.</p>
-<h2 id="placeholder-syntax"><span class="enumerate-headings-plugin enumerate-heading-plugin">66.1</span> Placeholder syntax<a class="headerlink" href="#placeholder-syntax" title="Permanent link">¶</a></h2>
+<h2 id="placeholder-syntax"><span class="enumerate-headings-plugin enumerate-heading-plugin">67.1</span> Placeholder syntax<a class="headerlink" href="#placeholder-syntax" title="Permanent link">¶</a></h2>
 <p>Placeholders are written using the form <code>{name:default}</code> where <code>name</code> is the placeholder name and
 <code>default</code> is an optional default value to apply if no placeholder value exists for the given name.
 If a default value is not needed, omit the <code>colon</code> so the placeholder becomes just <code>{name}</code>.</p>
@@ -1274,7 +1282,7 @@ If a default value is not needed, omit the <code>colon</code> so the placeholder
 </tr>
 </tbody>
 </table>
-<h2 id="static-placeholder-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">66.2</span> Static placeholder configuration<a class="headerlink" href="#static-placeholder-configuration" title="Permanent link">¶</a></h2>
+<h2 id="static-placeholder-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">67.2</span> Static placeholder configuration<a class="headerlink" href="#static-placeholder-configuration" title="Permanent link">¶</a></h2>
 <p>SolarNode will look for placeholder values defined in properties files stored in the
 <code>conf/placeholders.d</code> directory by default. In SolarNodeOS this is the
 <code>/etc/solarnode/placeholders.d</code> directory.</p>
@@ -1293,7 +1301,7 @@ placeholder values <a href="#placeholder-syntax">shown previously</a> could be d
 <div class="highlight"><pre><span></span><code>building = OFFICE1
 room = BREAK
 </code></pre></div>
-<h2 id="dynamic-placeholder-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">66.3</span> Dynamic placeholder configuration<a class="headerlink" href="#dynamic-placeholder-configuration" title="Permanent link">¶</a></h2>
+<h2 id="dynamic-placeholder-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">67.3</span> Dynamic placeholder configuration<a class="headerlink" href="#dynamic-placeholder-configuration" title="Permanent link">¶</a></h2>
 <p>SolarNode also supports storing placeholder values as <a href="../settings/">Settings</a> using the key
 <code>placeholder</code>. The SolarUser <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API#queue-instruction">/instruction/add</a> API can be used with the
 <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API-enumerated-types#updatesetting">UpdateSetting</a> topic to modify the placeholder values as needed. The <code>type</code> value is

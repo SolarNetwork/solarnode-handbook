@@ -632,6 +632,14 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../io/modbus-server/">
+<span class="md-ellipsis">
+    Modbus Server
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../io/modbus/">
 <span class="md-ellipsis">
     Modbus
@@ -1232,7 +1240,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="local-state"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.</span> Local State<a class="headerlink" href="#local-state" title="Permanent link">¶</a></h1>
+<h1 id="local-state"><span class="enumerate-headings-plugin enumerate-heading-plugin">64.</span> Local State<a class="headerlink" href="#local-state" title="Permanent link">¶</a></h1>
 <p>SolarNode provides a persistent "state" database of Local State entities, for use by plugins and
 <a href="../expressions/#local-state-functions">expressions</a>. The <a href="../setup-app/settings/local-state/">Local State management</a>
 page in SolarNode can be used to view and manage Local State entities.</p>
@@ -1245,9 +1253,9 @@ it was first created, and the most recent modification date.</p>
 Local State can be used in SolarNode to track maximum property values (peaks) within a rolling
 time period.</p>
 </div>
-<h2 id="boolean-type"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.1</span> Boolean type<a class="headerlink" href="#boolean-type" title="Permanent link">¶</a></h2>
+<h2 id="boolean-type"><span class="enumerate-headings-plugin enumerate-heading-plugin">64.1</span> Boolean type<a class="headerlink" href="#boolean-type" title="Permanent link">¶</a></h2>
 <p>The <code>Boolean</code> type represents an on/off toggle state. It can be either <code>true</code> or <code>false</code>.</p>
-<h2 id="number-types"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.2</span> Number types<a class="headerlink" href="#number-types" title="Permanent link">¶</a></h2>
+<h2 id="number-types"><span class="enumerate-headings-plugin enumerate-heading-plugin">64.2</span> Number types<a class="headerlink" href="#number-types" title="Permanent link">¶</a></h2>
 <p>SolarNode supports 3 different integer types and 3 different decimal (floating point) types.</p>
 <table>
 <thead>
@@ -1290,9 +1298,9 @@ time period.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="string-type"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.3</span> String type<a class="headerlink" href="#string-type" title="Permanent link">¶</a></h2>
+<h2 id="string-type"><span class="enumerate-headings-plugin enumerate-heading-plugin">64.3</span> String type<a class="headerlink" href="#string-type" title="Permanent link">¶</a></h2>
 <p>The <code>String</code> type is a UTF-8 encoded string. The maximum size is 8KB (UTF-8 bytes).</p>
-<h2 id="map-type"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.4</span> Map type<a class="headerlink" href="#map-type" title="Permanent link">¶</a></h2>
+<h2 id="map-type"><span class="enumerate-headings-plugin enumerate-heading-plugin">64.4</span> Map type<a class="headerlink" href="#map-type" title="Permanent link">¶</a></h2>
 <p>The <code>Mapping</code> type holds an arbitrary key-value mapping. It is formatted as a JSON object and supports
 the same value types as JSON: boolean, 64-bit floating point, and strings. For example:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"setpoint"</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="nt">"mode"</span><span class="p">:</span><span class="s2">"manual"</span><span class="p">,</span><span class="w"> </span><span class="nt">"turbo"</span><span class="p">:</span><span class="kc">true</span><span class="p">}</span>
