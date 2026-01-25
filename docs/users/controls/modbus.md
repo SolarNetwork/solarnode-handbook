@@ -10,18 +10,21 @@ This datum source is provided by the [Modbus Control][src] plugin, which is incl
 
 Once installed, a new **Modbus Control** component will appear on the [Settings >
 Components][components] page on your SolarNode. Click on the **Manage** button to configure devices.
-You'll need to add one configuration for each Modbus device you want to control.
+You will need to add one configuration for each Modbus device you want to control.
 
-Using this plugin you'll define one SolarNode control per Modbus register
-(or registers, for data types that require more than one). For example you
-might define a `/thermostat/temp/comfort` control that writes a temperature
-value as a 32-bit floating point value to two Modbus registers.
+<figure markdown>
+  ![Modbus Control component](../../images/users/controls/modbus-control-component@2x.png){width=860 loading=lazy}
+</figure>
 
-A status indicator will appear at the top of the device settings, which will
-display the latest readings obtained from the configured Modbus registers.
+Using this plugin You will define one SolarNode control per Modbus register (or registers, for data
+types that require more than one). For example you might define a `/thermostat/temp/comfort` control
+that writes a temperature value as a 32-bit floating point value to two Modbus registers.
 
-Each Modbus Control component is specific to one Modbus device. You can add
-as many components as you like, if you want to control multiple devices.
+A status indicator will appear at the top of the device settings, which will display the latest
+readings obtained from the configured Modbus registers.
+
+Each Modbus Control component is specific to one Modbus device. You can add as many components as
+you like, if you want to control multiple devices.
 
 
 ## CSV Configurer

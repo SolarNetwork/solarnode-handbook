@@ -8,17 +8,21 @@ This integration is provided by the [Modbus Communication Support (Nifty Modbus)
 
 ## Use
 
-Once installed, new **Modbus serial connection** and **Modbus TCP connection** components will
+Once installed, **Modbus serial connection** and **Modbus TCP connection** components will
 appear on the [Settings > Components][components] page on your SolarNode. Click on the **Manage**
-button to configure networks. You'll need to add one configuration for each Modbus network you want
+button to configure networks. You will need to add one configuration for each Modbus network you want
 to collect data from.
+
+<figure markdown>
+  ![Modbus connection components](../../images/users/io/modbus-connections-components@2x.png){width=860 loading=lazy}
+</figure>
 
 ## Serial (RTU)
 
 The Modbus serial connection allows you to connect to Modbus RTU devices on a serial network.
 
 <figure markdown>
-  ![Modbus serial connection settings](../../images/users/io/modbus-rtu-settings@2x.png){width=870 loading=lazy}
+  ![Modbus serial connection settings](../../images/users/io/modbus-rtu-connection-settings@2x.png){width=870 loading=lazy}
 </figure>
 
 Each configuration contains the following overall settings:
@@ -54,7 +58,7 @@ The Modbus TCP connection allows you to connect to a Modbus device on a specific
 and port number using the TCP protocol.
 
 <figure markdown>
-  ![Modbus TCP connection settings](../../images/users/io/modbus-tcp-settings@2x.png){width=870 loading=lazy}
+  ![Modbus TCP connection settings](../../images/users/io/modbus-tcp-connection-settings@2x.png){width=870 loading=lazy}
 </figure>
 
 Each configuration contains the following overall settings:

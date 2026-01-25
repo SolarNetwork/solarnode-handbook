@@ -9,9 +9,13 @@ This datum source is provided by the [Modbus Datum Source][src] plugin, which is
 
 ## Use
 
-Once installed, a new **Modbus Device** component will appear on the [Settings >
-Components][components] page on your SolarNode. Click on the **Manage** button to configure devices.
-You'll need to add one configuration for each Modbus device you want to collect data from.
+Once installed, a **Modbus Device** component will appear on the [Settings > Components][components]
+page on your SolarNode. Click on the **Manage** button to configure devices. You will need to add
+one configuration for each Modbus device you want to collect data from.
+
+<figure markdown>
+  ![Modbus Device component](../../images/users/datum-sources/modbus-device-component@2x.png){width=860 loading=lazy}
+</figure>
 
 You can also configure components with the [CSV Configurer](#csv-configurer), detailed in the
 following section.
