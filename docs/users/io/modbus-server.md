@@ -1,7 +1,7 @@
 # Modbus Server
 
 SolarNode can host a Modbus TCP or serial (RTU) server populated with data collected by [datum
-sources](../datum-sources/) or updated though [controls](#controls). This allows other devices to
+sources](../datum-sources/index.md) or updated though [controls](#controls). This allows other devices to
 query SolarNode for data (or update it) using the Modbus protocol. This is an advanced plugin that
 requires specific low-level knowledge of the Modbus services you plan to integrate with.
 
