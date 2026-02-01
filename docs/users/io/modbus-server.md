@@ -168,6 +168,7 @@ settings for the Modbus Service component:
 | Service Name | `uid` | Arbitrary string |
 | Service Group | `groupUid` | Arbitrary string |
 | Startup Delay | `startupDelay` | Number (seconds) |
+| Required Mode | `requiredOperationalMode` | String mode name |
 | Allow Writes | `allowWrites` | Either `true` or `false` |
 | Persistence Needed | `daoRequired` | Either `true` or `false` |
 | Strict Unit IDs | `restrictUnitIds` | Either `true` or `false` |
@@ -200,7 +201,7 @@ To manage RTU or TCP server configurations in the SolarNode UI, the settings in 
 The RTU server configuration defines the serial port to use.
 
 <figure markdown>
-  ![RTU server settings](../../images/users/io/modbus-rtu-server-settings@2x.png){width=872 loading=lazy}
+  ![RTU server settings](../../images/users/io/modbus-rtu-server-settings@2x.png){width=876 loading=lazy}
 </figure>
 
 Each server configuration contains the following settings:
@@ -210,6 +211,7 @@ Each server configuration contains the following settings:
 | Service Name       | A unique name to identify this data source with. |
 | Service Group      | A group name to associate this data source with. |
 | Serial Connection  | The **Service Name** of the Modbus Serial Connection component to use. |
+| Required Mode      | Require an active [operational mode][op-modes] to apply datum updates. Does not apply to control updates. Can be prefixed with `!` to require the operational mode to **not** be active. |
 | Request Throttle   | A number of **milliseconds** to limit client requests by. |
 | Startup Delay      | A number of **seconds** to delay starting up the server after the plugin starts, after any configuration change, or after any message validation failure. |
 | Allow Writes       | If enabled, then allow Modbus clients to write to coil and output registers. |
@@ -224,7 +226,7 @@ Each server configuration contains the following settings:
 The TCP server configuration defines the port number and address to listen on.
 
 <figure markdown>
-  ![TCP server settings](../../images/users/io/modbus-tcp-server-settings@2x.png){width=872 loading=lazy}
+  ![TCP server settings](../../images/users/io/modbus-tcp-server-settings@2x.png){width=876 loading=lazy}
 </figure>
 
 Each server configuration contains the following settings:
@@ -235,6 +237,7 @@ Each server configuration contains the following settings:
 | Service Group      | A group name to associate this data source with. |
 | Bind Address       | The IP address or host name to listen on. Set to `0.0.0.0` to listen on all available addresses. |
 | Port               | The port number to listen on. The default Modbus port is `502`. See [port considerations](#solarnodeos-port-considerations) for more info. |
+| Required Mode      | Require an active [operational mode][op-modes] to apply datum updates. Does not apply to control updates. Can be prefixed with `!` to require the operational mode to **not** be active. |
 | Request Throttle   | A number of milliseconds to limit client requests by. |
 | Startup Delay      | A number of **seconds** to delay starting up the server after the plugin starts, after any configuration change. |
 | Allow Writes       | If enabled, then allow Modbus clients to write to coil and output registers. |
@@ -366,6 +369,7 @@ the source ID and/or property name:
 [modbus-server]: https://github.com/SolarNetwork/solarnetwork-node/tree/develop/net.solarnetwork.node.io.modbus.server
 [modbus-server-pkg]: https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-io-modbus-server/debian
 [node-controls-ui]: ../setup-app/tools/controls.md
+[op-modes]: https://solarnetwork.github.io/solarnode-handbook/users/op-modes/
 [services]: ../setup-app/settings/services.md
 [SetControlParameter]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API-enumerated-types#setcontrolparameter
 [sheet-example-rtu]: https://docs.google.com/spreadsheets/d/1e3yqWtH7D_eGF_mWyQd7qeH8xoojN-RJhgUwClrHPTY
