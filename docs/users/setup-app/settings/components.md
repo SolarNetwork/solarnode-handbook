@@ -8,7 +8,7 @@ For example imagine you want to collect data from a power meter, solar inverter,
 station, all of which use the Modbus protocol. To do that you would configure three _instances_ of
 the Modbus Device component, one for each device.
 
-!!! note "Not seeing the expected components ?"
+!!! note "Not seeing the expected components "
     If you do not see a component you are looking for, you probably need to install the package that provides it. 
     You can install packages on the [System > Packages][packages].
 
