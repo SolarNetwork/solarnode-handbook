@@ -8,6 +8,12 @@ For example imagine you want to collect data from a power meter, solar inverter,
 station, all of which use the Modbus protocol. To do that you would configure three _instances_ of
 the Modbus Device component, one for each device.
 
+!!! note "Not seeing the expected components?"
+    If you do not see a component you are looking for, you probably need to install the package that provides it. 
+    You can install packages on the [System > Packages][packages].
+
+    For example, to add Modbus components install the `solarnode-app-modbus` package.
+    
 <figure markdown>
   ![Settings components list](../../../images/users/setup/settings-components@2x.png){width=863}
 </figure>
@@ -127,3 +133,6 @@ You will be asked to confirm removing all instances:
   ![Remove all button confirmation dialog](../../../images/users/setup/settings-manage-component-remove-all-confirm@2x.png){width=506}
   <caption>Confirming the "Remove all" action.</caption>
 </figure>
+
+
+[packages]: ../system/packages.md 
