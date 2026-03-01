@@ -524,6 +524,14 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../datum-filters/rounded-timestamp/">
+<span class="md-ellipsis">
+    Rounded Timestamp
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../datum-filters/split/">
 <span class="md-ellipsis">
     Split
@@ -1392,12 +1400,12 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="modbus-control"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.</span> Modbus Control<a class="headerlink" href="#modbus-control" title="Permanent link">¶</a></h1>
+<h1 id="modbus-control"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.</span> Modbus Control<a class="headerlink" href="#modbus-control" title="Permanent link">¶</a></h1>
 <p>SolarNode can be update arbitrary Modbus register values on Modbus devices with the
 <strong>Modbus Control</strong> component.</p>
 <p>This component is provided by the <a href="https://github.com/SolarNetwork/solarnetwork-node/tree/develop/net.solarnetwork.node.control.modbus">Modbus Control</a> plugin, which is included in the
 <a href="https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-modbus/debian">solarnode-app-modbus</a> package in SolarNodeOS.</p>
-<h2 id="use"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.1</span> Use<a class="headerlink" href="#use" title="Permanent link">¶</a></h2>
+<h2 id="use"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.1</span> Use<a class="headerlink" href="#use" title="Permanent link">¶</a></h2>
 <p>Once installed, a new <strong>Modbus Control</strong> component will appear on the <a href="../../setup-app/settings/components/">Settings &gt;
 Components</a> page on your SolarNode. Click on the <strong>Manage</strong> button to configure devices.
 You will need to add one configuration for each Modbus device you want to control.</p>
@@ -1411,14 +1419,14 @@ that writes a temperature value as a 32-bit floating point value to two Modbus r
 readings obtained from the configured Modbus registers.</p>
 <p>Each Modbus Control component is specific to one Modbus device. You can add as many components as
 you like, if you want to control multiple devices.</p>
-<h2 id="csv-configurer"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.2</span> CSV Configurer<a class="headerlink" href="#csv-configurer" title="Permanent link">¶</a></h2>
+<h2 id="csv-configurer"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.2</span> CSV Configurer<a class="headerlink" href="#csv-configurer" title="Permanent link">¶</a></h2>
 <p>This plugin also provides a <strong>Modbus Control CSV Configurer</strong> component will appear on the
 <a href="../../setup-app/settings/services/">Settings &gt; Services</a> page. This component lets you upload a Modbus Control CSV Configuration file
 to configure all Modbus Control components, without having to use the <a href="#settings">settings</a> form.</p>
 <figure>
 <p><img alt="CSV Configuration example" loading="lazy" src="../../../images/users/controls/modbus-control-csv-configurer-settings%402x.png" width="872"/></p>
 </figure>
-<h3 id="modbus-control-csv-configuration-format"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.2.1</span> Modbus Control CSV Configuration Format<a class="headerlink" href="#modbus-control-csv-configuration-format" title="Permanent link">¶</a></h3>
+<h3 id="modbus-control-csv-configuration-format"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.2.1</span> Modbus Control CSV Configuration Format<a class="headerlink" href="#modbus-control-csv-configuration-format" title="Permanent link">¶</a></h3>
 <p>The Modbus Control CSV Configuration uses the column structure detailed <a href="#csv-column-definition">below</a>,
 with each row representing an individual control to write to the Modbus device. A header row
 is required. Comment lines are allowed, just start the line with a <code>#</code> character (i.e. the first
@@ -1437,7 +1445,7 @@ then be loaded into SolarNode via the CSV Configurer.</p>
 <p class="admonition-title">Tip</p>
 <p>You can copy this <a href="https://docs.google.com/spreadsheets/d/1qZIdzCzSwuTMEs1hg6HabkFih4Gqw-eBjd43HZ0R5ng">example sheet</a> to get started.</p>
 </div>
-<h4 id="instance-identifiers"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.2.1.1</span> Instance identifiers<a class="headerlink" href="#instance-identifiers" title="Permanent link">¶</a></h4>
+<h4 id="instance-identifiers"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.2.1.1</span> Instance identifiers<a class="headerlink" href="#instance-identifiers" title="Permanent link">¶</a></h4>
 <p>Individual Modbus Control components are defined by the first column (<strong>Instance ID</strong>). You can
 assign any identifier you like (such as <code>Relay</code>, <code>PLC</code>, and so on) or configure as a single
 dash character <code>-</code> to have SolarNode assign a simple number identifier. Once an Instance ID has been
@@ -1448,7 +1456,7 @@ SolarNode UI:</p>
 <figure>
 <p><img alt="Modbus Control instance names" loading="lazy" src="../../../images/users/controls/modbus-control-instance-keys%402x.png" width="972"/></p>
 </figure>
-<h4 id="csv-column-definition"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.2.1.2</span> CSV column definition<a class="headerlink" href="#csv-column-definition" title="Permanent link">¶</a></h4>
+<h4 id="csv-column-definition"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.2.1.2</span> CSV column definition<a class="headerlink" href="#csv-column-definition" title="Permanent link">¶</a></h4>
 <p>The following table defines all the CSV columns used by Modbus Device CSV Configuration. Columns
 <strong>A - H</strong> apply to the <strong>entire Modbus Device configuration</strong>, and only the values from the row that
 defines a new Instance ID will be used to configure the device. Thus you can omit the values from
@@ -1559,7 +1567,7 @@ individual datum property.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="example-csv"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.2.2</span> Example CSV<a class="headerlink" href="#example-csv" title="Permanent link">¶</a></h3>
+<h3 id="example-csv"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.2.2</span> Example CSV<a class="headerlink" href="#example-csv" title="Permanent link">¶</a></h3>
 <p>Here is the CSV as shown in the example configuration screen shot above (comments have been removed
 for brevity):</p>
 <div class="highlight"><pre><span></span><code>Instance ID,Connection,Unit ID,Sample Cache,Word Order,Control ID,Property Type,Register,Register Type,Data Type,Data Length,Multiplier,Decimal Scale
@@ -1572,7 +1580,7 @@ P1,Modbus Port,1,5000,Most to least,,,,,,,,
 P2,Modbus Port,2,5000,Most to least,power/1,Integer,10,Holding,16-bit unsigned int,,0.01,
 ,,,,,power/2,Integer,11,Holding,32-bit unsigned int,,,
 </code></pre></div>
-<h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.3</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
+<h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.3</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
 <figure>
 <p><img alt="Modbus Control settings" loading="lazy" src="../../../images/users/controls/modbus-control-settings%402x.png" width="872"/></p>
 </figure>
@@ -1615,7 +1623,7 @@ P2,Modbus Port,2,5000,Most to least,power/1,Integer,10,Holding,16-bit unsigned i
 </tr>
 </tbody>
 </table>
-<h3 id="property-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.3.1</span> Property settings<a class="headerlink" href="#property-settings" title="Permanent link">¶</a></h3>
+<h3 id="property-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.3.1</span> Property settings<a class="headerlink" href="#property-settings" title="Permanent link">¶</a></h3>
 <p>Property configurations define a mapping between the SolarNode control and a Modbus register (or set
 of registers). You can configure as many property settings as you like, using the <kbd>+</kbd> and
 <kbd>-</kbd> buttons to add/remove property configurations (and thus, add/remove controls).</p>
@@ -1665,12 +1673,12 @@ of registers). You can configure as many property settings as you like, using th
 </tr>
 </tbody>
 </table>
-<h2 id="control-manipulation"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.4</span> Control manipulation<a class="headerlink" href="#control-manipulation" title="Permanent link">¶</a></h2>
+<h2 id="control-manipulation"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.4</span> Control manipulation<a class="headerlink" href="#control-manipulation" title="Permanent link">¶</a></h2>
 <p>Once configured each control can be changed on the node itself or via the SolarNetwork API.</p>
-<h3 id="solarnode-manipulation"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.4.1</span> SolarNode manipulation<a class="headerlink" href="#solarnode-manipulation" title="Permanent link">¶</a></h3>
+<h3 id="solarnode-manipulation"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.4.1</span> SolarNode manipulation<a class="headerlink" href="#solarnode-manipulation" title="Permanent link">¶</a></h3>
 <p>You can set a control value using the SolarNode GUI once the component is configured. Visit the
 <a href="../../setup-app/tools/controls/">Tools &gt; Controls</a> page to manage the available controls.</p>
-<h3 id="solarnetwork-manipulation"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.4.2</span> SolarNetwork manipulation<a class="headerlink" href="#solarnetwork-manipulation" title="Permanent link">¶</a></h3>
+<h3 id="solarnetwork-manipulation"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.4.2</span> SolarNetwork manipulation<a class="headerlink" href="#solarnetwork-manipulation" title="Permanent link">¶</a></h3>
 <p>The <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API#queue-instruction">SolarUser Instruction API</a> can be used to change the control from anywhere in the
 world, by requesting the SolarNode to perform a <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API-enumerated-types#setcontrolparameter"><code>SetControlParameter</code></a>
 instruction and passing a single instruction parameter named the <strong>Control ID</strong> you configured for
@@ -1681,7 +1689,7 @@ value:</p>
 
 {"nodeId":123,"params":{"test/float":"29.0"}}
 </code></pre></div>
-<h4 id="demandbalancegeneration-instruction-support"><span class="enumerate-headings-plugin enumerate-heading-plugin">49.4.2.1</span> <code>DemandBalanceGeneration</code> instruction support<a class="headerlink" href="#demandbalancegeneration-instruction-support" title="Permanent link">¶</a></h4>
+<h4 id="demandbalancegeneration-instruction-support"><span class="enumerate-headings-plugin enumerate-heading-plugin">50.4.2.1</span> <code>DemandBalanceGeneration</code> instruction support<a class="headerlink" href="#demandbalancegeneration-instruction-support" title="Permanent link">¶</a></h4>
 <p>The <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarUser-API-enumerated-types#demandbalancegeneration"><code>DemandBalanceGeneration</code></a> instruction is also supported, which
 is a specialized variation of <code>SetControlParameter</code> where a single instruction parameter named
 the <strong>Control ID</strong> you configured for the control and the desired integer percentage as the

@@ -524,6 +524,14 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../datum-filters/rounded-timestamp/">
+<span class="md-ellipsis">
+    Rounded Timestamp
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../datum-filters/split/">
 <span class="md-ellipsis">
     Split
@@ -1446,14 +1454,14 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="modbus-server"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.</span> Modbus Server<a class="headerlink" href="#modbus-server" title="Permanent link">¶</a></h1>
+<h1 id="modbus-server"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.</span> Modbus Server<a class="headerlink" href="#modbus-server" title="Permanent link">¶</a></h1>
 <p>SolarNode can host a Modbus TCP or serial (RTU) server populated with data collected by <a href="../../datum-sources/">datum
 sources</a> or updated though <a href="#controls">controls</a>. This allows other devices to
 query SolarNode for data (or update it) using the Modbus protocol. This is an advanced plugin that
 requires specific low-level knowledge of the Modbus services you plan to integrate with.</p>
 <p>This integration is provided by the <a href="https://github.com/SolarNetwork/solarnetwork-node/tree/develop/net.solarnetwork.node.io.modbus.server">Modbus Server</a> plugin, which is included in the
 <a href="https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-io-modbus-server/debian">solarnode-app-io-modbus-server</a> package in SolarNodeOS.</p>
-<h2 id="use"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.1</span> Use<a class="headerlink" href="#use" title="Permanent link">¶</a></h2>
+<h2 id="use"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.1</span> Use<a class="headerlink" href="#use" title="Permanent link">¶</a></h2>
 <p>Once installed, <strong>Modbus Server (RTU)</strong> and <strong>Modbus Server (TCP)</strong> components will appear on
 the <a href="../../setup-app/settings/components/">Settings &gt; Components</a> page on your SolarNode. Click on the <strong>Manage</strong> button to
 configure servers. You will need to add one configuration for each port you want to expose a Modbus
@@ -1471,7 +1479,7 @@ server on.</p>
 <p>Each configuration part contains a list of the subsequent configuration part. That is, a server
 configuration can have multiple unit configurations, which can contain multiple register block
 configurations, which can have multiple measurement configurations.</p>
-<h2 id="register-word-order"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.2</span> Register word order<a class="headerlink" href="#register-word-order" title="Permanent link">¶</a></h2>
+<h2 id="register-word-order"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.2</span> Register word order<a class="headerlink" href="#register-word-order" title="Permanent link">¶</a></h2>
 <p>All multi-register data (anything more than 16 bits) is stored in <strong>most-to-least significant</strong>
 register (word) order, sometimes referred to as <em>big endian</em> or <em>network</em> order. Specifically, the
 highest bits of the data are stored first, in smaller numbered registers, followed by lower bits in
@@ -1481,7 +1489,7 @@ registers <code>0-1</code> will look like this:</p>
 <div class="highlight"><pre><span></span><code>0:  0x1234
 1:  0x5678
 </code></pre></div>
-<h2 id="data-persistence"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.3</span> Data persistence<a class="headerlink" href="#data-persistence" title="Permanent link">¶</a></h2>
+<h2 id="data-persistence"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.3</span> Data persistence<a class="headerlink" href="#data-persistence" title="Permanent link">¶</a></h2>
 <p>By default the Modbus Server data is <strong>not</strong> preserved when SolarNode restarts. That
 means all registers are effectively cleared to <code>0</code> when SolarNode restarts. If you would like to
 have the registers preserved instead, a <code>ModbusRegisterDao</code> service must be available at
@@ -1495,7 +1503,7 @@ plugin provides this.</p>
 <p>With or without persistence configured, Modbus Server serves all requests from an in-memory
 register database. If the <code>ModbusRegisterDao</code> service is available, updates to the in-memory
 database are then also persisted to that service.</p>
-<h2 id="csv-configurer"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.4</span> CSV Configurer<a class="headerlink" href="#csv-configurer" title="Permanent link">¶</a></h2>
+<h2 id="csv-configurer"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.4</span> CSV Configurer<a class="headerlink" href="#csv-configurer" title="Permanent link">¶</a></h2>
 <p>This plugin provides <strong>Modbus Server (RTU) CSV Configurer</strong> and <strong>Modbus Server (TCP) CSV
 Configurer</strong> components that will appear on the <a href="../../setup-app/settings/services/">Settings &gt; Services</a> page. These
 components let you upload a CSV file to configure all Modbus Server components, without having to
@@ -1503,7 +1511,7 @@ use the <a href="#settings">settings</a> form.</p>
 <figure>
 <p><img alt="RTU and TCP CSV Configurer settings" loading="lazy" src="../../../images/users/io/modbus-servers-csv-configurer%402x.png" width="876"/></p>
 </figure>
-<h3 id="modbus-server-csv-configuration-format"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.4.1</span> Modbus Server CSV Configuration Format<a class="headerlink" href="#modbus-server-csv-configuration-format" title="Permanent link">¶</a></h3>
+<h3 id="modbus-server-csv-configuration-format"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.4.1</span> Modbus Server CSV Configuration Format<a class="headerlink" href="#modbus-server-csv-configuration-format" title="Permanent link">¶</a></h3>
 <p>The Modbus Server CSV Configuration uses the column structure detailed
 <a href="#csv-column-definition">below</a>, with each row representing an individual datum property to expose
 in Modbus server registers. A header row is required. Comment lines are allowed, just start the line
@@ -1524,13 +1532,13 @@ be loaded into SolarNode via the CSV Configurer.</p>
 <p>You can copy the <a href="https://docs.google.com/spreadsheets/d/1m1G6j0CcJ6vOY1K79og_3mpIBxhGZHhXtDbA4UGez0U">TCP example sheet</a> or <a href="https://docs.google.com/spreadsheets/d/1e3yqWtH7D_eGF_mWyQd7qeH8xoojN-RJhgUwClrHPTY">RTU example
 sheet</a> to get started.</p>
 </div>
-<h4 id="instance-identifiers"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.4.1.1</span> Instance identifiers<a class="headerlink" href="#instance-identifiers" title="Permanent link">¶</a></h4>
+<h4 id="instance-identifiers"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.4.1.1</span> Instance identifiers<a class="headerlink" href="#instance-identifiers" title="Permanent link">¶</a></h4>
 <p>Individual Modbus Device components are defined by the first column (<strong>Instance ID</strong>). You can
 assign any identifier you like (such as <code>Meter</code>, <code>Inverter</code>, and so on) or configure as a single
 dash character <code>-</code> to have SolarNode assign a simple number identifier. Once an Instance ID has been
 assigned on a given row, subsequent rows will use that value if the corresponding cell value is left
 empty.</p>
-<h4 id="csv-column-definition"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.4.1.2</span> CSV column definition<a class="headerlink" href="#csv-column-definition" title="Permanent link">¶</a></h4>
+<h4 id="csv-column-definition"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.4.1.2</span> CSV column definition<a class="headerlink" href="#csv-column-definition" title="Permanent link">¶</a></h4>
 <p>The following table defines all the CSV columns used by Modbus Server CSV Configuration. Columns
 <strong>A - D</strong> apply to the <strong>entire Modbus Server configuration</strong>, and only the values from the row that
 defines a new Instance ID will be used to configure the server. Thus you can omit the values from
@@ -1653,7 +1661,7 @@ is used for the serial port name and the <strong>Port</strong> column is unused.
 </tr>
 </tbody>
 </table>
-<h3 id="example-csv"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.4.2</span> Example CSV<a class="headerlink" href="#example-csv" title="Permanent link">¶</a></h3>
+<h3 id="example-csv"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.4.2</span> Example CSV<a class="headerlink" href="#example-csv" title="Permanent link">¶</a></h3>
 <p>Here is the CSV as shown in the previous TCP example configuration screen shot:</p>
 <div class="highlight"><pre><span></span><code>Instance ID,Bind Address,Port,Throttle,Unit ID,Register Type,Register,Data Type,Data Length,Source ID,Property,Multiplier,Decimal Scale
 1,0.0.0.0,5020,100,1,Holding,0,UInt16,1,Mock Energy Meter,watts,1,0
@@ -1662,7 +1670,7 @@ is used for the serial port name and the <strong>Port</strong> column is unused.
 ,,,,,Input,100,UInt32,1,Mock Energy Meter,frequency,10,0
 ,,,,,,,Float32,2,Mock Energy Meter,current,1,-1
 </code></pre></div>
-<h3 id="additional-server-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.4.3</span> Additional server settings<a class="headerlink" href="#additional-server-settings" title="Permanent link">¶</a></h3>
+<h3 id="additional-server-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.4.3</span> Additional server settings<a class="headerlink" href="#additional-server-settings" title="Permanent link">¶</a></h3>
 <p>Other <a href="#tcp-settings">TCP server settings</a> or <a href="#rtu-settings">RTU server settings</a> like <strong>Service
 Name</strong> or <strong>Allow Writes</strong> can be configured with special <code>#param</code> comment rows <strong>preceeding</strong> the
 start of a instance. You configure just 3 columns in these rows:</p>
@@ -1742,9 +1750,9 @@ settings:</p>
 ,,,,,Input,100,UInt32,1,Mock Energy Meter,frequency,10,0
 ,,,,,,,Float32,2,Mock Energy Meter,current,1,-1
 </code></pre></div>
-<h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.5</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
+<h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.5</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
 <p>To manage RTU or TCP server configurations in the SolarNode UI, the settings in the following sections are available.</p>
-<h3 id="rtu-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.5.1</span> RTU settings<a class="headerlink" href="#rtu-settings" title="Permanent link">¶</a></h3>
+<h3 id="rtu-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.5.1</span> RTU settings<a class="headerlink" href="#rtu-settings" title="Permanent link">¶</a></h3>
 <p>The RTU server configuration defines the serial port to use.</p>
 <figure>
 <p><img alt="RTU server settings" loading="lazy" src="../../../images/users/io/modbus-rtu-server-settings%402x.png" width="876"/></p>
@@ -1808,7 +1816,7 @@ settings:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="tcp-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.5.2</span> TCP settings<a class="headerlink" href="#tcp-settings" title="Permanent link">¶</a></h3>
+<h3 id="tcp-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.5.2</span> TCP settings<a class="headerlink" href="#tcp-settings" title="Permanent link">¶</a></h3>
 <p>The TCP server configuration defines the port number and address to listen on.</p>
 <figure>
 <p><img alt="TCP server settings" loading="lazy" src="../../../images/users/io/modbus-tcp-server-settings%402x.png" width="876"/></p>
@@ -1876,7 +1884,7 @@ settings:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="solarnodeos-port-considerations"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.5.3</span> SolarNodeOS port considerations<a class="headerlink" href="#solarnodeos-port-considerations" title="Permanent link">¶</a></h3>
+<h3 id="solarnodeos-port-considerations"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.5.3</span> SolarNodeOS port considerations<a class="headerlink" href="#solarnodeos-port-considerations" title="Permanent link">¶</a></h3>
 <p>By default SolarNodeOS has a built-in firewall enabled that will not allow access to arbitrary TCP
 ports. Additionally, the SolarNode service runs as an unprivileged user that cannot listen on ports
 less than 1024. To work around these issues, you should use a port number 1024 or higher, for
@@ -1893,7 +1901,7 @@ add rule ip filter INPUT tcp dport 5020 counter accept
 <div class="highlight"><pre><span></span><code># Redirect port 502 to 5020 for SolarNode Modbus server
 add rule ip nat prerouting tcp dport 502 redirect to 5020
 </code></pre></div>
-<h3 id="unit-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.5.4</span> Unit configuration<a class="headerlink" href="#unit-configuration" title="Permanent link">¶</a></h3>
+<h3 id="unit-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.5.4</span> Unit configuration<a class="headerlink" href="#unit-configuration" title="Permanent link">¶</a></h3>
 <p>Each RTU and TCP Modbus server can support up to 256 unit configurations, numbered from <code>0</code> - <code>255</code>.</p>
 <figure>
 <p><img alt="Unit settings" loading="lazy" src="../../../images/users/io/modbus-tcp-server-unit-settings%402x.png" width="854"/></p>
@@ -1917,7 +1925,7 @@ add rule ip nat prerouting tcp dport 502 redirect to 5020
 </tr>
 </tbody>
 </table>
-<h3 id="register-block-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.5.5</span> Register block configuration<a class="headerlink" href="#register-block-configuration" title="Permanent link">¶</a></h3>
+<h3 id="register-block-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.5.5</span> Register block configuration<a class="headerlink" href="#register-block-configuration" title="Permanent link">¶</a></h3>
 <p>Register blocks are sets of contiguous Modbus registers. You configure a starting address and then
 each measurement configuration added to the block is mapped to Modbus registers based on the size
 required by each measurement.</p>
@@ -1947,7 +1955,7 @@ required by each measurement.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="measurement-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.5.6</span> Measurement configuration<a class="headerlink" href="#measurement-configuration" title="Permanent link">¶</a></h3>
+<h3 id="measurement-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.5.6</span> Measurement configuration<a class="headerlink" href="#measurement-configuration" title="Permanent link">¶</a></h3>
 <p>Measurement configurations define what data is made available in Modbus. They work by mapping
 properties of datum, collected by other SolarNode plugins, to Modbus registers. Thus you must
 configure the datum source ID and property name of each value you want to publish via Modbus.</p>
@@ -1993,7 +2001,7 @@ configure the datum source ID and property name of each value you want to publis
 </tr>
 </tbody>
 </table>
-<h2 id="controls"><span class="enumerate-headings-plugin enumerate-heading-plugin">51.6</span> Controls<a class="headerlink" href="#controls" title="Permanent link">¶</a></h2>
+<h2 id="controls"><span class="enumerate-headings-plugin enumerate-heading-plugin">52.6</span> Controls<a class="headerlink" href="#controls" title="Permanent link">¶</a></h2>
 <p>If a <a href="#measurement-configuration">measurement</a> has a <strong>Control ID</strong> configured, then it will be
 exposed as a control that can be queried and updated as a normal control. They will appear on the
 <a href="../../setup-app/tools/controls/">Tools &gt; Controls</a> page in the SolarNode UI.</p>

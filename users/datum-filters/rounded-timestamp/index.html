@@ -5,12 +5,12 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/metric-harvester/" rel="canonical"/>
-<link href="../join/" rel="prev"/>
-<link href="../op-mode/" rel="next"/>
+<link href="https://solarnetwork.github.io/solarnode-handbook/users/datum-filters/rounded-timestamp/" rel="canonical"/>
+<link href="../pvlib/" rel="prev"/>
+<link href="../split/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.18" name="generator"/>
-<title>Metric Harvester - SolarNode Handbook</title>
+<title>Rounded Timestamp - SolarNode Handbook</title>
 <link href="../../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -24,7 +24,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#metric-harvester-filter">
+<a class="md-skip" href="#rounded-timestamp-datum-filter">
           Skip to content
         </a>
 </div>
@@ -48,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Metric Harvester
+              Rounded Timestamp
             
           </span>
 </div>
@@ -483,61 +483,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    Metric Harvester
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../metric-harvester/">
 <span class="md-ellipsis">
     Metric Harvester
     
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#settings">
-<span class="md-ellipsis">
-      Settings
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#property-settings">
-<span class="md-ellipsis">
-      Property settings
-    </span>
-</a>
-<nav aria-label="Property settings" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#value-transform">
-<span class="md-ellipsis">
-      Value transform
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#expression-settings">
-<span class="md-ellipsis">
-      Expression settings
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../op-mode/">
@@ -571,13 +523,43 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../rounded-timestamp/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Rounded Timestamp
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Rounded Timestamp
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#settings">
+<span class="md-ellipsis">
+      Settings
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#duration">
+<span class="md-ellipsis">
+      Duration
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../split/">
@@ -1225,27 +1207,9 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#property-settings">
+<a class="md-nav__link" href="#duration">
 <span class="md-ellipsis">
-      Property settings
-    </span>
-</a>
-<nav aria-label="Property settings" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#value-transform">
-<span class="md-ellipsis">
-      Value transform
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#expression-settings">
-<span class="md-ellipsis">
-      Expression settings
+      Duration
     </span>
 </a>
 </li>
@@ -1256,14 +1220,12 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="metric-harvester-filter"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.</span> Metric Harvester Filter<a class="headerlink" href="#metric-harvester-filter" title="Permanent link">¶</a></h1>
-<p>The Metric Harvester filter provides a way to capture properties from datum generated by data
-sources as <a href="../../metrics/">metrics</a>.</p>
-<p>This filter is provided by the <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.metrics.harvester/README.md">Metrics Harvester</a> plugin, which is included in the
-<a href="https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-metrics-harvester/debian">solarnode-app-metrics-harvester</a> package in SolarNodeOS.</p>
-<h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.1</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
+<h1 id="rounded-timestamp-datum-filter"><span class="enumerate-headings-plugin enumerate-heading-plugin">41.</span> Rounded Timestamp Datum Filter<a class="headerlink" href="#rounded-timestamp-datum-filter" title="Permanent link">¶</a></h1>
+<p>The <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/README-RoundedTimestamp.md">Rounded Timestamp Datum Filter</a> provides a way to round datum timestamps down to clock-aligned values.</p>
+<p>This filter is provided by the <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/">Standard Datum Filters</a> plugin.</p>
+<h2 id="settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">41.1</span> Settings<a class="headerlink" href="#settings" title="Permanent link">¶</a></h2>
 <figure>
-<p><img alt="Metric Harvester component settings" loading="lazy" src="../../../images/users/datum-filters/metric-harvester-settings%402x.png" width="936"/></p>
+<p><img alt="Rounded Timestamp filter component settings" loading="lazy" src="../../../images/users/datum-filters/rounded-timestamp-filter-settings%402x.png" width="870"/></p>
 </figure>
 <p>In addition to the <a href="../#common-datum-filter-settings">Common Settings</a>, the following general settings are available:</p>
 <table>
@@ -1275,96 +1237,24 @@ sources as <a href="../../metrics/">metrics</a>.</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Properties</td>
-<td style="text-align: left;">A list of datum property configurations. See <a href="#property-settings">Property settings</a> for more information.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Expressions</td>
-<td style="text-align: left;">A list of expression configurations. See <a href="#property-settings">Expression settings</a> for more information.</td>
+<td style="text-align: left;">Duration</td>
+<td style="text-align: left;">A duration in milliseconds to round datum timestamps <strong>down</strong> by. See the <a href="#duration">note below</a> on how the times become clock-aligned.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="property-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.2</span> Property settings<a class="headerlink" href="#property-settings" title="Permanent link">¶</a></h2>
-<p>Use the <strong>Properties</strong> <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove property configurations.
-Each property configuration contains the following settings:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Setting</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Property Type</td>
-<td style="text-align: left;">The type of the datum property to extract.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Property</td>
-<td style="text-align: left;">The name of the datum property to extract. Only <strong>numeric</strong> properties are supported.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Unit Offset</td>
-<td style="text-align: left;">An offset to add to the value. This is the first transform applied. Set to <code>0</code> for no offset.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Unit Multiplier</td>
-<td style="text-align: left;">A multiplication factor to normalize the value into some other unit. This is the second transform applied, <strong>after</strong> the <strong>Unit Offset</strong>. Set to <code>1</code> to leave the input unchanged.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Multiplier</td>
-<td style="text-align: left;">A multiplication factor to normalize the value into some other unit. This is the third transform applied, <strong>after</strong> the <strong>Unit Multiplier</strong>. Set to <code>1</code> to leave the input unchanged.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Offset</td>
-<td style="text-align: left;">An offset to add to the value. This is the forth transform applied, <strong>after</strong> the <strong>Multiplier</strong>. Set to <code>0</code> for no offset.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Metric Name</td>
-<td style="text-align: left;">The metric name to assign to the value.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="value-transform"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.2.1</span> Value transform<a class="headerlink" href="#value-transform" title="Permanent link">¶</a></h3>
-<p>The various <strong>Multiplier</strong> and <strong>Offset</strong> settings allow you to apply two linear equations to the
-datum property values to transform a raw data value <em>x</em> into a corresponding metric value <em>y</em>.</p>
-<p>First the <strong>Unit Offset</strong> <em>B</em> and <strong>Unit Multiplier</strong> <em>M</em> are applied using the equation</p>
-<div class="highlight"><pre><span></span><code>y = (x + B) × M
-</code></pre></div>
-<p>Then the <strong>Multiplier</strong> <em>m</em> and <strong>Offset</strong> <em>b</em> are applied using the equation</p>
-<div class="highlight"><pre><span></span><code>y = (m × x) + b
-</code></pre></div>
-<p>Taken together, the overal equation applied is thus:</p>
-<div class="highlight"><pre><span></span><code>y = (m × ((x + B) × M)) + b
-</code></pre></div>
-<h2 id="expression-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">36.3</span> Expression settings<a class="headerlink" href="#expression-settings" title="Permanent link">¶</a></h2>
-<figure>
-<p><img alt="Metric Harvester expression settings" loading="lazy" src="../../../images/users/datum-filters/metric-harvester-expression-settings%402x.png" width="937"/></p>
-</figure>
-<p>Use the <strong>Expressions</strong> <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove property configurations.
-Each expression configuration contains the following settings:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Setting</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Metric Name</td>
-<td style="text-align: left;">The metric name to assign to the value.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Expression</td>
-<td style="text-align: left;">The expression to evaluate. See <a href="../../expressions/">Expressions</a> for more info.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Expression Language</td>
-<td style="text-align: left;">The <a href="../../expressions/">expression language</a> to write <strong>Expression</strong> in.</td>
-</tr>
-</tbody>
-</table>
+<h2 id="duration"><span class="enumerate-headings-plugin enumerate-heading-plugin">41.2</span> Duration<a class="headerlink" href="#duration" title="Permanent link">¶</a></h2>
+<p>The resolved timestamp of each output datum will be rounded down based on the duration configured.
+For example if <code>300000</code> is configured then the resolved timestamps would have times exactly at
+5-minute intervals, with <em>hour:minute</em> values like <code>00:00</code>, <code>00:05</code>, <code>00:10</code>, and so on.</p>
+<p>Sub-second durations are also supported. For example if <code>250</code> is configured then the resolved
+timestamps would have times with <em>second.millisecond</em> values like
+<code>00.000</code>, <code>00.250</code>, <code>00.500</code>, and so on.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If datum are generated at a rate faster than the configured duration, "duplicate" datum will be
+generated with identical timestamps. If these datum end up in SolarNetwork the most recently
+generated datum will replace any previously generated datum with the same timestamp.</p>
+</div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
