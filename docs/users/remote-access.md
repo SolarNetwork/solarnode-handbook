@@ -138,7 +138,7 @@ function solarssh () {
     echo "Enter SN token secret when first prompted for password. Enter node $node_id password second."
     ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
 	  -o LogLevel=ERROR -o NumberOfPasswordPrompts=1 \
-      -J "$node_id"'SN_TOKEN_HERE@ssh.solarnetwork.net:9022' \
+      -J "$node_id"':SN_TOKEN_HERE@ssh.solarnetwork.net:9022' \
 	  $@ solar@solarnode-$node_id
   fi
 }
@@ -150,6 +150,15 @@ configuration (e.g. `~/.bashrc` or `~/.zshrc`) then you could connect to node `1
 ```sh
 solarssh 123
 ```
+
+!!! warning
+
+	Be sure to leave the `:` character in front of your token in the `-J` argument. If your token
+	was `ABC123DEF456` the line would look like this:
+
+	```
+	-J "$node_id":ABC123DEF456@ssh.solarnetwork.net:9022' \`
+	```
 
 ## PuTTY
 
