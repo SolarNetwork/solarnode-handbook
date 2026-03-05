@@ -157,7 +157,7 @@ solarssh 123
 	was `ABC123DEF456` the line would look like this:
 
 	```
-	-J "$node_id":ABC123DEF456@ssh.solarnetwork.net:9022' \`
+	-J "$node_id"':ABC123DEF456@ssh.solarnetwork.net:9022' \`
 	```
 
 ## PuTTY
