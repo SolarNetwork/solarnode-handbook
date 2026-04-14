@@ -1,1390 +1,3755 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://solarnetwork.github.io/solarnode-handbook/users/remote-access/">
+      
+      
+        <link rel="prev" href="../security-tokens/">
+      
+      
+        <link rel="next" href="../expressions/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Remote Access - SolarNode Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
 
-<html class="no-js" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://solarnetwork.github.io/solarnode-handbook/users/remote-access/" rel="canonical"/>
-<link href="../security-tokens/" rel="prev"/>
-<link href="../expressions/" rel="next"/>
-<link href="../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.18" name="generator"/>
-<title>Remote Access - SolarNode Handbook</title>
-<link href="../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../css/sn.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
-<body data-md-color-accent="indigo" data-md-color-primary="amber" data-md-color-scheme="default" dir="ltr">
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#remote-access">
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/sn.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#remote-access" class="md-skip">
           Skip to content
         </a>
-</div>
-<div data-md-component="announce">
-</div>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
 <header class="md-header md-header--shadow" data-md-component="header">
-<nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="SolarNode Handbook" class="md-header__button md-logo" data-md-component="logo" href="../.." title="SolarNode Handbook">
-<img alt="logo" src="../../images/solarnode-icon.svg"/>
-</a>
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
-</label>
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SolarNode Handbook" class="md-header__button md-logo" aria-label="SolarNode Handbook" data-md-component="logo">
+      
+  <img src="../../images/solarnode-icon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             SolarNode Handbook
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               Remote Access
             
           </span>
-</div>
-</div>
-</div>
-<form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="amber" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
-</label>
-<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="amber" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
-</label>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
 </form>
-<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
-</label>
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
-</label>
-<nav aria-label="Search" class="md-search__options">
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
-</button>
-</nav>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</nav>
+      
+    
+    
+  </nav>
+  
 </header>
-<div class="md-container" data-md-component="container">
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="SolarNode Handbook" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="SolarNode Handbook">
-<img alt="logo" src="../../images/solarnode-icon.svg"/>
-</a>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SolarNode Handbook" class="md-nav__button md-logo" aria-label="SolarNode Handbook" data-md-component="logo">
+      
+  <img src="../../images/solarnode-icon.svg" alt="logo">
+
+    </a>
     SolarNode Handbook
   </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../">
-<span class="md-ellipsis">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     User Guide
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="true" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_1">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
             User Guide
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../getting-started/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Getting Started
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../setup-app/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../setup-app/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Setup App
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_3">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
             Setup App
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/login/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Login
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/home/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Home
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_4" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../setup-app/settings/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../setup-app/settings/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Settings
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_4_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_4">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_4">
+            <span class="md-nav__icon md-icon"></span>
             Settings
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/settings/components/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/settings/components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Components
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/settings/services/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/settings/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Services
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/settings/datum-filters/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/settings/datum-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum Filters
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/settings/datum-sources/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/settings/datum-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum Sources
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/settings/logging/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/settings/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Logging
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/settings/op-modes/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/settings/op-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Operational Modes
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/settings/local-state/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/settings/local-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Local State
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/settings/backups/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/settings/backups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Backups
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../setup-app/system/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../setup-app/system/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     System
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_5">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_5">
+            <span class="md-nav__icon md-icon"></span>
             System
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/system/certificates/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/system/certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Certificates
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/system/packages/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/system/packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Packages
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/system/host-aliases/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/system/host-aliases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Host Aliases
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/system/restart/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/system/restart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Restart
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/system/reset/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/system/reset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Reset
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_6" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../setup-app/tools/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../setup-app/tools/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Tools
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_3_6" id="__nav_1_3_6_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_6_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_6">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3_6" id="__nav_1_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_6">
+            <span class="md-nav__icon md-icon"></span>
             Tools
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/tools/controls/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/tools/controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Controls
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/tools/command-console/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/tools/command-console/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Command Console
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/tools/metrics/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/tools/metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Metrics
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../setup-app/profile/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-app/profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Profile
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../cli/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Command Line Tool
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_6" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../datum-sources/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../datum-sources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Datum Sources
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_6_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_6">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
             Datum Sources
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-sources/modbus/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-sources/modbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Modbus Device
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_7" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../datum-filters/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-sources/sunspec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SunSpec Modbus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../datum-filters/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Datum Filters
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_7_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_7">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_7">
+            <span class="md-nav__icon md-icon"></span>
             Datum Filters
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/chain/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Filter Chain
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/control-updater/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/control-updater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Control Updater
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/downsample/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/downsample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Downsample
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/expression/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/expression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Expression
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/join/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/join/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Join
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/metric-harvester/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/metric-harvester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Metric Harvester
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/op-mode/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/op-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Operational Mode
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/parameter-expression/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/parameter-expression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Parameter Expression
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/property/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Property
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/pvlib/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/pvlib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     POAI Calculator
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/rounded-timestamp/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/rounded-timestamp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Rounded Timestamp
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/split/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/split/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Split
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/tariff/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/tariff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Tariff
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/throttle/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/throttle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Throttle
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/timeout/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/timeout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Timeout
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/unchanged-property/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/unchanged-property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Unchanged Property
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/unchanged/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/unchanged/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Unchanged
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../datum-filters/virtual-meter/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datum-filters/virtual-meter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Virtual Meter
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_8" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../controls/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../controls/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Controls
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_8_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_8">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_8">
+            <span class="md-nav__icon md-icon"></span>
             Controls
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../controls/modbus/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controls/modbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Modbus Control
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_9" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../io/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../io/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     I/O Integrations
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_9_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_9">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_9">
+            <span class="md-nav__icon md-icon"></span>
             I/O Integrations
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../io/modbus-server/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../io/modbus-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Modbus Server
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../io/modbus/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../io/modbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Modbus
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../solarflux/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solarflux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     SolarFlux
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_11" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../sysadmin/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_11" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../sysadmin/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     System Administration
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_11" id="__nav_1_11_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_11_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_11">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_11" id="__nav_1_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_11">
+            <span class="md-nav__icon md-icon"></span>
             System Administration
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../sysadmin/date-time/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/date-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Date and Time
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../sysadmin/networking/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Networking
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../sysadmin/packages/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Package Maintenance
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../sysadmin/solarnode-service/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/solarnode-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     SolarNode Service
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../sysadmin/solarssh/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysadmin/solarssh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     SolarSSH
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../networking/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Networking
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../security-tokens/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Security Tokens
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
     Remote Access
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
     Remote Access
     
   </span>
-</a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#browser-connection">
-<span class="md-ellipsis">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#browser-connection" class="md-nav__link">
+    <span class="md-ellipsis">
       Browser Connection
     </span>
-</a>
-<nav aria-label="Browser Connection" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#choose-your-node-id">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="Browser Connection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choose-your-node-id" class="md-nav__link">
+    <span class="md-ellipsis">
       Choose your node ID
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#provide-your-credentials">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#provide-your-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
       Provide your credentials
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#connect">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#connect" class="md-nav__link">
+    <span class="md-ellipsis">
       Connect
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#remote-setup-app">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#remote-setup-app" class="md-nav__link">
+    <span class="md-ellipsis">
       Remote Setup App
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct-connection">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#direct-connection" class="md-nav__link">
+    <span class="md-ellipsis">
       Direct connection
     </span>
-</a>
-<nav aria-label="Direct connection" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#shell-shortcut-function">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct connection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell-shortcut-function" class="md-nav__link">
+    <span class="md-ellipsis">
       Shell shortcut function
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#putty">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#putty" class="md-nav__link">
+    <span class="md-ellipsis">
       PuTTY
     </span>
-</a>
-<nav aria-label="PuTTY" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#putty-ssh-proxy-connection-configuration">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="PuTTY">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#putty-ssh-proxy-connection-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
       PuTTY SSH proxy connection configuration
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#putty-ssh-tunnel-configuration">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#putty-ssh-tunnel-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
       PuTTY SSH tunnel configuration
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#putty-session-configuration">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#putty-session-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
       PuTTY session configuration
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#putty-open-connection">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#putty-open-connection" class="md-nav__link">
+    <span class="md-ellipsis">
       PuTTY open connection
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../expressions/">
-<span class="md-ellipsis">
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Expressions
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../local-state/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Local State
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../metrics/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Metrics
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../op-modes/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../op-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Operational Modes
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../placeholders/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../placeholders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Placeholders
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../configuration/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Configuration
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../settings/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Settings Files
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../logging/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Logging
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../recipes/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../recipes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Recipes
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
             Recipes
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../recipes/datum-filters/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../recipes/datum-filters/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Datum Filters
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_2">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
             Datum Filters
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../recipes/datum-filters/main-filter-chain/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/datum-filters/main-filter-chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Main Filter Chain
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../recipes/datum-filters/daily-limit-tracking/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/datum-filters/daily-limit-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Daily Limit Tracking
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../recipes/datum-filters/peak-tracking/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/datum-filters/peak-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Peak Tracking
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../developers/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../developers/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Developer Guide
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
             Developer Guide
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../developers/osgi/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../developers/osgi/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Plugins
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_2">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
             Plugins
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/osgi/manifest/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/osgi/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Manifest
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/osgi/life-cycle/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/osgi/life-cycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Life cycle
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/osgi/configuration-admin/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/osgi/configuration-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Configuration Admin
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/osgi/blueprint/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/osgi/blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Blueprint
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/osgi/blueprint-compendium/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/osgi/blueprint-compendium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Blueprint Compendium
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../developers/settings/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../developers/settings/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Settings
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_3">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
             Settings
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/settings/provider/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/settings/provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Settings Provider
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/settings/specifier/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/settings/specifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Setting Specifier
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/settings/resource-handler/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/settings/resource-handler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Setting Resource Handler
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/settings/singleton/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/settings/singleton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Singleton Service
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/settings/factory/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/settings/factory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Factory Service
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     Services
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_4">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
             Services
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/services/backup-manager/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/services/backup-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Backup Manager
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/services/closeable-service/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/services/closeable-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Closeable Service
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/services/datum-data-source-poll-job/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/services/datum-data-source-poll-job/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum Data Source Poll Job
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/services/datum-data-source/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/services/datum-data-source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum Data Source
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/services/datum-db/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/services/datum-db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum Database
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/services/datum-queue/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/services/datum-queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum Queue
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/services/job-scheduler/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/services/job-scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Job Scheduler
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/services/placeholder-service/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/services/placeholder-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Placeholder Service
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/services/settings-db/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/services/settings-db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Settings Database
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/services/settings-service/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/services/settings-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Settings Service
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/services/sql-database/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/services/sql-database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     SQL Database
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/services/task-executor/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/services/task-executor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Task Executor
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../developers/services/task-scheduler/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/services/task-scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Task Scheduler
     
   </span>
-</a>
-</li>
-</ul>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#browser-connection">
-<span class="md-ellipsis">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#browser-connection" class="md-nav__link">
+    <span class="md-ellipsis">
       Browser Connection
     </span>
-</a>
-<nav aria-label="Browser Connection" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#choose-your-node-id">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="Browser Connection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choose-your-node-id" class="md-nav__link">
+    <span class="md-ellipsis">
       Choose your node ID
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#provide-your-credentials">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#provide-your-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
       Provide your credentials
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#connect">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#connect" class="md-nav__link">
+    <span class="md-ellipsis">
       Connect
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#remote-setup-app">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#remote-setup-app" class="md-nav__link">
+    <span class="md-ellipsis">
       Remote Setup App
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct-connection">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#direct-connection" class="md-nav__link">
+    <span class="md-ellipsis">
       Direct connection
     </span>
-</a>
-<nav aria-label="Direct connection" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#shell-shortcut-function">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct connection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell-shortcut-function" class="md-nav__link">
+    <span class="md-ellipsis">
       Shell shortcut function
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#putty">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#putty" class="md-nav__link">
+    <span class="md-ellipsis">
       PuTTY
     </span>
-</a>
-<nav aria-label="PuTTY" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#putty-ssh-proxy-connection-configuration">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="PuTTY">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#putty-ssh-proxy-connection-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
       PuTTY SSH proxy connection configuration
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#putty-ssh-tunnel-configuration">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#putty-ssh-tunnel-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
       PuTTY SSH tunnel configuration
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#putty-session-configuration">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#putty-session-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
       PuTTY session configuration
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#putty-open-connection">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#putty-open-connection" class="md-nav__link">
+    <span class="md-ellipsis">
       PuTTY open connection
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
-<h1 id="remote-access"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.</span> Remote Access<a class="headerlink" href="#remote-access" title="Permanent link">¶</a></h1>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="remote-access">Remote Access<a class="headerlink" href="#remote-access" title="Permanent link">&para;</a></h1>
 <p>SolarSSH is SolarNetwork's method of connecting to SolarNode devices over the internet even when
 those devices are not directly reachable due to network firewalls or routing rules. It uses the
 Secure Shell Protocol (<a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a>) to ensure your connection is private and secure.</p>
@@ -1394,20 +3759,20 @@ when you need to perform maintenance, but not require SolarNode maintain an open
 SolarSSH.</p>
 <p>In order to use SolarSSH, you will need a <a href="../security-tokens/">User Security Token</a> to use for
 authentication.</p>
-<h2 id="browser-connection"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.1</span> Browser Connection<a class="headerlink" href="#browser-connection" title="Permanent link">¶</a></h2>
+<h2 id="browser-connection">Browser Connection<a class="headerlink" href="#browser-connection" title="Permanent link">&para;</a></h2>
 <p>You can use SolarSSH <a href="https://go.solarnetwork.net/solarssh/">right in your browser</a> to connect to any of your nodes.</p>
 <figure>
-<p><img alt="SolarSSH Web" loading="lazy" src="../../images/users/solarssh/solarssh-web-terminal%402x.png" width="965">
-</img></p>
+<p><img alt="SolarSSH Web" loading="lazy" src="../../images/users/solarssh/solarssh-web-terminal%402x.png" width="965" />
+  </p>
 <figcaption>
 <p>The SolarSSH browser app</p>
 </figcaption>
 </figure>
-<h3 id="choose-your-node-id"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.1.1</span> Choose your node ID<a class="headerlink" href="#choose-your-node-id" title="Permanent link">¶</a></h3>
+<h3 id="choose-your-node-id">Choose your node ID<a class="headerlink" href="#choose-your-node-id" title="Permanent link">&para;</a></h3>
 <p>Click on the node ID in the page title to change what node you want to connect to.</p>
 <figure>
-<p><img alt="Changing the node ID" loading="lazy" src="../../images/users/solarssh/solarssh-edit-node-id.gif" width="224">
-</img></p>
+<p><img alt="Changing the node ID" loading="lazy" src="../../images/users/solarssh/solarssh-edit-node-id.gif" width="224" />
+  </p>
 <figcaption>
 <p>Changing the SolarSSH node ID</p>
 </figcaption>
@@ -1419,10 +3784,10 @@ authentication.</p>
 node ID directly. For example to start with node 123, you could bookmark the URL
 <a href="https://go.solarnetwork.net/solarssh/?nodeId=123">https://go.solarnetwork.net/solarssh/?nodeId=123</a>.</p>
 </div>
-<h3 id="provide-your-credentials"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.1.2</span> Provide your credentials<a class="headerlink" href="#provide-your-credentials" title="Permanent link">¶</a></h3>
+<h3 id="provide-your-credentials">Provide your credentials<a class="headerlink" href="#provide-your-credentials" title="Permanent link">&para;</a></h3>
 <p>Fill in <a href="../security-tokens/">User Security Token</a> credentials for authentication. The node ID you are
 connecting to must be owned by the same account as the security token.</p>
-<h3 id="connect"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.1.3</span> Connect<a class="headerlink" href="#connect" title="Permanent link">¶</a></h3>
+<h3 id="connect">Connect<a class="headerlink" href="#connect" title="Permanent link">&para;</a></h3>
 <p>Click the <strong>Connect</strong> button to initiate the SolarSSH connection process. You will be presented with
 a dialog form to provide your SolarNodeOS <a href="../sysadmin/#system-user-account">system account
 credentials</a>. This is only necessary if you want to connect
@@ -1430,8 +3795,8 @@ to the SolarNodeOS system command line. If you only need to access the SolarNode
 App</a>, you can click the <strong>Skip</strong> button to skip this step. Otherwise, click the
 <strong>Login</strong> button to log into the system command line.</p>
 <figure>
-<p><img alt="SolarNodeOS system account credentials form" loading="lazy" src="../../images/users/solarssh/solarssh-web-terminal-shell-credentials-form%402x.png" width="515"/>
-</p>
+<p><img alt="SolarNodeOS system account credentials form" loading="lazy" src="../../images/users/solarssh/solarssh-web-terminal-shell-credentials-form%402x.png" width="515" />
+  </p>
 <figcaption>
 <p>SolarNodeOS system account credentials form</p>
 </figcaption>
@@ -1440,23 +3805,23 @@ App</a>, you can click the <strong>Skip</strong> button to skip this step. Other
 credentials previously and clicked the <strong>Login</strong> button, you will end up with a system
 command prompt, like this:</p>
 <figure>
-<p><img alt="SolarSSH system command prompt" loading="lazy" src="../../images/users/solarssh/solarssh-web-terminal-shell-loggedin%402x.png" width="965"/>
-</p>
+<p><img alt="SolarSSH system command prompt" loading="lazy" src="../../images/users/solarssh/solarssh-web-terminal-shell-loggedin%402x.png" width="965" />
+  </p>
 <figcaption>
 <p>SolarSSH logged-in system command prompt</p>
 </figcaption>
 </figure>
-<h3 id="remote-setup-app"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.1.4</span> Remote Setup App<a class="headerlink" href="#remote-setup-app" title="Permanent link">¶</a></h3>
+<h3 id="remote-setup-app">Remote Setup App<a class="headerlink" href="#remote-setup-app" title="Permanent link">&para;</a></h3>
 <p>Once connected, you can access the remote node's Setup App by clicking the <strong>Setup</strong> button in the
 top-right corner of the window. This will open a new browser tab for the Setup App.</p>
 <figure>
-<p><img alt="Accessing the SolarNode Setup App through a SolarSSH web connection" loading="lazy" src="../../images/users/solarssh/solarssh-web-setup-app%402x.png" width="972"/>
-</p>
+<p><img alt="Accessing the SolarNode Setup App through a SolarSSH web connection" loading="lazy" src="../../images/users/solarssh/solarssh-web-setup-app%402x.png" width="972" />
+  </p>
 <figcaption>
 <p>Accessing the SolarNode Setup App through a SolarSSH web connection</p>
 </figcaption>
 </figure>
-<h2 id="direct-connection"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.2</span> Direct connection<a class="headerlink" href="#direct-connection" title="Permanent link">¶</a></h2>
+<h2 id="direct-connection">Direct connection<a class="headerlink" href="#direct-connection" title="Permanent link">&para;</a></h2>
 <p>SolarSSH also supports a "direct" connection mode, that allows you to connect using standard <a href="https://en.wikipedia.org/wiki/Comparison_of_SSH_clients">ssh
 client</a> applications. This is a more advanced (and flexible) way of connecting to
 your nodes, and even allows you to access other network services on the same network as the node
@@ -1474,7 +3839,7 @@ looks like this:</p>
 A good practice for the hostname is to use one derived from the SolarNode ID, e.g. <code>solarnode-123</code>.</p>
 <p>Using OpenSSH a complete connection command to log in as a <code>solar</code> user looks like this, passing
 the "jump" host via a <code>-J</code> argument:</p>
-<div class="highlight"><pre><span></span><code>ssh -J 'NODE:TOKEN@ssh.solarnetwork.net:9022' solar@solarnode-NODE
+<div class="highlight"><pre><span></span><code>ssh -J &#39;NODE:TOKEN@ssh.solarnetwork.net:9022&#39; solar@solarnode-NODE
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1486,26 +3851,26 @@ like <code>9gPa9S;Ux1X3kK)YN6&amp;g</code> might need to have the <code>;)&amp;<
 <p>You will be first prompted to enter a password, which must be the token secret. You might then
 be prompted for the SolarNode OS user's password. Here's an example screen shot:</p>
 <figure>
-<p><img alt="SolarSSH Direct Terminal" loading="lazy" src="../../images/users/solarssh/solarssh-direct-example%402x.png" width="672"/>
-</p>
+<p><img alt="SolarSSH Direct Terminal" loading="lazy" src="../../images/users/solarssh/solarssh-direct-example%402x.png" width="672" />
+  </p>
 <figcaption>
 <p>Accessing the SolarNode system command line through a SolarSSH direct connection</p>
 </figcaption>
 </figure>
-<h3 id="shell-shortcut-function"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.2.1</span> Shell shortcut function<a class="headerlink" href="#shell-shortcut-function" title="Permanent link">¶</a></h3>
+<h3 id="shell-shortcut-function">Shell shortcut function<a class="headerlink" href="#shell-shortcut-function" title="Permanent link">&para;</a></h3>
 <p>If you find yourself using SolarSSH connections frequently, a handy <code>bash</code> or <code>zsh</code> shell function
 can help make the connection process easier to remember. Here's an example that give you a
 <code>solarssh</code> command that accepts a SolarNode ID argument, followed by any optional SSH arguments:</p>
 <div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span>solarssh<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">node_id</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="nv">$node_id</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'Must provide node ID , e.g. 123'</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">node_id</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$node_id</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Must provide node ID , e.g. 123&#39;</span>
 <span class="w">  </span><span class="k">else</span>
 <span class="w">    </span><span class="nb">shift</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Enter SN token secret when first prompted for password. Enter node </span><span class="nv">$node_id</span><span class="s2"> password second."</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Enter SN token secret when first prompted for password. Enter node </span><span class="nv">$node_id</span><span class="s2"> password second.&quot;</span>
 <span class="w">    </span>ssh<span class="w"> </span>-o<span class="w"> </span><span class="nv">StrictHostKeyChecking</span><span class="o">=</span>no<span class="w"> </span>-o<span class="w"> </span><span class="nv">UserKnownHostsFile</span><span class="o">=</span>/dev/null<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>-o<span class="w"> </span><span class="nv">LogLevel</span><span class="o">=</span>ERROR<span class="w"> </span>-o<span class="w"> </span><span class="nv">NumberOfPasswordPrompts</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>-J<span class="w"> </span><span class="s2">"</span><span class="nv">$node_id</span><span class="s2">"</span><span class="s1">':SN_TOKEN_HERE@ssh.solarnetwork.net:9022'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-J<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$node_id</span><span class="s2">&quot;</span><span class="s1">&#39;:SN_TOKEN_HERE@ssh.solarnetwork.net:9022&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span><span class="nv">$@</span><span class="w"> </span>solar@solarnode-<span class="nv">$node_id</span>
 <span class="w">  </span><span class="k">fi</span>
 <span class="o">}</span>
@@ -1518,10 +3883,10 @@ configuration (e.g. <code>~/.bashrc</code> or <code>~/.zshrc</code>) then you co
 <p class="admonition-title">Warning</p>
 <p>Be sure to leave the <code>:</code> character in front of your token in the <code>-J</code> argument. If your token
 was <code>ABC123DEF456</code> the line would look like this:</p>
-<div class="highlight"><pre><span></span><code>-J "$node_id"':ABC123DEF456@ssh.solarnetwork.net:9022' \
+<div class="highlight"><pre><span></span><code>-J &quot;$node_id&quot;&#39;:ABC123DEF456@ssh.solarnetwork.net:9022&#39; \
 </code></pre></div>
 </div>
-<h2 id="putty"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.3</span> PuTTY<a class="headerlink" href="#putty" title="Permanent link">¶</a></h2>
+<h2 id="putty">PuTTY<a class="headerlink" href="#putty" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.putty.org/">PuTTY</a> is a popular tool for Windows that supports SolarSSH connections. To connect to a
 SolarNode using PuTTY, you must:</p>
 <ol>
@@ -1530,7 +3895,7 @@ SolarNode using PuTTY, you must:</p>
 <li>Optionally configure a tunnel to <code>localhost:8080</code> to access the SolarNode Setup App</li>
 <li>Configure the session to connect to <code>solarnode-NODE_ID</code> on port <code>22</code></li>
 </ol>
-<h3 id="putty-ssh-proxy-connection-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.3.1</span> PuTTY SSH proxy connection configuration<a class="headerlink" href="#putty-ssh-proxy-connection-configuration" title="Permanent link">¶</a></h3>
+<h3 id="putty-ssh-proxy-connection-configuration">PuTTY SSH proxy connection configuration<a class="headerlink" href="#putty-ssh-proxy-connection-configuration" title="Permanent link">&para;</a></h3>
 <p>Open the <strong>Connection &gt; Proxy</strong> configuration category in PuTTY, and configure the following settings:</p>
 <table>
 <thead>
@@ -1563,13 +3928,13 @@ SolarNode using PuTTY, you must:</p>
 </tbody>
 </table>
 <figure>
-<p><img alt="PuTTY SolarSSH connection proxy configuration" loading="lazy" src="../../images/users/solarssh/solarssh-putty-conf-proxy%402x.png" width="451"/>
-</p>
+<p><img alt="PuTTY SolarSSH connection proxy configuration" loading="lazy" src="../../images/users/solarssh/solarssh-putty-conf-proxy%402x.png" width="451" />
+  </p>
 <figcaption>
 <p>Confiruing PuTTY connection proxy settings</p>
 </figcaption>
 </figure>
-<h3 id="putty-ssh-tunnel-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.3.2</span> PuTTY SSH tunnel configuration<a class="headerlink" href="#putty-ssh-tunnel-configuration" title="Permanent link">¶</a></h3>
+<h3 id="putty-ssh-tunnel-configuration">PuTTY SSH tunnel configuration<a class="headerlink" href="#putty-ssh-tunnel-configuration" title="Permanent link">&para;</a></h3>
 <p>To access the SolarNode Setup App, you can configure PuTTY to foward a port on your local machine to
 <code>localhost:8080</code> on the node. Once the SSH connection is established, you can open a browser to
 <code>http://localhost:PORT</code> to access the SolarNode Setup App. You can use any available local port, for
@@ -1599,13 +3964,13 @@ the SolarNode Setup App.</p>
 </tbody>
 </table>
 <figure>
-<p><img alt="PuTTY SolarSSH connection proxy configuration" loading="lazy" src="../../images/users/solarssh/solarssh-putty-conf-tunnels%402x.png" width="451"/>
-</p>
+<p><img alt="PuTTY SolarSSH connection proxy configuration" loading="lazy" src="../../images/users/solarssh/solarssh-putty-conf-tunnels%402x.png" width="451" />
+  </p>
 <figcaption>
 <p>Confiruing PuTTY connection SSH tunnel settings</p>
 </figcaption>
 </figure>
-<h3 id="putty-session-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.3.3</span> PuTTY session configuration<a class="headerlink" href="#putty-session-configuration" title="Permanent link">¶</a></h3>
+<h3 id="putty-session-configuration">PuTTY session configuration<a class="headerlink" href="#putty-session-configuration" title="Permanent link">&para;</a></h3>
 <p>Finally under the <strong>Session</strong> configuration category in PuTTY, configure the Host Name and Port to
 connect to SolarNode. You can also provide a session name and click the <strong>Save</strong> button to save all
 the settings you have configured, making it easy to load them in the future.</p>
@@ -1628,19 +3993,19 @@ the settings you have configured, making it easy to load them in the future.</p>
 </tbody>
 </table>
 <figure>
-<p><img alt="PuTTY SolarSSH session configuration" loading="lazy" src="../../images/users/solarssh/solarssh-putty-conf-session%402x.png" width="451"/>
-</p>
+<p><img alt="PuTTY SolarSSH session configuration" loading="lazy" src="../../images/users/solarssh/solarssh-putty-conf-session%402x.png" width="451" />
+  </p>
 <figcaption>
 <p>Confiruing PuTTY session settings</p>
 </figcaption>
 </figure>
-<h3 id="putty-open-connection"><span class="enumerate-headings-plugin enumerate-heading-plugin">63.3.4</span> PuTTY open connection<a class="headerlink" href="#putty-open-connection" title="Permanent link">¶</a></h3>
+<h3 id="putty-open-connection">PuTTY open connection<a class="headerlink" href="#putty-open-connection" title="Permanent link">&para;</a></h3>
 <p>On the <strong>Session</strong> configuration category, click the <strong>Open</strong> button to establish the SolarSSH
 connection. You might be prompted to confirm the identity of the <code>ssh.solarnetwork.net</code> server
 first. Click the <strong>Accept</strong> button if this is the case.</p>
 <figure>
-<p><img alt="PuTTY SolarSSH host verification alert" loading="lazy" src="../../images/users/solarssh/solarssh-putty-trust-alert%402x.png" width="510"/>
-</p>
+<p><img alt="PuTTY SolarSSH host verification alert" loading="lazy" src="../../images/users/solarssh/solarssh-putty-trust-alert%402x.png" width="510" />
+  </p>
 <figcaption>
 <p>PuTTY host verification alert</p>
 </figcaption>
@@ -1650,8 +4015,8 @@ like to connect to SolarNode with. Typically you would use the <code>solar</code
 <code>solar</code> followed by <span class="keys"><kbd class="key-enter">Enter</kbd></span>. You will then be prompted for that account's password, so type that
 in and type <span class="keys"><kbd class="key-enter">Enter</kbd></span> again. You will then be presented with the SolarNodeOS shell prompt.</p>
 <figure>
-<p><img alt="PuTTY SolarSSH node login" loading="lazy" src="../../images/users/solarssh/solarssh-putty-node-login%402x.png" width="659"/>
-</p>
+<p><img alt="PuTTY SolarSSH node login" loading="lazy" src="../../images/users/solarssh/solarssh-putty-node-login%402x.png" width="659" />
+  </p>
 <figcaption>
 <p>PuTTY node login</p>
 </figcaption>
@@ -1659,37 +4024,67 @@ in and type <span class="keys"><kbd class="key-enter">Enter</kbd></span> again. 
 <p>Assuming you configured a SSH tunnel on port <code>8888</code> to <code>localhost:8080</code>, you can now open
 <a href="http://localhost:8888">http://localhost:8888</a> to access the SolarNode Setup App.</p>
 <figure>
-<p><img alt="PuTTY SolarSSH access to Setup App" loading="lazy" src="../../images/users/solarssh/solarssh-putty-setup-app%402x.png" width="783"/>
-</p>
+<p><img alt="PuTTY SolarSSH access to Setup App" loading="lazy" src="../../images/users/solarssh/solarssh-putty-setup-app%402x.png" width="783" />
+  </p>
 <figcaption>
 <p>Once connected to SolarSSH, access the SolarNode Setup App in your browser.</p>
 </figcaption>
 </figure>
-</article>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-</div>
-</main>
-<footer class="md-footer">
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-copyright">
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
     </a>
+  
 </div>
-</div>
-</div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
-<script src="../../js/open_in_new_tab.js"></script>
-</body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../js/open_in_new_tab.js"></script>
+      
+    
+  </body>
 </html>

@@ -1,1440 +1,3823 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://solarnetwork.github.io/solarnode-handbook/developers/settings/specifier/">
+      
+      
+        <link rel="prev" href="../provider/">
+      
+      
+        <link rel="next" href="../resource-handler/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Setting Specifier - SolarNode Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
 
-<html class="no-js" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://solarnetwork.github.io/solarnode-handbook/developers/settings/specifier/" rel="canonical"/>
-<link href="../provider/" rel="prev"/>
-<link href="../resource-handler/" rel="next"/>
-<link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.18" name="generator"/>
-<title>Setting Specifier - SolarNode Handbook</title>
-<link href="../../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../css/sn.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
-<body data-md-color-accent="indigo" data-md-color-primary="amber" data-md-color-scheme="default" dir="ltr">
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#setting-specifier">
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/sn.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setting-specifier" class="md-skip">
           Skip to content
         </a>
-</div>
-<div data-md-component="announce">
-</div>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
 <header class="md-header md-header--shadow" data-md-component="header">
-<nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="SolarNode Handbook" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="SolarNode Handbook">
-<img alt="logo" src="../../../images/solarnode-icon.svg"/>
-</a>
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
-</label>
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="SolarNode Handbook" class="md-header__button md-logo" aria-label="SolarNode Handbook" data-md-component="logo">
+      
+  <img src="../../../images/solarnode-icon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             SolarNode Handbook
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               Setting Specifier
             
           </span>
-</div>
-</div>
-</div>
-<form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="amber" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
-</label>
-<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="amber" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
-<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
-</label>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
 </form>
-<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
-</label>
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
-</label>
-<nav aria-label="Search" class="md-search__options">
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
-</button>
-</nav>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</nav>
+      
+    
+    
+  </nav>
+  
 </header>
-<div class="md-container" data-md-component="container">
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="SolarNode Handbook" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="SolarNode Handbook">
-<img alt="logo" src="../../../images/solarnode-icon.svg"/>
-</a>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SolarNode Handbook" class="md-nav__button md-logo" aria-label="SolarNode Handbook" data-md-component="logo">
+      
+  <img src="../../../images/solarnode-icon.svg" alt="logo">
+
+    </a>
     SolarNode Handbook
   </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/">
-<span class="md-ellipsis">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../users/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     User Guide
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_1">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
             User Guide
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/getting-started/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Getting Started
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/setup-app/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../users/setup-app/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Setup App
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_3">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
             Setup App
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/login/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Login
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/home/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Home
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_4" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/setup-app/settings/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../users/setup-app/settings/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Settings
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_4_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_4">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_4">
+            <span class="md-nav__icon md-icon"></span>
             Settings
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/settings/components/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/settings/components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Components
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/settings/services/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/settings/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Services
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/settings/datum-filters/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/settings/datum-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum Filters
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/settings/datum-sources/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/settings/datum-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum Sources
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/settings/logging/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/settings/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Logging
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/settings/op-modes/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/settings/op-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Operational Modes
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/settings/local-state/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/settings/local-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Local State
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/settings/backups/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/settings/backups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Backups
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_5" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/setup-app/system/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../users/setup-app/system/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     System
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_5">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_5">
+            <span class="md-nav__icon md-icon"></span>
             System
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/system/certificates/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/system/certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Certificates
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/system/packages/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/system/packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Packages
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/system/host-aliases/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/system/host-aliases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Host Aliases
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/system/restart/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/system/restart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Restart
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/system/reset/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/system/reset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Reset
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_3_6" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/setup-app/tools/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../users/setup-app/tools/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Tools
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_3_6" id="__nav_1_3_6_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_3_6_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_3_6">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3_6" id="__nav_1_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_6">
+            <span class="md-nav__icon md-icon"></span>
             Tools
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/tools/controls/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/tools/controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Controls
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/tools/command-console/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/tools/command-console/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Command Console
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/tools/metrics/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/tools/metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Metrics
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/setup-app/profile/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Profile
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/cli/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Command Line Tool
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_6" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/datum-sources/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../users/datum-sources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Datum Sources
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_6_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_6">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
             Datum Sources
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-sources/modbus/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-sources/modbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Modbus Device
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_7" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/datum-filters/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-sources/sunspec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SunSpec Modbus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../users/datum-filters/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Datum Filters
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_7_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_7">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_7">
+            <span class="md-nav__icon md-icon"></span>
             Datum Filters
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/chain/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Filter Chain
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/control-updater/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/control-updater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Control Updater
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/downsample/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/downsample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Downsample
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/expression/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/expression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Expression
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/join/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/join/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Join
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/metric-harvester/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/metric-harvester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Metric Harvester
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/op-mode/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/op-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Operational Mode
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/parameter-expression/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/parameter-expression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Parameter Expression
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/property/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Property
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/pvlib/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/pvlib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     POAI Calculator
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/rounded-timestamp/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/rounded-timestamp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Rounded Timestamp
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/split/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/split/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Split
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/tariff/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/tariff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Tariff
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/throttle/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/throttle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Throttle
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/timeout/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/timeout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Timeout
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/unchanged-property/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/unchanged-property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Unchanged Property
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/unchanged/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/unchanged/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Unchanged
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/datum-filters/virtual-meter/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/datum-filters/virtual-meter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Virtual Meter
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_8" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/controls/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../users/controls/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Controls
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_8_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_8">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_8">
+            <span class="md-nav__icon md-icon"></span>
             Controls
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/controls/modbus/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/controls/modbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Modbus Control
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_9" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/io/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../users/io/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     I/O Integrations
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_9_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_9">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_9">
+            <span class="md-nav__icon md-icon"></span>
             I/O Integrations
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/io/modbus-server/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/io/modbus-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Modbus Server
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/io/modbus/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/io/modbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Modbus
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/solarflux/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/solarflux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     SolarFlux
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1_11" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../users/sysadmin/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_11" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../users/sysadmin/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     System Administration
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_1_11" id="__nav_1_11_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_11_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_11">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_11" id="__nav_1_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_11">
+            <span class="md-nav__icon md-icon"></span>
             System Administration
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/sysadmin/date-time/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/sysadmin/date-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Date and Time
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/sysadmin/networking/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/sysadmin/networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Networking
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/sysadmin/packages/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/sysadmin/packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Package Maintenance
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/sysadmin/solarnode-service/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/sysadmin/solarnode-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     SolarNode Service
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/sysadmin/solarssh/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/sysadmin/solarssh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     SolarSSH
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/networking/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Networking
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/security-tokens/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/security-tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Security Tokens
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/remote-access/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/remote-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Remote Access
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/expressions/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Expressions
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/local-state/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/local-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Local State
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/metrics/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Metrics
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/op-modes/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/op-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Operational Modes
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/placeholders/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/placeholders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Placeholders
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/configuration/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Configuration
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/settings/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Settings Files
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../users/logging/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Logging
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../recipes/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../recipes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Recipes
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
             Recipes
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../recipes/datum-filters/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../recipes/datum-filters/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Datum Filters
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_2">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
             Datum Filters
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../recipes/datum-filters/main-filter-chain/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/datum-filters/main-filter-chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Main Filter Chain
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../recipes/datum-filters/daily-limit-tracking/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/datum-filters/daily-limit-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Daily Limit Tracking
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../recipes/datum-filters/peak-tracking/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/datum-filters/peak-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Peak Tracking
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Developer Guide
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
             Developer Guide
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../osgi/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../osgi/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Plugins
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_2">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
             Plugins
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../osgi/manifest/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../osgi/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Manifest
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../osgi/life-cycle/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../osgi/life-cycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Life cycle
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../osgi/configuration-admin/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../osgi/configuration-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Configuration Admin
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../osgi/blueprint/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../osgi/blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Blueprint
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../osgi/blueprint-compendium/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../osgi/blueprint-compendium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Blueprint Compendium
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
     Settings
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="true" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_3">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
             Settings
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../provider/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Settings Provider
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
     Setting Specifier
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
     Setting Specifier
     
   </span>
-</a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#settings-playpen">
-<span class="md-ellipsis">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#settings-playpen" class="md-nav__link">
+    <span class="md-ellipsis">
       Settings Playpen
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#text-field">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#text-field" class="md-nav__link">
+    <span class="md-ellipsis">
       Text Field
     </span>
-</a>
-<nav aria-label="Text Field" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#secure-text-field">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="Text Field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secure-text-field" class="md-nav__link">
+    <span class="md-ellipsis">
       Secure Text Field
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#title">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#title" class="md-nav__link">
+    <span class="md-ellipsis">
       Title
     </span>
-</a>
-<nav aria-label="Title" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#html-title">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="Title">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-title" class="md-nav__link">
+    <span class="md-ellipsis">
       HTML Title
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#text-area">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#text-area" class="md-nav__link">
+    <span class="md-ellipsis">
       Text Area
     </span>
-</a>
-<nav aria-label="Text Area" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct-text-area">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="Text Area">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-text-area" class="md-nav__link">
+    <span class="md-ellipsis">
       Direct Text Area
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#toggle">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#toggle" class="md-nav__link">
+    <span class="md-ellipsis">
       Toggle
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#slider">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#slider" class="md-nav__link">
+    <span class="md-ellipsis">
       Slider
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#radio-group">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#radio-group" class="md-nav__link">
+    <span class="md-ellipsis">
       Radio Group
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#multi-value">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#multi-value" class="md-nav__link">
+    <span class="md-ellipsis">
       Multi-value
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#file">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
       File
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dynamic-list">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-list" class="md-nav__link">
+    <span class="md-ellipsis">
       Dynamic List
     </span>
-</a>
-<nav aria-label="Dynamic List" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#simple-dynamic-list">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-dynamic-list" class="md-nav__link">
+    <span class="md-ellipsis">
       Simple Dynamic List
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#complex-dynamic-list">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#complex-dynamic-list" class="md-nav__link">
+    <span class="md-ellipsis">
       Complex Dynamic List
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../resource-handler/">
-<span class="md-ellipsis">
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource-handler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Setting Resource Handler
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../singleton/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../singleton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Singleton Service
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../factory/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../factory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Factory Service
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     Services
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_4">
-<span class="md-nav__icon md-icon"></span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
             Services
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../services/backup-manager/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/backup-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Backup Manager
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../services/closeable-service/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/closeable-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Closeable Service
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../services/datum-data-source-poll-job/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/datum-data-source-poll-job/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum Data Source Poll Job
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../services/datum-data-source/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/datum-data-source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum Data Source
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../services/datum-db/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/datum-db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum Database
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../services/datum-queue/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/datum-queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Datum Queue
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../services/job-scheduler/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/job-scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Job Scheduler
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../services/placeholder-service/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/placeholder-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Placeholder Service
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../services/settings-db/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/settings-db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Settings Database
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../services/settings-service/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/settings-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Settings Service
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../services/sql-database/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/sql-database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     SQL Database
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../services/task-executor/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/task-executor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Task Executor
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../services/task-scheduler/">
-<span class="md-ellipsis">
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/task-scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     Task Scheduler
     
   </span>
-</a>
-</li>
-</ul>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#settings-playpen">
-<span class="md-ellipsis">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#settings-playpen" class="md-nav__link">
+    <span class="md-ellipsis">
       Settings Playpen
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#text-field">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#text-field" class="md-nav__link">
+    <span class="md-ellipsis">
       Text Field
     </span>
-</a>
-<nav aria-label="Text Field" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#secure-text-field">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="Text Field">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secure-text-field" class="md-nav__link">
+    <span class="md-ellipsis">
       Secure Text Field
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#title">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#title" class="md-nav__link">
+    <span class="md-ellipsis">
       Title
     </span>
-</a>
-<nav aria-label="Title" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#html-title">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="Title">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-title" class="md-nav__link">
+    <span class="md-ellipsis">
       HTML Title
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#text-area">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#text-area" class="md-nav__link">
+    <span class="md-ellipsis">
       Text Area
     </span>
-</a>
-<nav aria-label="Text Area" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct-text-area">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="Text Area">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-text-area" class="md-nav__link">
+    <span class="md-ellipsis">
       Direct Text Area
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#toggle">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#toggle" class="md-nav__link">
+    <span class="md-ellipsis">
       Toggle
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#slider">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#slider" class="md-nav__link">
+    <span class="md-ellipsis">
       Slider
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#radio-group">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#radio-group" class="md-nav__link">
+    <span class="md-ellipsis">
       Radio Group
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#multi-value">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#multi-value" class="md-nav__link">
+    <span class="md-ellipsis">
       Multi-value
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#file">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
       File
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dynamic-list">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-list" class="md-nav__link">
+    <span class="md-ellipsis">
       Dynamic List
     </span>
-</a>
-<nav aria-label="Dynamic List" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#simple-dynamic-list">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-dynamic-list" class="md-nav__link">
+    <span class="md-ellipsis">
       Simple Dynamic List
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#complex-dynamic-list">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#complex-dynamic-list" class="md-nav__link">
+    <span class="md-ellipsis">
       Complex Dynamic List
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
-<h1 id="setting-specifier"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.</span> Setting Specifier<a class="headerlink" href="#setting-specifier" title="Permanent link">¶</a></h1>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="setting-specifier">Setting Specifier<a class="headerlink" href="#setting-specifier" title="Permanent link">&para;</a></h1>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/SettingSpecifier.html"><code>net.solarnetwork.settings.SettingSpecifier</code></a> API defines metadata for a
 single configurable property in the Settings API. The API looks like this:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">SettingSpecifier</span><span class="w"> </span><span class="p">{</span>
@@ -1451,7 +3834,7 @@ single configurable property in the Settings API. The API looks like this:</p>
 <span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">getType</span><span class="p">();</span>
 
 <span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * Localizable text to display with the setting's content.</span>
+<span class="cm">     * Localizable text to display with the setting&#39;s content.</span>
 <span class="cm">     *</span>
 <span class="cm">     * @return the title</span>
 <span class="cm">     */</span>
@@ -1466,28 +3849,28 @@ setting <em>types</em>.</p>
 <p>A <code>SettingSpecifier</code> instance is often referred to simply as <em>a setting</em>.</p>
 </div>
 <p>Here is a view of the class hierarchy that builds off of this interface:</p>
-<p><img alt="SettingSpecifier class hierarchy diagram" src="../../../images/developers/settings/setting-specifier-class-hierarchy.png" width="317"/></p>
+<p><img alt="SettingSpecifier class hierarchy diagram" src="../../../images/developers/settings/setting-specifier-class-hierarchy.png" width="317" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code>SettingSpecifier</code> API defines metadata about a configurable property, but not methods to
 view or change that property's value. The <a href="../../services/settings-service/">Settings Service</a>
 provides methods for managing setting values.</p>
 </div>
-<h2 id="settings-playpen"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.1</span> Settings Playpen<a class="headerlink" href="#settings-playpen" title="Permanent link">¶</a></h2>
+<h2 id="settings-playpen">Settings Playpen<a class="headerlink" href="#settings-playpen" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://github.com/SolarNetwork/solarnetwork-node/tree/develop/net.solarnetwork.node.settings.playpen">Settings Playpen</a> plugin demonstrates most of the available setting types, and is a
 great way to see how the settings can be used.</p>
-<h2 id="text-field"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.2</span> Text Field<a class="headerlink" href="#text-field" title="Permanent link">¶</a></h2>
+<h2 id="text-field">Text Field<a class="headerlink" href="#text-field" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/TextFieldSettingSpecifier.html"><code>TextFieldSettingSpecifier</code></a> defines a simple string-based
 configurable property and is the most common setting type. The setting defines a <code>key</code> that maps to
 a setter method on its associated component class. In the SolarNode UI a text field is rendered as
 an HTML form text input, like this:</p>
-<p><img alt="Text field setting as an HTML form field" src="../../../images/developers/settings/text-field-setting.png" width="416"/></p>
+<p><img alt="Text field setting as an HTML form field" src="../../../images/developers/settings/text-field-setting.png" width="416" /></p>
 <p>The <code>net.solarnetwork.settings.support.BasicTextFieldSettingSpecifier</code> class provides the standard implementation
 of this API. A standard text field setting is created like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEFAULT_VALUE"</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DEFAULT_VALUE&quot;</span><span class="p">);</span>
 
 <span class="c1">// or without any default value</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1498,138 +3881,138 @@ component accessor methods.</p>
 <p>For example a <code>Map&lt;String, String&gt;</code> setting could be published as a text field setting that
 en/decodes the <code>Map</code> into a delimited string value, for example <code>name=Test, color=red</code>.</p>
 </div>
-<h3 id="secure-text-field"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.2.1</span> Secure Text Field<a class="headerlink" href="#secure-text-field" title="Permanent link">¶</a></h3>
+<h3 id="secure-text-field">Secure Text Field<a class="headerlink" href="#secure-text-field" title="Permanent link">&para;</a></h3>
 <p>The <code>BasicTextFieldSettingSpecifier</code> can also be used for "secure" text fields where the field's
 content is obscured from view. In the SolarNode UI a secure text field is rendered as an HTML
 password form input like this:</p>
-<p><img alt="Secure text field setting as an HTML form field" src="../../../images/developers/settings/secure-text-field-setting.png" width="435"/></p>
+<p><img alt="Secure text field setting as an HTML form field" src="../../../images/developers/settings/secure-text-field-setting.png" width="435" /></p>
 <p>A standard secure text field setting is created by passing a third <code>true</code> argument, like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEFAULT_VALUE"</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DEFAULT_VALUE&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 
 <span class="c1">// or without any default value</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="title"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.3</span> Title<a class="headerlink" href="#title" title="Permanent link">¶</a></h2>
+<h2 id="title">Title<a class="headerlink" href="#title" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/TitleSettingSpecifier.html"><code>TitleSettingSpecifier</code></a> defines a simple read-only string-based
 configurable property. The setting defines a <code>key</code> that maps to a setter method on its associated
 component class. In the SolarNode UI the default value is rendered as plain text, like this:</p>
-<p><img alt="Title setting as HTML text" src="../../../images/developers/settings/title-setting.png" width="246"/></p>
+<p><img alt="Title setting as HTML text" src="../../../images/developers/settings/title-setting.png" width="246" /></p>
 <p>The <code>net.solarnetwork.settings.support.BasicTitleSettingSpecifier</code> class provides the standard
 implementation of this API. A standard title setting is created like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTitleSettingSpecifier</span><span class="p">(</span><span class="s">"status"</span><span class="p">,</span><span class="w"> </span><span class="s">"Status is good."</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTitleSettingSpecifier</span><span class="p">(</span><span class="s">&quot;status&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Status is good.&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="html-title"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.3.1</span> HTML Title<a class="headerlink" href="#html-title" title="Permanent link">¶</a></h3>
+<h3 id="html-title">HTML Title<a class="headerlink" href="#html-title" title="Permanent link">&para;</a></h3>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/TitleSettingSpecifier.html"><code>TitleSettingSpecifier</code></a> supports HTML markup. In the SolarNode UI the
 default value is rendered directly into HTML, like this:</p>
-<p><img alt="Title setting as HTML text" src="../../../images/developers/settings/title-markup-setting.png" width="366"/></p>
+<p><img alt="Title setting as HTML text" src="../../../images/developers/settings/title-markup-setting.png" width="366" /></p>
 <div class="highlight"><pre><span></span><code><span class="c1">// pass `true` as the 4th argument to enable HTML markup in the status value</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicTitleSettingSpecifier</span><span class="p">(</span><span class="s">"status"</span><span class="p">,</span><span class="w"> </span><span class="s">"Status is &lt;b&gt;good&lt;/b&gt;."</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicTitleSettingSpecifier</span><span class="p">(</span><span class="s">&quot;status&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Status is &lt;b&gt;good&lt;/b&gt;.&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="text-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.4</span> Text Area<a class="headerlink" href="#text-area" title="Permanent link">¶</a></h2>
+<h2 id="text-area">Text Area<a class="headerlink" href="#text-area" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/TextAreaSettingSpecifier.html"><code>TextAreaSettingSpecifier</code></a> defines a simple string-based
 configurable property for a larger text value, loaded as an external file using the
 <a href="../resource-handler/">SettingResourceHandler</a> API. In the SolarNode UI a text area is rendered
 as an HTML form text area with an associated button to upload the content, like this:</p>
-<p><img alt="Text area setting as an HTML form field" src="../../../images/developers/settings/text-area-setting.png" width="476"/></p>
+<p><img alt="Text area setting as an HTML form field" src="../../../images/developers/settings/text-area-setting.png" width="476" /></p>
 <p>The <code>net.solarnetwork.settings.support.BasicTextAreaSettingSpecifier</code> class provides the standard implementation
 of this API. A standard text field setting is created like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEFAULT_VALUE"</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DEFAULT_VALUE&quot;</span><span class="p">);</span>
 
 <span class="c1">// or without any default value</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="direct-text-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.4.1</span> Direct Text Area<a class="headerlink" href="#direct-text-area" title="Permanent link">¶</a></h3>
+<h3 id="direct-text-area">Direct Text Area<a class="headerlink" href="#direct-text-area" title="Permanent link">&para;</a></h3>
 <p>The <code>BasicTextAreaSettingSpecifier</code> can also be used for "direct" text areas where the field's
 content is not uploaded as an external file. In the SolarNode UI a direct text area is rendered as
 an HTML form text area, like this:</p>
-<p><img alt="Direct text area setting as an HTML form field" src="../../../images/developers/settings/direct-text-area-setting.png" width="446"/></p>
+<p><img alt="Direct text area setting as an HTML form field" src="../../../images/developers/settings/direct-text-area-setting.png" width="446" /></p>
 <p>A standard direct text area setting is created by passing a third <code>true</code> argument, like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEFAULT_VALUE"</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DEFAULT_VALUE&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 
 <span class="c1">// or without any default value</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="toggle"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.5</span> Toggle<a class="headerlink" href="#toggle" title="Permanent link">¶</a></h2>
+<h2 id="toggle">Toggle<a class="headerlink" href="#toggle" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/ToggleSettingSpecifier.html"><code>ToggleSettingSpecifier</code></a> defines a boolean configurable property. In
 the SolarNode UI a toggle setting is rendered as an HTML form button, like this:</p>
-<p><img alt="Toggle setting as an HTML form field" src="../../../images/developers/settings/toggle-setting.png" width="142"/></p>
+<p><img alt="Toggle setting as an HTML form field" src="../../../images/developers/settings/toggle-setting.png" width="142" /></p>
 <p>The <code>net.solarnetwork.settings.support.BasicToggleSettingSpecifier</code> class provides the standard implementation
 of this API. A standard toggle setting is created like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicToggleSettingSpecifier</span><span class="p">(</span><span class="s">"enabled"</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"> </span><span class="c1">// default "off"</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicToggleSettingSpecifier</span><span class="p">(</span><span class="s">&quot;enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"> </span><span class="c1">// default &quot;off&quot;</span>
 
-<span class="k">new</span><span class="w"> </span><span class="n">BasicToggleSettingSpecifier</span><span class="p">(</span><span class="s">"enabled"</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w">  </span><span class="c1">// default "on"</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicToggleSettingSpecifier</span><span class="p">(</span><span class="s">&quot;enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w">  </span><span class="c1">// default &quot;on&quot;</span>
 </code></pre></div>
-<h2 id="slider"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.6</span> Slider<a class="headerlink" href="#slider" title="Permanent link">¶</a></h2>
+<h2 id="slider">Slider<a class="headerlink" href="#slider" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/SliderSettingSpecifier.html"><code>SliderSettingSpecifier</code></a> defines a number-based configuration property
 with minimum and maximum values enforced, and a <em>step</em> limit. In the SolarNode UI a
 slider is rendered as an HTML widget, like this:</p>
-<p><img alt="Slider setting as an HTML form widget" src="../../../images/developers/settings/slider-setting.png" width="382"/></p>
+<p><img alt="Slider setting as an HTML form widget" src="../../../images/developers/settings/slider-setting.png" width="382" /></p>
 <p>The <code>net.solarnetwork.settings.support.BasicSliderSettingSpecifier</code> class provides the standard implementation
 of this API. A standard Slider setting is created like this:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// no default value, range between 0-11 in 0.5 increments</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicSliderSettingSpecifier</span><span class="p">(</span><span class="s">"volume"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicSliderSettingSpecifier</span><span class="p">(</span><span class="s">&quot;volume&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
 
 <span class="c1">// default value 5.0, range between 0-11 in 0.5 increments</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicSliderSettingSpecifier</span><span class="p">(</span><span class="s">"volume"</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicSliderSettingSpecifier</span><span class="p">(</span><span class="s">&quot;volume&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="radio-group"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.7</span> Radio Group<a class="headerlink" href="#radio-group" title="Permanent link">¶</a></h2>
+<h2 id="radio-group">Radio Group<a class="headerlink" href="#radio-group" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/RadioGroupSettingSpecifier.html"><code>RadioGroupSettingSpecifier</code></a> defines a configurable property that
 accepts a single value from a fixed set of possible values. In the SolarNode UI a radio group is
 rendered as a set of HTML radio input form fields, like this:</p>
-<p><img alt="Radio Group setting as a set of HTML radio inputs" src="../../../images/developers/settings/radio-group-setting.png" width="156"/></p>
+<p><img alt="Radio Group setting as a set of HTML radio inputs" src="../../../images/developers/settings/radio-group-setting.png" width="156" /></p>
 <p>The <code>net.solarnetwork.settings.support.BasicRadioGroupSettingSpecifier</code> class provides the standard implementation
 of this API. A standard RadioGroup setting is created like this:</p>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">vals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">"a"</span><span class="p">,</span><span class="w"> </span><span class="s">"b"</span><span class="p">,</span><span class="w"> </span><span class="s">"c"</span><span class="p">};</span>
-<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Strign</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">"One"</span><span class="p">,</span><span class="w"> </span><span class="s">"Two"</span><span class="p">,</span><span class="w"> </span><span class="s">"Three"</span><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">vals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">};</span>
+<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Strign</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;One&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Two&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Three&quot;</span><span class="p">};</span>
 <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">radioValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashMap</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">vals</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">radioValues</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">vals</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">labels</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="n">BasicRadioGroupSettingSpecifier</span><span class="w"> </span><span class="n">radio</span><span class="w"> </span><span class="o">=</span>
-<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">BasicRadioGroupSettingSpecifier</span><span class="p">(</span><span class="s">"option"</span><span class="p">,</span><span class="w"> </span><span class="n">vals</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">BasicRadioGroupSettingSpecifier</span><span class="p">(</span><span class="s">&quot;option&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">vals</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
 <span class="n">radio</span><span class="p">.</span><span class="na">setValueTitles</span><span class="p">(</span><span class="n">radioValues</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="multi-value"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.8</span> Multi-value<a class="headerlink" href="#multi-value" title="Permanent link">¶</a></h2>
+<h2 id="multi-value">Multi-value<a class="headerlink" href="#multi-value" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/MultiValueSettingSpecifier.html"><code>MultiValueSettingSpecifier</code></a> defines a configurable property that
 accepts a single value from a fixed set of possible values. In the SolarNode UI a multi-value
 setting is rendered as an HTML select form field, like this:</p>
-<p><img alt="Multi-value setting as an HTML select form field" src="../../../images/developers/settings/multi-value-setting.png" width="318"/></p>
+<p><img alt="Multi-value setting as an HTML select form field" src="../../../images/developers/settings/multi-value-setting.png" width="318" /></p>
 <p>The <code>net.solarnetwork.settings.support.BasicMultiValueSettingSpecifier</code> class provides the standard implementation
 of this API. A standard MultiValue setting is created like this:</p>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">vals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">"a"</span><span class="p">,</span><span class="w"> </span><span class="s">"b"</span><span class="p">,</span><span class="w"> </span><span class="s">"c"</span><span class="p">};</span>
-<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Strign</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">"Option 1"</span><span class="p">,</span><span class="w"> </span><span class="s">"Option 2"</span><span class="p">,</span><span class="w"> </span><span class="s">"Option 3"</span><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">vals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">};</span>
+<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Strign</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Option 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Option 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Option 3&quot;</span><span class="p">};</span>
 <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">radioValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashMap</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">vals</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">radioValues</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">vals</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">labels</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="n">BasicMultiValueSettingSpecifier</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BasicMultiValueSettingSpecifier</span><span class="p">(</span><span class="s">"option"</span><span class="p">,</span>
+<span class="n">BasicMultiValueSettingSpecifier</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BasicMultiValueSettingSpecifier</span><span class="p">(</span><span class="s">&quot;option&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="n">vals</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
 <span class="n">menu</span><span class="p">.</span><span class="na">setValueTitles</span><span class="p">(</span><span class="n">menuValues</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="file"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.9</span> File<a class="headerlink" href="#file" title="Permanent link">¶</a></h2>
+<h2 id="file">File<a class="headerlink" href="#file" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.node/net.solarnetwork.node/latest/net/solarnetwork/node/settings/FileSettingSpecifier.html"><code>FileSettingSpecifier</code></a> defines a file-based resource property, loaded as
 an external file using the <a href="../resource-handler/">SettingResourceHandler</a> API. In the SolarNode UI a
 file setting is rendered as an HTML file input, like this:</p>
-<p><img alt="File setting as an HTML form field" src="../../../images/developers/settings/file-setting.png" width="468"/></p>
+<p><img alt="File setting as an HTML form field" src="../../../images/developers/settings/file-setting.png" width="468" /></p>
 <p>The <code>net.solarnetwork.node.settings.support.BasicFileSettingSpecifier</code> class provides the standard implementation
 of this API. A standard file setting is created like this:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// a single file only, no default content</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicFileSettingSpecifier</span><span class="p">(</span><span class="s">"document"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">".txt"</span><span class="p">,</span><span class="w"> </span><span class="s">"text/*"</span><span class="p">)),</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicFileSettingSpecifier</span><span class="p">(</span><span class="s">&quot;document&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;text/*&quot;</span><span class="p">)),</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 
 <span class="c1">// multiple files allowed, no default content</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicFileSettingSpecifier</span><span class="p">(</span><span class="s">"document-list"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">".txt"</span><span class="p">,</span><span class="w"> </span><span class="s">"text/*"</span><span class="p">)),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicFileSettingSpecifier</span><span class="p">(</span><span class="s">&quot;document-list&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;text/*&quot;</span><span class="p">)),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="dynamic-list"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.10</span> Dynamic List<a class="headerlink" href="#dynamic-list" title="Permanent link">¶</a></h2>
+<h2 id="dynamic-list">Dynamic List<a class="headerlink" href="#dynamic-list" title="Permanent link">&para;</a></h2>
 <p>A Dynamic List setting allows the user to manage a list of homogeneous items, adding or subtracting items as desired.
 The items can be literals like strings, or arbitrary objects that define their own settings. In the SolarNode UI a
 dynamic list setting is rendered as a pair of HTML buttons to remove and add items, like this:</p>
-<p><img alt="Dynamic list setting in an HTML form" src="../../../images/developers/settings/dynamic-list-setting.png" width="198"/></p>
+<p><img alt="Dynamic list setting in an HTML form" src="../../../images/developers/settings/dynamic-list-setting.png" width="198" /></p>
 <p>A Dynamic List is often backed by a Java <code>Collection</code> or array in the associated component. In addition
 a special size-adjusting accessor method is required, named after the setter method with <code>Count</code> appended.
 SolarNode will use this accessor to request a specific size for the dynamic list.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Array-backed dynamic list accessors</label><label for="__tabbed_1_2">List-backed dynamic list accessors</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Array-backed dynamic list accessors</label><label for="__tabbed_1_2">List-backed dynamic list accessors</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
@@ -1684,20 +4067,20 @@ SolarNode will use this accessor to request a specific size for the dynamic list
 <span class="w">        </span><span class="n">setNames</span><span class="p">(</span><span class="n">l</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">lCount</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">l</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+<span class="w">        </span><span class="n">l</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
 <span class="w">        </span><span class="n">lCount</span><span class="o">++</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
 </div>
-</input></input></div>
+</div>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/support/SettingUtils.html"><code>SettingUtils.dynamicListSettingSpecifier()</code></a> method simplifies the creation of a
 <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/GroupSettingSpecifier.html"><code>GroupSettingSpecifier</code></a> that represents a dynamic list (the examples in the
 following sections demonstrate this).</p>
-<h3 id="simple-dynamic-list"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.10.1</span> Simple Dynamic List<a class="headerlink" href="#simple-dynamic-list" title="Permanent link">¶</a></h3>
+<h3 id="simple-dynamic-list">Simple Dynamic List<a class="headerlink" href="#simple-dynamic-list" title="Permanent link">&para;</a></h3>
 <p>A <em>simple</em> Dynamic List is a dynamic list of string or number values.</p>
-<p><img alt="Simple dynamic list setting in an HTML form" src="../../../images/developers/settings/dynamic-list-simple-setting.png" width="420"/></p>
+<p><img alt="Simple dynamic list setting in an HTML form" src="../../../images/developers/settings/dynamic-list-simple-setting.png" width="420" /></p>
 <div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
 
 <span class="nd">@Override</span>
@@ -1706,19 +4089,19 @@ following sections demonstrate this).</p>
 
 <span class="w">    </span><span class="c1">// turn a list of strings into a Group of TextField settings</span>
 <span class="w">    </span><span class="n">GroupSettingSpecifier</span><span class="w"> </span><span class="n">namesList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SettingUtils</span><span class="p">.</span><span class="na">dynamicListSettingSpecifier</span><span class="p">(</span>
-<span class="w">            </span><span class="s">"names"</span><span class="p">,</span><span class="w"> </span><span class="n">asList</span><span class="p">(</span><span class="n">names</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">            </span><span class="s">&quot;names&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">asList</span><span class="p">(</span><span class="n">names</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
 <span class="w">                    </span><span class="n">singletonList</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">)));</span>
 <span class="w">    </span><span class="n">results</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">namesList</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">results</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="complex-dynamic-list"><span class="enumerate-headings-plugin enumerate-heading-plugin">86.10.2</span> Complex Dynamic List<a class="headerlink" href="#complex-dynamic-list" title="Permanent link">¶</a></h3>
+<h3 id="complex-dynamic-list">Complex Dynamic List<a class="headerlink" href="#complex-dynamic-list" title="Permanent link">&para;</a></h3>
 <p>A <em>complex</em> Dynamic List is a dynamic list of arbitrary object values. The main difference in terms
 of the necessary settings structure required, compared to a Simple Dynamic List, is that a
 group-of-groups is used.</p>
-<p><img alt="Complex dynamic list setting in an HTML form" src="../../../images/developers/settings/dynamic-list-complex-setting.png" width="452"/></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Complex data class</label><label for="__tabbed_2_2">Dynamic List setting</label></div>
+<p><img alt="Complex dynamic list setting in an HTML form" src="../../../images/developers/settings/dynamic-list-complex-setting.png" width="452" /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Complex data class</label><label for="__tabbed_2_2">Dynamic List setting</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
@@ -1728,8 +4111,8 @@ group-of-groups is used.</p>
 <span class="w">    </span><span class="c1">// generate list of settings for a Person, nested under some prefix</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">SettingSpecifier</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">settings</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">prefix</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">SettingSpecifier</span><span class="o">&gt;</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-<span class="w">        </span><span class="n">results</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="n">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"firstName"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">));</span>
-<span class="w">        </span><span class="n">results</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="n">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"lastName"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">));</span>
+<span class="w">        </span><span class="n">results</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="n">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;firstName&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">));</span>
+<span class="w">        </span><span class="n">results</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="n">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;lastName&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">));</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">results</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
@@ -1752,9 +4135,9 @@ group-of-groups is used.</p>
 
 <span class="w">    </span><span class="c1">// turn a list of People into a Group of Group settings</span>
 <span class="w">    </span><span class="n">GroupSettingSpecifier</span><span class="w"> </span><span class="n">peopleList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SettingUtils</span><span class="p">.</span><span class="na">dynamicListSettingSpecifier</span><span class="p">(</span>
-<span class="w">            </span><span class="s">"people"</span><span class="p">,</span><span class="w"> </span><span class="n">asList</span><span class="p">(</span><span class="n">people</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">Person</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">            </span><span class="s">&quot;people&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">asList</span><span class="p">(</span><span class="n">people</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">Person</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
 <span class="w">                    </span><span class="n">singletonList</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicGroupSettingSpecifier</span><span class="p">(</span>
-<span class="w">                        </span><span class="n">value</span><span class="p">.</span><span class="na">settings</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"."</span><span class="p">))));</span>
+<span class="w">                        </span><span class="n">value</span><span class="p">.</span><span class="na">settings</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">))));</span>
 <span class="w">    </span><span class="n">results</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">peopleList</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">results</span><span class="p">;</span>
@@ -1762,32 +4145,62 @@ group-of-groups is used.</p>
 </code></pre></div>
 </div>
 </div>
-</input></input></div>
-</article>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-</div>
-</main>
-<footer class="md-footer">
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-copyright">
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
     </a>
+  
 </div>
-</div>
-</div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
-<script src="../../../js/open_in_new_tab.js"></script>
-</body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../../js/open_in_new_tab.js"></script>
+      
+    
+  </body>
 </html>
