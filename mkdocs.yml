@@ -35,7 +35,6 @@ extra_css:
 plugins:
     - awesome-pages:
         collapse_single_pages: true
-    - enumerate-headings
     - open-in-new-tab
     - search:
         lang: en
