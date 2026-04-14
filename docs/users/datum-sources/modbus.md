@@ -5,7 +5,9 @@ is an advanced component that requires specific low-level knowledge of the devic
 collect data from.
 
 This datum source is provided by the [Modbus Datum Source][src] plugin, which is included in the
-[solarnode-app-modbus][pkg] package in SolarNodeOS.
+[solarnode-app-modbus][pkg] package in SolarNodeOS. You can install this package on the [System >
+Packages][packages] page in SolarNode.
+
 
 ## Use
 
@@ -300,6 +302,7 @@ however, so the filter "knows" which datum are sub-samples and which are "normal
 [meta-api]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarQuery-API#add-node-datum-metadata
 [metadata-key-path]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#metadata-filter-key-paths
 [modbus-conn]: ../io/modbus.md
+[packages]: ../setup-app/system/packages.md
 [pkg]: https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-modbus/debian
 [services]: ../setup-app/settings/services.md
 [sheet-example]: https://docs.google.com/spreadsheets/d/1nMHfiGQa0la1AI8Ch3T0-PeZIEsWZymRDyi1PdUl7z4
