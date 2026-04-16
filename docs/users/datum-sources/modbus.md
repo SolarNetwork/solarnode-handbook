@@ -51,7 +51,7 @@ then be loaded into SolarNode via the CSV Configurer.
   ![CSV Configuration example](../../images/users/datum-sources/modbus-device-csv-configuration-example-sheet@2x.png){width=1597 loading=lazy}
 </figure>
 
-!!! tip Example Sheet
+!!! tip "Example Sheet"
 
 	You can copy this [example sheet][sheet-example] to get started.
 
