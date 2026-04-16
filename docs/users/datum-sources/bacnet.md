@@ -19,9 +19,9 @@ You can install this package on the [System > Packages][packages] page in SolarN
 
 This datum source can persist datum based on a schedule and also based on BACnet change-of-value
 (COV) events, if the BACnet device you're collecting data from supports COV subscriptions. The
-[Persist Mode](#overall-settings) device setting configures this. Regardless of when datum are
-persisted, transient datum will be generated for each COV event and other plugins can do things with
-those. For example, those datum could be posted to [SolarFlux][solarflux] for real-time monitoring.
+[Persist Mode](#settings) device setting configures this. Regardless of when datum are persisted,
+transient datum will be generated for each COV event and other plugins can do things with those. For
+example, those datum could be posted to [SolarFlux][solarflux] for real-time monitoring.
 
 !!! tip
 

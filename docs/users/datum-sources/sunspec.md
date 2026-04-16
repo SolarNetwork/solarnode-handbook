@@ -68,7 +68,7 @@ Each inverter configuration contains the following settings, in addition to the 
 | Setting            | Description |
 |:-------------------|:------------|
 | Ignore States      | A list of inverter operating states to skip collecting data while in. Some inverters shut down at night, and may not report valid values for various readings like the total lifetime energy exported. Use this setting to avoid collecting data when the inverter is in one of the configured states. Valid states are: `Off`, `Sleeping`, `Starting`, `Mppt`, `Throttled`, `ShuttingDown`, `Fault`, `Standby`. |
-| Phase Measurements | Toggle to collect additional phase-specific measurement properties. See [SunSpec phase measurements](#sunspec-meter-phase-measurements) for more details. |
+| Phase Measurements | Toggle to collect additional phase-specific measurement properties. See [SunSpec phase measurements](#sunspec-phase-measurements) for more details. |
 
 ### SunSpec Inverter secondary model support
 
