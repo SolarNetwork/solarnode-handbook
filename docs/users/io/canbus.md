@@ -69,7 +69,7 @@ To request capturing to stop on `can0` the following instruction parameters woul
 
 ## SolarNetwork KCD Support
 
-This project also registers a [`KcdParser`][kcd-parser] service with the OSGi runtime, which can be
+This project also registers a [`KcdParser`][kcd-parser] service in SolarNode, which can be
 used to parse CAN bus configuration information from [KCD][kcd] XML files. This service does not
 expose any user-visible settings itself or do anything other than provide the service to parse the
 XML, but other plugins can use this. For example the [SolarNode CAN Bus Datum Data
