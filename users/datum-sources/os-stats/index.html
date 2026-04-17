@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://solarnetwork.github.io/solarnode-handbook/users/setup-app/system/packages/">
+        <link rel="canonical" href="https://solarnetwork.github.io/solarnode-handbook/users/datum-sources/os-stats/">
       
       
-        <link rel="prev" href="../certificates/">
+        <link rel="prev" href="../modbus/">
       
       
-        <link rel="next" href="../host-aliases/">
+        <link rel="next" href="../sunspec/">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
-        <title>Packages - SolarNode Handbook</title>
+        <title>OS Statistics - SolarNode Handbook</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../css/sn.css">
+      <link rel="stylesheet" href="../../../css/sn.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#packages" class="md-skip">
+        <a href="#os-statistics" class="md-skip">
           Skip to content
         </a>
       
@@ -92,9 +92,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="SolarNode Handbook" class="md-header__button md-logo" aria-label="SolarNode Handbook" data-md-component="logo">
+    <a href="../../.." title="SolarNode Handbook" class="md-header__button md-logo" aria-label="SolarNode Handbook" data-md-component="logo">
       
-  <img src="../../../../images/solarnode-icon.svg" alt="logo">
+  <img src="../../../images/solarnode-icon.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Packages
+              OS Statistics
             
           </span>
         </div>
@@ -215,9 +215,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="SolarNode Handbook" class="md-nav__button md-logo" aria-label="SolarNode Handbook" data-md-component="logo">
+    <a href="../../.." title="SolarNode Handbook" class="md-nav__button md-logo" aria-label="SolarNode Handbook" data-md-component="logo">
       
-  <img src="../../../../images/solarnode-icon.svg" alt="logo">
+  <img src="../../../images/solarnode-icon.svg" alt="logo">
 
     </a>
     SolarNode Handbook
@@ -294,7 +294,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -329,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
         
   
   
@@ -349,8 +349,6 @@
                 
   
   
-    
-  
   
   
     
@@ -376,15 +374,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../setup-app/" class="md-nav__link ">
               
   
   
@@ -403,7 +401,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             Setup App
@@ -419,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../login/" class="md-nav__link">
+      <a href="../../setup-app/login/" class="md-nav__link">
         
   
   
@@ -442,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../home/" class="md-nav__link">
+      <a href="../../setup-app/home/" class="md-nav__link">
         
   
   
@@ -499,7 +497,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../settings/" class="md-nav__link ">
+            <a href="../../setup-app/settings/" class="md-nav__link ">
               
   
   
@@ -534,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../settings/components/" class="md-nav__link">
+      <a href="../../setup-app/settings/components/" class="md-nav__link">
         
   
   
@@ -557,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../settings/services/" class="md-nav__link">
+      <a href="../../setup-app/settings/services/" class="md-nav__link">
         
   
   
@@ -580,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../settings/datum-filters/" class="md-nav__link">
+      <a href="../../setup-app/settings/datum-filters/" class="md-nav__link">
         
   
   
@@ -603,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../settings/datum-sources/" class="md-nav__link">
+      <a href="../../setup-app/settings/datum-sources/" class="md-nav__link">
         
   
   
@@ -626,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../settings/logging/" class="md-nav__link">
+      <a href="../../setup-app/settings/logging/" class="md-nav__link">
         
   
   
@@ -649,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../settings/op-modes/" class="md-nav__link">
+      <a href="../../setup-app/settings/op-modes/" class="md-nav__link">
         
   
   
@@ -672,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../settings/local-state/" class="md-nav__link">
+      <a href="../../setup-app/settings/local-state/" class="md-nav__link">
         
   
   
@@ -695,7 +693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../settings/backups/" class="md-nav__link">
+      <a href="../../setup-app/settings/backups/" class="md-nav__link">
         
   
   
@@ -723,8 +721,6 @@
                 
   
   
-    
-  
   
   
     
@@ -748,15 +744,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_5" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../setup-app/system/" class="md-nav__link ">
               
   
   
@@ -775,7 +771,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_3_5">
             <span class="md-nav__icon md-icon"></span>
             System
@@ -791,7 +787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../certificates/" class="md-nav__link">
+      <a href="../../setup-app/system/certificates/" class="md-nav__link">
         
   
   
@@ -811,32 +807,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Packages
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../setup-app/system/packages/" class="md-nav__link">
         
   
   
@@ -847,107 +821,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#refresh-available-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Refresh available packages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#package-updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Package Updates
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Package Updates">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#upgrade-an-installed-package" class="md-nav__link">
-    <span class="md-ellipsis">
-      Upgrade an installed package
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installed-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installed Packages
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installed Packages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#remove-an-installed-package" class="md-nav__link">
-    <span class="md-ellipsis">
-      Remove an installed package
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#available-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Available Packages
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Available Packages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-an-available-package" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install an available package
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -960,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../host-aliases/" class="md-nav__link">
+      <a href="../../setup-app/system/host-aliases/" class="md-nav__link">
         
   
   
@@ -983,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../restart/" class="md-nav__link">
+      <a href="../../setup-app/system/restart/" class="md-nav__link">
         
   
   
@@ -1006,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reset/" class="md-nav__link">
+      <a href="../../setup-app/system/reset/" class="md-nav__link">
         
   
   
@@ -1061,7 +934,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tools/" class="md-nav__link ">
+            <a href="../../setup-app/tools/" class="md-nav__link ">
               
   
   
@@ -1096,7 +969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/controls/" class="md-nav__link">
+      <a href="../../setup-app/tools/controls/" class="md-nav__link">
         
   
   
@@ -1119,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/command-console/" class="md-nav__link">
+      <a href="../../setup-app/tools/command-console/" class="md-nav__link">
         
   
   
@@ -1142,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/metrics/" class="md-nav__link">
+      <a href="../../setup-app/tools/metrics/" class="md-nav__link">
         
   
   
@@ -1173,7 +1046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../profile/" class="md-nav__link">
+      <a href="../../setup-app/profile/" class="md-nav__link">
         
   
   
@@ -1204,7 +1077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cli/" class="md-nav__link">
+      <a href="../../cli/" class="md-nav__link">
         
   
   
@@ -1227,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum/" class="md-nav__link">
+      <a href="../../datum/" class="md-nav__link">
         
   
   
@@ -1247,6 +1120,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1270,15 +1145,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../datum-sources/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1297,7 +1172,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_6">
             <span class="md-nav__icon md-icon"></span>
             Datum Sources
@@ -1313,7 +1188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-sources/bacnet/" class="md-nav__link">
+      <a href="../bacnet/" class="md-nav__link">
         
   
   
@@ -1336,7 +1211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-sources/controls/" class="md-nav__link">
+      <a href="../controls/" class="md-nav__link">
         
   
   
@@ -1359,7 +1234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-sources/modbus/" class="md-nav__link">
+      <a href="../modbus/" class="md-nav__link">
         
   
   
@@ -1379,10 +1254,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../datum-sources/os-stats/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    OS Statistics
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1393,6 +1290,149 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node metadata
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-datum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example datum
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistic-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statistic types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistic types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-temp" class="md-nav__link">
+    <span class="md-ellipsis">
+      cpu-temp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      cpu-use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fs-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      fs-use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mem-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      mem-use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#net-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      net-traffic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sys-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      sys-load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sys-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      sys-up
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-statistic-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom statistic types
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1405,7 +1445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-sources/sunspec/" class="md-nav__link">
+      <a href="../sunspec/" class="md-nav__link">
         
   
   
@@ -1490,7 +1530,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../datum-filters/" class="md-nav__link ">
+            <a href="../../datum-filters/" class="md-nav__link ">
               
   
   
@@ -1525,7 +1565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/chain/" class="md-nav__link">
+      <a href="../../datum-filters/chain/" class="md-nav__link">
         
   
   
@@ -1548,7 +1588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/control-updater/" class="md-nav__link">
+      <a href="../../datum-filters/control-updater/" class="md-nav__link">
         
   
   
@@ -1571,7 +1611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/downsample/" class="md-nav__link">
+      <a href="../../datum-filters/downsample/" class="md-nav__link">
         
   
   
@@ -1594,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/expression/" class="md-nav__link">
+      <a href="../../datum-filters/expression/" class="md-nav__link">
         
   
   
@@ -1617,7 +1657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/join/" class="md-nav__link">
+      <a href="../../datum-filters/join/" class="md-nav__link">
         
   
   
@@ -1640,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/metric-harvester/" class="md-nav__link">
+      <a href="../../datum-filters/metric-harvester/" class="md-nav__link">
         
   
   
@@ -1663,7 +1703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/op-mode/" class="md-nav__link">
+      <a href="../../datum-filters/op-mode/" class="md-nav__link">
         
   
   
@@ -1686,7 +1726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/parameter-expression/" class="md-nav__link">
+      <a href="../../datum-filters/parameter-expression/" class="md-nav__link">
         
   
   
@@ -1709,7 +1749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/property/" class="md-nav__link">
+      <a href="../../datum-filters/property/" class="md-nav__link">
         
   
   
@@ -1732,7 +1772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/pvlib/" class="md-nav__link">
+      <a href="../../datum-filters/pvlib/" class="md-nav__link">
         
   
   
@@ -1755,7 +1795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/rounded-timestamp/" class="md-nav__link">
+      <a href="../../datum-filters/rounded-timestamp/" class="md-nav__link">
         
   
   
@@ -1778,7 +1818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/split/" class="md-nav__link">
+      <a href="../../datum-filters/split/" class="md-nav__link">
         
   
   
@@ -1801,7 +1841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/tariff/" class="md-nav__link">
+      <a href="../../datum-filters/tariff/" class="md-nav__link">
         
   
   
@@ -1824,7 +1864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/throttle/" class="md-nav__link">
+      <a href="../../datum-filters/throttle/" class="md-nav__link">
         
   
   
@@ -1847,7 +1887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/timeout/" class="md-nav__link">
+      <a href="../../datum-filters/timeout/" class="md-nav__link">
         
   
   
@@ -1870,7 +1910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/unchanged-property/" class="md-nav__link">
+      <a href="../../datum-filters/unchanged-property/" class="md-nav__link">
         
   
   
@@ -1893,7 +1933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/unchanged/" class="md-nav__link">
+      <a href="../../datum-filters/unchanged/" class="md-nav__link">
         
   
   
@@ -1916,7 +1956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../datum-filters/virtual-meter/" class="md-nav__link">
+      <a href="../../datum-filters/virtual-meter/" class="md-nav__link">
         
   
   
@@ -1971,7 +2011,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../controls/" class="md-nav__link ">
+            <a href="../../controls/" class="md-nav__link ">
               
   
   
@@ -2006,7 +2046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../controls/bacnet/" class="md-nav__link">
+      <a href="../../controls/bacnet/" class="md-nav__link">
         
   
   
@@ -2029,7 +2069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../controls/gpio/" class="md-nav__link">
+      <a href="../../controls/gpio/" class="md-nav__link">
         
   
   
@@ -2052,7 +2092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../controls/modbus/" class="md-nav__link">
+      <a href="../../controls/modbus/" class="md-nav__link">
         
   
   
@@ -2107,7 +2147,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../io/" class="md-nav__link ">
+            <a href="../../io/" class="md-nav__link ">
               
   
   
@@ -2142,7 +2182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../io/bacnet/" class="md-nav__link">
+      <a href="../../io/bacnet/" class="md-nav__link">
         
   
   
@@ -2165,7 +2205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../io/modbus-server/" class="md-nav__link">
+      <a href="../../io/modbus-server/" class="md-nav__link">
         
   
   
@@ -2188,7 +2228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../io/modbus/" class="md-nav__link">
+      <a href="../../io/modbus/" class="md-nav__link">
         
   
   
@@ -2219,7 +2259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../solarflux/" class="md-nav__link">
+      <a href="../../solarflux/" class="md-nav__link">
         
   
   
@@ -2270,7 +2310,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../sysadmin/" class="md-nav__link ">
+            <a href="../../sysadmin/" class="md-nav__link ">
               
   
   
@@ -2305,7 +2345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/date-time/" class="md-nav__link">
+      <a href="../../sysadmin/date-time/" class="md-nav__link">
         
   
   
@@ -2328,7 +2368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/networking/" class="md-nav__link">
+      <a href="../../sysadmin/networking/" class="md-nav__link">
         
   
   
@@ -2351,7 +2391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/packages/" class="md-nav__link">
+      <a href="../../sysadmin/packages/" class="md-nav__link">
         
   
   
@@ -2374,7 +2414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/solarnode-service/" class="md-nav__link">
+      <a href="../../sysadmin/solarnode-service/" class="md-nav__link">
         
   
   
@@ -2397,7 +2437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sysadmin/solarssh/" class="md-nav__link">
+      <a href="../../sysadmin/solarssh/" class="md-nav__link">
         
   
   
@@ -2428,7 +2468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../networking/" class="md-nav__link">
+      <a href="../../networking/" class="md-nav__link">
         
   
   
@@ -2451,7 +2491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security-tokens/" class="md-nav__link">
+      <a href="../../security-tokens/" class="md-nav__link">
         
   
   
@@ -2474,7 +2514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../remote-access/" class="md-nav__link">
+      <a href="../../remote-access/" class="md-nav__link">
         
   
   
@@ -2497,7 +2537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../expressions/" class="md-nav__link">
+      <a href="../../expressions/" class="md-nav__link">
         
   
   
@@ -2520,7 +2560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../local-state/" class="md-nav__link">
+      <a href="../../local-state/" class="md-nav__link">
         
   
   
@@ -2543,7 +2583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../metrics/" class="md-nav__link">
+      <a href="../../metrics/" class="md-nav__link">
         
   
   
@@ -2566,7 +2606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../op-modes/" class="md-nav__link">
+      <a href="../../op-modes/" class="md-nav__link">
         
   
   
@@ -2589,7 +2629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../placeholders/" class="md-nav__link">
+      <a href="../../placeholders/" class="md-nav__link">
         
   
   
@@ -2612,7 +2652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/" class="md-nav__link">
+      <a href="../../configuration/" class="md-nav__link">
         
   
   
@@ -2635,7 +2675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../settings/" class="md-nav__link">
+      <a href="../../settings/" class="md-nav__link">
         
   
   
@@ -2658,7 +2698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../logging/" class="md-nav__link">
+      <a href="../../logging/" class="md-nav__link">
         
   
   
@@ -2708,7 +2748,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../recipes/" class="md-nav__link ">
+            <a href="../../../recipes/" class="md-nav__link ">
               
   
   
@@ -2767,7 +2807,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../recipes/datum-filters/" class="md-nav__link ">
+            <a href="../../../recipes/datum-filters/" class="md-nav__link ">
               
   
   
@@ -2802,7 +2842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../recipes/datum-filters/main-filter-chain/" class="md-nav__link">
+      <a href="../../../recipes/datum-filters/main-filter-chain/" class="md-nav__link">
         
   
   
@@ -2825,7 +2865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../recipes/datum-filters/daily-limit-tracking/" class="md-nav__link">
+      <a href="../../../recipes/datum-filters/daily-limit-tracking/" class="md-nav__link">
         
   
   
@@ -2848,7 +2888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../recipes/datum-filters/peak-tracking/" class="md-nav__link">
+      <a href="../../../recipes/datum-filters/peak-tracking/" class="md-nav__link">
         
   
   
@@ -2910,7 +2950,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../developers/" class="md-nav__link ">
+            <a href="../../../developers/" class="md-nav__link ">
               
   
   
@@ -2973,7 +3013,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../developers/osgi/" class="md-nav__link ">
+            <a href="../../../developers/osgi/" class="md-nav__link ">
               
   
   
@@ -3008,7 +3048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/osgi/manifest/" class="md-nav__link">
+      <a href="../../../developers/osgi/manifest/" class="md-nav__link">
         
   
   
@@ -3031,7 +3071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/osgi/life-cycle/" class="md-nav__link">
+      <a href="../../../developers/osgi/life-cycle/" class="md-nav__link">
         
   
   
@@ -3054,7 +3094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/osgi/configuration-admin/" class="md-nav__link">
+      <a href="../../../developers/osgi/configuration-admin/" class="md-nav__link">
         
   
   
@@ -3077,7 +3117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/osgi/blueprint/" class="md-nav__link">
+      <a href="../../../developers/osgi/blueprint/" class="md-nav__link">
         
   
   
@@ -3100,7 +3140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/osgi/blueprint-compendium/" class="md-nav__link">
+      <a href="../../../developers/osgi/blueprint-compendium/" class="md-nav__link">
         
   
   
@@ -3159,7 +3199,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../developers/settings/" class="md-nav__link ">
+            <a href="../../../developers/settings/" class="md-nav__link ">
               
   
   
@@ -3194,7 +3234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/settings/provider/" class="md-nav__link">
+      <a href="../../../developers/settings/provider/" class="md-nav__link">
         
   
   
@@ -3217,7 +3257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/settings/specifier/" class="md-nav__link">
+      <a href="../../../developers/settings/specifier/" class="md-nav__link">
         
   
   
@@ -3240,7 +3280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/settings/resource-handler/" class="md-nav__link">
+      <a href="../../../developers/settings/resource-handler/" class="md-nav__link">
         
   
   
@@ -3263,7 +3303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/settings/singleton/" class="md-nav__link">
+      <a href="../../../developers/settings/singleton/" class="md-nav__link">
         
   
   
@@ -3286,7 +3326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/settings/factory/" class="md-nav__link">
+      <a href="../../../developers/settings/factory/" class="md-nav__link">
         
   
   
@@ -3383,7 +3423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/services/backup-manager/" class="md-nav__link">
+      <a href="../../../developers/services/backup-manager/" class="md-nav__link">
         
   
   
@@ -3406,7 +3446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/services/closeable-service/" class="md-nav__link">
+      <a href="../../../developers/services/closeable-service/" class="md-nav__link">
         
   
   
@@ -3429,7 +3469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/services/datum-data-source-poll-job/" class="md-nav__link">
+      <a href="../../../developers/services/datum-data-source-poll-job/" class="md-nav__link">
         
   
   
@@ -3452,7 +3492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/services/datum-data-source/" class="md-nav__link">
+      <a href="../../../developers/services/datum-data-source/" class="md-nav__link">
         
   
   
@@ -3475,7 +3515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/services/datum-db/" class="md-nav__link">
+      <a href="../../../developers/services/datum-db/" class="md-nav__link">
         
   
   
@@ -3498,7 +3538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/services/datum-queue/" class="md-nav__link">
+      <a href="../../../developers/services/datum-queue/" class="md-nav__link">
         
   
   
@@ -3521,7 +3561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/services/job-scheduler/" class="md-nav__link">
+      <a href="../../../developers/services/job-scheduler/" class="md-nav__link">
         
   
   
@@ -3544,7 +3584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/services/placeholder-service/" class="md-nav__link">
+      <a href="../../../developers/services/placeholder-service/" class="md-nav__link">
         
   
   
@@ -3567,7 +3607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/services/settings-db/" class="md-nav__link">
+      <a href="../../../developers/services/settings-db/" class="md-nav__link">
         
   
   
@@ -3590,7 +3630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/services/settings-service/" class="md-nav__link">
+      <a href="../../../developers/services/settings-service/" class="md-nav__link">
         
   
   
@@ -3613,7 +3653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/services/sql-database/" class="md-nav__link">
+      <a href="../../../developers/services/sql-database/" class="md-nav__link">
         
   
   
@@ -3636,7 +3676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/services/task-executor/" class="md-nav__link">
+      <a href="../../../developers/services/task-executor/" class="md-nav__link">
         
   
   
@@ -3659,7 +3699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../developers/services/task-scheduler/" class="md-nav__link">
+      <a href="../../../developers/services/task-scheduler/" class="md-nav__link">
         
   
   
@@ -3717,28 +3757,109 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#refresh-available-packages" class="md-nav__link">
+  <a href="#use" class="md-nav__link">
     <span class="md-ellipsis">
-      Refresh available packages
+      Use
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#package-updates" class="md-nav__link">
+  <a href="#settings" class="md-nav__link">
     <span class="md-ellipsis">
-      Package Updates
+      Settings
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Package Updates">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node metadata
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-datum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example datum
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistic-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statistic types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistic types">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#upgrade-an-installed-package" class="md-nav__link">
+  <a href="#cpu-temp" class="md-nav__link">
     <span class="md-ellipsis">
-      Upgrade an installed package
+      cpu-temp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      cpu-use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fs-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      fs-use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mem-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      mem-use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#net-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      net-traffic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sys-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      sys-load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sys-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      sys-up
     </span>
   </a>
   
@@ -3750,50 +3871,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installed-packages" class="md-nav__link">
+  <a href="#custom-statistic-types" class="md-nav__link">
     <span class="md-ellipsis">
-      Installed Packages
+      Custom statistic types
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Installed Packages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#remove-an-installed-package" class="md-nav__link">
-    <span class="md-ellipsis">
-      Remove an installed package
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#available-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Available Packages
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Available Packages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-an-available-package" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install an available package
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3813,43 +3895,379 @@
 
 
 
-<h1 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h1>
-<p>The Packages page lets you add, update, and remove system packages from SolarNodeOS. In particular
-there are many SolarNode specific pacakges that provide plugins. See
-<a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNodeOS">SolarNodeOS</a> for more information,
-including a listing of the available SolarNode specific packages.</p>
-<p><img alt="SolarNode Packages screen" src="../../../../images/users/setup/setup-system-packages%402x.png" width="1024" /></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can also use <a href="../../../sysadmin/packages/">command line tools</a> to manage system packages.</p>
-</div>
-<h2 id="refresh-available-packages">Refresh available packages<a class="headerlink" href="#refresh-available-packages" title="Permanent link">&para;</a></h2>
-<p>SolarNode maintains a local cache of the available packages database. Over time new packages
-or updated package versions can be released, but SolarNode will not be aware of them until
-its local cache is refreshed. Click the <strong>Refresh Available Packages</strong> button to do that.</p>
-<h2 id="package-updates">Package Updates<a class="headerlink" href="#package-updates" title="Permanent link">&para;</a></h2>
-<p>The Package Updates section shows you any installed system packages that have a newer version
-available, and thus could be upgraded. You can click the <strong>Upgrade All</strong> button to upgrade all
-upgradable packages at once.</p>
-<h3 id="upgrade-an-installed-package">Upgrade an installed package<a class="headerlink" href="#upgrade-an-installed-package" title="Permanent link">&para;</a></h3>
-<p>Click on any upgradable package name and you will be asked if you would like to upgrade that
-package.</p>
-<h2 id="installed-packages">Installed Packages<a class="headerlink" href="#installed-packages" title="Permanent link">&para;</a></h2>
-<p>The Installed Packages section shows you all the system packages currently installed. You can
-filter which packages are shown using the search field in the upper-right. By default only
-packages matching "solarnode" are shown.</p>
-<h3 id="remove-an-installed-package">Remove an installed package<a class="headerlink" href="#remove-an-installed-package" title="Permanent link">&para;</a></h3>
-<p>Click on any installed package name and you will be asked if you would like to remove that package.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Be careful about removing core SolarNode packages: you might remove SolarNode itself!</p>
-</div>
-<h2 id="available-packages">Available Packages<a class="headerlink" href="#available-packages" title="Permanent link">&para;</a></h2>
-<p>The Available Packages section shows you all the available system packages <em>not</em> currently
-installed. You can filter which packages are shown using the search field in the upper-right. By
-default only packages matching "solarnode" are shown.</p>
-<h3 id="install-an-available-package">Install an available package<a class="headerlink" href="#install-an-available-package" title="Permanent link">&para;</a></h3>
-<p>Click on any available package name and you will be asked if you would like to install that package.</p>
+<h1 id="os-statistics">OS Statistics<a class="headerlink" href="#os-statistics" title="Permanent link">&para;</a></h1>
+<p>SolarNode can collect operating system metrics such as uptime and CPU temperature.</p>
+<p>This components is included in the <a href="https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-sunspec/debian">solarnode-app-osstat</a> package in SolarNodeOS.
+You can install this package on the <a href="../../setup-app/system/packages/">System &gt; Packages</a> page in SolarNode.</p>
+<h2 id="use">Use<a class="headerlink" href="#use" title="Permanent link">&para;</a></h2>
+<p>Once installed, a new <strong>OS Statistics</strong> component will appear on the <a href="../../setup-app/settings/components/">Settings &gt; Components</a>
+page on your SolarNode. Click on the <strong>Manage</strong> button to configure components.</p>
+<figure>
+<p><img alt="OS Statistics component" loading="lazy" src="../../../images/users/datum-sources/osstats-component%402x.png" width="1024" /></p>
+</figure>
+<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="OS Statistics Datum Source settings" loading="lazy" src="../../../images/users/datum-sources/osstats-settings%402x.png" width="1024" /></p>
+</figure>
+<p>Each configuration contains the following overall settings:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Schedule</td>
+<td>A cron schedule that determines when data is collected.</td>
+</tr>
+<tr>
+<td>Service Name</td>
+<td>A unique name to identify this data source with.</td>
+</tr>
+<tr>
+<td>Service Group</td>
+<td>A group name to associate this data source with.</td>
+</tr>
+<tr>
+<td>Sample Maximum Age</td>
+<td>A minimum time to cache captured Modbus data, in milliseconds.</td>
+</tr>
+<tr>
+<td>Source ID</td>
+<td>The SolarNetwork source ID to assign to captured datum. This value unique identifies the data collected from this device, by this node, on SolarNetwork. Each configured device should use a different value.</td>
+</tr>
+<tr>
+<td>Statistics</td>
+<td>A list of statistic types to collect. See <a href="#statistic-types">Statistic types</a> for the most commonly supported types.</td>
+</tr>
+<tr>
+<td>Filesystems</td>
+<td>A list of filesystem paths to collect statistics from.</td>
+</tr>
+<tr>
+<td>Network Devices</td>
+<td>A list of network device names to collect statistics from.</td>
+</tr>
+<tr>
+<td>Command</td>
+<td>The external command to execute that provides the statistic data.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="node-metadata">Node metadata<a class="headerlink" href="#node-metadata" title="Permanent link">&para;</a></h2>
+<p>This plugin will publish some OS information as node metadata, under the <code>os</code> property
+metadata key. The metadata is:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>os.arch</code></td>
+<td>The OS architecture.</td>
+</tr>
+<tr>
+<td><code>os.name</code></td>
+<td>The OS name.</td>
+</tr>
+<tr>
+<td><code>os.version</code></td>
+<td>The OS version.</td>
+</tr>
+</tbody>
+</table>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;pm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;os&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Linux&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;arch&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arm&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4.14.34-v7+&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="example-datum">Example datum<a class="headerlink" href="#example-datum" title="Permanent link">&para;</a></h2>
+<p>Here's an example datum collected by this plugin:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2018-08-13 18:25:21.014Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;nodeId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">344</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sourceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OS Stats&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;localDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2018-08-14&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;localTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;06:25&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cpu_idle&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">98.27</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cpu_user&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.59</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cpu_system&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.13</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;fs_size_/&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1887322112</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;fs_used_/&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">793722880</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;fs_used_percent_/&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;fs_size_/run&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">512094208</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;fs_used_/run&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15802368</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;fs_used_percent_/run&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sys_load_1min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.35</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sys_load_5min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.14</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sys_load_15min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.11</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ram_avail&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">743899136</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ram_total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1024188416</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ram_used_percent&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">27.4</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sys_up&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2923.77</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;net_bytes_in_eth0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">528719</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;net_bytes_out_eth0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">459475</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;net_packets_in_eth0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2312</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;net_packets_out_eth0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1848</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="statistic-types">Statistic types<a class="headerlink" href="#statistic-types" title="Permanent link">&para;</a></h2>
+<p>The external helper command must support the following statistic types and return data in
+the following formats. The output must always include a header row before any data rows.
+Extra columns are allowed; they will simply be ignored.</p>
+<h3 id="cpu-temp"><code>cpu-temp</code><a class="headerlink" href="#cpu-temp" title="Permanent link">&para;</a></h3>
+<p>The CPU temperature, in degrees celsius. This is not available on all systems, but is
+fairly common. It is implemented as a <a href="#custom-statistic-types">custom statistic</a> on
+platforms that do support it.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i/cpu_temp</td>
+<td><code>cpu_temp</code></td>
+<td>The CPU temperature, in degrees celsius.</td>
+</tr>
+</tbody>
+</table>
+<p>An example output looks like:</p>
+<div class="highlight"><pre><span></span><code>i/cpu_temp
+45.277
+</code></pre></div>
+<h3 id="cpu-use"><code>cpu-use</code><a class="headerlink" href="#cpu-use" title="Permanent link">&para;</a></h3>
+<p>Average CPU utilization information, inspired by <code>sysstat</code>. Any number of rows of data may
+be returned, but only the last row of data may be used.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user</td>
+<td><code>cpu_user</code></td>
+<td>Percentage of CPU time in user programs, from 0-100.</td>
+</tr>
+<tr>
+<td>system</td>
+<td><code>cpu_system</code></td>
+<td>Percentage of CPU time in the kernel, from 0-100.</td>
+</tr>
+<tr>
+<td>idle</td>
+<td><code>cpu_idle</code></td>
+<td>Percentage of idle CPU time, from 0-100.</td>
+</tr>
+</tbody>
+</table>
+<p>An example output looks like:</p>
+<div class="highlight"><pre><span></span><code>user,system,idle
+0.03,0.03,99.93
+</code></pre></div>
+<h3 id="fs-use"><code>fs-use</code><a class="headerlink" href="#fs-use" title="Permanent link">&para;</a></h3>
+<p>Filesystem utilization information. Each row represents a single mount point. Each
+property has the mount point appended to the end. For example the root mount point <code>/</code>
+would have a percentage used property named <code>fs_used_percent_/</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mount</td>
+<td></td>
+<td>Used in other property names.</td>
+</tr>
+<tr>
+<td>size-kb</td>
+<td><code>fs_size_{mount}</code></td>
+<td>Size of filesystem, in kilobytes. Property stored as bytes.</td>
+</tr>
+<tr>
+<td>used-kb</td>
+<td><code>fs_used_{mount}</code></td>
+<td>Allocated use of filesystem, in kilobytes. Property stored as bytes.</td>
+</tr>
+<tr>
+<td>used-percent</td>
+<td><code>fs_used_percent_{mount}</code></td>
+<td>Percentage of filesystem used, from 0-100.</td>
+</tr>
+</tbody>
+</table>
+<p>An example output looks like:</p>
+<div class="highlight"><pre><span></span><code>mount,size-kb,used-kb,used-percent
+/dev,2003748,0,0
+/run,403224,12268,4
+/,19880876,12383500,66
+/boot,233191,36370,17
+</code></pre></div>
+<h3 id="mem-use"><code>mem-use</code><a class="headerlink" href="#mem-use" title="Permanent link">&para;</a></h3>
+<p>RAM utilization information.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total-kb</td>
+<td><code>ram_total</code></td>
+<td>Amount of RAM installed in the system, in kilobytes. Property stored as bytes.</td>
+</tr>
+<tr>
+<td>avail-kb</td>
+<td><code>ram_avail</code></td>
+<td>Amount of unused RAM avaialble, in kilobytes. Property stored as bytes.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>ram_used_percent</code></td>
+<td>Percentage of RAM used, from 0-100. Derived from <code>ram_total</code> and <code>ram_avail</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>An example output looks like:</p>
+<div class="highlight"><pre><span></span><code>total-kb,avail-kb
+33554432,9505456
+</code></pre></div>
+<h3 id="net-traffic"><code>net-traffic</code><a class="headerlink" href="#net-traffic" title="Permanent link">&para;</a></h3>
+<p>Network use information. Each row represents a single network device. Each
+property has the device name appended to the end. For example the WiFi device
+<code>wlan0</code> would have a bytes out property named <code>net_bytes_out_wlan0</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td></td>
+<td>Used in other property names.</td>
+</tr>
+<tr>
+<td>bytes-in</td>
+<td><code>net_bytes_in_{name}</code></td>
+<td>Count of bytes receivied.</td>
+</tr>
+<tr>
+<td>bytes-out</td>
+<td><code>net_bytes_out_{name}</code></td>
+<td>Count of bytes sent.</td>
+</tr>
+<tr>
+<td>packets-in</td>
+<td><code>net_packets_out_{name}</code></td>
+<td>Count of packets received.</td>
+</tr>
+<tr>
+<td>packets-out</td>
+<td><code>net_packets_out_{name}</code></td>
+<td>Count of packets sent.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>device,bytes-in,bytes-out,packets-in,packets-out
+wlan0,9161,5970,86,38
+lo,1242,1242,12,12
+eth0,9348,10031,80,81
+usb0,0,0,0,0
+</code></pre></div>
+<h3 id="sys-load"><code>sys-load</code><a class="headerlink" href="#sys-load" title="Permanent link">&para;</a></h3>
+<p>System load information.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1min</td>
+<td><code>sys_load_1min</code></td>
+<td>Average load over past minute.</td>
+</tr>
+<tr>
+<td>5min</td>
+<td><code>sys_load_5min</code></td>
+<td>Average load over past 5 minutes.</td>
+</tr>
+<tr>
+<td>15min</td>
+<td><code>sys_load_15min</code></td>
+<td>Average load over past 15 minutes.</td>
+</tr>
+</tbody>
+</table>
+<p>An example output looks like:</p>
+<div class="highlight"><pre><span></span><code>1min,5min,15min
+0.09,0.10,0.07
+</code></pre></div>
+<h3 id="sys-up"><code>sys-up</code><a class="headerlink" href="#sys-up" title="Permanent link">&para;</a></h3>
+<p>System uptime information.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>up-sec</td>
+<td><code>sys_up</code></td>
+<td>Number of seconds the system has been running.</td>
+</tr>
+</tbody>
+</table>
+<p>An example output looks like:</p>
+<div class="highlight"><pre><span></span><code>up-sec
+26483.63
+</code></pre></div>
+<h2 id="custom-statistic-types">Custom statistic types<a class="headerlink" href="#custom-statistic-types" title="Permanent link">&para;</a></h2>
+<p>This plugin supports custom statistic collection via arbitrary statistic
+names. The configured <strong>Command</strong> must support the statistic names, of course, and they must return
+CSV formatted data, including a header row. All returned columns will be populated as <em>status</em> datum
+properties. To populate <em>instantaneous</em> or <em>accumulating</em> properties, the column names should be
+prefixed with <code>i/</code> and <code>a/</code>, respectively. The actual property name used on the datum will be
+stripped of this prefix. For example, if the <strong>Command</strong> supports a <code>cpu-temp</code> statistic that should
+populate an instantaneous property <code>cpu_temp</code> the output should be formatted like this:</p>
+<div class="highlight"><pre><span></span><code>i/cpu_temp
+30.1
+</code></pre></div>
 
 
 
@@ -3898,12 +4316,12 @@ default only packages matching "solarnode" are shown.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
-        <script src="../../../../js/open_in_new_tab.js"></script>
+        <script src="../../../js/open_in_new_tab.js"></script>
       
     
   </body>
