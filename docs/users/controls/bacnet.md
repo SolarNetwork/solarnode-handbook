@@ -42,6 +42,13 @@ Configuration file to configure all BACnet Control components at once, without h
   ![BACnet Control CSV configurer form](../../images/users/controls/bacnet-control-csv-configurer@2x.png){width=1024 loading=lazy}
 </figure>
 
+!!! tip "Spreadsheet jumpstart"
+
+    You can copy the [BACNet Control Configuration Example][sheet-example] sheet as a
+    starting point. This sheet has drop-down menu validation to make it super easy to configure your
+    BACnet integration. Download your completed Sheet as a CSV file, then use the **BACnet Control CSV Configurer**
+    form to upload the CSV file and configure SolarNode.
+
 ### BACnet Control CSV Configuration Format
 
 The BACnet Control CSV Configuration uses the column structure detailed

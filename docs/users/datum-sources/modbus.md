@@ -35,6 +35,13 @@ all Modbus Device components, without having to use the [settings](#settings) fo
   ![CSV Configurer settings](../../images/users/datum-sources/modbus-device-csv-configurer@2x.png){width=872 loading=lazy}
 </figure>
 
+!!! tip "Spreadsheet jumpstart"
+
+    You can copy the [Modbus Device Configuration Example][sheet-example] sheet as a
+    starting point. This sheet has drop-down menu validation to make it super easy to configure your
+    Modbus integration. Download your completed Sheet as a CSV file, then use the **Modbus Device CSV Configurer**
+    form to upload the CSV file and configure SolarNode.
+
 ### Modbus CSV Configuration Format
 
 The Modbus CSV Configuration uses the column structure detailed [below](#csv-column-definition),
@@ -53,10 +60,6 @@ then be loaded into SolarNode via the CSV Configurer.
 <figure markdown>
   ![CSV Configuration example](../../images/users/datum-sources/modbus-device-csv-configuration-example-sheet@2x.png){width=1597 loading=lazy}
 </figure>
-
-!!! tip "Example Sheet"
-
-	You can copy this [example sheet][sheet-example] to get started.
 
 #### Instance identifiers
 

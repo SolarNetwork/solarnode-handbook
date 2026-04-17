@@ -40,6 +40,13 @@ to configure all Modbus Control components, without having to use the [settings]
   ![CSV Configuration example](../../images/users/controls/modbus-control-csv-configurer-settings@2x.png){width=872 loading=lazy}
 </figure>
 
+!!! tip "Spreadsheet jumpstart"
+
+    You can copy the [Modbus Control Configuration Example][sheet-example] sheet as a
+    starting point. This sheet has drop-down menu validation to make it super easy to configure your
+    Modbus integration. Download your completed Sheet as a CSV file, then use the **Modbus Control CSV Configurer**
+    form to upload the CSV file and configure SolarNode.
+
 ### Modbus Control CSV Configuration Format
 
 The Modbus Control CSV Configuration uses the column structure detailed [below](#csv-column-definition),
@@ -58,10 +65,6 @@ then be loaded into SolarNode via the CSV Configurer.
 <figure markdown>
   ![CSV Configuration example](../../images/users/controls/modbus-control-csv-configurer-example@2x.png){width=1295 loading=lazy}
 </figure>
-
-!!! tip Example Sheet
-
-	You can copy this [example sheet][sheet-example] to get started.
 
 #### Instance identifiers
 

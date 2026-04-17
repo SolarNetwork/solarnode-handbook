@@ -45,6 +45,13 @@ Configuration file to configure all BACnet Device components at once, without ha
   ![BACnet Device CSV configurer form](../../images/users/datum-sources/bacnet-device-csv-configurer@2x.png){width=1024 loading=lazy}
 </figure>
 
+!!! tip "Spreadsheet jumpstart"
+
+    You can copy the [BACNet Device Configuration Example][sheet-example] sheet as a
+    starting point. This sheet has drop-down menu validation to make it super easy to configure your
+    BACnet integration. Download your completed Sheet as a CSV file, then use the **BACnet Device CSV Configurer**
+    form to upload the CSV file and configure SolarNode.
+
 ### BACnet CSV Configuration Format
 
 The BACnet CSV Configuration uses the column structure detailed [below](#csv-column-definition),
@@ -63,10 +70,6 @@ then be loaded into SolarNode via the CSV Configurer.
 <figure markdown>
   ![BACnet Device spreadsheet example](../../images/users/datum-sources/bacnet-device-csv-configuration-example-sheet@2x.png){width=1704 loading=lazy}
 </figure>
-
-!!! tip "Example Sheet"
-
-	You can copy this [example sheet][sheet-example] to get started.
 
 #### Instance identifiers
 
