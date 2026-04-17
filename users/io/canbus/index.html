@@ -4205,7 +4205,7 @@ following instruction parameters are supported:</p>
 </tbody>
 </table>
 <h2 id="solarnetwork-kcd-support">SolarNetwork KCD Support<a class="headerlink" href="#solarnetwork-kcd-support" title="Permanent link">&para;</a></h2>
-<p>This project also registers a <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.io.canbus/src/net/solarnetwork/node/io/canbus/KcdParser.java"><code>KcdParser</code></a> service with the OSGi runtime, which can be
+<p>This project also registers a <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.io.canbus/src/net/solarnetwork/node/io/canbus/KcdParser.java"><code>KcdParser</code></a> service in SolarNode, which can be
 used to parse CAN bus configuration information from <a href="https://github.com/julietkilo/kcd">KCD</a> XML files. This service does not
 expose any user-visible settings itself or do anything other than provide the service to parse the
 XML, but other plugins can use this. For example the <a href="../../datum-sources/canbus/">SolarNode CAN Bus Datum Data
