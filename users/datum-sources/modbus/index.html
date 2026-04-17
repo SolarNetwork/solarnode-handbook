@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://solarnetwork.github.io/solarnode-handbook/users/datum-sources/modbus/">
       
       
-        <link rel="prev" href="../controls/">
+        <link rel="prev" href="../dnp3/">
       
       
         <link rel="next" href="../os-stats/">
@@ -1141,6 +1141,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1211,12 +1215,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../canbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAN Bus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../controls/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dnp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Control Center
     
   </span>
   
@@ -2177,6 +2227,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2230,6 +2288,98 @@
   
   <span class="md-ellipsis">
     BACnet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/canbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAN Bus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/dnp3-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/dnp3-outstation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Outstation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/dnp3-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Server
     
   </span>
   
@@ -4002,6 +4152,13 @@ all Modbus Device components, without having to use the <a href="#settings">sett
 <figure>
 <p><img alt="CSV Configurer settings" loading="lazy" src="../../../images/users/datum-sources/modbus-device-csv-configurer%402x.png" width="872" /></p>
 </figure>
+<div class="admonition tip">
+<p class="admonition-title">Spreadsheet jumpstart</p>
+<p>You can copy the <a href="https://docs.google.com/spreadsheets/d/1nMHfiGQa0la1AI8Ch3T0-PeZIEsWZymRDyi1PdUl7z4">Modbus Device Configuration Example</a> sheet as a
+starting point. This sheet has drop-down menu validation to make it super easy to configure your
+Modbus integration. Download your completed Sheet as a CSV file, then use the <strong>Modbus Device CSV Configurer</strong>
+form to upload the CSV file and configure SolarNode.</p>
+</div>
 <h3 id="modbus-csv-configuration-format">Modbus CSV Configuration Format<a class="headerlink" href="#modbus-csv-configuration-format" title="Permanent link">&para;</a></h3>
 <p>The Modbus CSV Configuration uses the column structure detailed <a href="#csv-column-definition">below</a>,
 with each row representing an individual datum property to read from the Modbus device. A header row
@@ -4017,10 +4174,6 @@ then be loaded into SolarNode via the CSV Configurer.</p>
 <figure>
 <p><img alt="CSV Configuration example" loading="lazy" src="../../../images/users/datum-sources/modbus-device-csv-configuration-example-sheet%402x.png" width="1597" /></p>
 </figure>
-<div class="admonition tip">
-<p class="admonition-title">Example Sheet</p>
-<p>You can copy this <a href="https://docs.google.com/spreadsheets/d/1nMHfiGQa0la1AI8Ch3T0-PeZIEsWZymRDyi1PdUl7z4">example sheet</a> to get started.</p>
-</div>
 <h4 id="instance-identifiers">Instance identifiers<a class="headerlink" href="#instance-identifiers" title="Permanent link">&para;</a></h4>
 <p>Individual Modbus Device components are defined by the first column (<strong>Instance ID</strong>). You can
 assign any identifier you like (such as <code>Meter</code>, <code>Inverter</code>, and so on) or configure as a single
@@ -4293,7 +4446,7 @@ P2,power/2,0 * * * * *,Modbus Port,2,5000,64,Most to least,frequency,Instantaneo
 </table>
 <h3 id="datum-property-settings">Datum property settings<a class="headerlink" href="#datum-property-settings" title="Permanent link">&para;</a></h3>
 <p>You must configure settings for each datum property you want to collect from each device. You can
-configure as many property settings as you like, using the <kbd>+</kbd> and <kbd>-</kbd> buttons to
+configure as many property settings as you like, using the <span class="keys"><kbd class="key-plus">+</kbd></span> and <span class="keys"><kbd class="key-minus">-</kbd></span> buttons to
 add/remove property configurations.</p>
 <figure>
 <p><img alt="Property settings" loading="lazy" src="../../../images/users/datum-sources/modbus-device-property-settings%402x.png" width="872" /></p>

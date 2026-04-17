@@ -1139,6 +1139,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1209,12 +1213,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../../datum-sources/canbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAN Bus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../datum-sources/controls/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-sources/dnp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Control Center
     
   </span>
   
@@ -2129,6 +2179,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2182,6 +2240,98 @@
   
   <span class="md-ellipsis">
     BACnet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/canbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAN Bus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/dnp3-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/dnp3-outstation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Outstation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/dnp3-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Server
     
   </span>
   
@@ -3911,6 +4061,13 @@ Configuration file to configure all BACnet Control components at once, without h
 <figure>
 <p><img alt="BACnet Control CSV configurer form" loading="lazy" src="../../../images/users/controls/bacnet-control-csv-configurer%402x.png" width="1024" /></p>
 </figure>
+<div class="admonition tip">
+<p class="admonition-title">Spreadsheet jumpstart</p>
+<p>You can copy the <a href="https://docs.google.com/spreadsheets/d/1sjNqdxng73DcjwBaLX1PI_ejURirv4ChvjdbykvXmdg">BACNet Control Configuration Example</a> sheet as a
+starting point. This sheet has drop-down menu validation to make it super easy to configure your
+BACnet integration. Download your completed Sheet as a CSV file, then use the <strong>BACnet Control CSV Configurer</strong>
+form to upload the CSV file and configure SolarNode.</p>
+</div>
 <h3 id="bacnet-control-csv-configuration-format">BACnet Control CSV Configuration Format<a class="headerlink" href="#bacnet-control-csv-configuration-format" title="Permanent link">&para;</a></h3>
 <p>The BACnet Control CSV Configuration uses the column structure detailed
 <a href="#csv-column-definition">below</a>, with each row representing an individual control to write to the
@@ -4100,8 +4257,8 @@ Relay,,,BACnet/IP,5000,switch/1,Boolean,112821,binary-value,0,present-value,,,
 </table>
 <h2 id="property-settings">Property settings<a class="headerlink" href="#property-settings" title="Permanent link">&para;</a></h2>
 <p>You must configure settings for each BACnet object property you want to expose as an updatable
-control. You can configure as many property settings as you like, using the <kbd>+</kbd> and
-<kbd>-</kbd> buttons to add/remove configurations.</p>
+control. You can configure as many property settings as you like, using the <span class="keys"><kbd class="key-plus">+</kbd></span> and
+<span class="keys"><kbd class="key-minus">-</kbd></span> buttons to add/remove configurations.</p>
 <figure>
 <p><img alt="BACnet Control property settings" loading="lazy" src="../../../images/users/controls/bacnet-control-property-settings%402x.png" width="1024" /></p>
 </figure>

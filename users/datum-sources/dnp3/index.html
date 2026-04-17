@@ -1,0 +1,4396 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://solarnetwork.github.io/solarnode-handbook/users/datum-sources/dnp3/">
+      
+      
+        <link rel="prev" href="../controls/">
+      
+      
+        <link rel="next" href="../modbus/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>DNP3 Control Center - SolarNode Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/sn.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dnp3-control-center" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="SolarNode Handbook" class="md-header__button md-logo" aria-label="SolarNode Handbook" data-md-component="logo">
+      
+  <img src="../../../images/solarnode-icon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SolarNode Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DNP3 Control Center
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SolarNode Handbook" class="md-nav__button md-logo" aria-label="SolarNode Handbook" data-md-component="logo">
+      
+  <img src="../../../images/solarnode-icon.svg" alt="logo">
+
+    </a>
+    SolarNode Handbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    User Guide
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../setup-app/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Setup App
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Setup App
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../setup-app/settings/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Settings
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Settings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/settings/components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/settings/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/settings/datum-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datum Filters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/settings/datum-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datum Sources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/settings/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/settings/op-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operational Modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/settings/local-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local State
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/settings/backups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Backups
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../setup-app/system/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    System
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/system/certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Certificates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/system/packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Packages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/system/host-aliases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Host Aliases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/system/restart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Restart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/system/reset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../setup-app/tools/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_3_6" id="__nav_1_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/tools/controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/tools/command-console/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Command Console
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/tools/metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metrics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup-app/profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Profile
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Command Line Tool
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datum
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Datum Sources
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            Datum Sources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bacnet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BACnet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../canbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAN Bus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Control Center
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Control Center
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv-configurer" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSV Configurer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CSV Configurer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dnp3-control-center-csv-configuration-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNP3 Control Center CSV configuration format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DNP3 Control Center CSV configuration format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instance-identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instance identifiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-column-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSV column definition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example CSV
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datum-source-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datum Source settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modbus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os-stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OS Statistics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sunspec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SunSpec Modbus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../datum-filters/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Datum Filters
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            Datum Filters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Filter Chain
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/control-updater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control Updater
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/downsample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Downsample
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/expression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/join/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Join
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/metric-harvester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metric Harvester
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/op-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operational Mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/parameter-expression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parameter Expression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Property
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/pvlib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    POAI Calculator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/rounded-timestamp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rounded Timestamp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/split/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Split
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/tariff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tariff
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/throttle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Throttle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/timeout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Timeout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/unchanged-property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unchanged Property
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/unchanged/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unchanged
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-filters/virtual-meter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Virtual Meter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../controls/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Controls
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_8">
+            <span class="md-nav__icon md-icon"></span>
+            Controls
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../controls/bacnet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BACnet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../controls/gpio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GPIO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../controls/modbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modbus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../io/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    I/O Integrations
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_9">
+            <span class="md-nav__icon md-icon"></span>
+            I/O Integrations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/bacnet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BACnet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/canbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAN Bus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/dnp3-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/dnp3-outstation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Outstation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/dnp3-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/modbus-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modbus Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../io/modbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modbus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solarflux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SolarFlux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_11" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../sysadmin/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    System Administration
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_11" id="__nav_1_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_11">
+            <span class="md-nav__icon md-icon"></span>
+            System Administration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sysadmin/date-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Date and Time
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sysadmin/networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sysadmin/packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Package Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sysadmin/solarnode-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SolarNode Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sysadmin/solarssh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SolarSSH
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security-tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security Tokens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remote-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Remote Access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expressions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../local-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local State
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metrics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../op-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operational Modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../placeholders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Placeholders
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Settings Files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../recipes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Recipes
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Recipes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../recipes/datum-filters/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Datum Filters
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Datum Filters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/datum-filters/main-filter-chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Main Filter Chain
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/datum-filters/daily-limit-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Daily Limit Tracking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/datum-filters/peak-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Peak Tracking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../developers/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Developer Guide
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Developer Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../developers/osgi/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Plugins
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Plugins
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/osgi/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manifest
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/osgi/life-cycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Life cycle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/osgi/configuration-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration Admin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/osgi/blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Blueprint
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/osgi/blueprint-compendium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Blueprint Compendium
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../developers/settings/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Settings
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Settings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/settings/provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Settings Provider
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/settings/specifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setting Specifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/settings/resource-handler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setting Resource Handler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/settings/singleton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Singleton Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/settings/factory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Factory Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Services
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/services/backup-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Backup Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/services/closeable-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Closeable Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/services/datum-data-source-poll-job/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datum Data Source Poll Job
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/services/datum-data-source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datum Data Source
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/services/datum-db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datum Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/services/datum-queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datum Queue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/services/job-scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Job Scheduler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/services/placeholder-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Placeholder Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/services/settings-db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Settings Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/services/settings-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Settings Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/services/sql-database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/services/task-executor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Task Executor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developers/services/task-scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Task Scheduler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv-configurer" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSV Configurer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CSV Configurer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dnp3-control-center-csv-configuration-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNP3 Control Center CSV configuration format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DNP3 Control Center CSV configuration format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instance-identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instance identifiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-column-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSV column definition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example CSV
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datum-source-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datum Source settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dnp3-control-center">DNP3 Control Center<a class="headerlink" href="#dnp3-control-center" title="Permanent link">&para;</a></h1>
+<p>The <strong>DNP3 Control Center</strong> component provides a DNP3 "control center" (or <em>master</em>) that connects
+to a DNP3 outstation to collect measurement values. The Control Center then generates datum out of
+the collected DNP3 measurements.</p>
+<p>At a high level, this component connects to a DNP3 outstation and then polls for DNP3 measurement
+values, caching them, based on a <strong>Refresh Frequency</strong> polling frequency. It then generates datum
+out of the cached values, based on a configured <strong>Schedule</strong>. Thus the collection and publication of
+the measurement values are decoupled.</p>
+<p>A DNP3 outstation can also <em>push</em> measurement values to this control center, as they change. The
+updated measurement values are cached as if this control center polled for that measurement. You can
+configure the <strong>Event Datum</strong> setting to have this component generate datum after receiving a
+measurement update event, in which case the datum will include the latest available values for <em>all
+cached values for all properties configured on that datum</em>.</p>
+<p>This component is included in the <a href="https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-dnp3/debian">solarnode-app-dnp3</a> package in SolarNodeOS.
+You can install this package on the <a href="../../setup-app/system/packages/">System &gt; Packages</a> page in SolarNode.</p>
+<h2 id="use">Use<a class="headerlink" href="#use" title="Permanent link">&para;</a></h2>
+<p>Once installed, a new <strong>DNP3 Control Center</strong> component will appear on the <a href="../../setup-app/settings/components/">Settings &gt; Components</a>
+page on your SolarNode. Click on the <strong>Manage</strong> button to configure components.</p>
+<figure>
+<p><img alt="DNP3 Control Center component" loading="lazy" src="../../../images/users/datum-sources/dnp3-cc-component%402x.png" width="1024" /></p>
+</figure>
+<h2 id="csv-configurer">CSV Configurer<a class="headerlink" href="#csv-configurer" title="Permanent link">&para;</a></h2>
+<p>SolarNode supports configuring DNP3 Control Center components using a simple comma-separated-values (CSV)
+file, which spreadsheet applications can easily generate. A <strong>DNP3 Control Center CSV Configurer</strong> component will appear on the <a href="../../setup-app/settings/services/">Settings &gt; Services</a> page. This form lets you upload a DNP3 Control Center CSV
+Configuration file to configure all DNP3 Control Center components at once, without having to use the
+<a href="#settings">settings</a> form.</p>
+<figure>
+<p><img alt="DNP3 Control Center CSV Configurer form" loading="lazy" src="../../../images/users/datum-sources/dnp3-cc-csv-configurer%402x.png" width="948" /></p>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Spreadsheet jumpstart</p>
+<p>You can copy the <a href="https://docs.google.com/spreadsheets/d/1ZYAfR8NFbY11f5SLlGuXqOadG32FH4c4WsixRbcOekQ">DNP3 Control Center Configuration Example</a> sheet as a
+starting point. This sheet has drop-down menu validation to make it super easy to configure your
+DNP3 integration. Download your completed Sheet as CSV, then use the <strong>DNP3 Control Center
+CSV Configurer</strong> form to upload and configure SolarNode.</p>
+</div>
+<h3 id="dnp3-control-center-csv-configuration-format">DNP3 Control Center CSV configuration format<a class="headerlink" href="#dnp3-control-center-csv-configuration-format" title="Permanent link">&para;</a></h3>
+<p>The DNP3 Control Center CSV configuration uses the column structure detailed
+<a href="#csv-column-definition">below</a>, with each row representing an individual datum property to read
+from the DNP3 outstation. A header row is required. Comment lines are allowed, just start the line
+with a <code>#</code> character (i.e. the first cell value). The entire comment line will be ignored.</p>
+<p>Here's an example screen shot of a configuration in a spreadsheet application. It is for two Control
+Centers with 3 datum sources defined between them:</p>
+<ol>
+<li>Control Center <code>1</code> with 2 datum sources:<ol>
+<li>Source <code>meter/1/power</code> with 2 properties: <code>watts</code> and <code>voltage</code></li>
+<li>Source <code>meter/1/energy</code> with 2 properties: <code>wattHours</code> and <code>switch</code></li>
+</ol>
+</li>
+<li>Control Center <code>2</code> with 1 datum source:<ol>
+<li>Source <code>meter/2/power1</code> with 1 datum property: <code>watts</code></li>
+</ol>
+</li>
+</ol>
+<p>Spreadsheet applications generally allow you to export the sheet in the CSV format, which can then
+be loaded into SolarNode via the CSV Configurer.</p>
+<figure>
+<p><img alt="DNP3 example spreadsheet configuration" loading="lazy" src="../../../images/users/datum-sources/dnp3-cc-csv-example%402x.png" width="1383" /></p>
+</figure>
+<h4 id="instance-identifiers">Instance identifiers<a class="headerlink" href="#instance-identifiers" title="Permanent link">&para;</a></h4>
+<p>Individual DNP3 Control Center components are defined by the first column (<strong>Instance ID</strong>). You can
+assign any identifier you like (such as <code>Meter</code>, <code>Inverter</code>, and so on) or configure as a single
+dash character <code>-</code> to have SolarNode assign a simple number identifier. Once an Instance ID has been
+assigned on a given row, subsequent rows will use that value if the corresponding cell value is left
+empty.</p>
+<h4 id="csv-column-definition">CSV column definition<a class="headerlink" href="#csv-column-definition" title="Permanent link">&para;</a></h4>
+<p>The following table defines all the CSV columns used by DNP3 Control Center CSV Configuration. There
+are 3 groups within the columns:</p>
+<ol>
+<li>Control Center configuration: columns <strong>A - G</strong></li>
+<li>Datum Source configuration: columns <strong>H - J</strong></li>
+<li>Measurement configuration: columns <strong>K - P</strong></li>
+</ol>
+<p>The Control Center configuration columns  <strong>A - G</strong> apply to the <strong>entire DNP3 Control Center
+configuration</strong>, and only the values from the row that defines a new Instance ID will be used to
+configure the control center. Thus you can omit the values from these columns when defining
+additional rows within the same configuration.</p>
+<p>The Datum Source configuration columns <strong>H - J</strong> apply to a <strong>Datum Source configuration</strong>, and only
+the values from the row that define a new Source ID will be used to configure the datum source. Thus
+you can omit the values from these columns when defining additional rows within the same
+configuration.</p>
+<p>The Measurement configuration columns <strong>K - P</strong> define <strong>datum properties</strong> to populate from DNP3
+measurement values.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Col</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>A</code></td>
+<td style="text-align: left;"><strong>Instance ID</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">The unique identifier for a single DNP3 Control Center component. Can specify <code>-</code> to automatically assign a simple number value, which will start at <code>1</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>B</code></td>
+<td style="text-align: left;"><strong>Service Name</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">A <strong>required</strong> service name to assign to the component.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>C</code></td>
+<td style="text-align: left;"><strong>Service Group</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">An optional service group to assign to the component.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>D</code></td>
+<td style="text-align: left;"><strong>Connection</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">The <strong>Service Name</strong> of the <strong>DNP3 client connection</strong> component to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>E</code></td>
+<td style="text-align: left;"><strong>Address</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">The DNP3 address to use. Must be unique within the local DNP3 network.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>F</code></td>
+<td style="text-align: left;"><strong>Events</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">A comma-delimited list of DNP3 classes to register for unsolicited (push) events. The supported classes are <code>1</code>, <code>2</code>, and <code>3</code>. For example <code>1, 2, 3</code> would register for all DNP3 events. Can be specified also as a range like <code>1-3</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>G</code></td>
+<td style="text-align: left;"><strong>Schedule</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"><code>0 * * * * *</code></td>
+<td style="text-align: left;">The schedule at which to generate datum out of the collected DNP3 measurement data. Can be either a <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNode-Cron-Job-Syntax">cron</a> value or a millisecond frequency.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>H</code></td>
+<td style="text-align: left;"><strong>Source ID</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Defines the start of a Datum Configuration, using this source ID. A single DNP3 Control Center instance supports any number of Datum Configurations.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>I</code></td>
+<td style="text-align: left;"><strong>Datum Events</strong></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">When <code>true</code> then generate datum after measurement update events are received, otherwise only on the configured <strong>Schedule</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>J</code></td>
+<td style="text-align: left;"><strong>Poll Frequency</strong></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">An optional frequency, in seconds, to poll the DNP3 outstation for the latest measurement values. Leave blank or set to <code>0</code> to disable polling (and rely only on <strong>Events</strong>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>K</code></td>
+<td style="text-align: left;"><strong>Property</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">A datum property name to use for a DNP3 measurement.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>L</code></td>
+<td style="text-align: left;"><strong>Property Type</strong></td>
+<td style="text-align: left;">enum</td>
+<td style="text-align: left;"><code>Instantaneous</code></td>
+<td style="text-align: left;">The type of datum property to use. Must be one of <code>Instantaneous</code>, <code>Accumulating</code>, <code>Status</code>, or <code>Tag</code>, and can be shortened to just <code>i</code>, <code>a</code>, <code>s</code>, or <code>t</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M</code></td>
+<td style="text-align: left;"><strong>Measurement Type</strong></td>
+<td style="text-align: left;">enum</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">The DNP3 point type to collect. Must be one of <code>Analog Input</code>, <code>Analog Output Status</code>, <code>Binary Input</code>, <code>Binary Output Status</code>, <code>Counter</code>, <code>Double Bit Binary Input</code>, <code>Frozen Counter</code>, or equivalent case-sensitive keys of <code>a</code>, <code>A</code>, <code>b</code>, <code>B</code>, <code>c</code>, <code>d</code>, <code>f</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>N</code></td>
+<td style="text-align: left;"><strong>Index</strong></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">The DNP point type index to collect .</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>O</code></td>
+<td style="text-align: left;"><strong>Multiplier</strong></td>
+<td style="text-align: left;">decimal</td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;">For numeric data types, a multiplier to apply to the BACnet value to normalize it into a standard unit.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>P</code></td>
+<td style="text-align: left;"><strong>Decimal Scale</strong></td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;"><code>5</code></td>
+<td style="text-align: left;">For numeric data types, a maximum number of decimal places to round decimal numbers to, or <code>-1</code> to not do any rounding.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-csv">Example CSV<a class="headerlink" href="#example-csv" title="Permanent link">&para;</a></h3>
+<p>Here is the CSV as shown in the example configuration screen shot above:</p>
+<div class="highlight"><pre><span></span><code>Instance ID,Service Name,Service Group,Connection,Address,Event Classes,Schedule,Source ID,Datum Events,Poll Frequency,Property,Property Type,Measurement Type,Index,Multiplier,Decimal Scale
+1,DNP3 Client 1,,DNP3 Client,1,1-3,,meter/1/power,FALSE,0,watts,Instantaneous,Analog Input,0,1,0
+,,,,,,,,,,voltage,Instantaneous,Analog Input,1,1,5
+,,,,,,,meter/1/energy,TRUE,,wattHours,Accumulating,Counter,0,1000,0
+,,,,,,,,,,switch,Status,Binary Output Status,0,,
+2,DNP3 Client 2,,DNP3 Client 2,2,1-3,,meter/2/power,TRUE,0,watts,Instantaneous,Analog Input,0,1,0
+</code></pre></div>
+<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="DNP3 Control Center settings" loading="lazy" src="../../../images/users/datum-sources/dnp3-cc-config%402x.png" width="950" /></p>
+</figure>
+<p>Each control center configuration contains the following overall settings:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Service Name</td>
+<td style="text-align: left;">A unique name to identify this component with.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Service Group</td>
+<td style="text-align: left;">A group name to associate this component with.</td>
+</tr>
+<tr>
+<td style="text-align: left;">DNP3 Connection</td>
+<td style="text-align: left;">The <strong>Service Name</strong> of <a href="../../io/dnp3-client/">DNP3 client connection</a> to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Address</td>
+<td style="text-align: left;">The DNP3 address to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Max Rx Fragment</td>
+<td style="text-align: left;">The maximum fragment size the outstation will be able to receive.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Max Tx Fragment</td>
+<td style="text-align: left;">The maximum fragment size the outstation will use for fragments it sends.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Event Classes</td>
+<td style="text-align: left;">A comma-delimited list of DNP3 classes to register for unsolicited (push) events. The supported classes are <code>1</code>, <code>2</code>, and <code>3</code>. For example <code>1, 2, 3</code> would register for all DNP3 events. Each DNP3 outstation defines for itself what measurements are included in each of the event classes, so you must consult the documentation and/or configuration of the device to find out what is included in each.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Datum Sources</td>
+<td style="text-align: left;">A list of datum-specific settings that define the source IDs to generate datum for.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="datum-source-settings">Datum Source settings<a class="headerlink" href="#datum-source-settings" title="Permanent link">&para;</a></h3>
+<p>A datum source configuration defines a datum <strong>source ID</strong> and a list of <strong>measurement
+configurations</strong> to collect from the DNP3 outstation and populate as datum properties. You can
+configure as many datum source settings as you like, using the <strong>Datum Sources</strong> <span class="keys"><kbd class="key-plus">+</kbd></span> and
+<span class="keys"><kbd class="key-minus">-</kbd></span> buttons to add/remove configurations.</p>
+<figure>
+<p><img alt="DNP3 Datum Source settings" loading="lazy" src="../../../images/users/datum-sources/dnp3-cc-datum-config%402x.png" width="956" /></p>
+</figure>
+<p>Each datum source configuration contains the following settings:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Source ID</td>
+<td style="text-align: left;">The datum source ID to assign. Placeholder values are supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Refresh Frequency</td>
+<td style="text-align: left;">An optional frequency, in seconds, to poll the DNP3 outstation to collect the latest available measurement values. Works with or without the overall <strong>Event Classes</strong> setting that allows the DNP3 outstation to publish measurement updates when the change. <img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Note this setting differs from the overall <strong>Schedule</strong> setting, which defines when datum are generated from the collected measurement values.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Event Datum</td>
+<td style="text-align: left;">Toggle the generation of datum in response to measurement updates.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Measurements</td>
+<td style="text-align: left;">A list of measurement-specific settings that define which DNP3 points map to datum properties.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="measurement-settings">Measurement settings<a class="headerlink" href="#measurement-settings" title="Permanent link">&para;</a></h3>
+<p>A measurement configuration defines a mapping from a DNP3 point to a datum property.</p>
+<figure>
+<p><img alt="DNP3 Measurement settings" loading="lazy" src="../../../images/users/datum-sources/dnp3-cc-measurement-config%402x.png" width="952" /></p>
+</figure>
+<p>Each measurement configuration contains the following settings:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">DNP3 Type</td>
+<td style="text-align: left;">The DNP point type to collect.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Index</td>
+<td style="text-align: left;">The DNP point type index to collect.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Property Type</td>
+<td style="text-align: left;">The datum <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#datum-property-classifications">property type</a> to publish measurement values as.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Property</td>
+<td style="text-align: left;">The datum property name to publish measurement values as.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Unit Multiplier</td>
+<td style="text-align: left;">A multiplication factor to apply to measurement values to normalize the value into a standard unit.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Decimal Scale</td>
+<td style="text-align: left;">A maximum scale (number of digits after the decimal point) to round decimal values to.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../../js/open_in_new_tab.js"></script>
+      
+    
+  </body>
+</html>

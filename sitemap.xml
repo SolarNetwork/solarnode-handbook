@@ -297,7 +297,15 @@
          <lastmod>2026-04-17</lastmod>
     </url>
     <url>
+         <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-sources/canbus/</loc>
+         <lastmod>2026-04-17</lastmod>
+    </url>
+    <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-sources/controls/</loc>
+         <lastmod>2026-04-17</lastmod>
+    </url>
+    <url>
+         <loc>https://solarnetwork.github.io/solarnode-handbook/users/datum-sources/dnp3/</loc>
          <lastmod>2026-04-17</lastmod>
     </url>
     <url>
@@ -318,6 +326,22 @@
     </url>
     <url>
          <loc>https://solarnetwork.github.io/solarnode-handbook/users/io/bacnet/</loc>
+         <lastmod>2026-04-17</lastmod>
+    </url>
+    <url>
+         <loc>https://solarnetwork.github.io/solarnode-handbook/users/io/canbus/</loc>
+         <lastmod>2026-04-17</lastmod>
+    </url>
+    <url>
+         <loc>https://solarnetwork.github.io/solarnode-handbook/users/io/dnp3-client/</loc>
+         <lastmod>2026-04-17</lastmod>
+    </url>
+    <url>
+         <loc>https://solarnetwork.github.io/solarnode-handbook/users/io/dnp3-outstation/</loc>
+         <lastmod>2026-04-17</lastmod>
+    </url>
+    <url>
+         <loc>https://solarnetwork.github.io/solarnode-handbook/users/io/dnp3-server/</loc>
          <lastmod>2026-04-17</lastmod>
     </url>
     <url>

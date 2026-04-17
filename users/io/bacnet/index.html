@@ -14,7 +14,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../modbus-server/">
+        <link rel="next" href="../canbus/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bacnet" class="md-skip">
+        <a href="#bacnet-connection" class="md-skip">
           Skip to content
         </a>
       
@@ -1139,6 +1139,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1209,12 +1213,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../../datum-sources/canbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAN Bus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../datum-sources/controls/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datum-sources/dnp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Control Center
     
   </span>
   
@@ -1970,6 +2020,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2097,6 +2155,98 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../canbus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAN Bus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dnp3-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dnp3-outstation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Outstation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dnp3-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNP3 Server
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3703,9 +3853,9 @@
 
 
 
-<h1 id="bacnet">BACnet<a class="headerlink" href="#bacnet" title="Permanent link">&para;</a></h1>
+<h1 id="bacnet-connection">BACnet Connection<a class="headerlink" href="#bacnet-connection" title="Permanent link">&para;</a></h1>
 <p>SolarNode supports BACnet integration through IP networks.</p>
-<p>This component is included in the <a href="https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-sunspec/debian">solarnode-app-io-bacnet-bacnet4j</a> package in SolarNodeOS.
+<p>This component is included in the <a href="https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-io-bacnet-bacnet4j/debian">solarnode-app-io-bacnet-bacnet4j</a> package in SolarNodeOS.
 You can install this package on the <a href="../../setup-app/system/packages/">System &gt; Packages</a> page in SolarNode.</p>
 <h2 id="use">Use<a class="headerlink" href="#use" title="Permanent link">&para;</a></h2>
 <p>Once installed a <strong>BACnet/IP connection</strong> components will appear on the <a href="../../setup-app/settings/components/">Settings &gt;
@@ -3794,6 +3944,9 @@ and port number using the UDP protocol.</p>
 
 
 
+
+  
+  
 
 
 
