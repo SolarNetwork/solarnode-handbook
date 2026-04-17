@@ -1,4 +1,7 @@
-# DNP3 Client
+---
+title: DNP3 Client
+---
+# DNP3 Client Connection
 
 The **DNP3 TCP client** component provides a TCP based DNP3 client that can be used for DNP3
 applications to use. This can be used by the [DNP3 Control Center][dnp3-cc] component.

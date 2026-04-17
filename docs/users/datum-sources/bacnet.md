@@ -201,7 +201,7 @@ Each property configuration contains the following settings:
 [bacnet-conn]: ../io/bacnet.md
 [components]: ../setup-app/settings/components.md
 [packages]: ../setup-app/system/packages.md
-[pkg]: https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-sunspec/debian
+[pkg]: https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-bacnet/debian
 [prop-names]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#standard-property-names
 [prop-types]: https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-global-objects#datum-property-classifications
 [services]: ../setup-app/settings/services.md

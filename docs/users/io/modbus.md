@@ -1,4 +1,7 @@
-# Modbus
+---
+title: Modbus
+---
+# Modbus Connection
 
 SolarNode supports Modbus integration through serial port (RTU) and TCP networks.
 

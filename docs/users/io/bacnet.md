@@ -1,4 +1,7 @@
-# BACnet
+---
+title: BACnet
+---
+# BACnet Connection
 
 SolarNode supports BACnet integration through IP networks.
 
@@ -58,4 +61,4 @@ Each configuration contains the following overall settings:
 [components]: ../setup-app/settings/components.md
 [firewall]: ../sysadmin/networking.md#firewall
 [packages]: ../setup-app/system/packages.md
-[pkg]: https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-sunspec/debian
+[pkg]: https://github.com/SolarNetwork/solarnode-os-packages/tree/develop/solarnode-app-io-bacnet-bacnet4j/debian

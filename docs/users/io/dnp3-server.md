@@ -1,4 +1,7 @@
-# DNP3 Server
+---
+title: DNP3 Server
+---
+# DNP3 Server Connection
 
 The **DNP3 TCP server** component provides a TCP based DNP3 client that can be used for DNP3
 applications to use. This can be used by the [DNP3 Outstation][dnp3-outstation] component.
