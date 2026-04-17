@@ -7,14 +7,13 @@ This project provides SolarNode plugin that can collect arbitrary data from BACn
 This is an advanced plugin that requires knowledge of BACnet and the BACnet configuration of the
 devices you want to collect data from.
 
+This component is included in the [solarnode-app-bacnet][pkg] package in SolarNodeOS.
+You can install this package on the [System > Packages][packages] page in SolarNode.
 
 ## Use
 
 Once installed, a new **BACnet Device** component will appear on the [Settings > Components][components]
 page on your SolarNode. Click on the **Manage** button to configure components.
-
-This component is included in the [solarnode-app-bacnet][pkg] package in SolarNodeOS.
-You can install this package on the [System > Packages][packages] page in SolarNode.
 
 <figure markdown>
   ![BACnet Device component](../../images/users/datum-sources/bacnet-device-component@2x.png){width=1024 loading=lazy}
