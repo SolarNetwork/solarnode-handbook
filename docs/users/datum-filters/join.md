@@ -25,7 +25,7 @@ In addition to the [Common Settings][datumfilter-common-settings], the following
 | Persist Output     | If enabled then process and persist output datum after merging. Otherwise process output datum but do not persist them. |
 | Source Property Mappings |  A list of source IDs with associated property name templates to rename the properties with. Each template must contain a `{p}` parameter which will be replaced by the property names merged from datum encountered with the associated source ID. For example `{p}_s1` would map an input property `watts` to `watts_s1`. |
 
-Use the <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove source property configurations.
+Use the ++plus++ and ++minus++ buttons to add/remove source property configurations.
 
 ## Source Property Mappings settings
 

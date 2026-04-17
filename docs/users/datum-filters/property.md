@@ -34,7 +34,7 @@ In addition to the [Common Settings][datumfilter-common-settings], the following
 | Property Includes  | A list of property names to include, removing all others.  This is a list of case-insensitive [patterns][regex] to match against datum **property names**. If any inclusion patterns are configured then **only** properties matching one of these patterns will be included in datum. Any property name that does not match one of these patterns will be removed. |
 | Property Excludes  | A list of property names to exclude. This is a list of case-insensitive [patterns][regex] to match against datum **property names**. If any exclusion expressions are configured then **any** property that matches one of these expressions will be removed. Exclusion epxressions are processed **after** inclusion expressions when both are configured.|
 
-Use the <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove property include/exclude patterns.
+Use the ++plus++ and ++minus++ buttons to add/remove property include/exclude patterns.
 
 Each property inclusion setting contains the following settings:
 

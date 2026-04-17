@@ -191,7 +191,7 @@ Each metadata configuration contains the following settings:
 ### Datum property settings
 
 You must configure settings for each datum property you want to collect from each device. You can
-configure as many property settings as you like, using the <kbd>+</kbd> and <kbd>-</kbd> buttons to
+configure as many property settings as you like, using the ++plus++ and ++minus++ buttons to
 add/remove property configurations.
 
 <figure markdown>

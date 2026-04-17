@@ -32,7 +32,7 @@ In addition to the [Common Settings][datumfilter-common-settings], the following
   ![Unchanged Property filter property settings](../../images/users/datum-filters/unchanged-property-filter-property-settings@2x.png){width=675 loading=lazy}
 </figure>
 
-Use the <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove Property configurations.
+Use the ++plus++ and ++minus++ buttons to add/remove Property configurations.
 
 Each property source mapping configuration contains the following settings:
 

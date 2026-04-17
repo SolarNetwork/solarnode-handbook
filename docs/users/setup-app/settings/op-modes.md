@@ -1,7 +1,7 @@
 # Operational Modes
 
 The SolarNode UI will show the list of active [Operational Modes](../../op-modes.md) on the
-**Settings > Operational Modes** page. Click the <kbd>+</kbd> button to activate modes, and the
+**Settings > Operational Modes** page. Click the ++plus++ button to activate modes, and the
 <kbd>:fontawesome-regular-trash-can:</kbd> button to deactivate an active mode.
 
 <figure markdown>

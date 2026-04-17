@@ -154,8 +154,8 @@ Each control center configuration contains the following overall settings:
 
 A datum source configuration defines a datum **source ID** and a list of **measurement
 configurations** to collect from the DNP3 outstation and populate as datum properties. You can
-configure as many datum source settings as you like, using the **Datum Sources** <kbd>+</kbd> and
-<kbd>-</kbd> buttons to add/remove configurations.
+configure as many datum source settings as you like, using the **Datum Sources** ++plus++ and
+++minus++ buttons to add/remove configurations.
 
 <figure markdown>
   ![DNP3 Datum Source settings](../../images/users/datum-sources/dnp3-cc-datum-config@2x.png){width=956 loading=lazy}

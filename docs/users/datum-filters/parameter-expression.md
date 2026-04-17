@@ -26,7 +26,7 @@ In addition to the [Common Settings][datumfilter-common-settings], the following
 |:-------------------|:------------------------------------------------------------------|
 | Expressions        |  A list of expression configurations that are evaluated to derive parameter values from other property values. |
 
-Use the <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove expression configurations.
+Use the ++plus++ and ++minus++ buttons to add/remove expression configurations.
 
 ## Expression settings
 

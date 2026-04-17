@@ -30,7 +30,7 @@ In addition to the [Common Settings][datumfilter-common-settings], the following
 
 ## Property Source Mappings settings
 
-Use the <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove Property Source Mapping configurations.
+Use the ++plus++ and ++minus++ buttons to add/remove Property Source Mapping configurations.
 
 Each property source mapping configuration contains the following settings:
 

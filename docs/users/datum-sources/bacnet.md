@@ -155,7 +155,7 @@ overall settings:
 
 You must configure settings for each BACnet device you want to collect data from. Every BACnet
 device within a BACnet network is identified by a unique **device ID**. You can configure as many
-device settings as you like, using the <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove
+device settings as you like, using the ++plus++ and ++minus++ buttons to add/remove
 configurations.
 
 <figure markdown>
@@ -174,7 +174,7 @@ Each device configuration contains the following settings:
 BACnet devices organize their data into _objects_ that have _properties_, and SolarNode will map
 BACnet object property values into datum property values. You must configure settings for each datum
 property you want to collect. You can configure as many property settings as you like, using the
-<kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove configurations.
+++plus++ and ++minus++ buttons to add/remove configurations.
 
 <figure markdown>
   ![BACnet Datum Source property settings](../../images/users/datum-sources/bacnet-device-property-settings@2x.png){width=1024 loading=lazy}

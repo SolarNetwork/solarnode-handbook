@@ -143,8 +143,8 @@ Each component configuration contains the following settings:
 ## Property settings
 
 You must configure settings for each BACnet object property you want to expose as an updatable
-control. You can configure as many property settings as you like, using the <kbd>+</kbd> and
-<kbd>-</kbd> buttons to add/remove configurations.
+control. You can configure as many property settings as you like, using the ++plus++ and
+++minus++ buttons to add/remove configurations.
 
 <figure markdown>
   ![BACnet Control property settings](../../images/users/controls/bacnet-control-property-settings@2x.png){width=1024 loading=lazy}

@@ -24,7 +24,7 @@ In addition to the [Common Settings][datumfilter-common-settings], the following
 
 ## Property settings
 
-Use the **Properties** <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove property configurations.
+Use the **Properties** ++plus++ and ++minus++ buttons to add/remove property configurations.
 Each property configuration contains the following settings:
 
 | Setting            | Description                                                       |
@@ -66,7 +66,7 @@ y = (m × ((x + B) × M)) + b
   ![Metric Harvester expression settings](../../images/users/datum-filters/metric-harvester-expression-settings@2x.png){width=937 loading=lazy}
 </figure>
 
-Use the **Expressions** <kbd>+</kbd> and <kbd>-</kbd> buttons to add/remove property configurations.
+Use the **Expressions** ++plus++ and ++minus++ buttons to add/remove property configurations.
 Each expression configuration contains the following settings:
 
 | Setting            | Description                                                       |

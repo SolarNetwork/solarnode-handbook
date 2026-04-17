@@ -147,8 +147,8 @@ Each configuration contains the following overall settings:
 ### Property settings
 
 Property configurations define a mapping between the SolarNode control and a Modbus register (or set
-of registers). You can configure as many property settings as you like, using the <kbd>+</kbd> and
-<kbd>-</kbd> buttons to add/remove property configurations (and thus, add/remove controls).
+of registers). You can configure as many property settings as you like, using the ++plus++ and
+++minus++ buttons to add/remove property configurations (and thus, add/remove controls).
 
 <figure markdown>
   ![Modbus Control property settings](../../images/users/controls/modbus-control-property-settings@2x.png){width=872 loading=lazy}
