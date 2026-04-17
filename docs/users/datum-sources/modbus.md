@@ -1,3 +1,6 @@
+---
+title: Modbus
+---
 # Modbus Device
 
 SolarNode can collect arbitrary data from Modbus devices with the **Modbus Device** component. This

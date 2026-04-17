@@ -1,3 +1,6 @@
+---
+title: Modbus
+---
 # Modbus Control
 
 SolarNode can be update arbitrary Modbus register values on Modbus devices with the

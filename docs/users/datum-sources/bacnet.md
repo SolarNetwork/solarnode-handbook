@@ -1,3 +1,6 @@
+---
+title: BACnet
+---
 # BACnet Device
 
 This project provides SolarNode plugin that can collect arbitrary data from BACnet enabled devices.

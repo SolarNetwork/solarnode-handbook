@@ -1,3 +1,6 @@
+---
+title: BACnet
+---
 # BACnet Control
 
 SolarNode can update arbitrary BACnet object property values, such
