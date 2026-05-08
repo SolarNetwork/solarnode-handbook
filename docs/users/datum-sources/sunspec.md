@@ -105,7 +105,7 @@ Each meter configuration contains the following settings, in addition to the [co
 | Setting            | Description |
 |:-------------------|:------------|
 | Backwards          | Toggle to treat energy delivered as `wattHoursReverse` instead of `wattHours`. Normally this plugin maps the energy _imported_ value to the `wattHours`	datum property and energy _exported_ to `wattHoursReverse`. Enable this to instead map energy _imported_ to `wattHoursReverse` and energy _exported_ to `wattHours`. |
-| Phase Measurements | Toggle to collect additional phase-specific measurement properties. See [SunSpec phase measurements](#sunspec-meter-phase-measurements) for more details. |
+| Phase Measurements | Toggle to collect additional phase-specific measurement properties. See [SunSpec phase measurements](#sunspec-phase-measurements) for more details. |
 
 
 ## SunSpec Meteorological
