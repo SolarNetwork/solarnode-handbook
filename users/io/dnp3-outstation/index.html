@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -3972,12 +3972,18 @@ buttons to add/remove measurement configurations.</p>
 </tr>
 <tr>
 <td>Decimal Scale</td>
-<td>A maximum scale (number of digits after the decimal point) to round decimal values to.</td>
+<td>A maximum scale (number of digits after the decimal point) to round decimal values to. Set to <code>0</code> to round to whole numbers, or <code>-1</code> for no rounding.</td>
 </tr>
 </tbody>
 </table>
 <p>The Outstation will listen for <code>net/solarnetwork/node/DatumDataSource/DATUM_CAPTURED</code> events that
 match any measurement configuration's <em>Source ID</em> value, and update the associated value in the DNP3 database.</p>
+<div class="admonition info">
+<p class="admonition-title">Decimal Scale and analog types</p>
+<p>Note that the <strong>Decimal Scale</strong> will affect the DNP3 encoding used for Analog Input and Analog
+Output Status measurement types. When set to <code>0</code> then a 32-bit integer variation will be used. Otherwise
+a 64-bit floating point variation will be used.</p>
+</div>
 <h2 id="control-settings">Control settings<a class="headerlink" href="#control-settings" title="Permanent link">&para;</a></h2>
 <p>You may configure control settings for each control you want to make manageable via DNP3.
 You can configure as many control settings as you like, using the <span class="keys"><kbd class="key-plus">+</kbd></span> and <span class="keys"><kbd class="key-minus">-</kbd></span>
@@ -4060,10 +4066,10 @@ configuration's <em>Control ID</em> value, and update the associated value in th
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       
