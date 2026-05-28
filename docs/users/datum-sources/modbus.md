@@ -233,7 +233,7 @@ addition, the following properties are available:
 | `sample` | `ModbusData` | A [`ModbusData`][ModbusData] object, populated with the raw Modbus holding register data read from the device. |
 | `regs` | `Map<Integer,Integer>` | Simple Map based access to the register data in `sample`, to simplify expressions all register values are returned as unsigned 16-bit integers. |
 
-Any Modbus registers referenced via `reg[x]` expressions will be automatically read via the Modbus
+Any Modbus registers referenced via `regs[x]` expressions will be automatically read via the Modbus
 **read holding register** function, unless that same register is referenced also in a normal
 property configuration, in which case the Modus function defined there will be used.
 
