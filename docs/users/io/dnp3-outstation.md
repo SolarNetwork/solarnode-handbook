@@ -58,10 +58,16 @@ Each measurement configuration contains the following settings:
 | Property        | The datum property to publish to DNP3. |
 | DNP3 Type       | The type of DNP3 measurement to associate with the datum property. |
 | Unit Multiplier | A multiplication factor to apply to property values to normalize the value into a standard unit. |
-| Decimal Scale   | A maximum scale (number of digits after the decimal point) to round decimal values to. |
+| Decimal Scale   | A maximum scale (number of digits after the decimal point) to round decimal values to. Set to `0` to round to whole numbers, or `-1` for no rounding. |
 
 The Outstation will listen for `net/solarnetwork/node/DatumDataSource/DATUM_CAPTURED` events that
 match any measurement configuration's _Source ID_ value, and update the associated value in the DNP3 database.
+
+!!! info "Decimal Scale and analog types"
+
+	Note that the **Decimal Scale** will affect the DNP3 encoding used for Analog Input and Analog
+	Output Status measurement types. When set to `0` then a 32-bit integer variation will be used. Otherwise
+	a 64-bit floating point variation will be used.
 
 ## Control settings
 
