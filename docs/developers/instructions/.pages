@@ -1,0 +1,6 @@
+title: Instructions
+nav:
+    - index.md
+    - handler.md
+    - local-instructions.md
+    - ...
