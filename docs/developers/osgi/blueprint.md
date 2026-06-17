@@ -322,4 +322,4 @@ Export-Package: com.example.service;version="1.0.0"
 
 [eclipse-gemini-blueprint]: https://eclipse.org/gemini/blueprint/
 [osgi-blueprint]: https://docs.osgi.org/specification/osgi.cmpn/7.0.0/service.blueprint.html
-[spring-xml-config]: https://docs.spring.io/spring-framework/docs/5.3.0/reference/html/core.html#beans-factory-metadata
+[spring-xml-config]: https://docs.spring.io/spring-framework/reference/6.2/core/beans/basics.html#beans-factory-xml

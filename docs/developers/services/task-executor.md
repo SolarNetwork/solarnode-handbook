@@ -38,6 +38,6 @@ This thread pool is configured as a fixed-size pool with the number of threads s
 CPU cores detected at runtime, plus one. For example on a Raspberry Pi 4 there are 4 CPU cores so
 the thread pool would be configured with 5 threads.
 
-[AsyncListenableTaskExecutor]: https://docs.spring.io/spring-framework/docs/5.3.0/javadoc-api/org/springframework/core/task/AsyncListenableTaskExecutor.html
-[AsyncTaskExecutor]: https://docs.spring.io/spring-framework/docs/5.3.0/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html
-[TaskExecutor]: https://docs.spring.io/spring-framework/docs/5.3.0/javadoc-api/org/springframework/core/task/TaskExecutor.html
+[AsyncListenableTaskExecutor]: https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/core/task/AsyncListenableTaskExecutor.html
+[AsyncTaskExecutor]: https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/core/task/AsyncTaskExecutor.html
+[TaskExecutor]: https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/core/task/TaskExecutor.html

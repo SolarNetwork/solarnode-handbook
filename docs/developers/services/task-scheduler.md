@@ -35,4 +35,4 @@ jobScheduler.poolSize = 20
 scheduler.startupDelay = 30
 ```
 
-[TaskScheduler]: https://docs.spring.io/spring-framework/docs/5.3.0/javadoc-api/org/springframework/scheduling/TaskScheduler.html
+[TaskScheduler]: https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/scheduling/TaskScheduler.html
