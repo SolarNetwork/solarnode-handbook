@@ -4865,7 +4865,7 @@
 <h1 id="authenticating">Authenticating<a class="headerlink" href="#authenticating" title="Permanent link">&para;</a></h1>
 <p>Once a client receives a <a href="../connecting/#connected-frame"><code>CONNECTED</code> frame</a>, it must authenticate
 the session, using the scheme specified in the <code>authenticate</code> header. Authentication is performed by
-sending a <code>SEND</code> frame with a <code>destination</code> header value of <code>/setup/authentication</code> and an
+sending a <code>SEND</code> frame with a <code>destination</code> header value of <code>/setup/authenticate</code> and an
 <code>authorization</code> header with the appropriate credentials, the syntax of which depends on the scheme
 used. The only supported scheme at this time is <a href="#sns-authentication-scheme"><code>SNS</code></a>.</p>
 <div class="admonition note">
@@ -4902,7 +4902,7 @@ key.</p>
 </tbody>
 </table>
 <div class="highlight"><span class="filename">Example SEND frame for authentication</span><pre><span></span><code>SEND
-destination:/setup/authentication
+destination:/setup/authenticate
 date:Mon, 16 Aug 2021 02\c27\c39 GMT
 authorization: SNS Credential=me@example.com,SignedHeaders=date,Signature=168365...
 </code></pre></div>

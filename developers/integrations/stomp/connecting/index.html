@@ -4642,6 +4642,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="CONNECT frame">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect-error-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      CONNECT error messages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4787,6 +4802,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="CONNECT frame">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect-error-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      CONNECT error messages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4857,6 +4887,14 @@ login:solar
 <p>See the <a href="https://stomp.github.io/stomp-specification-1.2.html#CONNECT_or_STOMP_Frame">STOMP specification</a>
 for more details on the <code>CONNECT</code> frame.</p>
 </div>
+<h3 id="connect-error-messages"><code>CONNECT</code> error messages<a class="headerlink" href="#connect-error-messages" title="Permanent link">&para;</a></h3>
+<p>If a client sends a <code>CONNECT</code> frame on a connection which has already established a session,
+an <code>ERROR</code> frame will be sent to the client with a <code>message</code> header value of <em>Already connected.</em>.</p>
+<div class="highlight"><span class="filename">Example ERROR: already connected</span><pre><span></span><code>ERROR
+message:Already connected.
+
+^@
+</code></pre></div>
 <h2 id="connected-frame"><code>CONNECTED</code> frame<a class="headerlink" href="#connected-frame" title="Permanent link">&para;</a></h2>
 <p>The <code>CONNECTED</code> frame is sent by the server and used to indicate a new <em>setup session</em> has been
 successfully started. After receipt of this frame a client must <a href="../authenticating/">authenticate</a>.
