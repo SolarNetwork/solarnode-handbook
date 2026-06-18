@@ -33,6 +33,18 @@ login:solar
 	See the [STOMP specification](https://stomp.github.io/stomp-specification-1.2.html#CONNECT_or_STOMP_Frame)
 	for more details on the `CONNECT` frame.
 
+### `CONNECT` error messages
+
+If a client sends a `CONNECT` frame on a connection which has already established a session,
+an `ERROR` frame will be sent to the client with a `message` header value of _Already connected._.
+
+``` title="Example ERROR: already connected"
+ERROR
+message:Already connected.
+
+^@
+```
+
 ## `CONNECTED` frame
 
 The `CONNECTED` frame is sent by the server and used to indicate a new _setup session_ has been
