@@ -1,0 +1,7 @@
+title: STOMP
+nav:
+    - index.md
+    - connecting.md
+    - authenticating.md
+    - subscribing.md
+    - commands.md
