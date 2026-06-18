@@ -2,7 +2,7 @@
 
 Once a client receives a [`CONNECTED` frame](./connecting.md#connected-frame), it must authenticate
 the session, using the scheme specified in the `authenticate` header. Authentication is performed by
-sending a `SEND` frame with a `destination` header value of `/setup/authentication` and an
+sending a `SEND` frame with a `destination` header value of `/setup/authenticate` and an
 `authorization` header with the appropriate credentials, the syntax of which depends on the scheme
 used. The only supported scheme at this time is [`SNS`](#sns-authentication-scheme).
 
@@ -32,7 +32,7 @@ The required `SEND` headers for SNS authentication are:
 
 ``` title="Example SEND frame for authentication"
 SEND
-destination:/setup/authentication
+destination:/setup/authenticate
 date:Mon, 16 Aug 2021 02\c27\c39 GMT
 authorization: SNS Credential=me@example.com,SignedHeaders=date,Signature=168365...
 ```
