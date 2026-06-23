@@ -4870,7 +4870,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code>instructions</code></td>
-<td style="text-align: left;">A JSON array of nested instruction objects. Consult the documentation for each instruction topic you want to use for the syntax required. Note that the <code>nodeId</code> property is <strong>not</strong> needed on these instructions, as it is assumed to be the ID of the node executing the <code>ExecuteInstructions</code> instruction.</td>
+<td style="text-align: left;">A JSON array of nested instruction objects. Consult the documentation for each instruction topic you want to use for the syntax required. Note that the <code>nodeId</code> property is <strong>not</strong> needed on these instructions, as it is assumed to be the ID of the node executing the <code>ExecuteInstructions</code> instruction. The nested instructions <strong>cannot be idependently deffered</strong>, and will ignore any provided <code>executionDate</code> parameter.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>successMode</code></td>
