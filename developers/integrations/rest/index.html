@@ -14,7 +14,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../websocket/">
+        <link rel="next" href="identity/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -354,6 +354,8 @@
       
         
           
+        
+      
         
       
         
@@ -1050,6 +1052,29 @@
   
   <span class="md-ellipsis">
     Profile
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/setup-app/security-tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security Tokens
     
   </span>
   
@@ -4503,25 +4528,105 @@
   
   
   
-    <li class="md-nav__item md-nav__item--active">
+    
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+        
+          
+        
       
         
       
+        
       
-      <a href="./" class="md-nav__link md-nav__link--active">
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    Rest
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Rest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="identity/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    REST
+    Identity
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="instructions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instructions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -4747,6 +4852,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response structure
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4762,7 +4893,57 @@
 
 
 <h1 id="rest-integration">REST integration<a class="headerlink" href="#rest-integration" title="Permanent link">&para;</a></h1>
-<p>TODO</p>
+<p>SolarNode provides a JSON REST HTTP API that supports various functions for external applications.</p>
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<p>The REST API requires clients to authenticate using the <a href="https://github.com/SolarNetwork/solarnetwork/wiki/SolarNet-API-authentication-scheme-V2">SNWS2</a> scheme (the same scheme
+used by the SolarNetwork API). Security tokens are created and managed on the
+<a href="../../../users/setup-app/security-tokens/">Security Tokens</a> page in SolarNode.</p>
+<h2 id="response-structure">Response structure<a class="headerlink" href="#response-structure" title="Permanent link">&para;</a></h2>
+<p>General JSON responses are returned using a basic result object structure shared with the
+SolarNetwork API, including the following properties:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>success</code></td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Either <code>true</code> or <code>false</code> representing the success of the request.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>code</code></td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">An error code, used sometimes when <code>sucess</code> is <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>message</code></td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">An message, typically used for error messages when <code>success</code> is <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>errors</code></td>
+<td style="text-align: left;">Object[]</td>
+<td style="text-align: left;">A list of error detail objects.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>data</code></td>
+<td style="text-align: left;"><em>any</em></td>
+<td style="text-align: left;">Result data, the form of which depends on the endpoint.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><span class="filename">Example response</span><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abc123def456&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
