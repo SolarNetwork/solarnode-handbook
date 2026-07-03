@@ -61,7 +61,7 @@ The request body should be a JSON object with the following properties:
 
 Update the state of existing instructions.
 
-| POST | `/api/v1/sec/instr/instr/updateState` |
+| POST | `/api/v1/sec/instr/updateState` |
 |:-----|:--------------------------------|
 | `id` | The ID of a single instruction to update. |
 | `ids` | A comma-delimited list of instruction IDs to update. |
@@ -89,7 +89,7 @@ The request body should be an `application/x-www-form-urlencoded` encoding of th
 
 View one or more instruction satuses.
 
-| POST | `/api/v1/sec/instr/instr/view` |
+| POST | `/api/v1/sec/instr/view` |
 |:-----|:--------------------------------|
 | `id` | The ID of a single instruction to view. |
 | `ids` | A comma-delimited list of instruction IDs to view. |
@@ -104,7 +104,7 @@ The request body should be an `application/x-www-form-urlencoded` encoding of th
 
 === "Example request"
 
-	Send a `POST /api/v1/sec/instr/updateState` request with the following content:
+	Send a `POST /api/v1/sec/instr/view` request with the following content:
 
 	```
 	id=1782532316364
