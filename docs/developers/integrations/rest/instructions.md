@@ -18,7 +18,7 @@ Queue an instruction to execute. See the [SolarUser endpoint][sn-instr-api] for 
 
 | POST | `/api/v1/sec/instr/add/{topic}` |
 |:-----|:--------------------------------|
-| `topic` | The [instruction topic](../../instructions/topics/index.md). |
+| `topic` | The [instruction topic](../../../users/instructions/topics/index.md). |
 
 The request body should be a JSON object with the following properties:
 

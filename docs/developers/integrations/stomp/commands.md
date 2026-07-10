@@ -48,7 +48,7 @@ a JSON array of the most recently captured datum in SolarNode:
 
 Internally, each STOMP `SEND` setup command will be converted to a [local
 instruction](../../instructions/local-instructions.md) using the [`SystemConfigure`
-topic](../../instructions/topics/system-configure.md). The instruction result status will then be converted into
+topic](../../../users/instructions/topics/system-configure.md). The instruction result status will then be converted into
 a `MESSAGE` response frame and and published back to the client.
 
 ### Creating the request `SystemConfigure` instruction
