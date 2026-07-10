@@ -28,7 +28,7 @@ SolarNode supports 3 different integer types and 3 different decimal (floating p
 | 32-bit integer | `Int32` | A 32-bit signed integer. |
 | 64-bit integer | `Int64` | A 64-bit signed integer. |
 | Decimal        | `Decimal` | An arbitrary precision decimal (floating point). |
-| 32-bit decimal | `Float2` | An IEEE-754 32-bit signed floating point. |
+| 32-bit decimal | `Float32` | An IEEE-754 32-bit signed floating point. |
 | 64-bit decimal | `Float64` | An IEEE-754 64-bit signed floating point. |
 
 ## String type
