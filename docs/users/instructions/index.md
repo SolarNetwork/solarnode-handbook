@@ -115,6 +115,13 @@ is modeled as a _topic_ (the desired action) with _named parameters_ (dynamic at
 		InstructionState getInstructionState();
 
 		@Nullable
+		String instructionStateName();
+
+		boolean isDone(); // Completed or Declined
+
+		boolean isCompleted();
+
+		@Nullable
 		Instant getStatusDate();
 
 		@Nullable
