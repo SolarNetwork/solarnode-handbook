@@ -280,6 +280,7 @@ The following functions deal with string manipulation.
 
 | Function | Arguments | Result | Description |
 |:---------|:----------|:-------|:------------|
+| `numberValue(o)` | `Object` | `Number` | If `o` is already a `Number`, return that. Otherwise, try to parse `o` as a number value. Returns `null` if `o` is not parsed successfully. |
 | `regexMatches(s, regex)` | `String`, `String` | `boolean` | Search `s` using a [regular expression][regex] `regex`, returning `true` if a match is found. A match can occur anywhere within `s` so use `^` and `$` to anchor the search to the start and end of the string, as needed. For example `regexMatches("foo/bar", "^foo/")` would return `true`. |
 | `regexReplace(s, regex, r)` | `String`, `String`, `String` | `String` | Search `s` using a [regular expression][regex] `regex`, replacing all matches with `r`. Capture groups are supported, refer to them using `$n` in `r`. For example `regexReplace("thing/123", "^.*/(\d+)$", "$1")` would return `"123"`. |
 
