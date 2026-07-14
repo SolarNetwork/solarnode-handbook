@@ -6387,7 +6387,7 @@
 
 
 <h1 id="control-conductor">Control Conductor<a class="headerlink" href="#control-conductor" title="Permanent link">&para;</a></h1>
-<p>This project provides SolarNode plugin that can schedule a set of control changes in response to an
+<p>The Control Conductor component can schedule a set of control changes in response to an
 <a href="../../instructions/topics/orchestrate-controls/"><code>OrchestrateControls</code></a> instruction. For example,
 this could be used to execute a hot-water load shift scenario like:</p>
 <div class="admonition note">
@@ -6502,7 +6502,7 @@ Conductor component. It requires the following parameters:</p>
 </tbody>
 </table>
 <p>The <code>date</code> parameter can be specified as an Unix millisecond epoch integer like <code>1680664200000</code> or
-an ISO 8601 instant like <code>2023-04-05T03:10:00Z</code>.</p>
+an ISO 8601 instant like <code>2023-04-05T03:10:00</code>.</p>
 <h3 id="orchestratecontrols-instruction-extra-parameters">OrchestrateControls instruction extra parameters<a class="headerlink" href="#orchestratecontrols-instruction-extra-parameters" title="Permanent link">&para;</a></h3>
 <p>Any parameter included in the  <code>OrchestrateControls</code> instruction will then be available as a
 placeholder for use in any configured task <strong>Control</strong>, <strong>Offset</strong>, and <strong>Value</strong> settings. If
