@@ -25,9 +25,9 @@ range can be left empty to represent **all values**. The time constraint columns
 
 | Column | Constraint | Description |
 |:-------|:-----------|:------------|
-| 1      | Month range | An inclusive month range. Months can be specified as numbers (1-12) or abbreviations (Jan-Dec) or full names (January - December). When using text names case does not matter and they will be parsed using the **Lanauage** setting. |
+| 1      | Month range | An inclusive month range. Months can be specified as numbers (1-12) or abbreviations (Jan-Dec) or full names (January - December). When using text names case does not matter and they will be typically be parsed using a **Lanauage** setting configured on the component that is accessing the schedule. |
 | 2      | Day range | An inclusive day-of-month range. Days are specified as numbers (1-31). |
-| 3      | Weekday range | An inclusive day-of-week range. Weekdays can be specified as numbers (1-7) with Monday being `1` and Sunday being `7`, or abbreviations (Mon-Sun) or full names (Monday - Sunday). When using text names case does not matter and they will be parsed using the **Lanauage** setting. |
+| 3      | Weekday range | An inclusive day-of-week range. Weekdays can be specified as numbers (1-7) with Monday being `1` and Sunday being `7`, or abbreviations (Mon-Sun) or full names (Monday - Sunday). When using text names case does not matter and they will be parsed using a **Lanauage** setting configured on the component that is accessing the schedule.. |
 | 4      | Time range | An **inclusive - exclusive** time-of-day range. The time can be specified as whole hour numbers (0-24) or `HH:MM` style (`00:00` - `24:00`). |
 
 Starting on column 5 of the tariff schedule are arbitrary rate values to add to datum when the
