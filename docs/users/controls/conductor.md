@@ -3,7 +3,7 @@ title: Conductor
 ---
 # Control Conductor
 
-This project provides SolarNode plugin that can schedule a set of control changes in response to an
+The Control Conductor component can schedule a set of control changes in response to an
 [`OrchestrateControls`](../instructions/topics/orchestrate-controls.md) instruction. For example,
 this could be used to execute a hot-water load shift scenario like:
 
@@ -87,7 +87,7 @@ Conductor component. It requires the following parameters:
 | `date`    | The _orchestration date_ to execute the task schedule at. |
 
 The `date` parameter can be specified as an Unix millisecond epoch integer like `1680664200000` or
-an ISO 8601 instant like `2023-04-05T03:10:00Z`.
+an ISO 8601 instant like `2023-04-05T03:10:00`.
 
 ### OrchestrateControls instruction extra parameters
 
