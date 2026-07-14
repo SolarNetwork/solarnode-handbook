@@ -6,8 +6,7 @@ title: Split
 The [Split Datum Filter][src] provides a way to split the properties of a [datum
 stream](../datum.md) into multiple new derived datum streams.
 
-
-This filter is provided by the [Standard Datum Filters][sdf] plugin.
+--8<-- "snippets/users/datum-filters/provided-by-standard-filter.md"
 
 ## Settings
 

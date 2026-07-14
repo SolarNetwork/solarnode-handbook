@@ -15,7 +15,7 @@ result in an accumulating `irradianceHours` property. The value is calculated as
 between the _current_ and the _previous_ instantaneous property values, multiplied by the amount of
 time that has elapsed between the two samples.
 
-This filter is provided by the [Standard Datum Filters][sdf] plugin.
+--8<-- "snippets/users/datum-filters/provided-by-standard-filter.md"
 
 ## Settings
 

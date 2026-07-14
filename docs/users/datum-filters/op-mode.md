@@ -8,7 +8,7 @@ The [Operational Mode Datum Filter][src] provides a way to evaluate [expressions
 is activated. When an expression evaluates to `false` the associated operational mode is
 deactivated.
 
-This filter is provided by the [Standard Datum Filters][sdf] plugin.
+--8<-- "snippets/users/datum-filters/provided-by-standard-filter.md"
 
 ## Settings
 

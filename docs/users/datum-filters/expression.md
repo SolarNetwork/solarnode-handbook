@@ -6,7 +6,7 @@ title: Expression
 The [Expression Datum Filter][src] provides a way to generate new properties by evaluating
 [expressions][expr] against existing properties.
 
-This filter is provided by the [Standard Datum Filters][sdf] plugin.
+--8<-- "snippets/users/datum-filters/provided-by-standard-filter.md"
 
 ## Settings
 

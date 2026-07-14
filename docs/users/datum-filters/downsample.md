@@ -8,7 +8,7 @@ lower-frequency (averaged) datum samples. The filter will collect a configurable
 and then generate a down-sampled sample where an average of each collected instantaneous property is
 included. In addition minimum and maximum values of each averaged property are added.
 
-This filter is provided by the [Standard Datum Filters][sdf] plugin.
+--8<-- "snippets/users/datum-filters/provided-by-standard-filter.md"
 
 ## Downsample property handling
 

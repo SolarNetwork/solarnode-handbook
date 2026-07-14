@@ -18,7 +18,7 @@ sources that are captured faster than the time limit will be discarded.
 	The time limit can be set to `-1` to represent _infinity_. The effect of this is that all
 	matching datum will always be discarded.
 
-This filter is provided by the [Standard Datum Filters][sdf] plugin.
+--8<-- "snippets/users/datum-filters/provided-by-standard-filter.md"
 
 ## Settings
 

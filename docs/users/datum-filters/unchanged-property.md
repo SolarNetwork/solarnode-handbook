@@ -6,12 +6,12 @@ title: Unchanged Property
 The [Unchanged Property Filter][src] provides a way to discard **individual datum properties** that
 have not changed within a datum stream.
 
-This filter is provided by the [Standard Datum Filters][sdf] plugin.
-
 !!! tip
 
 	See the [Unchanged Datum Filter](./unchanged.md) for a filter that can discard entire unchanging
 	_datum_ (at the source ID level).
+
+--8<-- "snippets/users/datum-filters/provided-by-standard-filter.md"
 
 ## Settings
 

@@ -12,7 +12,7 @@ populate datum properties, taking into consideration if the datum is a "timeout"
 For example you could configure the <b>Tag</b> setting with `timeout`, and then in the Expression
 Filter use the <b>Required Tag</b> property to only execute when that tag is present.
 
-This filter is provided by the [Standard Datum Filters][sdf] plugin.
+--8<-- "snippets/users/datum-filters/provided-by-standard-filter.md"
 
 ## Settings
 

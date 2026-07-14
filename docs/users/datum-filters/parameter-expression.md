@@ -12,7 +12,7 @@ any further datum filters in the same filter chain.
 	Parameters are useful as temporary variables that you want to use during datum processing but do
 	not want to include as datum properties that get posted to SolarNet.
 
-This filter is provided by the [Standard Datum Filters][sdf] plugin.
+--8<-- "snippets/users/datum-filters/provided-by-standard-filter.md"
 
 ## Settings
 

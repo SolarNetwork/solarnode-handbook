@@ -19,7 +19,7 @@ The general idea for filtering properties is to configure rules that define whic
 you want to filter, along with a list of **properties** to _include_ and/or a list to _exclude_. All
 matching is done using regular expressions, which can help make your rules concise.
 
-This filter is provided by the [Standard Datum Filters][sdf] plugin.
+--8<-- "snippets/users/datum-filters/provided-by-standard-filter.md"
 
 ## Settings
 

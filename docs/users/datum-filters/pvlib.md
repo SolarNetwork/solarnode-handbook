@@ -9,9 +9,11 @@ is useful when you have a pyranometer deployed with a PV system, but it only pro
 measurements and you would like to model the expected performance of the PV system taking into
 consideration the PV array tilt, GPS coordinates, and so on.
 
-This filter is provided by the [pvlib Datum Filters][pf] plugin, which is provided by the
-[`solarnode-app-datumfilters-pvlib`][solarnode-app-datumfilters-pvlib]
-[package](../setup-app/system/packages.md) in SolarNodeOS.
+!!! info
+
+	This filter is provided by the [pvlib Datum Filters][pf] plugin, which is provided by the
+	[`solarnode-app-datumfilters-pvlib`][solarnode-app-datumfilters-pvlib]
+	[package](../setup-app/system/packages.md) in SolarNodeOS.
 
 ## Settings
 

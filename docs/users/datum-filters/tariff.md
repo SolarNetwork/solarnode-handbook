@@ -6,8 +6,11 @@ title: Tariff
 The [Tariff Datum Filter][src] provides a way to inject time-based tariff rates based on a flexible
 tariff schedule defined with various time constraints.
 
+!!! info
 
-This filter is provided by the [Tariff Filter][tariff] plugin.
+	This filter is provided by the [Tariff Filter][tariff] plugin, which is provided by the
+	[`solarnode-app-datumfilters`][solarnode-app-datumfilters]
+	[package](../setup-app/system/packages.md) in SolarNodeOS.
 
 ## Settings
 
