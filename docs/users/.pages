@@ -17,6 +17,8 @@ nav:
     - remote-access.md
     - expressions.md
     - local-state.md
+    - metadata.md
+    - tariff-schedules.md
     - metrics.md
     - op-modes.md
     - placeholders.md

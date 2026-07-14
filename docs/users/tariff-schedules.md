@@ -1,49 +1,22 @@
----
-title: Tariff
----
-# Time-based Tariff Datum Filter
+# Tariff Schedules
 
-The [Tariff Datum Filter][src] provides a way to inject time-based tariff rates based on a flexible
-tariff schedule defined with various time constraints.
+Tariff schedules are a convenient way to represent _variable rates_ that vary based on _time
+constraints_. Some common use cases for tariff schedules include:
 
+ * **Time-of-use based energy pricing**: a variable-rate pricing scheme, such as time-of-day or day-of-week (or both)
+ * **Modelled PV energy production**: the expected theoretical PV energy output of a system can be used to track system performance
+ * **Seasonal operating modes**: season-based parameters can be encoded into a tariff schedule and used by [expressions](./expressions.md)
 
-This filter is provided by the [Tariff Filter][tariff] plugin.
-
-## Settings
-
-<figure markdown>
-  ![Tariff filter component settings](../../images/users/datum-filters/tariff-filter-settings@2x.png){width=742 loading=lazy}
-</figure>
-
-In addition to the [Common Settings][datumfilter-common-settings], the following general settings are available:
-
-| Setting            | Description |
-|:-------------------|:------------|
-| Metadata Service   | The **Service Name** of the Metadata Service to obtain the tariff schedule from. See [below](#metadata-service) for more information. |
-| Metadata Path      | The metadata path that will resolve the tariff schedule from the configured Metadata Service. |
-| Language           | An IETF BCP 47 language tag to parse the tariff data with. If not configured then the default system language will be assumed. |
-| First Match        | If enabled, then apply only the **first** tariff that matches a given datum date. If disabled, then apply **all** tariffs that match. |
-| Schedule Cache     | The amount of seconds to cache the tariff schedule obtained from the configured Metadata Service.
-| Tariff Evaluator   | The **Service Name** of a _Time-based Tariff Evaluator_ service to evaluate each tariff to determine if it should apply to a given datum. If not configured a default algorithm is used that matches all non-empty constraints in an inclusive manner, except for the time-of-day constraint which uses an exclusive upper bound. |
-
-## Metadata Service
-
-SolarNode provides access to [metadata](../metadata.md) components that this filter can use for the
-**Metadata Service** setting. This allows you to configure the tariff schedule as metadata in
-SolarNetwork and then SolarNode will download the schedule and use it as needed.
+Tariff schedules are commonly stored in [metadata](./metadata.md), so components like the [Fixed Data](./datum-sources/fixed.md) datum source
+or the [Tariff Filter](./datum-filters/tariff.md) can make use of them.
 
 ## Tariff schedule format
 
-The tariff schedule obtained from the configured Metadata Service uses a simple CSV-based format
-that can be easily exported from a spreadsheet. Each row represents a rule that includes:
+A tariff schedule uses a simple CSV-based format that can be easily exported from a spreadsheet.
+Each row represents a rule that includes:
 
  * a set of time constraints that must be satisfied for the rule to be applied
- * a list of tariff rates to be added to datum when the constraints are satisfied
-
-!!! tip "Include a header row"
-
-	A header row is **required** because the tariff rate names are defined there.
-	The first 4 column names are ignored.
+ * a list of tariff rates associated with the time constraints
 
 The schedule consists of 4 time constraint columns followed by one or more tariff rate columns. Each
 constraint is represented as a range, in the form `start - end`. Whitespace is allowed around the
@@ -73,7 +46,7 @@ Here are some examples of the header name to the equivalent property name:
 | Foo Bar                  | `foo_bar`           |
 | This Isn't A Great Name! | `this_isn_t_a_great_name` |
 
-### Example schedule
+## Example schedule
 
 Here's an example schedule with 4 rules and a single **TOU** rate (the `*` stands for **all values**):
 
@@ -95,8 +68,16 @@ Jan-Dec,,Sat-Sun,0-8,9.19
 Jan-Dec,,Sat-Sun,8-24,11.21
 ```
 
-When encoding into SolarNetwork metadata JSON, that same schedule would look like this when saved
-at the `/pm/tariffs/schedule` path:
+!!! tip "Include a header row"
+
+	A header row is **required** because the tariff rate names are defined there.
+	The first 4 column names are ignored.
+
+## Metadata encoding
+
+When encoding into SolarNetwork metadata JSON, the schedule can be encoded either as a JSON string
+or an array-of-arrays structure. The previous example schedule would look like this when saved
+at the `/pm/tariffs/schedule` path as a string:
 
 ```json
 {
@@ -108,8 +89,26 @@ at the `/pm/tariffs/schedule` path:
 }
 ```
 
---8<-- "snippets/users/datum-filters/base-filter-settings-links.md"
-[placeholders]: ../placeholders.md
-[api-explorer]: https://go.solarnetwork.net/dev/api/
-[tariff]: https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.tariff/
-[src]: https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.filter/README.md
+!!! warning "Line breaks must be esacped in the JSON string form"
+
+	When encoding the CSV data into a JSON string, note that line breaks should be escaped as `\n`
+	for the JSON to be valid.
+
+Alternatively, the previous example could be encoded as a JSON array-of-arrays, which would look
+like this:
+
+```json
+{
+  "pm": {
+    "tariffs": {
+      "schedule": [
+		["Month","Day","Weekday","Time","TOU"],
+		["Jan-Dec",,"Mon-Fri","0-8","10.48"],
+		["Jan-Dec",,"Mon-Fri","8-24","11.00"],
+		["Jan-Dec",,"Sat-Sun","0-8","9.19"],
+		["Jan-Dec",,"Sat-Sun","8-24","11.21"]
+	  ]
+    }
+  }
+}
+```
