@@ -1972,6 +1972,73 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#csv-configurer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV Configurer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CSV Configurer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csv-configuration-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV Configuration Format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CSV Configuration Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instance-identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instance identifiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-column-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV column definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example CSV
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-vehicle-gate-control" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6132,6 +6199,73 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#csv-configurer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV Configurer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CSV Configurer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csv-configuration-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV Configuration Format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CSV Configuration Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instance-identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instance identifiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-column-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV column definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example CSV
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-vehicle-gate-control" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6376,6 +6510,174 @@ The <strong>Result Expression</strong> also includes the following additional va
 <p>For example, you could generate a datum property based on the success of the executed instruction
 with a <strong>Result Expression</strong> like:</p>
 <div class="highlight"><span class="filename">Generate a true/false datum property based on the instruction result status</span><pre><span></span><code><span class="n">has</span><span class="p">(</span><span class="err">&#39;</span><span class="n">instructionResult</span><span class="err">&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">instructionResult</span><span class="p">.</span><span class="na">completed</span>
+</code></pre></div>
+<h2 id="csv-configurer">CSV Configurer<a class="headerlink" href="#csv-configurer" title="Permanent link">&para;</a></h2>
+<p>This component provides an <strong>Instructor Datum Filter CSV Configurer</strong> service that appears on the
+<a href="../../setup-app/settings/services/">Settings &gt; Services</a> page. This service lets you upload an Instructor Datum Filter CSV
+Configuration file to configure all Instructor Datum Filter components, without having to use the
+<a href="#settings">settings</a> form directly.</p>
+<figure>
+<p><img alt="Instructor Datum Filter CSV Configurer settings" loading="lazy" src="../../../images/users/datum-filters/instructor-csv-configurer-settings%402x.png" width="1024" /></p>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Spreadsheet jumpstart</p>
+<p>You can copy the <a href="https://docs.google.com/spreadsheets/d/1ym9wk78zqPjk5SxlWVPdVJRJ4glR-CAhOtBSdlIAUiA/edit?gid=0#gid=0">Instructor Filter Configuration Example</a> sheet as a
+starting point. This sheet has drop-down menu validation to make it super easy to configure your
+Instructor components. Download your completed Sheet as a CSV file, then use the
+<strong>Instructor Datum Filter CSV Configurer</strong> form to upload the CSV file and configure SolarNode.</p>
+</div>
+<h3 id="csv-configuration-format">CSV Configuration Format<a class="headerlink" href="#csv-configuration-format" title="Permanent link">&para;</a></h3>
+<p>The Instructor Datum Filter CSV Configuration uses the column structure detailed
+<a href="#csv-column-definition">below</a>. A header row is required. Comment lines are allowed, just start the
+line with a <code>#</code> character (i.e. the first cell value). The entire comment line will be ignored.</p>
+<p>Here's an example screen shot of a configuration in a spreadsheet application. It is for two scenarios:</p>
+<ol>
+<li>Scenario <code>Photo</code> tests a <code>voltage</code> property is outside a range, and then issues a <code>Signal</code>
+    instruction to a <code>/camera/1</code> device to take a photo.</li>
+<li>Scenario <code>DR</code> watis for an <code>initiate</code> property to equal <code>1</code>, and then issues <code>CancelInstruction</code>
+    and <code>OrchestrateControls</code> instructions to handle a demand response event.</li>
+</ol>
+<p>Spreadsheet applications generally allow you to export the sheet in the CSV format, which can
+then be loaded into SolarNode via the CSV Configurer.</p>
+<figure>
+<p><img alt="Instructor Datum Filter CSV Configuration example" loading="lazy" src="../../../images/users/datum-filters/instructor-csv-configuration-example-sheet%402x.png" width="1910" /></p>
+</figure>
+<h4 id="instance-identifiers">Instance identifiers<a class="headerlink" href="#instance-identifiers" title="Permanent link">&para;</a></h4>
+<p>Individual Instructor components are defined by the first column (<strong>Instance ID</strong>). You can
+assign any identifier you like (such as <code>Photo</code>, <code>DR</code>, and so on) or configure as a single
+dash character <code>-</code> to have SolarNode assign a simple number identifier. Once an Instance ID has been
+assigned on a given row, subsequent rows will continue the configuration for that instance, until
+a new Instance ID is encountered.</p>
+<p>Here's an example of how 3 custom instance IDs <code>DR</code>, <code>Gantry</code>, and <code>Photo</code> appear in the
+SolarNode UI:</p>
+<figure>
+<p><img alt="Instructor Datum Filter instance names" loading="lazy" src="../../../images/users/datum-filters/instructor-named-component-instances%402x.png" width="1024" /></p>
+</figure>
+<h4 id="csv-column-definition">CSV column definition<a class="headerlink" href="#csv-column-definition" title="Permanent link">&para;</a></h4>
+<p>The following table defines all the CSV columns used by Instructor Datum Filter CSV Configuration.
+Columns <strong>A - F</strong> apply to the <strong>entire Instructor Datum Filter configuration</strong>, and only the values
+of those cells from the row that defines a new Instance ID will be used to configure the instance.
+Thus you can omit the values from these columns in subsequent rows used to configure the same
+instance.</p>
+<ul>
+<li>Each instance can be configured with any number of instruction rows, based on column <strong>H</strong>
+   (Instruction Topic).</li>
+<li>Each instruction can be configured with any number of parameter rows, based on columns <strong>I-J</strong>
+   (Parameter Name and Parameter Value).</li>
+<li>Each instruction can be configured with any number of result expression rows, based on columns
+   <strong>L-N</strong> (Result Expression, Result Property, and Result Property Type).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Col</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>A</code></td>
+<td style="text-align: left;"><strong>Instance ID</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The unique identifier for a single Instructor Datum Filter component. Can specify <code>-</code> to automatically assign a simple number value, which will start at <code>1</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>B</code></td>
+<td style="text-align: left;"><strong>Service Name</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">A unique filter service name, to be referenced by other components.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>C</code></td>
+<td style="text-align: left;"><strong>Service Group</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">An optional service group.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>D</code></td>
+<td style="text-align: left;"><strong>Source ID</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">An optional case-insensitive <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">pattern</a> to match the input source ID(s) to filter. If omitted then datum for <em>all</em> source ID values will be filtered, otherwise only datum with <em>matching</em> source ID values will be filtered.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>E</code></td>
+<td style="text-align: left;"><strong>Mode</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">An optional <a href="../../op-modes/">operational mode</a> that must be active for this filter to be applied.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>F</code></td>
+<td style="text-align: left;"><strong>Tag</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">Only apply the filter on datum with the given tag. A tag may be prefixed with <code>!</code> to invert the logic so that the filter only applies to datum <strong>without</strong> the given tag. Multiple tags can be defined using a <code>,</code> delimiter, in which case <strong>at least one</strong> of the configured tags must match to apply the filter.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>G</code></td>
+<td style="text-align: left;"><strong>Predicate</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The expression that must evaluate to <code>true</code> to generate the configured instructions.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>H</code></td>
+<td style="text-align: left;"><strong>Instruction Topic</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The <a href="../../instructions/topics/">instruction topic</a> to generate.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>I</code></td>
+<td style="text-align: left;"><strong>Parameter Name</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The instruction parameter name to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>J</code></td>
+<td style="text-align: left;"><strong>Parameter Value</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">The instruction parameter value. Can be an expression if the <strong>Parameter Expression</strong> cell value is <code>true</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>K</code></td>
+<td style="text-align: left;"><strong>Parameter Expression</strong></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;"><code>true</code> to treat the <strong>Parameter Value</strong> cell value as an expression.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>L</code></td>
+<td style="text-align: left;"><strong>Result Expression</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">An optional expression to evaluate after the instruction has been executed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M</code></td>
+<td style="text-align: left;"><strong>Result Property</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">An optional datum property name to save the <strong>Result Expression</strong> result to. Leave empty to evaluate the expression without saving any datum property.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>N</code></td>
+<td style="text-align: left;"><strong>Result Property Type</strong></td>
+<td style="text-align: left;">enum</td>
+<td style="text-align: left;">The type of datum property to use for <strong>Result Property</strong>. Must be one of <code>Instantaneous</code>, <code>Accumulating</code>, <code>Status</code>, or <code>Tag</code>, and can be shortened to just <code>i</code>, <code>a</code>, <code>s</code>, <code>t</code>.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>SpEL</strong> Experssion Language is assumed for all expressions in the CSV based configuration.</p>
+</div>
+<h3 id="example-csv">Example CSV<a class="headerlink" href="#example-csv" title="Permanent link">&para;</a></h3>
+<p>Here is the CSV as shown in the example configuration screen shot above (comments have been
+removed for brevity):</p>
+<div class="highlight"><pre><span></span><code>Instance ID,Service Name,Service Group,Source ID,Mode,Tag,Predicate,Instruction Topic,Param Name,Param Value,Param Expr,Result Expr,Result Prop,Result Prop Type
+Photo,Take Photo on Anomaly,,/inv/1,,,has(&#39;voltage&#39;) &amp;&amp; (voltage &lt; 235 || voltage &gt; 245),Signal,/camera/1,snapshot,FALSE,,,
+DR,Execute DR Event,,/dr/event,,,has(&#39;initiate&#39;) &amp;&amp; initiate == 1,CancelInstruction,id,localState(&#39;dr-instruction-id&#39;),TRUE,,,
+,,,,,,,,ignoreErrors,true,FALSE,,,
+,,,,,,,OrchestrateControls,service,DR HVAC,FALSE,&quot;has(&#39;instructionResult&#39;) &amp;&amp; instructionResult.completed
+? saveLocalState(&#39;dr-instruction-id&#39;, instructionResult.instructionId)
+: null&quot;,instructionId,Status
+,,,,,,,,date,&quot;datePlus(timestamp(), &#39;PT2M&#39;)&quot;,TRUE,,,
 </code></pre></div>
 <h2 id="example-vehicle-gate-control">Example: Vehicle Gate Control<a class="headerlink" href="#example-vehicle-gate-control" title="Permanent link">&para;</a></h2>
 <p>Imagine a vehicle service garage, where vehicles enter and leave a maintenance bay in one direction.
