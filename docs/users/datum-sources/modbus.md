@@ -27,7 +27,7 @@ following section.
 
 ## CSV Configurer
 
-This plugin provides a **Modbus Device CSV Configurer** service will appear on the [Settings >
+This component provides a **Modbus Device CSV Configurer** service that appears on the [Settings >
 Services][services] page. This service lets you upload a Modbus CSV Configuration file to configure
 all Modbus Device components, without having to use the [settings](#settings) form directly.
 
@@ -54,7 +54,7 @@ Here's an example screen shot of a configuration in a spreadsheet application. I
  1. Device `P1` with 4 datum properties: `error`, `current`, `voltage`, and `wattHours`
  2. Device `P2` with 2 datum properties: `frequency` and `watts`
 
-Spreadsheet applications generally allows you to export the sheet in the CSV format, which can
+Spreadsheet applications generally allow you to export the sheet in the CSV format, which can
 then be loaded into SolarNode via the CSV Configurer.
 
 <figure markdown>
