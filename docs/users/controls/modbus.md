@@ -160,7 +160,7 @@ Each property configuration contains the following settings:
 | Setting         | Description |
 |-----------------|-------------|
 | Control ID      | A name to associate this control configuration with. This should be unique amongst all control IDs deployed on the SolarNode. By convention, control IDs are grouped into a hierarchy via slash characters, for example `/modem/power/1`. This ID will also be used as the datum source ID when the control value is posted to SolarNetwork. |
-| Property Name   | An **optional** property name to use for the control value. Useful when using the [Control Datum Source](../datum-sources/controls.md), to change the generated datum property name from the default of `val`. |
+| Property Name   | An **optional** property name to use for the control value. Useful when using the [Control Datum Source](../datum-sources/control.md), to change the generated datum property name from the default of `val`. |
 | Property Type   | The SolarNode control type to use. Each property must be categorized as `Boolean` (on/off), `Float` (decimal number), `Integer` (whole number), `Percent` (decimal number between 0 and 1), or `String`. |
 | Address         | The starting register address to read Modbus data from (zero-based). Note this value is the zero-based address to read. Sometimes documentation for Modbus devices list the addresses in one-based notation. If that is the case for your device, simply subtract one from the documented address here. |
 | Modbus Function | The Modbus write function to execute. |

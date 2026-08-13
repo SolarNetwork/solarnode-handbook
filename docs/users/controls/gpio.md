@@ -7,7 +7,7 @@ SolarNode can read and write to **digital** general purpose input/output (GPIO) 
 available on SolarNode devices like the Raspberry Pi.
 
 To turn the GPIO lines into a datum stream you can use the [Controls Datum
-Source](../datum-sources/controls.md) plugin.
+Source](../datum-sources/control.md) plugin.
 
 This component is included in the [solarnode-app-control-gpiod][pkg] package in SolarNodeOS.
 You can install this package on the [System > Packages][packages] page in SolarNode.
