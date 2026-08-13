@@ -83,13 +83,13 @@ SolarNode UI:
 
 #### CSV column definition
 
-The following table defines all the CSV columns used by Modbus Device CSV Configuration. Columns
-**A - H** apply to the **entire Modbus Device configuration**, and only the values from the row that
+The following table defines all the CSV columns used by Modbus Device CSV Configuration. Columns **A
+- E** apply to the **entire Modbus Control configuration**, and only the values from the row that
 defines a new Instance ID will be used to configure the device. Thus you can omit the values from
 these columns when defining more than one property for a given device.
 
-Columns **I - Q** define the mapping of Modbus registers to datum properties: each row defines an
-individual datum property.
+Columns **F - N** define the mapping of Modbus registers to controls: each row defines an individual
+control.
 
 
 | Col | Name | Type | Default | Description |
@@ -107,6 +107,7 @@ individual datum property.
 | `K` | **Data Length** | integer |  | For variable length data types such as strings, the number of Modbus registers to read. |
 | `L` | **Multiplier** | decimal | `1` | For numeric data types, a multiplier to apply to the Modbus value to normalize it into a standard unit. |
 | `M` | **Decimal Scale** | integer | `0` | For numeric data types, a maximum number of decimal places to round decimal numbers to, or `-1` to not do any rounding. |
+| `N` | **Property Name** | string |  | An **optional** property name to use for the control value. |
 
 ### Example CSV
 
@@ -114,15 +115,15 @@ Here is the CSV as shown in the example configuration screen shot above (comment
 for brevity):
 
 ```csv
-Instance ID,Connection,Unit ID,Sample Cache,Word Order,Control ID,Property Type,Register,Register Type,Data Type,Data Length,Multiplier,Decimal Scale
-P1,Modbus Port,1,5000,Most to least,,,,,,,,
-,,,,,msg/1,String,1000,Holding,String ASCII,16,,
-,,,,,analog/1,Float,0,Holding,32-bit float,,1,-1
-,,,,,analog/2,Float,2,Holding,32-bit float,,1,1
-,,,,,meter/1,Integer,70,Holding,64-bit unsigned int,,,
-,,,,,switch/1,Boolean,100,Coil,Boolean,,,
-P2,Modbus Port,2,5000,Most to least,power/1,Integer,10,Holding,16-bit unsigned int,,0.01,
-,,,,,power/2,Integer,11,Holding,32-bit unsigned int,,,
+Instance ID,Connection,Unit ID,Sample Cache,Word Order,Control ID,Property Type,Register,Register Type,Data Type,Data Length,Multiplier,Decimal Scale,Property Name
+P1,Modbus Port,1,5000,Most to least,,,,,,,,,
+,,,,,msg/1,String,1000,Holding,String ASCII,16,,,
+,,,,,analog/1,Float,0,Holding,32-bit float,,1,-1,
+,,,,,analog/2,Float,2,Holding,32-bit float,,1,1,
+,,,,,meter/1,Integer,70,Holding,64-bit unsigned int,,,,
+,,,,,switch/1,Boolean,100,Coil,Boolean,,,,
+P2,Modbus Port,2,5000,Most to least,power/1,Integer,10,Holding,16-bit unsigned int,,0.01,,
+,,,,,power/2,Integer,11,Holding,32-bit unsigned int,,,,
 ```
 
 ## Settings
@@ -151,7 +152,7 @@ of registers). You can configure as many property settings as you like, using th
 ++minus++ buttons to add/remove property configurations (and thus, add/remove controls).
 
 <figure markdown>
-  ![Modbus Control property settings](../../images/users/controls/modbus-control-property-settings@2x.png){width=872 loading=lazy}
+  ![Modbus Control property settings](../../images/users/controls/modbus-control-property-settings@2x.png){width=887 loading=lazy}
 </figure>
 
 Each property configuration contains the following settings:
@@ -159,6 +160,7 @@ Each property configuration contains the following settings:
 | Setting         | Description |
 |-----------------|-------------|
 | Control ID      | A name to associate this control configuration with. This should be unique amongst all control IDs deployed on the SolarNode. By convention, control IDs are grouped into a hierarchy via slash characters, for example `/modem/power/1`. This ID will also be used as the datum source ID when the control value is posted to SolarNetwork. |
+| Property Name   | An **optional** property name to use for the control value. Useful when using the [Control Datum Source](../datum-sources/controls.md), to change the generated datum property name from the default of `val`. |
 | Property Type   | The SolarNode control type to use. Each property must be categorized as `Boolean` (on/off), `Float` (decimal number), `Integer` (whole number), `Percent` (decimal number between 0 and 1), or `String`. |
 | Address         | The starting register address to read Modbus data from (zero-based). Note this value is the zero-based address to read. Sometimes documentation for Modbus devices list the addresses in one-based notation. If that is the case for your device, simply subtract one from the documented address here. |
 | Modbus Function | The Modbus write function to execute. |

@@ -1,7 +1,7 @@
 ---
-title: Controls
+title: Control
 ---
-# Controls Datum Source
+# Control Datum Source
 
 SolarNode can generate a datum stream from SolarNode [control][controls] values, either on a fixed
 schedule or in response to changes to control values.
@@ -26,11 +26,15 @@ This component is included in the [solarnode-app-control-core][pkg] package in S
 You can install this package on the [System > Packages][packages] page in SolarNode.
 
 <figure markdown>
-  ![BACnet Device component](../../images/users/datum-sources/bacnet-device-component@2x.png){width=1024 loading=lazy}
+  ![Control component](../../images/users/datum-sources/control-component@2x.png){width=1024 loading=lazy}
 </figure>
 
 
 ## Settings
+
+<figure markdown>
+  ![Control settings](../../images/users/datum-sources/control-settings@2x.png){width=1024 loading=lazy}
+</figure>
 
 Each component configuration contains the following settings:
 
