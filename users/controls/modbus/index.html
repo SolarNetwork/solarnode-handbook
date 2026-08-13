@@ -1450,14 +1450,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datum-sources/controls/" class="md-nav__link">
+      <a href="../../datum-sources/control/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Controls
+    Control
   
 
     
@@ -6426,12 +6426,12 @@ SolarNode UI:</p>
 <p><img alt="Modbus Control instance names" loading="lazy" src="../../../images/users/controls/modbus-control-instance-keys%402x.png" width="972" /></p>
 </figure>
 <h4 id="csv-column-definition">CSV column definition<a class="headerlink" href="#csv-column-definition" title="Permanent link">&para;</a></h4>
-<p>The following table defines all the CSV columns used by Modbus Device CSV Configuration. Columns
-<strong>A - H</strong> apply to the <strong>entire Modbus Device configuration</strong>, and only the values from the row that
+<p>The following table defines all the CSV columns used by Modbus Device CSV Configuration. Columns <strong>A
+- E</strong> apply to the <strong>entire Modbus Control configuration</strong>, and only the values from the row that
 defines a new Instance ID will be used to configure the device. Thus you can omit the values from
 these columns when defining more than one property for a given device.</p>
-<p>Columns <strong>I - Q</strong> define the mapping of Modbus registers to datum properties: each row defines an
-individual datum property.</p>
+<p>Columns <strong>F - N</strong> define the mapping of Modbus registers to controls: each row defines an individual
+control.</p>
 <table>
 <thead>
 <tr>
@@ -6534,20 +6534,27 @@ individual datum property.</p>
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;">For numeric data types, a maximum number of decimal places to round decimal numbers to, or <code>-1</code> to not do any rounding.</td>
 </tr>
+<tr>
+<td style="text-align: left;"><code>N</code></td>
+<td style="text-align: left;"><strong>Property Name</strong></td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">An <strong>optional</strong> property name to use for the control value.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="example-csv">Example CSV<a class="headerlink" href="#example-csv" title="Permanent link">&para;</a></h3>
 <p>Here is the CSV as shown in the example configuration screen shot above (comments have been removed
 for brevity):</p>
-<div class="highlight"><pre><span></span><code>Instance ID,Connection,Unit ID,Sample Cache,Word Order,Control ID,Property Type,Register,Register Type,Data Type,Data Length,Multiplier,Decimal Scale
-P1,Modbus Port,1,5000,Most to least,,,,,,,,
-,,,,,msg/1,String,1000,Holding,String ASCII,16,,
-,,,,,analog/1,Float,0,Holding,32-bit float,,1,-1
-,,,,,analog/2,Float,2,Holding,32-bit float,,1,1
-,,,,,meter/1,Integer,70,Holding,64-bit unsigned int,,,
-,,,,,switch/1,Boolean,100,Coil,Boolean,,,
-P2,Modbus Port,2,5000,Most to least,power/1,Integer,10,Holding,16-bit unsigned int,,0.01,
-,,,,,power/2,Integer,11,Holding,32-bit unsigned int,,,
+<div class="highlight"><pre><span></span><code>Instance ID,Connection,Unit ID,Sample Cache,Word Order,Control ID,Property Type,Register,Register Type,Data Type,Data Length,Multiplier,Decimal Scale,Property Name
+P1,Modbus Port,1,5000,Most to least,,,,,,,,,
+,,,,,msg/1,String,1000,Holding,String ASCII,16,,,
+,,,,,analog/1,Float,0,Holding,32-bit float,,1,-1,
+,,,,,analog/2,Float,2,Holding,32-bit float,,1,1,
+,,,,,meter/1,Integer,70,Holding,64-bit unsigned int,,,,
+,,,,,switch/1,Boolean,100,Coil,Boolean,,,,
+P2,Modbus Port,2,5000,Most to least,power/1,Integer,10,Holding,16-bit unsigned int,,0.01,,
+,,,,,power/2,Integer,11,Holding,32-bit unsigned int,,,,
 </code></pre></div>
 <h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
 <figure>
@@ -6597,7 +6604,7 @@ P2,Modbus Port,2,5000,Most to least,power/1,Integer,10,Holding,16-bit unsigned i
 of registers). You can configure as many property settings as you like, using the <span class="keys"><kbd class="key-plus">+</kbd></span> and
 <span class="keys"><kbd class="key-minus">-</kbd></span> buttons to add/remove property configurations (and thus, add/remove controls).</p>
 <figure>
-<p><img alt="Modbus Control property settings" loading="lazy" src="../../../images/users/controls/modbus-control-property-settings%402x.png" width="872" /></p>
+<p><img alt="Modbus Control property settings" loading="lazy" src="../../../images/users/controls/modbus-control-property-settings%402x.png" width="887" /></p>
 </figure>
 <p>Each property configuration contains the following settings:</p>
 <table>
@@ -6611,6 +6618,10 @@ of registers). You can configure as many property settings as you like, using th
 <tr>
 <td>Control ID</td>
 <td>A name to associate this control configuration with. This should be unique amongst all control IDs deployed on the SolarNode. By convention, control IDs are grouped into a hierarchy via slash characters, for example <code>/modem/power/1</code>. This ID will also be used as the datum source ID when the control value is posted to SolarNetwork.</td>
+</tr>
+<tr>
+<td>Property Name</td>
+<td>An <strong>optional</strong> property name to use for the control value. Useful when using the <a href="../datum-sources/controls.md">Control Datum Source</a>, to change the generated datum property name from the default of <code>val</code>.</td>
 </tr>
 <tr>
 <td>Property Type</td>
