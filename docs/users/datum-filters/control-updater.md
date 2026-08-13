@@ -27,7 +27,7 @@ Each control configuration contains the following settings:
 
 | Setting             | Description                                                       |
 |:--------------------|:------------------------------------------------------------------|
-| Control ID          | The ID of the control to update with the expression result. |
+| Control ID          | The ID of the control to update with the expression result. A `{sourceId}` placeholder is provided with the source ID of the datum being filtered. |
 | Property            | The optional datum property to store the expression result in. |
 | Property Type       | The datum property type to use. |
 | Expression          | The expression to evaluate. See [below](#expressions) for more info. |
