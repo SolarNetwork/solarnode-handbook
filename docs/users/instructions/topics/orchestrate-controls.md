@@ -73,7 +73,7 @@ The following instruction parameters are available:
 
 | Parameter | Description |
 |:----------|:------|
-| `date`    | The _orchestration date_ to execute the task schedule at, as a Unix millisecond epoch integer like `1680664200000` or an ISO 8601 instant like `2023-04-05T03:10:00Z`. |
+| `date`    | The _orchestration date_ to execute the task schedule at, as a Unix millisecond epoch integer like `1680664200000` or an ISO 8601 instant like `2023-04-05T03:10:00Z`. If not provided then the `executionDate` parameter value will be used. If that is not available then the instruction date itself will be used. |
 | `executionDate` | A future execution date. See [deferred instructions](../index.md#deferred-instructions) for more details. |
 | `service` | The **Service Name** of the Control Conductor to execute. |
 | _extra_ | Other parameters can be provided, see [Extra parameters](#extra-parameters) for more details. |
