@@ -6,6 +6,11 @@ title: Join
 The [Join Datum Filter][src] provides a way to merge the properties of multiple datum streams into a
 new derived datum stream.
 
+The filter maintains a merged copy of all input properties from all input sources. Whenever the
+filter emits an output datum it includes the last seen value of all available merged properties. See
+the **Coalesce Threshold** and **Coalesce Timeout** settings for information on how to control when
+output datum are actually emitted.
+
 --8<-- "snippets/users/datum-filters/provided-by-standard-filter.md"
 
 ## Settings
