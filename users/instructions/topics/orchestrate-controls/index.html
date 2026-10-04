@@ -6214,7 +6214,7 @@ orchestration date to execute at.</p>
 <tbody>
 <tr>
 <td style="text-align: left;"><code>date</code></td>
-<td style="text-align: left;">The <em>orchestration date</em> to execute the task schedule at, as a Unix millisecond epoch integer like <code>1680664200000</code> or an ISO 8601 instant like <code>2023-04-05T03:10:00Z</code>.</td>
+<td style="text-align: left;">The <em>orchestration date</em> to execute the task schedule at, as a Unix millisecond epoch integer like <code>1680664200000</code> or an ISO 8601 instant like <code>2023-04-05T03:10:00Z</code>. If not provided then the <code>executionDate</code> parameter value will be used. If that is not available then the instruction date itself will be used.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>executionDate</code></td>

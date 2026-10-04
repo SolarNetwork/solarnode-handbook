@@ -6123,6 +6123,10 @@
 <h1 id="join-datum-filter">Join Datum Filter<a class="headerlink" href="#join-datum-filter" title="Permanent link">&para;</a></h1>
 <p>The <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/README-Join.md">Join Datum Filter</a> provides a way to merge the properties of multiple datum streams into a
 new derived datum stream.</p>
+<p>The filter maintains a merged copy of all input properties from all input sources. Whenever the
+filter emits an output datum it includes the last seen value of all available merged properties. See
+the <strong>Coalesce Threshold</strong> and <strong>Coalesce Timeout</strong> settings for information on how to control when
+output datum are actually emitted.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>This filter is provided by the <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/">Standard Datum Filters</a> plugin, which is provided by the
