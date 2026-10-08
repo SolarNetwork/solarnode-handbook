@@ -2274,6 +2274,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#debounce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debounce
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debounce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debounce-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debounce modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5998,6 +6026,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#debounce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debounce
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debounce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debounce-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debounce modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6080,7 +6136,7 @@ individual unchanging <em>properties</em> within a datum stream.</p>
 </div>
 <h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
 <figure>
-<p><img alt="Unchanged Datum filter component settings" loading="lazy" src="../../../images/users/datum-filters/unchanged-filter-settings%402x.png" width="697" /></p>
+<p><img alt="Unchanged Datum filter component settings" loading="lazy" src="../../../images/users/datum-filters/unchanged-filter-settings%402x.png" width="876" /></p>
 </figure>
 <p>In addition to the <a href="../#common-datum-filter-settings">Common Settings</a>, the following general settings are available:</p>
 <table>
@@ -6099,8 +6155,84 @@ individual unchanging <em>properties</em> within a datum stream.</p>
 <td style="text-align: left;">Property Pattern</td>
 <td style="text-align: left;">A property name <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">pattern</a> that limits the properties monitored for changes. Only property names that match this expression will be considered when determining if a datum differs from the previous datum within the datum stream.</td>
 </tr>
+<tr>
+<td style="text-align: left;">Debounce Threshold</td>
+<td style="text-align: left;">When greater than <code>0</code> then the minimum number of milliseconds a changed datum must remain unchanged before it is published. See <a href="#debounce">Debounce</a> for more details.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Debounce Mode</td>
+<td style="text-align: left;">How time is counted towards the <strong>Debounce Threshold</strong>, either <strong>Consecutive</strong> or <strong>Integrator</strong>. See <a href="#debounce-modes">Debounce modes</a> for more details.</td>
+</tr>
 </tbody>
 </table>
+<h2 id="debounce">Debounce<a class="headerlink" href="#debounce" title="Permanent link">&para;</a></h2>
+<p>The <strong>Debounce Threshold</strong> setting can be used to ignore brief changes from a flaky input, such as a
+status value that occasionally flips to a different value and then quickly back again. When
+configured, a changed datum is only published once the monitored properties have remained at their
+changed values for at least the debounce threshold. Changes that revert before the threshold elapses
+are discarded.</p>
+<p>For example, with a <strong>Debounce Threshold</strong> of 5 seconds and a datum sampled every second, where <code>A</code>
+and <code>B</code> are values of a monitored <code>status</code> property:</p>
+<div class="highlight"><pre><span></span><code>time (s):  0  1  2  3  4  5  6  7  8  9  10 11
+status:    A  B  B  A  B  B  B  B  B  B  B  B
+output:    A  ·  ·  ·  ·  ·  ·  ·  ·  B  ·  ·
+</code></pre></div>
+<p>The <code>B</code> values at 1–2s revert to <code>A</code> at 3s, so they are discarded. The <code>B</code> value seen at 4s is
+published at 9s, which is the first datum after it has remained unchanged for 5 seconds.</p>
+<p>Some things to keep in mind when using a debounce threshold:</p>
+<ul>
+<li>The filter only evaluates datum as they are captured, so it is designed for datum streams
+   sampled on a regular schedule. A stable change is published on the first datum captured after
+   the threshold has elapsed, so the published datum can be delayed by up to the threshold plus
+   one sampling period from the actual change.</li>
+<li>If <strong>Unchanged Max Seconds</strong> elapses while a change is not yet stable, the datum is published
+   with its monitored properties set to their last published (stable) values. Other properties
+   are published as captured.</li>
+<li>Configure a <strong>Property Pattern</strong> that matches only the status-like properties you want to
+   debounce. Without a pattern all properties are monitored, so continuously changing values like
+   power readings would never be stable. In that case only the last stable datum values are
+   published, once per <strong>Unchanged Max Seconds</strong>.</li>
+</ul>
+<h3 id="debounce-modes">Debounce modes<a class="headerlink" href="#debounce-modes" title="Permanent link">&para;</a></h3>
+<p>The <strong>Debounce Mode</strong> setting determines how time is counted towards the <strong>Debounce Threshold</strong>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Mode</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Consecutive</td>
+<td style="text-align: left;">A changed value must be seen continuously for the entire threshold. Seeing the previously published value again abandons the change. This is the default mode.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Integrator</td>
+<td style="text-align: left;">Time at a changed value counts towards the threshold, and time back at the previously published value counts against it. The change is published once the net time reaches the threshold, and abandoned if the net time drops below zero.</td>
+</tr>
+</tbody>
+</table>
+<p>Both modes publish a change that is not interrupted at the same time. They differ when a change
+is interrupted by the previously published value. Using the same example as before, the
+<strong>Integrator</strong> mode publishes <code>B</code> one second earlier, because the <code>B</code> values at 1–2s still count
+after the <code>A</code> value at 3s takes one second away:</p>
+<div class="highlight"><pre><span></span><code>time (s):     0  1  2  3  4  5  6  7  8  9  10 11
+status:       A  B  B  A  B  B  B  B  B  B  B  B
+Consecutive:  A  ·  ·  ·  ·  ·  ·  ·  ·  B  ·  ·
+Integrator:   A  ·  ·  ·  ·  ·  ·  ·  B  ·  ·  ·
+</code></pre></div>
+<p>The <strong>Integrator</strong> mode suits signals that are <em>mostly</em>, but not always, at their true value. An
+example is a presence sensor detecting a parked vehicle, which occasionally misses a read. The
+<strong>Consecutive</strong> mode would need an unbroken run of reads lasting the entire threshold, which becomes
+very unlikely as the threshold grows. The <strong>Integrator</strong> mode only needs the signal to be at the
+changed value more than half the time. When using this mode:</p>
+<ul>
+<li>The weaker the signal (the closer it is to its true value only half the time) the longer the
+   threshold should be.</li>
+<li>Choose a threshold longer than the longest expected interruption, such as a burst of missed
+   reads while a vehicle is parked.</li>
+</ul>
 
 
 
