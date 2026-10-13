@@ -42,11 +42,13 @@ for any of the GPIO lines supported by the device.
 
 The configuration contains the following overall settings:
 
-| Setting             | Description |
-|:--------------------|:------------|
-| Service Name        | A **required** unique name to identify this component with. |
-| Service Group       | An optional group name to associate this component with. |
-| Task Configurations | A list of control task-specific settings. Any number of task configurations can be added. |
+| Setting              | Description |
+|:---------------------|:------------|
+| Service Name         | A **required** unique name to identify this component with. |
+| Service Group        | An optional group name to associate this component with. |
+| Predicate Expression | An optional expression that must evaluate to <code>true</code> for the task configurations to be evaluated when an `OrchestrateControls` instruction is handled. This can be useful if the `OrchestrateControls` instruction was deferred, to re-check that the runtime is in an expected state. |
+| Predicate Expression Language | The expression language **Predicate Expression** is written in. |
+| Task Configurations  | A list of control task-specific settings. Any number of task configurations can be added. |
 
 ### Task settings
 
