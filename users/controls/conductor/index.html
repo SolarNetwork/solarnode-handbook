@@ -6433,6 +6433,14 @@ for any of the GPIO lines supported by the device.</p>
 <td style="text-align: left;">An optional group name to associate this component with.</td>
 </tr>
 <tr>
+<td style="text-align: left;">Predicate Expression</td>
+<td style="text-align: left;">An optional expression that must evaluate to <code>true</code> for the task configurations to be evaluated when an <code>OrchestrateControls</code> instruction is handled. This can be useful if the <code>OrchestrateControls</code> instruction was deferred, to re-check that the runtime is in an expected state.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Predicate Expression Language</td>
+<td style="text-align: left;">The expression language <strong>Predicate Expression</strong> is written in.</td>
+</tr>
+<tr>
 <td style="text-align: left;">Task Configurations</td>
 <td style="text-align: left;">A list of control task-specific settings. Any number of task configurations can be added.</td>
 </tr>
