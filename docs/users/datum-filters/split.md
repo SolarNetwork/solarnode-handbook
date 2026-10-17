@@ -44,6 +44,16 @@ Each property source mapping configuration contains the following settings:
 	If multiple property name expressions match the same property name, that property will
 	be copied to **all** the datum streams of the associated source IDs.
 
+!!! note "Generated datum are not split again"
+
+	The filter ignores any datum whose source ID is the same as one of the mapping **Source ID**
+	values (after resolving [placeholders][placeholders]), and passes it through unchanged. The
+	filter adds the datum it generates to the [Datum Queue](index.md#datum-queue), whose filters
+	process them like any other datum, so this stops the filter from splitting its own output again,
+	endlessly. It also means a datum cannot be split into a stream with its own source ID. If a
+	mapping **Source ID** uses placeholders that can resolve differently for the generated datum,
+	configure the filter's **Source ID** setting so that it does not match the generated datum.
+
 --8<-- "snippets/users/datum-filters/base-filter-settings-links.md"
 [placeholders]: ../placeholders.md
 [sdf]: https://github.com/SolarNetwork/solarnetwork-node/blob/develop/net.solarnetwork.node.datum.filter.standard/
