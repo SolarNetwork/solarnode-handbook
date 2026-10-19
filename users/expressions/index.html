@@ -8008,7 +8008,7 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 <td style="text-align: left;">Returns the <code>state</code> status property directly, which is <code>Ok</code>.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>datum.s['state']</code></td>
+<td style="text-align: left;"><code>datum.samples.s['state']</code></td>
 <td style="text-align: left;"><code>Ok</code></td>
 <td style="text-align: left;">Returns the <code>state</code> status property explicitly.</td>
 </tr>
@@ -8093,7 +8093,7 @@ example:</p>
 <td style="text-align: left;">Returns <code>false</code> because only one earlier datum from the latest with source <code>solar</code> is available.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>(amps * volts) - (latest('solar').amps * latest('solar').volts)</code></td>
+<td style="text-align: left;"><code>(latest('solar').amps * latest('solar').volts) - (amps * volts)</code></td>
 <td style="text-align: left;"><code>432.0</code></td>
 <td style="text-align: left;">Computes the difference in energy between the latest <code>solar</code> datum and the current datum, which is <code>(6.0 × 240.0) - (4.2 × 240.0) = 432.0</code>.</td>
 </tr>
@@ -8127,7 +8127,7 @@ examples:</p>
 </tr>
 <tr>
 <td style="text-align: left;"><code>sum(latestMatching({'solar1', 'solar2'}).![amps * volts])</code></td>
-<td style="text-align: left;"><code>2160</code></td>
+<td style="text-align: left;"><code>960</code></td>
 <td style="text-align: left;">Returns the sum power of the latest <code>solar1</code> and <code>solar2</code> datum, so we end up with <code>(1 * 240) + (3 * 240) = 960</code>.</td>
 </tr>
 </tbody>

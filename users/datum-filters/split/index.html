@@ -6156,6 +6156,16 @@ containing <code>hour</code> (case-insensitive) will be copied to <code>/meter/1
 <p>If multiple property name expressions match the same property name, that property will
 be copied to <strong>all</strong> the datum streams of the associated source IDs.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Generated datum are not split again</p>
+<p>The filter ignores any datum whose source ID is the same as one of the mapping <strong>Source ID</strong>
+values (after resolving <a href="../../placeholders/">placeholders</a>), and passes it through unchanged. The
+filter adds the datum it generates to the <a href="../#datum-queue">Datum Queue</a>, whose filters
+process them like any other datum, so this stops the filter from splitting its own output again,
+endlessly. It also means a datum cannot be split into a stream with its own source ID. If a
+mapping <strong>Source ID</strong> uses placeholders that can resolve differently for the generated datum,
+configure the filter's <strong>Source ID</strong> setting so that it does not match the generated datum.</p>
+</div>
 
 
 
