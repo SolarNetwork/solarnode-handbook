@@ -419,7 +419,7 @@ Then here are some example [Spel][spel] expressions and the results they would p
 | Expression | Result | Comment |
 |:-----------|:-------|:--------|
 | `state` | `Ok` | Returns the `state` status property directly, which is `Ok`. |
-| `datum.s['state']` | `Ok` | Returns the `state` status property explicitly. |
+| `datum.samples.s['state']` | `Ok` | Returns the `state` status property explicitly. |
 | `props['state']` | `Ok` | Same result as `datum.s['state']` but using the short-cut `props` accessor. |
 | `amps * volts` | `1008.0` | Returns the result of multiplying the `amps` and `volts` properties together: `4.2 × 240.0 = 1008.0`. |
 
@@ -466,7 +466,7 @@ example:
 |:-----------|:-------|:--------|
 | `hasLatest('solar')` | `true` | Returns `true` because of a datum for source `solar` is available. |
 | `hasOffset('solar',2)` | `false` | Returns `false` because only one earlier datum from the latest with source `solar` is available. |
-| `(amps * volts) - (latest('solar').amps * latest('solar').volts)` | `432.0` | Computes the difference in energy between the latest `solar` datum and the current datum, which is `(6.0 × 240.0) - (4.2 × 240.0) = 432.0`. |
+| `(latest('solar').amps * latest('solar').volts) - (amps * volts)` | `432.0` | Computes the difference in energy between the latest `solar` datum and the current datum, which is `(6.0 × 240.0) - (4.2 × 240.0) = 432.0`. |
 
 If we add another datum stream for the source ID `solar1` like this:
 
@@ -490,7 +490,7 @@ examples:
 | Expression | Result | Comment |
 |:-----------|:-------|:--------|
 | `sum(latestMatching('solar*').?[amps>1].![amps * volts])` | `2160` | Returns the sum power of the latest `solar` and `solar2` datum. The `solar1` power is omitted because its `amps` property is not greater than `1`, so we end up with `(6 * 240) + (3 * 240) = 2160`. |
-| `sum(latestMatching({'solar1', 'solar2'}).![amps * volts])` | `2160` | Returns the sum power of the latest `solar1` and `solar2` datum, so we end up with `(1 * 240) + (3 * 240) = 960`. |
+| `sum(latestMatching({'solar1', 'solar2'}).![amps * volts])` | `960` | Returns the sum power of the latest `solar1` and `solar2` datum, so we end up with `(1 * 240) + (3 * 240) = 960`. |
 
 
 ## Datum metadata
