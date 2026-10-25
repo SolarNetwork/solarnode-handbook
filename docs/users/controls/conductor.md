@@ -33,8 +33,7 @@ Components][components] page on your SolarNode. Click on the **Manage** button t
 
 ## Settings
 
-Each component configuration is specific to a single GPIO device. You can configure SolarNode controls
-for any of the GPIO lines supported by the device.
+Each component configuration is specific to a single orchestration sequence.
 
 <figure markdown>
   ![Control Conductor settings](../../images/users/controls/control-conductor-settings@2x.png){width=1024 loading=lazy}
