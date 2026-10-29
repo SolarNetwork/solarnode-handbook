@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6211,16 +6211,16 @@ source ID of the datum being filtered and then from any configured <strong>Metad
 <p>For example, a <strong>Metadata Path</strong> of <code>/pm/pv-characteristics</code> would work with metadata like
 this:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;pm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;pv-characteristics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w">            </span><span class="mf">41.18015</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;lon&quot;</span><span class="p">:</span><span class="w">            </span><span class="mf">-73.8328</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;alt&quot;</span><span class="p">:</span><span class="w">            </span><span class="mi">10</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;zone&quot;</span><span class="p">:</span><span class="w">           </span><span class="s2">&quot;America/New_York&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;pvArrayTilt&quot;</span><span class="p">:</span><span class="w">    </span><span class="mi">7</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;pvArrayAzimuth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">205</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;minCosZenith&quot;</span><span class="p">:</span><span class="w">   </span><span class="mi">3</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;maxZenith&quot;</span><span class="p">:</span><span class="w">      </span><span class="mi">83</span>
+<span class="w">  </span><span class="nt">"pm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"pv-characteristics"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"lat"</span><span class="p">:</span><span class="w">            </span><span class="mf">41.18015</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"lon"</span><span class="p">:</span><span class="w">            </span><span class="mf">-73.8328</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"alt"</span><span class="p">:</span><span class="w">            </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"zone"</span><span class="p">:</span><span class="w">           </span><span class="s2">"America/New_York"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"pvArrayTilt"</span><span class="p">:</span><span class="w">    </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"pvArrayAzimuth"</span><span class="p">:</span><span class="w"> </span><span class="mi">205</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"minCosZenith"</span><span class="p">:</span><span class="w">   </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"maxZenith"</span><span class="p">:</span><span class="w">      </span><span class="mi">83</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -6282,20 +6282,20 @@ metadata, in the following order, with <strong>later sources overriding</strong>
 reference datum properties as usual, and additionally any properties returned by the configured
 command. For example, the default command returns many properties, like these:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-11-18T10:24:47&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;zone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pacific/Auckland&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;ghi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">805.0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dni&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">844.5952562517782</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dhi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">151.71952235515488</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;zenith&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">39.3322587975266</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;azimuth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">74.67509718383894</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;min_cos_zenith&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.065</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;max_zenith&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;poa_global&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">799.951169881113</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;poa_direct&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">648.6170024103126</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;poa_diffuse&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">151.3341674708004</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;poa_sky_diffuse&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">150.9512589662823</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;poa_ground_diffuse&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.38290850451810454</span>
+<span class="w">  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-11-18T10:24:47"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pacific/Auckland"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"ghi"</span><span class="p">:</span><span class="w"> </span><span class="mf">805.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dni"</span><span class="p">:</span><span class="w"> </span><span class="mf">844.5952562517782</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dhi"</span><span class="p">:</span><span class="w"> </span><span class="mf">151.71952235515488</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"zenith"</span><span class="p">:</span><span class="w"> </span><span class="mf">39.3322587975266</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"azimuth"</span><span class="p">:</span><span class="w"> </span><span class="mf">74.67509718383894</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"min_cos_zenith"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.065</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"max_zenith"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"poa_global"</span><span class="p">:</span><span class="w"> </span><span class="mf">799.951169881113</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"poa_direct"</span><span class="p">:</span><span class="w"> </span><span class="mf">648.6170024103126</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"poa_diffuse"</span><span class="p">:</span><span class="w"> </span><span class="mf">151.3341674708004</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"poa_sky_diffuse"</span><span class="p">:</span><span class="w"> </span><span class="mf">150.9512589662823</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"poa_ground_diffuse"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.38290850451810454</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Properties like <code>poa_global</code>, <code>poa_direct</code>, and so on can be used in expressions, for example you
@@ -6357,7 +6357,7 @@ could round the <code>poa_global</code> value to at most 3 digits with:</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       

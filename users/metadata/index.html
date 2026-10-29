@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6308,58 +6308,58 @@ and also within SolarNode. There are three main places metadata can be configure
 </table>
 <p>Here is an example of node metadata. The metadata is both read by and published from the node, as explained in the</p>
 <div class="highlight"><span class="filename">Node metadata example</span><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;m&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;ssh-public-key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ssh-ed25519 AAAAC3Nza...7MD SolarNode&quot;</span><span class="w"> </span><span class="c1">// (1)!</span>
+<span class="w">    </span><span class="nt">"m"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"ssh-public-key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssh-ed25519 AAAAC3Nza...7MD SolarNode"</span><span class="w"> </span><span class="c1">// (1)!</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;pm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;os&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (2)!</span>
-<span class="w">            </span><span class="nt">&quot;arch&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aarch64&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mac OS X&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15.7.4&quot;</span>
+<span class="w">    </span><span class="nt">"pm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"os"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (2)!</span>
+<span class="w">            </span><span class="nt">"arch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aarch64"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mac OS X"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.7.4"</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;cpd&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;schedule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="c1">// (3)!</span>
-<span class="w">                </span><span class="p">[</span><span class="s2">&quot;Month&quot;</span><span class="p">,</span><span class="s2">&quot;Day&quot;</span><span class="p">,</span><span class="s2">&quot;Weekday&quot;</span><span class="p">,</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span><span class="s2">&quot;cpdPeriodActive&quot;</span><span class="p">],</span>
-<span class="w">                </span><span class="p">[</span><span class="s2">&quot;Jan-Apr,Oct-Dec&quot;</span><span class="p">,,,,</span><span class="mi">0</span><span class="p">],</span>
-<span class="w">                </span><span class="p">[</span><span class="s2">&quot;May-Sep&quot;</span><span class="p">,,,,</span><span class="mi">1</span><span class="p">]</span>
+<span class="w">        </span><span class="nt">"cpd"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"schedule"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="c1">// (3)!</span>
+<span class="w">                </span><span class="p">[</span><span class="s2">"Month"</span><span class="p">,</span><span class="s2">"Day"</span><span class="p">,</span><span class="s2">"Weekday"</span><span class="p">,</span><span class="s2">"Time"</span><span class="p">,</span><span class="s2">"cpdPeriodActive"</span><span class="p">],</span>
+<span class="w">                </span><span class="p">[</span><span class="s2">"Jan-Apr,Oct-Dec"</span><span class="p">,,,,</span><span class="mi">0</span><span class="p">],</span>
+<span class="w">                </span><span class="p">[</span><span class="s2">"May-Sep"</span><span class="p">,,,,</span><span class="mi">1</span><span class="p">]</span>
 <span class="w">            </span><span class="p">]</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;setup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;s3-version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0000000000000010101&quot;</span><span class="w"> </span><span class="c1">// (4)!</span>
+<span class="w">        </span><span class="nt">"setup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"s3-version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000000000000010101"</span><span class="w"> </span><span class="c1">// (4)!</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;power-manager&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;prod&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (5)!</span>
-<span class="w">                    </span><span class="nt">&quot;MIN_MARGIN&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.14</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;IE_MAX_RATE&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;IE_MIN_RATE&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;EXP_INPUT_MAX&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;EXP_INPUT_MIN&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;USE_GRID_PRICE&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.150</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;LOW_PRICE_IMPORT&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;HIGH_DEMAND_THRESHOLD&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;LOW_BATTERY_THRESHOLD&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;CHARGED_BATTERY_THRESHOLD&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span>
+<span class="w">        </span><span class="nt">"power-manager"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"prod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (5)!</span>
+<span class="w">                    </span><span class="nt">"MIN_MARGIN"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.14</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">"IE_MAX_RATE"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">"IE_MIN_RATE"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">"EXP_INPUT_MAX"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">"EXP_INPUT_MIN"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">"USE_GRID_PRICE"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.150</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">"LOW_PRICE_IMPORT"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">"HIGH_DEMAND_THRESHOLD"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">"LOW_BATTERY_THRESHOLD"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">"CHARGED_BATTERY_THRESHOLD"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span>
 <span class="w">                </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;pv-characteristics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (6)!</span>
-<span class="w">            </span><span class="nt">&quot;alt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">41.1801547</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;lon&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-73.83277369999999</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;zone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;America/New_York&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;maxZenith&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;panelArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2242.25</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;pvArrayTilt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;minCosZenith&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;pvArrayAzimuth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">205</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;degradationRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0063</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;panelEfficiency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.192</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;performanceRatio&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.84</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;transpositionModel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;perez-driesse&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;nameplateAcMaxPower&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">333300</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;panelArrayTiltFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;pvArrayCommissionDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-12-22&quot;</span>
+<span class="w">        </span><span class="nt">"pv-characteristics"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// (6)!</span>
+<span class="w">            </span><span class="nt">"alt"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">41.1801547</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-73.83277369999999</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"maxZenith"</span><span class="p">:</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"panelArea"</span><span class="p">:</span><span class="w"> </span><span class="mf">2242.25</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"pvArrayTilt"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"minCosZenith"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"pvArrayAzimuth"</span><span class="p">:</span><span class="w"> </span><span class="mi">205</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"degradationRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0063</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"panelEfficiency"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.192</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"performanceRatio"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.84</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"transpositionModel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"perez-driesse"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"nameplateAcMaxPower"</span><span class="p">:</span><span class="w"> </span><span class="mi">333300</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"panelArrayTiltFactor"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"pvArrayCommissionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-12-22"</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -6569,7 +6569,7 @@ instruction to the node.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/open_in_new_tab.js"></script>
       

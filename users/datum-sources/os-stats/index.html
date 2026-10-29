@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6428,11 +6428,11 @@ metadata key. The metadata is:</p>
 </table>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;pm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;os&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Linux&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;arch&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arm&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4.14.34-v7+&quot;</span>
+<span class="w">    </span><span class="nt">"pm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"os"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Linux"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"arch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arm"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.14.34-v7+"</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -6440,31 +6440,31 @@ metadata key. The metadata is:</p>
 <h2 id="example-datum">Example datum<a class="headerlink" href="#example-datum" title="Permanent link">&para;</a></h2>
 <p>Here's an example datum collected by this plugin:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2018-08-13 18:25:21.014Z&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;nodeId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">344</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;sourceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OS Stats&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;localDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2018-08-14&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;localTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;06:25&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;cpu_idle&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">98.27</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;cpu_user&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.59</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;cpu_system&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.13</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;fs_size_/&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1887322112</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;fs_used_/&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">793722880</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;fs_used_percent_/&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;fs_size_/run&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">512094208</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;fs_used_/run&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15802368</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;fs_used_percent_/run&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;sys_load_1min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.35</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;sys_load_5min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.14</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;sys_load_15min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.11</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ram_avail&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">743899136</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ram_total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1024188416</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ram_used_percent&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">27.4</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;sys_up&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2923.77</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;net_bytes_in_eth0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">528719</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;net_bytes_out_eth0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">459475</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;net_packets_in_eth0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2312</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;net_packets_out_eth0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1848</span>
+<span class="w">    </span><span class="nt">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-13 18:25:21.014Z"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"nodeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">344</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"sourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OS Stats"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"localDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-14"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"localTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"06:25"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"cpu_idle"</span><span class="p">:</span><span class="w"> </span><span class="mf">98.27</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"cpu_user"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.59</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"cpu_system"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.13</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"fs_size_/"</span><span class="p">:</span><span class="w"> </span><span class="mi">1887322112</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"fs_used_/"</span><span class="p">:</span><span class="w"> </span><span class="mi">793722880</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"fs_used_percent_/"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"fs_size_/run"</span><span class="p">:</span><span class="w"> </span><span class="mi">512094208</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"fs_used_/run"</span><span class="p">:</span><span class="w"> </span><span class="mi">15802368</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"fs_used_percent_/run"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"sys_load_1min"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.35</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"sys_load_5min"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.14</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"sys_load_15min"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.11</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ram_avail"</span><span class="p">:</span><span class="w"> </span><span class="mi">743899136</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ram_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1024188416</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ram_used_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">27.4</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"sys_up"</span><span class="p">:</span><span class="w"> </span><span class="mf">2923.77</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"net_bytes_in_eth0"</span><span class="p">:</span><span class="w"> </span><span class="mi">528719</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"net_bytes_out_eth0"</span><span class="p">:</span><span class="w"> </span><span class="mi">459475</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"net_packets_in_eth0"</span><span class="p">:</span><span class="w"> </span><span class="mi">2312</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"net_packets_out_eth0"</span><span class="p">:</span><span class="w"> </span><span class="mi">1848</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="statistic-types">Statistic types<a class="headerlink" href="#statistic-types" title="Permanent link">&para;</a></h2>
@@ -6765,7 +6765,7 @@ populate an instantaneous property <code>cpu_temp</code> the output should be fo
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       

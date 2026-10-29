@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6273,18 +6273,18 @@ as all namespaces <em>beneath</em> it, meaning all other loggers that share the 
 </ul>
 <p>Given the default configuration sets the default level to <code>INFO</code>, we can turn in <code>DEBUG</code> logging for
 both of these by adding a <code>&lt;Logger&gt;</code> line like the following within the <code>&lt;Loggers&gt;</code> element:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;net.solarnetwork.node.io.modbus&quot;</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;debug&quot;</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"net.solarnetwork.node.io.modbus"</span><span class="w"> </span><span class="na">level=</span><span class="s">"debug"</span><span class="nt">/&gt;</span>
 </code></pre></div>
 <p>That turns on <code>DEBUG</code> for both loggers because they are both children of the <code>net.solarnetwork.node.io.modbus</code> namespace.
 We could turn on <code>TRACE</code> logging for one of them like this:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;net.solarnetwork.node.io.modbus&quot;</span><span class="w">        </span><span class="na">level=</span><span class="s">&quot;debug&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;net.solarnetwork.node.io.modbus.serial&quot;</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;trace&quot;</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"net.solarnetwork.node.io.modbus"</span><span class="w">        </span><span class="na">level=</span><span class="s">"debug"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"net.solarnetwork.node.io.modbus.serial"</span><span class="w"> </span><span class="na">level=</span><span class="s">"trace"</span><span class="nt">/&gt;</span>
 </code></pre></div>
 <p>That would also turn on <code>TRACE</code> for any other loggers in the <code>net.solarnetwork.node.io.modbus.serial</code>
 namespace. You can limit the configuration all the way down to a full logger name if you like, for
 example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;net.solarnetwork.node.io.modbus&quot;</span><span class="w">                            </span><span class="na">level=</span><span class="s">&quot;debug&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;net.solarnetwork.node.io.modbus.serial.SerialModbusNetwork&quot;</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;trace&quot;</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"net.solarnetwork.node.io.modbus"</span><span class="w">                            </span><span class="na">level=</span><span class="s">"debug"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"net.solarnetwork.node.io.modbus.serial.SerialModbusNetwork"</span><span class="w"> </span><span class="na">level=</span><span class="s">"trace"</span><span class="nt">/&gt;</span>
 </code></pre></div>
 <h2 id="logging-ui">Logging UI<a class="headerlink" href="#logging-ui" title="Permanent link">&para;</a></h2>
 <p>The SolarNode UI supports configuring logger levels dynamically, without having to change the
@@ -6300,9 +6300,9 @@ limits the number of historic files to <strong>3</strong>.</p>
 <code>&lt;DefaultRolloverStrategy&gt;</code> configuration. For example to change to a limit of <strong>9</strong> historic files of
 at most <strong>5 MB</strong> each, the configuration would look like this:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;Policies&gt;</span>
-<span class="w">  </span><span class="nt">&lt;SizeBasedTriggeringPolicy</span><span class="w"> </span><span class="na">size=</span><span class="s">&quot;5 MB&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;SizeBasedTriggeringPolicy</span><span class="w"> </span><span class="na">size=</span><span class="s">"5 MB"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/Policies&gt;</span>
-<span class="nt">&lt;DefaultRolloverStrategy</span><span class="w"> </span><span class="na">max=</span><span class="s">&quot;9&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;DefaultRolloverStrategy</span><span class="w"> </span><span class="na">max=</span><span class="s">"9"</span><span class="nt">/&gt;</span>
 </code></pre></div>
 <h2 id="persistent-logging">Persistent logging<a class="headerlink" href="#persistent-logging" title="Permanent link">&para;</a></h2>
 <p>By default SolarNode logs to temporary (RAM) storage that is discarded when the node reboots. The
@@ -6311,10 +6311,10 @@ like to have the logs persisted across reboots, or would like to preserve more l
 be stored in the temporary storage area.</p>
 <p>To make this change, update the <code>&lt;RollingFile&gt;</code> element's <code>fileName</code> and/or <code>filePattern</code> attributes to point to a persistent filesystem. SolarNode already has write permission to the <code>/var/lib/solarnode/var</code> directory, so an
 easy location to use is <code>/var/lib/solarnode/var/log</code>, like this:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;RollingFile</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;File&quot;</span>
-<span class="w">    </span><span class="na">immediateFlush=</span><span class="s">&quot;false&quot;</span>
-<span class="w">    </span><span class="na">fileName=</span><span class="s">&quot;/var/lib/solarnode/var/log/solarnode.log&quot;</span>
-<span class="w">    </span><span class="na">filePattern=</span><span class="s">&quot;/var/lib/solarnode/var/log/solarnode-%i.log&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;RollingFile</span><span class="w"> </span><span class="na">name=</span><span class="s">"File"</span>
+<span class="w">    </span><span class="na">immediateFlush=</span><span class="s">"false"</span>
+<span class="w">    </span><span class="na">fileName=</span><span class="s">"/var/lib/solarnode/var/log/solarnode.log"</span>
+<span class="w">    </span><span class="na">filePattern=</span><span class="s">"/var/lib/solarnode/var/log/solarnode-%i.log"</span><span class="nt">&gt;</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -6340,70 +6340,70 @@ sudo<span class="w"> </span>chmod<span class="w"> </span>g+w<span class="w"> </s
 </code></pre></div>
 <p>Then edit the <code>/etc/solarnode/log4j2.xml</code> file to hold the following (adjust according to your
 needs):</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;Configuration</span><span class="w"> </span><span class="na">status=</span><span class="s">&quot;WARN&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;Configuration</span><span class="w"> </span><span class="na">status=</span><span class="s">"WARN"</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;Appenders&gt;</span>
-<span class="w">    </span><span class="nt">&lt;RollingFile</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;File&quot;</span>
-<span class="w">        </span><span class="na">immediateFlush=</span><span class="s">&quot;true&quot;</span>
-<span class="w">        </span><span class="na">fileName=</span><span class="s">&quot;/var/log/solarnode/solarnode.log&quot;</span>
-<span class="w">        </span><span class="na">filePattern=</span><span class="s">&quot;/var/log/solarnode/solarnode-%i.log&quot;</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (1)! --&gt;</span>
-<span class="w">      </span><span class="nt">&lt;PatternLayout</span><span class="w"> </span><span class="na">pattern=</span><span class="s">&quot;%d{DEFAULT} %-5p %40.40c; %msg%n&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;RollingFile</span><span class="w"> </span><span class="na">name=</span><span class="s">"File"</span>
+<span class="w">        </span><span class="na">immediateFlush=</span><span class="s">"true"</span>
+<span class="w">        </span><span class="na">fileName=</span><span class="s">"/var/log/solarnode/solarnode.log"</span>
+<span class="w">        </span><span class="na">filePattern=</span><span class="s">"/var/log/solarnode/solarnode-%i.log"</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (1)! --&gt;</span>
+<span class="w">      </span><span class="nt">&lt;PatternLayout</span><span class="w"> </span><span class="na">pattern=</span><span class="s">"%d{DEFAULT} %-5p %40.40c; %msg%n"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;Policies&gt;</span>
-<span class="w">        </span><span class="nt">&lt;SizeBasedTriggeringPolicy</span><span class="w"> </span><span class="na">size=</span><span class="s">&quot;5 MB&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;SizeBasedTriggeringPolicy</span><span class="w"> </span><span class="na">size=</span><span class="s">"5 MB"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;/Policies&gt;</span>
-<span class="w">      </span><span class="nt">&lt;DefaultRolloverStrategy</span><span class="w"> </span><span class="na">max=</span><span class="s">&quot;9&quot;</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;DefaultRolloverStrategy</span><span class="w"> </span><span class="na">max=</span><span class="s">"9"</span><span class="nt">/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/RollingFile&gt;</span>
-<span class="w">    </span><span class="nt">&lt;RollingFile</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Filter&quot;</span>
-<span class="w">        </span><span class="na">immediateFlush=</span><span class="s">&quot;false&quot;</span>
-<span class="w">        </span><span class="na">fileName=</span><span class="s">&quot;/var/log/solarnode/filter.log&quot;</span>
-<span class="w">        </span><span class="na">filePattern=</span><span class="s">&quot;/var/log/solarnode/filter-%i.log&quot;</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (2)! --&gt;</span>
-<span class="w">      </span><span class="nt">&lt;PatternLayout</span><span class="w"> </span><span class="na">pattern=</span><span class="s">&quot;%d{DEFAULT} %-5p %40.40c; %msg%n&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;RollingFile</span><span class="w"> </span><span class="na">name=</span><span class="s">"Filter"</span>
+<span class="w">        </span><span class="na">immediateFlush=</span><span class="s">"false"</span>
+<span class="w">        </span><span class="na">fileName=</span><span class="s">"/var/log/solarnode/filter.log"</span>
+<span class="w">        </span><span class="na">filePattern=</span><span class="s">"/var/log/solarnode/filter-%i.log"</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (2)! --&gt;</span>
+<span class="w">      </span><span class="nt">&lt;PatternLayout</span><span class="w"> </span><span class="na">pattern=</span><span class="s">"%d{DEFAULT} %-5p %40.40c; %msg%n"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;Policies&gt;</span>
-<span class="w">        </span><span class="nt">&lt;SizeBasedTriggeringPolicy</span><span class="w"> </span><span class="na">size=</span><span class="s">&quot;10 MB&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;SizeBasedTriggeringPolicy</span><span class="w"> </span><span class="na">size=</span><span class="s">"10 MB"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;/Policies&gt;</span>
-<span class="w">      </span><span class="nt">&lt;DefaultRolloverStrategy</span><span class="w"> </span><span class="na">max=</span><span class="s">&quot;9&quot;</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;DefaultRolloverStrategy</span><span class="w"> </span><span class="na">max=</span><span class="s">"9"</span><span class="nt">/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/RollingFile&gt;</span>
-<span class="w">    </span><span class="nt">&lt;RollingFile</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;MQTT&quot;</span>
-<span class="w">        </span><span class="na">immediateFlush=</span><span class="s">&quot;false&quot;</span>
-<span class="w">        </span><span class="na">fileName=</span><span class="s">&quot;/var/log/solarnode/mqtt.log&quot;</span>
-<span class="w">        </span><span class="na">filePattern=</span><span class="s">&quot;/var/log/solarnode/mqtt-%i.log&quot;</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (3)! --&gt;</span>
-<span class="w">      </span><span class="nt">&lt;PatternLayout</span><span class="w"> </span><span class="na">pattern=</span><span class="s">&quot;%d{DEFAULT} %-5p %40.40c; %msg%n&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;RollingFile</span><span class="w"> </span><span class="na">name=</span><span class="s">"MQTT"</span>
+<span class="w">        </span><span class="na">immediateFlush=</span><span class="s">"false"</span>
+<span class="w">        </span><span class="na">fileName=</span><span class="s">"/var/log/solarnode/mqtt.log"</span>
+<span class="w">        </span><span class="na">filePattern=</span><span class="s">"/var/log/solarnode/mqtt-%i.log"</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (3)! --&gt;</span>
+<span class="w">      </span><span class="nt">&lt;PatternLayout</span><span class="w"> </span><span class="na">pattern=</span><span class="s">"%d{DEFAULT} %-5p %40.40c; %msg%n"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;Policies&gt;</span>
-<span class="w">        </span><span class="nt">&lt;SizeBasedTriggeringPolicy</span><span class="w"> </span><span class="na">size=</span><span class="s">&quot;10 MB&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;SizeBasedTriggeringPolicy</span><span class="w"> </span><span class="na">size=</span><span class="s">"10 MB"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;/Policies&gt;</span>
-<span class="w">      </span><span class="nt">&lt;DefaultRolloverStrategy</span><span class="w"> </span><span class="na">max=</span><span class="s">&quot;9&quot;</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;DefaultRolloverStrategy</span><span class="w"> </span><span class="na">max=</span><span class="s">"9"</span><span class="nt">/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/RollingFile&gt;</span>
-<span class="w">    </span><span class="nt">&lt;RollingFile</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Flux&quot;</span>
-<span class="w">        </span><span class="na">immediateFlush=</span><span class="s">&quot;false&quot;</span>
-<span class="w">        </span><span class="na">fileName=</span><span class="s">&quot;/var/log/solarnode/flux.log&quot;</span>
-<span class="w">        </span><span class="na">filePattern=</span><span class="s">&quot;/var/log/solarnode/flux-%i.log&quot;</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (4)! --&gt;</span>
-<span class="w">      </span><span class="nt">&lt;PatternLayout</span><span class="w"> </span><span class="na">pattern=</span><span class="s">&quot;%d{DEFAULT} %-5p %40.40c; %msg%n&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;RollingFile</span><span class="w"> </span><span class="na">name=</span><span class="s">"Flux"</span>
+<span class="w">        </span><span class="na">immediateFlush=</span><span class="s">"false"</span>
+<span class="w">        </span><span class="na">fileName=</span><span class="s">"/var/log/solarnode/flux.log"</span>
+<span class="w">        </span><span class="na">filePattern=</span><span class="s">"/var/log/solarnode/flux-%i.log"</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (4)! --&gt;</span>
+<span class="w">      </span><span class="nt">&lt;PatternLayout</span><span class="w"> </span><span class="na">pattern=</span><span class="s">"%d{DEFAULT} %-5p %40.40c; %msg%n"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;Policies&gt;</span>
-<span class="w">        </span><span class="nt">&lt;SizeBasedTriggeringPolicy</span><span class="w"> </span><span class="na">size=</span><span class="s">&quot;10 MB&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;SizeBasedTriggeringPolicy</span><span class="w"> </span><span class="na">size=</span><span class="s">"10 MB"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;/Policies&gt;</span>
-<span class="w">      </span><span class="nt">&lt;DefaultRolloverStrategy</span><span class="w"> </span><span class="na">max=</span><span class="s">&quot;9&quot;</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;DefaultRolloverStrategy</span><span class="w"> </span><span class="na">max=</span><span class="s">"9"</span><span class="nt">/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/RollingFile&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/Appenders&gt;</span>
 <span class="w">  </span><span class="nt">&lt;Loggers&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;org.eclipse.gemini.blueprint.blueprint.container.support&quot;</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;warn&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;org.eclipse.gemini.blueprint.context.support&quot;</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;warn&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;org.eclipse.gemini.blueprint.service.importer.support&quot;</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;warn&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;org.springframework.beans.factory&quot;</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;warn&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"org.eclipse.gemini.blueprint.blueprint.container.support"</span><span class="w"> </span><span class="na">level=</span><span class="s">"warn"</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"org.eclipse.gemini.blueprint.context.support"</span><span class="w"> </span><span class="na">level=</span><span class="s">"warn"</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"org.eclipse.gemini.blueprint.service.importer.support"</span><span class="w"> </span><span class="na">level=</span><span class="s">"warn"</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"org.springframework.beans.factory"</span><span class="w"> </span><span class="na">level=</span><span class="s">"warn"</span><span class="nt">/&gt;</span>
 
-<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;net.solarnetwork.node.datum.filter&quot;</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;trace&quot;</span><span class="w"> </span><span class="na">additivity=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;AppenderRef</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;Filter&quot;</span><span class="nt">/&gt;</span><span class="cm">&lt;!-- (5)! --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"net.solarnetwork.node.datum.filter"</span><span class="w"> </span><span class="na">level=</span><span class="s">"trace"</span><span class="w"> </span><span class="na">additivity=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;AppenderRef</span><span class="w"> </span><span class="na">ref=</span><span class="s">"Filter"</span><span class="nt">/&gt;</span><span class="cm">&lt;!-- (5)! --&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/Logger&gt;</span>
 
-<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;net.solarnetwork.mqtt.queue&quot;</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;trace&quot;</span><span class="w"> </span><span class="na">additivity=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;AppenderRef</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;MQTT&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"net.solarnetwork.mqtt.queue"</span><span class="w"> </span><span class="na">level=</span><span class="s">"trace"</span><span class="w"> </span><span class="na">additivity=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;AppenderRef</span><span class="w"> </span><span class="na">ref=</span><span class="s">"MQTT"</span><span class="nt">/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/Logger&gt;</span>
 
-<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;net.solarnetwork.mqtt.influx&quot;</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;trace&quot;</span><span class="w"> </span><span class="na">additivity=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;AppenderRef</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;Flux&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"net.solarnetwork.mqtt.influx"</span><span class="w"> </span><span class="na">level=</span><span class="s">"trace"</span><span class="w"> </span><span class="na">additivity=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;AppenderRef</span><span class="w"> </span><span class="na">ref=</span><span class="s">"Flux"</span><span class="nt">/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/Logger&gt;</span>
 
-<span class="w">    </span><span class="nt">&lt;Root</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;info&quot;</span><span class="nt">&gt;</span>
-<span class="w">      </span><span class="nt">&lt;AppenderRef</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;File&quot;</span><span class="nt">/&gt;</span><span class="cm">&lt;!-- (6)! --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Root</span><span class="w"> </span><span class="na">level=</span><span class="s">"info"</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;AppenderRef</span><span class="w"> </span><span class="na">ref=</span><span class="s">"File"</span><span class="nt">/&gt;</span><span class="cm">&lt;!-- (6)! --&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/Root&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/Loggers&gt;</span>
 <span class="nt">&lt;/Configuration&gt;</span>
@@ -6492,7 +6492,7 @@ name or IP address and port. For example SolarIn messages would use
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/open_in_new_tab.js"></script>
       

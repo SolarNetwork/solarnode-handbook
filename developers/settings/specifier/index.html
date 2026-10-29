@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6437,7 +6437,7 @@ single configurable property in the Settings API. The API looks like this:</p>
 <span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">getType</span><span class="p">();</span>
 
 <span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * Localizable text to display with the setting&#39;s content.</span>
+<span class="cm">     * Localizable text to display with the setting's content.</span>
 <span class="cm">     *</span>
 <span class="cm">     * @return the title</span>
 <span class="cm">     */</span>
@@ -6470,10 +6470,10 @@ an HTML form text input, like this:</p>
 <p><img alt="Text field setting as an HTML form field" src="../../../images/developers/settings/text-field-setting.png" width="416" /></p>
 <p>The <code>net.solarnetwork.settings.support.BasicTextFieldSettingSpecifier</code> class provides the standard implementation
 of this API. A standard text field setting is created like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DEFAULT_VALUE&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEFAULT_VALUE"</span><span class="p">);</span>
 
 <span class="c1">// or without any default value</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -6490,10 +6490,10 @@ content is obscured from view. In the SolarNode UI a secure text field is render
 password form input like this:</p>
 <p><img alt="Secure text field setting as an HTML form field" src="../../../images/developers/settings/secure-text-field-setting.png" width="435" /></p>
 <p>A standard secure text field setting is created by passing a third <code>true</code> argument, like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DEFAULT_VALUE&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEFAULT_VALUE"</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 
 <span class="c1">// or without any default value</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="title">Title<a class="headerlink" href="#title" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/TitleSettingSpecifier.html"><code>TitleSettingSpecifier</code></a> defines a simple read-only string-based
@@ -6502,14 +6502,14 @@ component class. In the SolarNode UI the default value is rendered as plain text
 <p><img alt="Title setting as HTML text" src="../../../images/developers/settings/title-setting.png" width="246" /></p>
 <p>The <code>net.solarnetwork.settings.support.BasicTitleSettingSpecifier</code> class provides the standard
 implementation of this API. A standard title setting is created like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTitleSettingSpecifier</span><span class="p">(</span><span class="s">&quot;status&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Status is good.&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTitleSettingSpecifier</span><span class="p">(</span><span class="s">"status"</span><span class="p">,</span><span class="w"> </span><span class="s">"Status is good."</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="html-title">HTML Title<a class="headerlink" href="#html-title" title="Permanent link">&para;</a></h3>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/TitleSettingSpecifier.html"><code>TitleSettingSpecifier</code></a> supports HTML markup. In the SolarNode UI the
 default value is rendered directly into HTML, like this:</p>
 <p><img alt="Title setting as HTML text" src="../../../images/developers/settings/title-markup-setting.png" width="366" /></p>
 <div class="highlight"><pre><span></span><code><span class="c1">// pass `true` as the 4th argument to enable HTML markup in the status value</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicTitleSettingSpecifier</span><span class="p">(</span><span class="s">&quot;status&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Status is &lt;b&gt;good&lt;/b&gt;.&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicTitleSettingSpecifier</span><span class="p">(</span><span class="s">"status"</span><span class="p">,</span><span class="w"> </span><span class="s">"Status is &lt;b&gt;good&lt;/b&gt;."</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="text-area">Text Area<a class="headerlink" href="#text-area" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/TextAreaSettingSpecifier.html"><code>TextAreaSettingSpecifier</code></a> defines a simple string-based
@@ -6519,10 +6519,10 @@ as an HTML form text area with an associated button to upload the content, like 
 <p><img alt="Text area setting as an HTML form field" src="../../../images/developers/settings/text-area-setting.png" width="476" /></p>
 <p>The <code>net.solarnetwork.settings.support.BasicTextAreaSettingSpecifier</code> class provides the standard implementation
 of this API. A standard text field setting is created like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DEFAULT_VALUE&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEFAULT_VALUE"</span><span class="p">);</span>
 
 <span class="c1">// or without any default value</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="direct-text-area">Direct Text Area<a class="headerlink" href="#direct-text-area" title="Permanent link">&para;</a></h3>
 <p>The <code>BasicTextAreaSettingSpecifier</code> can also be used for "direct" text areas where the field's
@@ -6530,10 +6530,10 @@ content is not uploaded as an external file. In the SolarNode UI a direct text a
 an HTML form text area, like this:</p>
 <p><img alt="Direct text area setting as an HTML form field" src="../../../images/developers/settings/direct-text-area-setting.png" width="446" /></p>
 <p>A standard direct text area setting is created by passing a third <code>true</code> argument, like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DEFAULT_VALUE&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEFAULT_VALUE"</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 
 <span class="c1">// or without any default value</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">&quot;myProperty&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicTextAreaSettingSpecifier</span><span class="p">(</span><span class="s">"myProperty"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="toggle">Toggle<a class="headerlink" href="#toggle" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/ToggleSettingSpecifier.html"><code>ToggleSettingSpecifier</code></a> defines a boolean configurable property. In
@@ -6541,9 +6541,9 @@ the SolarNode UI a toggle setting is rendered as an HTML form button, like this:
 <p><img alt="Toggle setting as an HTML form field" src="../../../images/developers/settings/toggle-setting.png" width="142" /></p>
 <p>The <code>net.solarnetwork.settings.support.BasicToggleSettingSpecifier</code> class provides the standard implementation
 of this API. A standard toggle setting is created like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicToggleSettingSpecifier</span><span class="p">(</span><span class="s">&quot;enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"> </span><span class="c1">// default &quot;off&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="n">BasicToggleSettingSpecifier</span><span class="p">(</span><span class="s">"enabled"</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"> </span><span class="c1">// default "off"</span>
 
-<span class="k">new</span><span class="w"> </span><span class="n">BasicToggleSettingSpecifier</span><span class="p">(</span><span class="s">&quot;enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w">  </span><span class="c1">// default &quot;on&quot;</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicToggleSettingSpecifier</span><span class="p">(</span><span class="s">"enabled"</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w">  </span><span class="c1">// default "on"</span>
 </code></pre></div>
 <h2 id="slider">Slider<a class="headerlink" href="#slider" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/SliderSettingSpecifier.html"><code>SliderSettingSpecifier</code></a> defines a number-based configuration property
@@ -6553,10 +6553,10 @@ slider is rendered as an HTML widget, like this:</p>
 <p>The <code>net.solarnetwork.settings.support.BasicSliderSettingSpecifier</code> class provides the standard implementation
 of this API. A standard Slider setting is created like this:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// no default value, range between 0-11 in 0.5 increments</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicSliderSettingSpecifier</span><span class="p">(</span><span class="s">&quot;volume&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicSliderSettingSpecifier</span><span class="p">(</span><span class="s">"volume"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
 
 <span class="c1">// default value 5.0, range between 0-11 in 0.5 increments</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicSliderSettingSpecifier</span><span class="p">(</span><span class="s">&quot;volume&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicSliderSettingSpecifier</span><span class="p">(</span><span class="s">"volume"</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="radio-group">Radio Group<a class="headerlink" href="#radio-group" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://javadoc.io/doc/net.solarnetwork.common/net.solarnetwork.common/latest/net/solarnetwork/settings/RadioGroupSettingSpecifier.html"><code>RadioGroupSettingSpecifier</code></a> defines a configurable property that
@@ -6565,14 +6565,14 @@ rendered as a set of HTML radio input form fields, like this:</p>
 <p><img alt="Radio Group setting as a set of HTML radio inputs" src="../../../images/developers/settings/radio-group-setting.png" width="156" /></p>
 <p>The <code>net.solarnetwork.settings.support.BasicRadioGroupSettingSpecifier</code> class provides the standard implementation
 of this API. A standard RadioGroup setting is created like this:</p>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">vals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">};</span>
-<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Strign</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;One&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Two&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Three&quot;</span><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">vals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">"a"</span><span class="p">,</span><span class="w"> </span><span class="s">"b"</span><span class="p">,</span><span class="w"> </span><span class="s">"c"</span><span class="p">};</span>
+<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Strign</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">"One"</span><span class="p">,</span><span class="w"> </span><span class="s">"Two"</span><span class="p">,</span><span class="w"> </span><span class="s">"Three"</span><span class="p">};</span>
 <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">radioValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashMap</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">vals</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">radioValues</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">vals</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">labels</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="n">BasicRadioGroupSettingSpecifier</span><span class="w"> </span><span class="n">radio</span><span class="w"> </span><span class="o">=</span>
-<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">BasicRadioGroupSettingSpecifier</span><span class="p">(</span><span class="s">&quot;option&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">vals</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">BasicRadioGroupSettingSpecifier</span><span class="p">(</span><span class="s">"option"</span><span class="p">,</span><span class="w"> </span><span class="n">vals</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
 <span class="n">radio</span><span class="p">.</span><span class="na">setValueTitles</span><span class="p">(</span><span class="n">radioValues</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="multi-value">Multi-value<a class="headerlink" href="#multi-value" title="Permanent link">&para;</a></h2>
@@ -6582,13 +6582,13 @@ setting is rendered as an HTML select form field, like this:</p>
 <p><img alt="Multi-value setting as an HTML select form field" src="../../../images/developers/settings/multi-value-setting.png" width="318" /></p>
 <p>The <code>net.solarnetwork.settings.support.BasicMultiValueSettingSpecifier</code> class provides the standard implementation
 of this API. A standard MultiValue setting is created like this:</p>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">vals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">};</span>
-<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Strign</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Option 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Option 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Option 3&quot;</span><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">vals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">"a"</span><span class="p">,</span><span class="w"> </span><span class="s">"b"</span><span class="p">,</span><span class="w"> </span><span class="s">"c"</span><span class="p">};</span>
+<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Strign</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="s">"Option 1"</span><span class="p">,</span><span class="w"> </span><span class="s">"Option 2"</span><span class="p">,</span><span class="w"> </span><span class="s">"Option 3"</span><span class="p">};</span>
 <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">radioValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashMap</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">vals</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">radioValues</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">vals</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">labels</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="n">BasicMultiValueSettingSpecifier</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BasicMultiValueSettingSpecifier</span><span class="p">(</span><span class="s">&quot;option&quot;</span><span class="p">,</span>
+<span class="n">BasicMultiValueSettingSpecifier</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BasicMultiValueSettingSpecifier</span><span class="p">(</span><span class="s">"option"</span><span class="p">,</span>
 <span class="w">        </span><span class="n">vals</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
 <span class="n">menu</span><span class="p">.</span><span class="na">setValueTitles</span><span class="p">(</span><span class="n">menuValues</span><span class="p">);</span>
 </code></pre></div>
@@ -6600,12 +6600,12 @@ file setting is rendered as an HTML file input, like this:</p>
 <p>The <code>net.solarnetwork.node.settings.support.BasicFileSettingSpecifier</code> class provides the standard implementation
 of this API. A standard file setting is created like this:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// a single file only, no default content</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicFileSettingSpecifier</span><span class="p">(</span><span class="s">&quot;document&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;text/*&quot;</span><span class="p">)),</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicFileSettingSpecifier</span><span class="p">(</span><span class="s">"document"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">".txt"</span><span class="p">,</span><span class="w"> </span><span class="s">"text/*"</span><span class="p">)),</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 
 <span class="c1">// multiple files allowed, no default content</span>
-<span class="k">new</span><span class="w"> </span><span class="n">BasicFileSettingSpecifier</span><span class="p">(</span><span class="s">&quot;document-list&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;text/*&quot;</span><span class="p">)),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="k">new</span><span class="w"> </span><span class="n">BasicFileSettingSpecifier</span><span class="p">(</span><span class="s">"document-list"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedHashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">".txt"</span><span class="p">,</span><span class="w"> </span><span class="s">"text/*"</span><span class="p">)),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="dynamic-list">Dynamic List<a class="headerlink" href="#dynamic-list" title="Permanent link">&para;</a></h2>
 <p>A Dynamic List setting allows the user to manage a list of homogeneous items, adding or subtracting items as desired.
@@ -6670,7 +6670,7 @@ SolarNode will use this accessor to request a specific size for the dynamic list
 <span class="w">        </span><span class="n">setNames</span><span class="p">(</span><span class="n">l</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">lCount</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">l</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">l</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
 <span class="w">        </span><span class="n">lCount</span><span class="o">++</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -6692,7 +6692,7 @@ following sections demonstrate this).</p>
 
 <span class="w">    </span><span class="c1">// turn a list of strings into a Group of TextField settings</span>
 <span class="w">    </span><span class="n">GroupSettingSpecifier</span><span class="w"> </span><span class="n">namesList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SettingUtils</span><span class="p">.</span><span class="na">dynamicListSettingSpecifier</span><span class="p">(</span>
-<span class="w">            </span><span class="s">&quot;names&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">asList</span><span class="p">(</span><span class="n">names</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">            </span><span class="s">"names"</span><span class="p">,</span><span class="w"> </span><span class="n">asList</span><span class="p">(</span><span class="n">names</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
 <span class="w">                    </span><span class="n">singletonList</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">)));</span>
 <span class="w">    </span><span class="n">results</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">namesList</span><span class="p">);</span>
 
@@ -6714,8 +6714,8 @@ group-of-groups is used.</p>
 <span class="w">    </span><span class="c1">// generate list of settings for a Person, nested under some prefix</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">SettingSpecifier</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">settings</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">prefix</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">SettingSpecifier</span><span class="o">&gt;</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-<span class="w">        </span><span class="n">results</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="n">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;firstName&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">));</span>
-<span class="w">        </span><span class="n">results</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="n">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;lastName&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">));</span>
+<span class="w">        </span><span class="n">results</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="n">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"firstName"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">));</span>
+<span class="w">        </span><span class="n">results</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="n">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"lastName"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">));</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">results</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
@@ -6738,9 +6738,9 @@ group-of-groups is used.</p>
 
 <span class="w">    </span><span class="c1">// turn a list of People into a Group of Group settings</span>
 <span class="w">    </span><span class="n">GroupSettingSpecifier</span><span class="w"> </span><span class="n">peopleList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SettingUtils</span><span class="p">.</span><span class="na">dynamicListSettingSpecifier</span><span class="p">(</span>
-<span class="w">            </span><span class="s">&quot;people&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">asList</span><span class="p">(</span><span class="n">people</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">Person</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">            </span><span class="s">"people"</span><span class="p">,</span><span class="w"> </span><span class="n">asList</span><span class="p">(</span><span class="n">people</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">Person</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
 <span class="w">                    </span><span class="n">singletonList</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">BasicGroupSettingSpecifier</span><span class="p">(</span>
-<span class="w">                        </span><span class="n">value</span><span class="p">.</span><span class="na">settings</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">))));</span>
+<span class="w">                        </span><span class="n">value</span><span class="p">.</span><span class="na">settings</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"."</span><span class="p">))));</span>
 <span class="w">    </span><span class="n">results</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">peopleList</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">results</span><span class="p">;</span>
@@ -6801,7 +6801,7 @@ group-of-groups is used.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       

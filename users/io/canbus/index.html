@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6507,44 +6507,44 @@ support working with SolarNetwork more easily. The extensions are provided in a 
 namespace to make it clear they are not from the KCD namespace. The namespace URI is
 <code>urn:solarnetwork:datum:1.0</code>.</p>
 <p>To make use of the extended format, an KCD document would start off like this:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;NetworkDefinition</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://kayak.2codeornot2code.org/1.0&quot;</span>
-<span class="w">  </span><span class="na">xmlns:sn=</span><span class="s">&quot;urn:solarnetwork:datum:1.0&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;NetworkDefinition</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://kayak.2codeornot2code.org/1.0"</span>
+<span class="w">  </span><span class="na">xmlns:sn=</span><span class="s">"urn:solarnetwork:datum:1.0"</span><span class="nt">&gt;</span>
 </code></pre></div>
 <p>That maps the <code>urn:solarnetwork:datum:1.0</code> namespace to the <code>sn</code> prefix, which is what the rest of
 this document uses in its examples.</p>
 <p>Here's an example snippet of the extended KCD XML format:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;NetworkDefinition</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://kayak.2codeornot2code.org/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:sn=</span><span class="s">&quot;urn:solarnetwork:datum:1.0&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;Document</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ACME Bus&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">author=</span><span class="s">&quot;J. Doe&quot;</span>
-<span class="w">      </span><span class="na">company=</span><span class="s">&quot;ACME&quot;</span><span class="w"> </span><span class="na">date=</span><span class="s">&quot;2019-09-20&quot;</span><span class="nt">&gt;</span>ACME<span class="w"> </span>Bus<span class="w"> </span>CAN<span class="nt">&lt;/Document&gt;</span>
-<span class="w">  </span><span class="nt">&lt;Node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Motor&quot;</span><span class="w"> </span><span class="na">sn:source-id=</span><span class="s">&quot;/TR/BUS/TEST1/MOT/1&quot;</span>
-<span class="w">      </span><span class="na">sn:publish-interval=</span><span class="s">&quot;60000&quot;</span><span class="w"> </span><span class="na">sn:network-service-name=</span><span class="s">&quot;Canbus Port A&quot;</span><span class="nt">/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;Bus</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;can0&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;NetworkDefinition</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://kayak.2codeornot2code.org/1.0"</span><span class="w"> </span><span class="na">xmlns:sn=</span><span class="s">"urn:solarnetwork:datum:1.0"</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Document</span><span class="w"> </span><span class="na">name=</span><span class="s">"ACME Bus"</span><span class="w"> </span><span class="na">version=</span><span class="s">"1.0"</span><span class="w"> </span><span class="na">author=</span><span class="s">"J. Doe"</span>
+<span class="w">      </span><span class="na">company=</span><span class="s">"ACME"</span><span class="w"> </span><span class="na">date=</span><span class="s">"2019-09-20"</span><span class="nt">&gt;</span>ACME<span class="w"> </span>Bus<span class="w"> </span>CAN<span class="nt">&lt;/Document&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Node</span><span class="w"> </span><span class="na">id=</span><span class="s">"1"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Motor"</span><span class="w"> </span><span class="na">sn:source-id=</span><span class="s">"/TR/BUS/TEST1/MOT/1"</span>
+<span class="w">      </span><span class="na">sn:publish-interval=</span><span class="s">"60000"</span><span class="w"> </span><span class="na">sn:network-service-name=</span><span class="s">"Canbus Port A"</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Bus</span><span class="w"> </span><span class="na">name=</span><span class="s">"can0"</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="cm">&lt;!-- Motor --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Message</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0x0C03A1A7&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Motor Data&quot;</span><span class="w"> </span><span class="na">interval=</span><span class="s">&quot;5000&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Message</span><span class="w"> </span><span class="na">id=</span><span class="s">"0x0C03A1A7"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Motor Data"</span><span class="w"> </span><span class="na">interval=</span><span class="s">"5000"</span><span class="nt">&gt;</span>
 <span class="w">      </span><span class="nt">&lt;Producer&gt;</span>
-<span class="w">        </span><span class="nt">&lt;NodeRef</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;NodeRef</span><span class="w"> </span><span class="na">id=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;/Producer&gt;</span>
-<span class="w">      </span><span class="nt">&lt;Signal</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;PCU Input Voltage&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;16&quot;</span><span class="w"> </span><span class="na">endianess=</span><span class="s">&quot;little&quot;</span>
-<span class="w">          </span><span class="na">sn:datum-property=</span><span class="s">&quot;mcuDcVoltage&quot;</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">&quot;i&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Signal</span><span class="w"> </span><span class="na">name=</span><span class="s">"PCU Input Voltage"</span><span class="w"> </span><span class="na">offset=</span><span class="s">"0"</span><span class="w"> </span><span class="na">length=</span><span class="s">"16"</span><span class="w"> </span><span class="na">endianess=</span><span class="s">"little"</span>
+<span class="w">          </span><span class="na">sn:datum-property=</span><span class="s">"mcuDcVoltage"</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">"i"</span><span class="nt">&gt;</span>
 <span class="w">        </span><span class="nt">&lt;Notes&gt;</span>PCU<span class="w"> </span>Input<span class="w"> </span>Voltage<span class="nt">&lt;/Notes&gt;</span>
-<span class="w">        </span><span class="nt">&lt;Value</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;unsigned&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">intercept=</span><span class="s">&quot;-1000&quot;</span><span class="w"> </span><span class="na">min=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">max=</span><span class="s">&quot;999&quot;</span><span class="w"> </span><span class="na">unit=</span><span class="s">&quot;V&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Value</span><span class="w"> </span><span class="na">type=</span><span class="s">"unsigned"</span><span class="w"> </span><span class="na">slope=</span><span class="s">"0.1"</span><span class="w"> </span><span class="na">intercept=</span><span class="s">"-1000"</span><span class="w"> </span><span class="na">min=</span><span class="s">"0"</span><span class="w"> </span><span class="na">max=</span><span class="s">"999"</span><span class="w"> </span><span class="na">unit=</span><span class="s">"V"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;/Signal&gt;</span>
-<span class="w">      </span><span class="nt">&lt;Signal</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;PCU Input Current&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;16&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;16&quot;</span><span class="w"> </span><span class="na">endianess=</span><span class="s">&quot;little&quot;</span>
-<span class="w">          </span><span class="na">sn:datum-property=</span><span class="s">&quot;mcuDcCurrent&quot;</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">&quot;i&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Signal</span><span class="w"> </span><span class="na">name=</span><span class="s">"PCU Input Current"</span><span class="w"> </span><span class="na">offset=</span><span class="s">"16"</span><span class="w"> </span><span class="na">length=</span><span class="s">"16"</span><span class="w"> </span><span class="na">endianess=</span><span class="s">"little"</span>
+<span class="w">          </span><span class="na">sn:datum-property=</span><span class="s">"mcuDcCurrent"</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">"i"</span><span class="nt">&gt;</span>
 <span class="w">        </span><span class="nt">&lt;Notes&gt;</span>PCU<span class="w"> </span>Input<span class="w"> </span>Current<span class="nt">&lt;/Notes&gt;</span>
-<span class="w">        </span><span class="nt">&lt;Value</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;signed&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">intercept=</span><span class="s">&quot;-1000&quot;</span><span class="w"> </span><span class="na">min=</span><span class="s">&quot;-999&quot;</span><span class="w"> </span><span class="na">max=</span><span class="s">&quot;999&quot;</span><span class="w"> </span><span class="na">unit=</span><span class="s">&quot;A&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Value</span><span class="w"> </span><span class="na">type=</span><span class="s">"signed"</span><span class="w"> </span><span class="na">slope=</span><span class="s">"0.1"</span><span class="w"> </span><span class="na">intercept=</span><span class="s">"-1000"</span><span class="w"> </span><span class="na">min=</span><span class="s">"-999"</span><span class="w"> </span><span class="na">max=</span><span class="s">"999"</span><span class="w"> </span><span class="na">unit=</span><span class="s">"A"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;/Signal&gt;</span>
-<span class="w">      </span><span class="nt">&lt;Signal</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;PCU Motor Torque&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;32&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;16&quot;</span><span class="w"> </span><span class="na">endianess=</span><span class="s">&quot;little&quot;</span>
-<span class="w">          </span><span class="na">sn:datum-property=</span><span class="s">&quot;torque&quot;</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">&quot;i&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Signal</span><span class="w"> </span><span class="na">name=</span><span class="s">"PCU Motor Torque"</span><span class="w"> </span><span class="na">offset=</span><span class="s">"32"</span><span class="w"> </span><span class="na">length=</span><span class="s">"16"</span><span class="w"> </span><span class="na">endianess=</span><span class="s">"little"</span>
+<span class="w">          </span><span class="na">sn:datum-property=</span><span class="s">"torque"</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">"i"</span><span class="nt">&gt;</span>
 <span class="w">        </span><span class="nt">&lt;Notes&gt;</span>Motor<span class="w"> </span>Torque<span class="nt">&lt;/Notes&gt;</span>
-<span class="w">        </span><span class="nt">&lt;Value</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;signed&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">intercept=</span><span class="s">&quot;-3000&quot;</span><span class="w"> </span><span class="na">min=</span><span class="s">&quot;-3000&quot;</span><span class="w"> </span><span class="na">max=</span><span class="s">&quot;3000&quot;</span>
-<span class="w">            </span><span class="na">unit=</span><span class="s">&quot;N.m&quot;</span><span class="w"> </span><span class="na">sn:normalized-unit=</span><span class="s">&quot;N.m&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Value</span><span class="w"> </span><span class="na">type=</span><span class="s">"signed"</span><span class="w"> </span><span class="na">slope=</span><span class="s">"1"</span><span class="w"> </span><span class="na">intercept=</span><span class="s">"-3000"</span><span class="w"> </span><span class="na">min=</span><span class="s">"-3000"</span><span class="w"> </span><span class="na">max=</span><span class="s">"3000"</span>
+<span class="w">            </span><span class="na">unit=</span><span class="s">"N.m"</span><span class="w"> </span><span class="na">sn:normalized-unit=</span><span class="s">"N.m"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;/Signal&gt;</span>
-<span class="w">      </span><span class="nt">&lt;Signal</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;PCU Motor Speed&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;48&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;16&quot;</span><span class="w"> </span><span class="na">endianess=</span><span class="s">&quot;little&quot;</span>
-<span class="w">          </span><span class="na">sn:datum-property=</span><span class="s">&quot;speed&quot;</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">&quot;i&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Signal</span><span class="w"> </span><span class="na">name=</span><span class="s">"PCU Motor Speed"</span><span class="w"> </span><span class="na">offset=</span><span class="s">"48"</span><span class="w"> </span><span class="na">length=</span><span class="s">"16"</span><span class="w"> </span><span class="na">endianess=</span><span class="s">"little"</span>
+<span class="w">          </span><span class="na">sn:datum-property=</span><span class="s">"speed"</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">"i"</span><span class="nt">&gt;</span>
 <span class="w">        </span><span class="nt">&lt;Notes&gt;</span>PCU<span class="w"> </span>Motor<span class="w"> </span>Speed<span class="nt">&lt;/Notes&gt;</span>
-<span class="w">        </span><span class="nt">&lt;Value</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;unsigned&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="na">intercept=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">min=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">max=</span><span class="s">&quot;9999&quot;</span>
-<span class="w">            </span><span class="na">unit=</span><span class="s">&quot;Hz/60&quot;</span><span class="w"> </span><span class="na">sn:normalized-unit=</span><span class="s">&quot;Hz/60&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Value</span><span class="w"> </span><span class="na">type=</span><span class="s">"unsigned"</span><span class="w"> </span><span class="na">slope=</span><span class="s">"0.5"</span><span class="w"> </span><span class="na">intercept=</span><span class="s">"0"</span><span class="w"> </span><span class="na">min=</span><span class="s">"0"</span><span class="w"> </span><span class="na">max=</span><span class="s">"9999"</span>
+<span class="w">            </span><span class="na">unit=</span><span class="s">"Hz/60"</span><span class="w"> </span><span class="na">sn:normalized-unit=</span><span class="s">"Hz/60"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;/Signal&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/Message&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/Bus&gt;</span>
@@ -6591,10 +6591,10 @@ this document uses in its examples.</p>
 </tbody>
 </table>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;Node</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Motor&quot;</span><span class="w"> </span><span class="na">sn:source-id=</span><span class="s">&quot;/TR/BUS/TEST1/MOT/1&quot;</span>
-<span class="w">  </span><span class="na">sn:publish-interval=</span><span class="s">&quot;60000&quot;</span><span class="w"> </span><span class="na">sn:network-service-name=</span><span class="s">&quot;Canbus Port A&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;Expression</span><span class="w"> </span><span class="na">sn:datum-property=</span><span class="s">&quot;power&quot;</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">&quot;i&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span>props[&#39;amps&#39;]<span class="w"> </span>*<span class="w"> </span>props[&#39;volts&#39;]
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Node</span><span class="w"> </span><span class="na">id=</span><span class="s">"1"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Motor"</span><span class="w"> </span><span class="na">sn:source-id=</span><span class="s">"/TR/BUS/TEST1/MOT/1"</span>
+<span class="w">  </span><span class="na">sn:publish-interval=</span><span class="s">"60000"</span><span class="w"> </span><span class="na">sn:network-service-name=</span><span class="s">"Canbus Port A"</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Expression</span><span class="w"> </span><span class="na">sn:datum-property=</span><span class="s">"power"</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">"i"</span><span class="nt">&gt;</span>
+<span class="w">    </span>props['amps']<span class="w"> </span>*<span class="w"> </span>props['volts']
 <span class="w">  </span><span class="nt">&lt;/Expression&gt;</span>
 <span class="nt">&lt;/Node&gt;</span>
 </code></pre></div>
@@ -6629,8 +6629,8 @@ following attributes:</p>
 </tbody>
 </table>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;Expression</span><span class="w"> </span><span class="na">sn:datum-property=</span><span class="s">&quot;power&quot;</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">&quot;i&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span>props[&#39;amps&#39;]<span class="w"> </span>*<span class="w"> </span>props[&#39;volts&#39;]
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Expression</span><span class="w"> </span><span class="na">sn:datum-property=</span><span class="s">"power"</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">"i"</span><span class="nt">&gt;</span>
+<span class="w">  </span>props['amps']<span class="w"> </span>*<span class="w"> </span>props['volts']
 <span class="nt">&lt;/Expression&gt;</span>
 </code></pre></div>
 <h4 id="signal-element-extensions"><code>&lt;Signal&gt;</code> element extensions<a class="headerlink" href="#signal-element-extensions" title="Permanent link">&para;</a></h4>
@@ -6679,10 +6679,10 @@ following attributes:</p>
 </tbody>
 </table>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;Signal</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Battery Charge Energy&quot;</span><span class="w"> </span><span class="na">offset=</span><span class="s">&quot;32&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;32&quot;</span><span class="w"> </span><span class="na">endianess=</span><span class="s">&quot;little&quot;</span>
-<span class="w">  </span><span class="na">sn:datum-property=</span><span class="s">&quot;chargeEnergy&quot;</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">&quot;a&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Signal</span><span class="w"> </span><span class="na">name=</span><span class="s">"Battery Charge Energy"</span><span class="w"> </span><span class="na">offset=</span><span class="s">"32"</span><span class="w"> </span><span class="na">length=</span><span class="s">"32"</span><span class="w"> </span><span class="na">endianess=</span><span class="s">"little"</span>
+<span class="w">  </span><span class="na">sn:datum-property=</span><span class="s">"chargeEnergy"</span><span class="w"> </span><span class="na">sn:datum-property-classification=</span><span class="s">"a"</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;Value/&gt;</span>
-<span class="w">  </span><span class="nt">&lt;Name</span><span class="w"> </span><span class="na">xml:lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>Battery<span class="w"> </span>Charge<span class="w"> </span>Energy<span class="nt">&lt;/Name&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Name</span><span class="w"> </span><span class="na">xml:lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>Battery<span class="w"> </span>Charge<span class="w"> </span>Energy<span class="nt">&lt;/Name&gt;</span>
 <span class="nt">&lt;/Signal&gt;</span>
 </code></pre></div>
 <h4 id="value-element-extensions"><code>&lt;Value&gt;</code> element extensions<a class="headerlink" href="#value-element-extensions" title="Permanent link">&para;</a></h4>
@@ -6704,7 +6704,7 @@ following attributes:</p>
 </tbody>
 </table>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;Value</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;unsigned&quot;</span><span class="w"> </span><span class="na">slope=</span><span class="s">&quot;0.01&quot;</span><span class="w"> </span><span class="na">intercept=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">unit=</span><span class="s">&quot;kW.h&quot;</span><span class="w"> </span><span class="na">sn:normalized-unit=</span><span class="s">&quot;W.h&quot;</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Value</span><span class="w"> </span><span class="na">type=</span><span class="s">"unsigned"</span><span class="w"> </span><span class="na">slope=</span><span class="s">"0.01"</span><span class="w"> </span><span class="na">intercept=</span><span class="s">"0"</span><span class="w"> </span><span class="na">unit=</span><span class="s">"kW.h"</span><span class="w"> </span><span class="na">sn:normalized-unit=</span><span class="s">"W.h"</span><span class="nt">/&gt;</span>
 </code></pre></div>
 <h2 id="socketcand">Socketcand<a class="headerlink" href="#socketcand" title="Permanent link">&para;</a></h2>
 <p>In SolarNodeOS the <code>sn-socketcand</code> package provides a configurable <a href="https://github.com/linux-can/socketcand"><code>socketcand</code></a> server
@@ -6800,7 +6800,7 @@ configuration syntax is one variable per line, like <code>VARIABLE=VALUE</code>.
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       

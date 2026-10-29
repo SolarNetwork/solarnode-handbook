@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6082,17 +6082,17 @@ or the <a href="../job-scheduler/">Job Scheduler</a> page for information on sch
 </div>
 <p>To make use of any of these services from a plugin using <a href="../../osgi/blueprint/">OSGi Blueprint</a> you can
 declare a reference to them like this:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;taskExecutor&quot;</span><span class="w"> </span><span class="na">interface=</span><span class="s">&quot;java.util.concurrent.Executor&quot;</span>
-<span class="w">        </span><span class="na">filter=</span><span class="s">&quot;(function=node)&quot;</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">"taskExecutor"</span><span class="w"> </span><span class="na">interface=</span><span class="s">"java.util.concurrent.Executor"</span>
+<span class="w">        </span><span class="na">filter=</span><span class="s">"(function=node)"</span><span class="nt">/&gt;</span>
 
-<span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;taskExecutor&quot;</span><span class="w"> </span><span class="na">interface=</span><span class="s">&quot;org.springframework.core.task.TaskExecutor&quot;</span>
-<span class="w">        </span><span class="na">filter=</span><span class="s">&quot;(function=node)&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">"taskExecutor"</span><span class="w"> </span><span class="na">interface=</span><span class="s">"org.springframework.core.task.TaskExecutor"</span>
+<span class="w">        </span><span class="na">filter=</span><span class="s">"(function=node)"</span><span class="nt">/&gt;</span>
 
-<span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;taskExecutor&quot;</span><span class="w"> </span><span class="na">interface=</span><span class="s">&quot;org.springframework.core.task.AsyncTaskExecutor&quot;</span>
-<span class="w">        </span><span class="na">filter=</span><span class="s">&quot;(function=node)&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">"taskExecutor"</span><span class="w"> </span><span class="na">interface=</span><span class="s">"org.springframework.core.task.AsyncTaskExecutor"</span>
+<span class="w">        </span><span class="na">filter=</span><span class="s">"(function=node)"</span><span class="nt">/&gt;</span>
 
-<span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;taskExecutor&quot;</span><span class="w"> </span><span class="na">interface=</span><span class="s">&quot;org.springframework.core.task.AsyncListenableTaskExecutor&quot;</span>
-<span class="w">        </span><span class="na">filter=</span><span class="s">&quot;(function=node)&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">"taskExecutor"</span><span class="w"> </span><span class="na">interface=</span><span class="s">"org.springframework.core.task.AsyncListenableTaskExecutor"</span>
+<span class="w">        </span><span class="na">filter=</span><span class="s">"(function=node)"</span><span class="nt">/&gt;</span>
 </code></pre></div>
 <h2 id="thread-pool-configuration">Thread pool configuration<a class="headerlink" href="#thread-pool-configuration" title="Permanent link">&para;</a></h2>
 <p>This thread pool is configured as a fixed-size pool with the number of threads set to the number of
@@ -6150,7 +6150,7 @@ the thread pool would be configured with 5 threads.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       

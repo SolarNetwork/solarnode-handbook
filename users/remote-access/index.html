@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6387,7 +6387,7 @@ looks like this:</p>
 A good practice for the hostname is to use one derived from the SolarNode ID, e.g. <code>solarnode-123</code>.</p>
 <p>Using OpenSSH a complete connection command to log in as a <code>solar</code> user looks like this, passing
 the "jump" host via a <code>-J</code> argument:</p>
-<div class="highlight"><pre><span></span><code>ssh -J &#39;NODE:TOKEN@ssh.solarnetwork.net:9022&#39; solar@solarnode-NODE
+<div class="highlight"><pre><span></span><code>ssh -J 'NODE:TOKEN@ssh.solarnetwork.net:9022' solar@solarnode-NODE
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -6410,15 +6410,15 @@ be prompted for the SolarNode OS user's password. Here's an example screen shot:
 can help make the connection process easier to remember. Here's an example that give you a
 <code>solarssh</code> command that accepts a SolarNode ID argument, followed by any optional SSH arguments:</p>
 <div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span>solarssh<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">node_id</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$node_id</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Must provide node ID , e.g. 123&#39;</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">node_id</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="nv">$node_id</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'Must provide node ID , e.g. 123'</span>
 <span class="w">  </span><span class="k">else</span>
 <span class="w">    </span><span class="nb">shift</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Enter SN token secret when first prompted for password. Enter node </span><span class="nv">$node_id</span><span class="s2"> password second.&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Enter SN token secret when first prompted for password. Enter node </span><span class="nv">$node_id</span><span class="s2"> password second."</span>
 <span class="w">    </span>ssh<span class="w"> </span>-o<span class="w"> </span><span class="nv">StrictHostKeyChecking</span><span class="o">=</span>no<span class="w"> </span>-o<span class="w"> </span><span class="nv">UserKnownHostsFile</span><span class="o">=</span>/dev/null<span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>-o<span class="w"> </span><span class="nv">LogLevel</span><span class="o">=</span>ERROR<span class="w"> </span>-o<span class="w"> </span><span class="nv">NumberOfPasswordPrompts</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>-J<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$node_id</span><span class="s2">&quot;</span><span class="s1">&#39;:SN_TOKEN_HERE@ssh.solarnetwork.net:9022&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-J<span class="w"> </span><span class="s2">"</span><span class="nv">$node_id</span><span class="s2">"</span><span class="s1">':SN_TOKEN_HERE@ssh.solarnetwork.net:9022'</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span><span class="nv">$@</span><span class="w"> </span>solar@solarnode-<span class="nv">$node_id</span>
 <span class="w">  </span><span class="k">fi</span>
 <span class="o">}</span>
@@ -6431,7 +6431,7 @@ configuration (e.g. <code>~/.bashrc</code> or <code>~/.zshrc</code>) then you co
 <p class="admonition-title">Warning</p>
 <p>Be sure to leave the <code>:</code> character in front of your token in the <code>-J</code> argument. If your token
 was <code>ABC123DEF456</code> the line would look like this:</p>
-<div class="highlight"><pre><span></span><code>-J &quot;$node_id&quot;&#39;:ABC123DEF456@ssh.solarnetwork.net:9022&#39; \
+<div class="highlight"><pre><span></span><code>-J "$node_id"':ABC123DEF456@ssh.solarnetwork.net:9022' \
 </code></pre></div>
 </div>
 <h2 id="putty">PuTTY<a class="headerlink" href="#putty" title="Permanent link">&para;</a></h2>
@@ -6630,7 +6630,7 @@ in and type <span class="keys"><kbd class="key-enter">Enter</kbd></span> again. 
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/open_in_new_tab.js"></script>
       

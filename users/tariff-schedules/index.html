@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6211,9 +6211,9 @@ The first 4 column names are ignored.</p>
 or an array-of-arrays structure. The previous example schedule would look like this when saved
 at the <code>/pm/tariffs/schedule</code> path as a string:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;pm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;tariffs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;schedule&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Month,Day,Weekday,Time,TOU\nJan-Dec,,Mon-Fri,0-8,10.48\nJan-Dec,,Mon-Fri,8-24,11.00\nJan-Dec,,Sat-Sun,0-8,9.19\nJan-Dec,,Sat-Sun,8-24,11.21&quot;</span>
+<span class="w">  </span><span class="nt">"pm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"tariffs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"schedule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Month,Day,Weekday,Time,TOU\nJan-Dec,,Mon-Fri,0-8,10.48\nJan-Dec,,Mon-Fri,8-24,11.00\nJan-Dec,,Sat-Sun,0-8,9.19\nJan-Dec,,Sat-Sun,8-24,11.21"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -6226,14 +6226,14 @@ for the JSON to be valid.</p>
 <p>Alternatively, the previous example could be encoded as a JSON array-of-arrays, which would look
 like this:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;pm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;tariffs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;schedule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;Month&quot;</span><span class="p">,</span><span class="s2">&quot;Day&quot;</span><span class="p">,</span><span class="s2">&quot;Weekday&quot;</span><span class="p">,</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span><span class="s2">&quot;TOU&quot;</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;Jan-Dec&quot;</span><span class="p">,,</span><span class="s2">&quot;Mon-Fri&quot;</span><span class="p">,</span><span class="s2">&quot;0-8&quot;</span><span class="p">,</span><span class="s2">&quot;10.48&quot;</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;Jan-Dec&quot;</span><span class="p">,,</span><span class="s2">&quot;Mon-Fri&quot;</span><span class="p">,</span><span class="s2">&quot;8-24&quot;</span><span class="p">,</span><span class="s2">&quot;11.00&quot;</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;Jan-Dec&quot;</span><span class="p">,,</span><span class="s2">&quot;Sat-Sun&quot;</span><span class="p">,</span><span class="s2">&quot;0-8&quot;</span><span class="p">,</span><span class="s2">&quot;9.19&quot;</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="s2">&quot;Jan-Dec&quot;</span><span class="p">,,</span><span class="s2">&quot;Sat-Sun&quot;</span><span class="p">,</span><span class="s2">&quot;8-24&quot;</span><span class="p">,</span><span class="s2">&quot;11.21&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">"pm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"tariffs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"schedule"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"Month"</span><span class="p">,</span><span class="s2">"Day"</span><span class="p">,</span><span class="s2">"Weekday"</span><span class="p">,</span><span class="s2">"Time"</span><span class="p">,</span><span class="s2">"TOU"</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"Jan-Dec"</span><span class="p">,,</span><span class="s2">"Mon-Fri"</span><span class="p">,</span><span class="s2">"0-8"</span><span class="p">,</span><span class="s2">"10.48"</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"Jan-Dec"</span><span class="p">,,</span><span class="s2">"Mon-Fri"</span><span class="p">,</span><span class="s2">"8-24"</span><span class="p">,</span><span class="s2">"11.00"</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"Jan-Dec"</span><span class="p">,,</span><span class="s2">"Sat-Sun"</span><span class="p">,</span><span class="s2">"0-8"</span><span class="p">,</span><span class="s2">"9.19"</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">"Jan-Dec"</span><span class="p">,,</span><span class="s2">"Sat-Sun"</span><span class="p">,</span><span class="s2">"8-24"</span><span class="p">,</span><span class="s2">"11.21"</span><span class="p">]</span>
 <span class="w">      </span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
@@ -6291,7 +6291,7 @@ like this:</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/open_in_new_tab.js"></script>
       

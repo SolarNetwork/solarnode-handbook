@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6777,14 +6777,14 @@ classifications</a> do not matter in this context: the expression will look for
 properties in all classifications.</p>
 <p>For example, given a datum like this:</p>
 <div class="highlight"><span class="filename">Example datum representation in JSON</span><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;i&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;watts&quot;</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="mi">123</span>
+<span class="w">  </span><span class="nt">"i"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"watts"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="mi">123</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;wattHours&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">987654321</span>
+<span class="w">  </span><span class="nt">"a"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"wattHours"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">987654321</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;s&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;mode&quot;</span><span class="w">      </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;auto&quot;</span>
+<span class="w">  </span><span class="nt">"s"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"mode"</span><span class="w">      </span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -7868,16 +7868,16 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 </tbody>
 </table>
 <p>Assuming the above schedule were available with the identifier <code>my-schedule</code>, here is an example expression that finds the <code>price</code> rate at the time the expression is evaluated:</p>
-<div class="highlight"><pre><span></span><code>tariffSchedule(&#39;my-schedule&#39;)
+<div class="highlight"><pre><span></span><code>tariffSchedule('my-schedule')
     .resolveTariff(now(), null)
-    .rates[&#39;price&#39;]
+    .rates['price']
     .amount
 </code></pre></div>
 <p>If the evuation time was <code>2024-08-10 13:00</code> then the expression would return <code>11.21</code> because that date matches tariff #4.</p>
 <p>You can use the <a href="#date-time-functions">date time functions</a> to find tariffs that match arbitrary dates, such as a date 1 month in the future:</p>
-<div class="highlight"><pre><span></span><code>tariffSchedule(&#39;my-schedule&#39;)
-    .resolveTariff(datePlus(now(), 1, &#39;months&#39;), null)
-    .rates[&#39;price&#39;]
+<div class="highlight"><pre><span></span><code>tariffSchedule('my-schedule')
+    .resolveTariff(datePlus(now(), 1, 'months'), null)
+    .rates['price']
     .amount
 </code></pre></div>
 <p>Here are the available tariff schedule expression functions:</p>
@@ -7980,15 +7980,15 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 <h2 id="expression-examples">Expression examples<a class="headerlink" href="#expression-examples" title="Permanent link">&para;</a></h2>
 <p>Let's assume a captured datum like this, expressed as JSON:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;i&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;amps&quot;</span><span class="w">      </span><span class="p">:</span><span class="w"> </span><span class="mf">4.2</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;volts&quot;</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="mf">240.0</span>
+<span class="w">  </span><span class="nt">"i"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"amps"</span><span class="w">      </span><span class="p">:</span><span class="w"> </span><span class="mf">4.2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"volts"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="mf">240.0</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;a&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;reading&quot;</span><span class="w">   </span><span class="p">:</span><span class="w"> </span><span class="mi">38009138</span>
+<span class="w">  </span><span class="nt">"a"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reading"</span><span class="w">   </span><span class="p">:</span><span class="w"> </span><span class="mi">38009138</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;s&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="w">  </span><span class="nt">"s"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"state"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -8028,10 +8028,10 @@ directly, operating on the node's own metadata instead of a datum stream's metad
 <p>Building on the previous example datum, let's assume an <strong>earlier</strong> datum for the same source ID had
 been collected with these properties (the classifications have been omitted for brevity):</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;amps&quot;</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="mf">3.1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;volts&quot;</span><span class="w">   </span><span class="p">:</span><span class="w"> </span><span class="mf">241.0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;reading&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">38009130</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="w">   </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ok&quot;</span>
+<span class="w">  </span><span class="nt">"amps"</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="mf">3.1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"volts"</span><span class="w">   </span><span class="p">:</span><span class="w"> </span><span class="mf">241.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"reading"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">38009130</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"state"</span><span class="w">   </span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Then here are some example expressions and the results they would produce given the original datum
@@ -8067,8 +8067,8 @@ example:</p>
 <code>offset(source,offset)</code> function. Let's assume SolarNode is collecting a datum stream for the source
 ID <code>solar</code>, and had amassed the following history, in newest-to-oldest order:</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span><span class="nt">&quot;amps&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">6.0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;volts&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">240.0</span><span class="w"> </span><span class="p">},</span>
-<span class="w">  </span><span class="p">{</span><span class="nt">&quot;amps&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">5.9</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;volts&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">239.9</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"amps"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">6.0</span><span class="p">,</span><span class="w"> </span><span class="nt">"volts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">240.0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"amps"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">5.9</span><span class="p">,</span><span class="w"> </span><span class="nt">"volts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">239.9</span><span class="w"> </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
 <p>Then here are some example expressions and the results they would produce given the original datum
@@ -8101,12 +8101,12 @@ example:</p>
 </table>
 <p>If we add another datum stream for the source ID <code>solar1</code> like this:</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span><span class="nt">&quot;amps&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;volts&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">240.0</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"amps"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="nt">"volts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">240.0</span><span class="w"> </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
 <p>If we also add another datum stream for the source ID <code>solar2</code> like this:</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span><span class="nt">&quot;amps&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;volts&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">240.0</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"amps"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="nt">"volts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">240.0</span><span class="w"> </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
 <p>Then here are some example expressions and the results they would produce given the previous datum
@@ -8341,7 +8341,7 @@ metadata (e.g. the <a href="https://github.com/SolarNetwork/solarnetwork/wiki/So
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/open_in_new_tab.js"></script>
       

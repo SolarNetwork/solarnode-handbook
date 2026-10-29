@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6239,13 +6239,13 @@ This encoding is <em>only</em> needed in the STOMP header, <em>not</em> in the S
 <p>Here is a basic example in Java that uses the
 <a href="https://github.com/SolarNetwork/solarnetwork-common/blob/develop/net.solarnetwork.common/src/net/solarnetwork/security/SnsAuthorizationBuilder.java">SnsAuthorizationBuilder</a> class to generate the required
 <code>authorization</code> and <code>date</code> headers required by the SNS scheme:</p>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;value-derived-from-password&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// depends on `auth-hash` CONNECTED header</span>
-<span class="n">SnsAuthorizationBuilder</span><span class="w"> </span><span class="n">authBuilder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SnsAuthorizationBuilder</span><span class="p">(</span><span class="s">&quot;me@example.com&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"value-derived-from-password"</span><span class="p">;</span><span class="w"> </span><span class="c1">// depends on `auth-hash` CONNECTED header</span>
+<span class="n">SnsAuthorizationBuilder</span><span class="w"> </span><span class="n">authBuilder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SnsAuthorizationBuilder</span><span class="p">(</span><span class="s">"me@example.com"</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="na">date</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
-<span class="w">    </span><span class="p">.</span><span class="na">verb</span><span class="p">(</span><span class="s">&quot;SEND&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="p">.</span><span class="na">path</span><span class="p">(</span><span class="s">&quot;/setup/authenticate&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">.</span><span class="na">verb</span><span class="p">(</span><span class="s">"SEND"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">path</span><span class="p">(</span><span class="s">"/setup/authenticate"</span><span class="p">);</span>
 <span class="n">String</span><span class="w"> </span><span class="n">authHeader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">authBuilder</span><span class="p">.</span><span class="na">build</span><span class="p">(</span><span class="n">secret</span><span class="p">);</span>
-<span class="n">String</span><span class="w"> </span><span class="n">dateHeader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">authBuilder</span><span class="p">.</span><span class="na">headerValue</span><span class="p">(</span><span class="s">&quot;date&quot;</span><span class="p">);</span>
+<span class="n">String</span><span class="w"> </span><span class="n">dateHeader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">authBuilder</span><span class="p">.</span><span class="na">headerValue</span><span class="p">(</span><span class="s">"date"</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="bcrypt-secret-derivation">BCrypt secret derivation<a class="headerlink" href="#bcrypt-secret-derivation" title="Permanent link">&para;</a></h2>
 <p>The <code>auth-hash:bcrypt</code> <a href="../connecting/#connected-frame"><code>CONNECTED</code></a> header indicates that the
@@ -6265,14 +6265,14 @@ everything after the final <code>$</code> is the Base64 encoded salt used.</p>
 <p>The <a href="https://github.com/SolarNetwork/solarnetwork-common/blob/develop/net.solarnetwork.common/src/net/solarnetwork/security/SnsAuthorizationBuilder.java">SnsAuthorizationBuilder</a> class can be used to generate the
 required <code>authorization</code> header value. See <a href="https://github.com/SolarNetwork/solarnetwork-node/blob/0d387a6ceb973c88c87e45ac7d0cd9a0bc95ba02/net.solarnetwork.node.setup.stomp.test/src/net/solarnetwork/node/setup/stomp/test/StompSetupServerHandlerTests.java#L260-L308">this example</a> for
 more details; here is that example distilled:</p>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">salt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;$2a$10$upVbEZHge9Iph1NN3L6ENO&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// from auth-hash-param-salt CONNECTED header</span>
-<span class="n">String</span><span class="w"> </span><span class="n">secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DigestUtils</span><span class="p">.</span><span class="na">sha256Hex</span><span class="p">(</span><span class="n">BCrypt</span><span class="p">.</span><span class="na">hashpw</span><span class="p">(</span><span class="s">&quot;password123&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">salt</span><span class="p">));</span>
-<span class="n">SnsAuthorizationBuilder</span><span class="w"> </span><span class="n">authBuilder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SnsAuthorizationBuilder</span><span class="p">(</span><span class="s">&quot;me@example.com&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">salt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"$2a$10$upVbEZHge9Iph1NN3L6ENO"</span><span class="p">;</span><span class="w"> </span><span class="c1">// from auth-hash-param-salt CONNECTED header</span>
+<span class="n">String</span><span class="w"> </span><span class="n">secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DigestUtils</span><span class="p">.</span><span class="na">sha256Hex</span><span class="p">(</span><span class="n">BCrypt</span><span class="p">.</span><span class="na">hashpw</span><span class="p">(</span><span class="s">"password123"</span><span class="p">,</span><span class="w"> </span><span class="n">salt</span><span class="p">));</span>
+<span class="n">SnsAuthorizationBuilder</span><span class="w"> </span><span class="n">authBuilder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SnsAuthorizationBuilder</span><span class="p">(</span><span class="s">"me@example.com"</span><span class="p">)</span>
 <span class="w">        </span><span class="p">.</span><span class="na">date</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="na">verb</span><span class="p">(</span><span class="s">&quot;SEND&quot;</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="na">path</span><span class="p">(</span><span class="s">&quot;/setup/authenticate&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">.</span><span class="na">verb</span><span class="p">(</span><span class="s">"SEND"</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">path</span><span class="p">(</span><span class="s">"/setup/authenticate"</span><span class="p">);</span>
 <span class="n">String</span><span class="w"> </span><span class="n">authHeader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">authBuilder</span><span class="p">.</span><span class="na">build</span><span class="p">(</span><span class="n">secret</span><span class="p">);</span>
-<span class="n">String</span><span class="w"> </span><span class="n">dateHeader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">authBuilder</span><span class="p">.</span><span class="na">headerValue</span><span class="p">(</span><span class="s">&quot;date&quot;</span><span class="p">);</span>
+<span class="n">String</span><span class="w"> </span><span class="n">dateHeader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">authBuilder</span><span class="p">.</span><span class="na">headerValue</span><span class="p">(</span><span class="s">"date"</span><span class="p">);</span>
 </code></pre></div>
 
 
@@ -6326,7 +6326,7 @@ more details; here is that example distilled:</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../../js/open_in_new_tab.js"></script>
       

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6368,7 +6368,7 @@ register as a service for other plugins to use, and an implementation of that se
 <span class="w">    </span><span class="nd">@Override</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">placeholderService</span><span class="p">.</span><span class="na">resolvePlaceholders</span><span class="p">(</span>
-<span class="w">            </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;Hello %s, from {myName}.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">),</span>
+<span class="w">            </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">"Hello %s, from {myName}."</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">),</span>
 <span class="w">            </span><span class="kc">null</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -6379,8 +6379,8 @@ register as a service for other plugins to use, and an implementation of that se
 <p>Assuming the <code>PlaceholderService</code> will resolve <code>{name}</code> to <code>Office Node</code>, we would expect the <code>greet()</code> method to
 run like this:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Greeter</span><span class="w"> </span><span class="n">greeter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resolveGreeterService</span><span class="p">();</span>
-<span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">greeter</span><span class="p">.</span><span class="na">greet</span><span class="p">(</span><span class="s">&quot;Joe&quot;</span><span class="p">);</span>
-<span class="c1">// result is &quot;Hello Joe, from Office Node.&quot;</span>
+<span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">greeter</span><span class="p">.</span><span class="na">greet</span><span class="p">(</span><span class="s">"Joe"</span><span class="p">);</span>
+<span class="c1">// result is "Hello Joe, from Office Node."</span>
 </code></pre></div>
 <p>In the plugin we then need to:</p>
 <ol>
@@ -6390,20 +6390,20 @@ run like this:</p>
     platform</li>
 </ol>
 <p>Here is an example Blueprint XML document that does both:</p>
-<div class="highlight"><span class="filename">Blueprint XML example</span><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;blueprint</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.osgi.org/xmlns/blueprint/v1.0.0&quot;</span>
-<span class="w">    </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;</span>
+<div class="highlight"><span class="filename">Blueprint XML example</span><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;blueprint</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://www.osgi.org/xmlns/blueprint/v1.0.0"</span>
+<span class="w">    </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">"</span>
 <span class="s">        http://www.osgi.org/xmlns/blueprint/v1.0.0</span>
-<span class="s">        https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="s">        https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd"</span><span class="nt">&gt;</span>
 
 <span class="w">    </span><span class="cm">&lt;!-- Declare a reference (lookup) to the PlaceholderService --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;placeholderService&quot;</span>
-<span class="w">        </span><span class="na">interface=</span><span class="s">&quot;net.solarnetwork.node.service.PlaceholderService&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">"placeholderService"</span>
+<span class="w">        </span><span class="na">interface=</span><span class="s">"net.solarnetwork.node.service.PlaceholderService"</span><span class="nt">/&gt;</span>
 
-<span class="w">    </span><span class="nt">&lt;service</span><span class="w"> </span><span class="na">interface=</span><span class="s">&quot;com.example.Greeter&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.example.HelloGreeter&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;placeholderService&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;service</span><span class="w"> </span><span class="na">interface=</span><span class="s">"com.example.Greeter"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">"com.example.HelloGreeter"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">ref=</span><span class="s">"placeholderService"</span><span class="nt">&gt;</span>
 <span class="w">        </span><span class="nt">&lt;/bean&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/service&gt;</span>
 
@@ -6415,12 +6415,12 @@ can provide any number of Blueprint XML documents there, but often a single file
 a common convention in SolarNode is to name it <code>module.xml</code>.</p>
 <h2 id="xml-syntax">XML Syntax<a class="headerlink" href="#xml-syntax" title="Permanent link">&para;</a></h2>
 <p>A minimal Blueprint XML file is structured like this:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;blueprint</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.osgi.org/xmlns/blueprint/v1.0.0&quot;</span>
-<span class="w">    </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;blueprint</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://www.osgi.org/xmlns/blueprint/v1.0.0"</span>
+<span class="w">    </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">"</span>
 <span class="s">        http://www.osgi.org/xmlns/blueprint/v1.0.0</span>
-<span class="s">        https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="s">        https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd"</span><span class="nt">&gt;</span>
 
 <span class="w">    </span><span class="cm">&lt;!-- Plugin components configured here --&gt;</span>
 
@@ -6431,8 +6431,8 @@ a common convention in SolarNode is to name it <code>module.xml</code>.</p>
 so you may refer to it elsewhere within the Blueprint XML. For example, imagine you wanted to use
 the <a href="../../services/placeholder-service/">Placeholder Service</a> in your component. You would obtain a
 reference to that like this:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;placeholderService&quot;</span>
-<span class="w">    </span><span class="na">interface=</span><span class="s">&quot;net.solarnetwork.node.service.PlaceholderService&quot;</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">"placeholderService"</span>
+<span class="w">    </span><span class="na">interface=</span><span class="s">"net.solarnetwork.node.service.PlaceholderService"</span><span class="nt">/&gt;</span>
 </code></pre></div>
 <p>The <code>id</code> attribute allows you to refer to this service elsewhere in your Blueprint XML, while
 <code>interface</code> declares the fully-qualified Java interface of the service you want to use.</p>
@@ -6457,7 +6457,7 @@ an <code>id</code> attribute, and then you can refer to that component in other 
 
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">go</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">PlaceholderService</span><span class="p">.</span><span class="na">resolvePlaceholders</span><span class="p">(</span><span class="n">placeholderService</span><span class="p">,</span>
-<span class="w">                </span><span class="s">&quot;{building}/temp&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="w">                </span><span class="s">"{building}/temp"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getMinimum</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -6470,12 +6470,12 @@ an <code>id</code> attribute, and then you can refer to that component in other 
 <span class="p">}</span>
 </code></pre></div>
 <p>Here is how that component could be declared in Blueprint:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;placeholderService&quot;</span>
-<span class="w">    </span><span class="na">interface=</span><span class="s">&quot;net.solarnetwork.node.service.PlaceholderService&quot;</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">"placeholderService"</span>
+<span class="w">    </span><span class="na">interface=</span><span class="s">"net.solarnetwork.node.service.PlaceholderService"</span><span class="nt">/&gt;</span>
 
-<span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myComponent&quot;</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.example.MyComponent&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;placeholderService&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;minimum&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">"myComponent"</span><span class="w"> </span><span class="na">class=</span><span class="s">"com.example.MyComponent"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">ref=</span><span class="s">"placeholderService"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"minimum"</span><span class="w"> </span><span class="na">value=</span><span class="s">"10"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/bean&gt;</span>
 </code></pre></div>
 <h4 id="constructor-arguments">Constructor Arguments<a class="headerlink" href="#constructor-arguments" title="Permanent link">&para;</a></h4>
@@ -6484,9 +6484,9 @@ elements in Blueprint. The <code>&lt;argument&gt;</code> value can be specified 
 using a <code>ref</code> attribute whose value is the <code>id</code> of that component, or as a literal value using a
 <code>value</code> attribute.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myComponent&quot;</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.example.MyComponent&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;placeholderService&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">"myComponent"</span><span class="w"> </span><span class="na">class=</span><span class="s">"com.example.MyComponent"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">ref=</span><span class="s">"placeholderService"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">value=</span><span class="s">"10"</span><span class="nt">&gt;</span>
 </code></pre></div>
 <h4 id="property-accessors">Property Accessors<a class="headerlink" href="#property-accessors" title="Permanent link">&para;</a></h4>
 <p>You can configure mutable class properties on a component with nested <code>&lt;property name=""&gt;</code> elements
@@ -6496,18 +6496,18 @@ would be associated with a Java setter method <code class="highlight"><span clas
 using a <code>ref</code> attribute whose value is the <code>id</code> of that component, or as a literal value using a
 <code>value</code> attribute.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myComponent&quot;</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.example.MyComponent&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;placeholderService&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;placeholderService&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;minimum&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">"myComponent"</span><span class="w"> </span><span class="na">class=</span><span class="s">"com.example.MyComponent"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"placeholderService"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"placeholderService"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">name=</span><span class="s">"minimum"</span><span class="w"> </span><span class="na">value=</span><span class="s">"10"</span><span class="nt">&gt;</span>
 </code></pre></div>
 <h4 id="startstop-hooks">Start/Stop Hooks<a class="headerlink" href="#startstop-hooks" title="Permanent link">&para;</a></h4>
 <p>Blueprint can invoke a method on your component when it has finished instantiating and configuring
 the object (when the plugin starts), and another when it destroys the instance (when the plugin is
 stopped). You simply provide the name of the method you would like Blueprint to call in the
 <code>init-method</code> and <code>destroy-method</code> attributes of the <code>&lt;bean&gt;</code> element. For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myComponent&quot;</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.example.MyComponent&quot;</span>
-<span class="w">    </span><span class="na">init-method=</span><span class="s">&quot;startup&quot;</span>
-<span class="w">    </span><span class="na">destroy-method=</span><span class="s">&quot;shutdown&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">"myComponent"</span><span class="w"> </span><span class="na">class=</span><span class="s">"com.example.MyComponent"</span>
+<span class="w">    </span><span class="na">init-method=</span><span class="s">"startup"</span>
+<span class="w">    </span><span class="na">destroy-method=</span><span class="s">"shutdown"</span><span class="nt">&gt;</span>
 </code></pre></div>
 <h3 id="service-registration">Service Registration<a class="headerlink" href="#service-registration" title="Permanent link">&para;</a></h3>
 <p>You can make any component available to other plugins by <em>registering</em> the component with a
@@ -6535,7 +6535,7 @@ class in <em>their</em> Blueprint XML.</p>
 
 <span class="w">    </span><span class="nd">@Override</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">go</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Gone!&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Gone!"</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -6544,18 +6544,18 @@ Blueprint:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Direct service component</label><label for="__tabbed_2_2">Indirect service component</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;service</span><span class="w"> </span><span class="na">interface=</span><span class="s">&quot;com.example.Startable&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;service</span><span class="w"> </span><span class="na">interface=</span><span class="s">"com.example.Startable"</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="cm">&lt;!-- The service implementation is nested directly within --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.example.MyComponent&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">"com.example.MyComponent"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/service&gt;</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- The service implementation is referenced indirectly... --&gt;</span>
-<span class="nt">&lt;service</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;myComponent&quot;</span><span class="w"> </span><span class="na">interface=</span><span class="s">&quot;com.example.Startable&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;service</span><span class="w"> </span><span class="na">ref=</span><span class="s">"myComponent"</span><span class="w"> </span><span class="na">interface=</span><span class="s">"com.example.Startable"</span><span class="nt">/&gt;</span>
 
 <span class="cm">&lt;!-- ... to a bean with a matching id attribute --&gt;</span>
-<span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myComponent&quot;</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.example.MyComponent&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">"myComponent"</span><span class="w"> </span><span class="na">class=</span><span class="s">"com.example.MyComponent"</span><span class="nt">/&gt;</span>
 </code></pre></div>
 </div>
 </div>
@@ -6563,7 +6563,7 @@ Blueprint:</p>
 <h4 id="multiple-service-interfaces">Multiple Service Interfaces<a class="headerlink" href="#multiple-service-interfaces" title="Permanent link">&para;</a></h4>
 <p>You can advertise any number of service interfaces that your component supports, by nesting an <code>&lt;interfaces&gt;</code>
 element within the <code>&lt;service&gt;</code> element, in place of the <code>interface</code> attribute. For example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;service</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;myComponent&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;service</span><span class="w"> </span><span class="na">ref=</span><span class="s">"myComponent"</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;interfaces&gt;</span>
 <span class="w">        </span><span class="nt">&lt;value&gt;</span>com.example.Startable<span class="nt">&lt;/value&gt;</span>
 <span class="w">        </span><span class="nt">&lt;value&gt;</span>com.example.Stopable<span class="nt">&lt;/value&gt;</span>
@@ -6578,7 +6578,7 @@ because the plugin wishing to add a <a href="#service-references">reference</a> 
 <p>For example, the plugin that hosts the <code>com.example.service.MyService</code> service would need a
 <a href="../manifest/">manifest</a> file that includes an <a href="../manifest/#package-exports"><code>Export-Package</code></a>
 attribute similar to:</p>
-<div class="highlight"><pre><span></span><code><span class="na">Export-Package</span><span class="o">:</span><span class="w"> </span><span class="s">com.example.service;version=&quot;1.0.0&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="na">Export-Package</span><span class="o">:</span><span class="w"> </span><span class="s">com.example.service;version="1.0.0"</span>
 </code></pre></div>
 
 
@@ -6632,7 +6632,7 @@ attribute similar to:</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       

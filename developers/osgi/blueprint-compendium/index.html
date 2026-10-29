@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6090,17 +6090,17 @@
 <p>The Gemini Blueprint implementation provides some useful extensions that SolarNode makes frequent use of.
  To use the extensions you need to declare the Gemini Blueprint Compendium namespace in your Blueprint
  XML file, like this:</p>
-<div class="highlight"><span class="filename">Gemini Blueprint Compendium XML declaration</span><pre><span></span><code><span class="nt">&lt;blueprint</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.osgi.org/xmlns/blueprint/v1.0.0&quot;</span>
-<span class="w">    </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="w">    </span><span class="na">xmlns:osgix=</span><span class="s">&quot;http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium&quot;</span>
-<span class="w">    </span><span class="na">xmlns:beans=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
-<span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;</span>
+<div class="highlight"><span class="filename">Gemini Blueprint Compendium XML declaration</span><pre><span></span><code><span class="nt">&lt;blueprint</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://www.osgi.org/xmlns/blueprint/v1.0.0"</span>
+<span class="w">    </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="w">    </span><span class="na">xmlns:osgix=</span><span class="s">"http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium"</span>
+<span class="w">    </span><span class="na">xmlns:beans=</span><span class="s">"http://www.springframework.org/schema/beans"</span>
+<span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">"</span>
 <span class="s">        http://www.osgi.org/xmlns/blueprint/v1.0.0</span>
 <span class="s">        http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd</span>
 <span class="s">        http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium</span>
 <span class="s">        http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium/gemini-blueprint-compendium.xsd</span>
 <span class="s">        http://www.springframework.org/schema/beans</span>
-<span class="s">        http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="s">        http://www.springframework.org/schema/beans/spring-beans.xsd"</span><span class="nt">&gt;</span>
 </code></pre></div>
 <p>This example declares the Gemini Blueprint Compendium XML namespace prefix <code>osgix</code> and a related Spring Beans
 namespace prefix <code>beans</code>. You will see those used throughout SolarNode.</p>
@@ -6140,13 +6140,13 @@ our Blueprint XML, like this:</p>
 
 <span class="w">    </span><span class="nd">@Override</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getSettingUid</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;com.example.MyService&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// (1)!</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"com.example.MyService"</span><span class="p">;</span><span class="w"> </span><span class="c1">// (1)!</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nd">@Override</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">SettingSpecifier</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getSettingSpecifiers</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">singletonList</span><span class="p">(</span>
-<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">&quot;level&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">0</span><span class="p">)));</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">"level"</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">0</span><span class="p">)));</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nd">@Override</span>
@@ -6177,31 +6177,31 @@ our Blueprint XML, like this:</p>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;blueprint</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.osgi.org/xmlns/blueprint/v1.0.0&quot;</span>
-<span class="w">    </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="w">    </span><span class="na">xmlns:osgix=</span><span class="s">&quot;http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium&quot;</span>
-<span class="w">    </span><span class="na">xmlns:beans=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
-<span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;blueprint</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://www.osgi.org/xmlns/blueprint/v1.0.0"</span>
+<span class="w">    </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="w">    </span><span class="na">xmlns:osgix=</span><span class="s">"http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium"</span>
+<span class="w">    </span><span class="na">xmlns:beans=</span><span class="s">"http://www.springframework.org/schema/beans"</span>
+<span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">"</span>
 <span class="s">        http://www.osgi.org/xmlns/blueprint/v1.0.0</span>
 <span class="s">        http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd</span>
 <span class="s">        http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium</span>
 <span class="s">        http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium/gemini-blueprint-compendium.xsd</span>
 <span class="s">        http://www.springframework.org/schema/beans</span>
-<span class="s">        http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="s">        http://www.springframework.org/schema/beans/spring-beans.xsd"</span><span class="nt">&gt;</span>
 
 <span class="w">    </span><span class="nt">&lt;service&gt;</span>
 <span class="w">        </span><span class="nt">&lt;interfaces&gt;</span>
 <span class="w">            </span><span class="nt">&lt;value&gt;</span>net.solarnetwork.settings.SettingSpecifierProvider<span class="nt">&lt;/value&gt;</span>
 <span class="w">        </span><span class="nt">&lt;/interfaces&gt;</span>
-<span class="w">        </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.example.MyService&quot;</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (1)! --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">"com.example.MyService"</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (1)! --&gt;</span>
 <span class="w">            </span><span class="nt">&lt;osgix:managed-properties</span>
-<span class="w">                    </span><span class="na">persistent-id=</span><span class="s">&quot;com.example.MyService&quot;</span>
-<span class="w">                    </span><span class="na">autowire-on-update=</span><span class="s">&quot;true&quot;</span>
-<span class="w">                    </span><span class="na">update-method=</span><span class="s">&quot;configurationChanged&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;messageSource&quot;</span><span class="nt">&gt;</span>
-<span class="w">                </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;org.springframework.context.support.ResourceBundleMessageSource&quot;</span><span class="nt">&gt;</span>
-<span class="w">                    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;basenames&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;com.example.MyService&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="na">persistent-id=</span><span class="s">"com.example.MyService"</span>
+<span class="w">                    </span><span class="na">autowire-on-update=</span><span class="s">"true"</span>
+<span class="w">                    </span><span class="na">update-method=</span><span class="s">"configurationChanged"</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"messageSource"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">"org.springframework.context.support.ResourceBundleMessageSource"</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"basenames"</span><span class="w"> </span><span class="na">value=</span><span class="s">"com.example.MyService"</span><span class="nt">/&gt;</span>
 <span class="w">                </span><span class="nt">&lt;/bean&gt;</span>
 <span class="w">            </span><span class="nt">&lt;/property&gt;</span>
 <span class="w">        </span><span class="nt">&lt;/bean&gt;</span>
@@ -6266,13 +6266,13 @@ that property a factory of managed, persistable settings by adding a
 
 <span class="w">    </span><span class="nd">@Override</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getSettingUid</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;com.example.ManagedService&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// (1)!</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"com.example.ManagedService"</span><span class="p">;</span><span class="w"> </span><span class="c1">// (1)!</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nd">@Override</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">SettingSpecifier</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getSettingSpecifiers</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">singletonList</span><span class="p">(</span>
-<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">&quot;level&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">0</span><span class="p">)));</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">BasicTextFieldSettingSpecifier</span><span class="p">(</span><span class="s">"level"</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">0</span><span class="p">)));</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nd">@Override</span>
@@ -6303,43 +6303,43 @@ that property a factory of managed, persistable settings by adding a
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;blueprint</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.osgi.org/xmlns/blueprint/v1.0.0&quot;</span>
-<span class="w">    </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="w">    </span><span class="na">xmlns:osgix=</span><span class="s">&quot;http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium&quot;</span>
-<span class="w">    </span><span class="na">xmlns:beans=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
-<span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;blueprint</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://www.osgi.org/xmlns/blueprint/v1.0.0"</span>
+<span class="w">    </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="w">    </span><span class="na">xmlns:osgix=</span><span class="s">"http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium"</span>
+<span class="w">    </span><span class="na">xmlns:beans=</span><span class="s">"http://www.springframework.org/schema/beans"</span>
+<span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">"</span>
 <span class="s">        http://www.osgi.org/xmlns/blueprint/v1.0.0</span>
 <span class="s">        http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd</span>
 <span class="s">        http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium</span>
 <span class="s">        http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium/gemini-blueprint-compendium.xsd</span>
 <span class="s">        http://www.springframework.org/schema/beans</span>
-<span class="s">        http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="s">        http://www.springframework.org/schema/beans/spring-beans.xsd"</span><span class="nt">&gt;</span>
 
-<span class="w">    </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;messageSource&quot;</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;org.springframework.context.support.ResourceBundleMessageSource&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;basenames&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;com.example.ManagedService&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">"messageSource"</span><span class="w"> </span><span class="na">class=</span><span class="s">"org.springframework.context.support.ResourceBundleMessageSource"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"basenames"</span><span class="w"> </span><span class="na">value=</span><span class="s">"com.example.ManagedService"</span><span class="nt">/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/bean&gt;</span>
 
-<span class="w">    </span><span class="nt">&lt;service</span><span class="w"> </span><span class="na">interface=</span><span class="s">&quot;net.solarnetwork.settings.SettingSpecifierProviderFactory&quot;</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (1)! --&gt;</span>
-<span class="w">        </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;net.solarnetwork.settings.support.BasicSettingSpecifierProviderFactory&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;displayName&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;Super-duper Managed Service&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;factoryUid&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;com.example.ManagedService&quot;</span><span class="nt">/&gt;</span><span class="cm">&lt;!-- (2)! --&gt;</span>
-<span class="w">            </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;messageSource&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;messageSource&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;service</span><span class="w"> </span><span class="na">interface=</span><span class="s">"net.solarnetwork.settings.SettingSpecifierProviderFactory"</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (1)! --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">"net.solarnetwork.settings.support.BasicSettingSpecifierProviderFactory"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"displayName"</span><span class="w"> </span><span class="na">value=</span><span class="s">"Super-duper Managed Service"</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"factoryUid"</span><span class="w"> </span><span class="na">value=</span><span class="s">"com.example.ManagedService"</span><span class="nt">/&gt;</span><span class="cm">&lt;!-- (2)! --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"messageSource"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"messageSource"</span><span class="nt">/&gt;</span>
 <span class="w">        </span><span class="nt">&lt;/bean&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/service&gt;</span>
 
 <span class="w">    </span><span class="nt">&lt;osgix:managed-service-factory</span>
-<span class="w">            </span><span class="na">factory-pid=</span><span class="s">&quot;com.example.ManagedService&quot;</span>
-<span class="w">            </span><span class="na">autowire-on-update=</span><span class="s">&quot;true&quot;</span>
-<span class="w">            </span><span class="na">update-method=</span><span class="s">&quot;configurationChanged&quot;</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (3)! --&gt;</span>
+<span class="w">            </span><span class="na">factory-pid=</span><span class="s">"com.example.ManagedService"</span>
+<span class="w">            </span><span class="na">autowire-on-update=</span><span class="s">"true"</span>
+<span class="w">            </span><span class="na">update-method=</span><span class="s">"configurationChanged"</span><span class="nt">&gt;</span><span class="cm">&lt;!-- (3)! --&gt;</span>
 <span class="w">        </span><span class="nt">&lt;osgix:interfaces&gt;</span>
 <span class="w">            </span><span class="nt">&lt;beans:value&gt;</span>net.solarnetwork.settings.SettingSpecifierProvider<span class="nt">&lt;/beans:value&gt;</span>
 <span class="w">        </span><span class="nt">&lt;/osgix:interfaces&gt;</span>
 <span class="w">        </span><span class="nt">&lt;osgix:service-properties&gt;</span>
-<span class="w">            </span><span class="nt">&lt;beans:entry</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;settingPid&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;com.example.ManagedService&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;beans:entry</span><span class="w"> </span><span class="na">key=</span><span class="s">"settingPid"</span><span class="w"> </span><span class="na">value=</span><span class="s">"com.example.ManagedService"</span><span class="nt">/&gt;</span>
 <span class="w">        </span><span class="nt">&lt;/osgix:service-properties&gt;</span>
-<span class="w">        </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.example.ManagedService&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;messageSource&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;messageSource&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">"com.example.ManagedService"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">"messageSource"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"messageSource"</span><span class="nt">/&gt;</span>
 <span class="w">        </span><span class="nt">&lt;/bean&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/osgix:managed-service-factory&gt;</span>
 
@@ -6424,7 +6424,7 @@ a screen shot showing two instances having been created:</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6004,9 +6004,9 @@ to make sure resources are freed when a service is no longer needed.</p>
 <p>Blueprint does provide the <code>destroy-method</code> <a href="../../osgi/blueprint/#startstop-hooks">stop hook</a> that can be
 used in many situations, however Blueprint does not allow this in all cases. For example a <code>&lt;bean&gt;</code>
 nested within a <code>&lt;service&gt;</code> element does not allow a <code>destroy-method</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;service</span><span class="w"> </span><span class="na">interface=</span><span class="s">&quot;com.example.MyService&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;service</span><span class="w"> </span><span class="na">interface=</span><span class="s">"com.example.MyService"</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="cm">&lt;!-- destroy-method not allowed here: --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.example.MyComponent&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">"com.example.MyComponent"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/service&gt;</span>
 </code></pre></div>
 <p>If <code>MyComponent</code> also implemented <code>CloseableService</code> then we can achieve the desired stop hook like
@@ -6016,15 +6016,15 @@ this:</p>
 <span class="w">        </span><span class="nt">&lt;value&gt;</span>com.example.MyService<span class="nt">&lt;/value&gt;</span>
 <span class="w">        </span><span class="nt">&lt;value&gt;</span>net.solarnetwork.service.CloseableService<span class="nt">&lt;/value&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/interfaces&gt;</span>
-<span class="w">    </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.example.MyComponent&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">"com.example.MyComponent"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/service&gt;</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Note that the above example <code>CloseableService</code> is not strictly needed, as the same effect could
 be acheived by un-nesting the <code>&lt;bean&gt;</code> from the <code>&lt;service&gt;</code> element, like this:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;myComponent&quot;</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.example.MyComponent&quot;</span><span class="w"> </span><span class="na">destroy-method=</span><span class="s">&quot;close&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;service</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;myComponent&quot;</span><span class="w"> </span><span class="na">interface=</span><span class="s">&quot;com.example.MyService&quot;</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">"myComponent"</span><span class="w"> </span><span class="na">class=</span><span class="s">"com.example.MyComponent"</span><span class="w"> </span><span class="na">destroy-method=</span><span class="s">"close"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;service</span><span class="w"> </span><span class="na">ref=</span><span class="s">"myComponent"</span><span class="w"> </span><span class="na">interface=</span><span class="s">"com.example.MyService"</span><span class="nt">/&gt;</span>
 </code></pre></div>
 <p>There are situations where un-nesting is not possible, which is where <code>CloseableService</code> can be
 helpful.</p>
@@ -6081,7 +6081,7 @@ helpful.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       

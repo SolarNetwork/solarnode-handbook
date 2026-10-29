@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6239,24 +6239,24 @@ published datum is saved by SolarFlux. When an application subscribes to a topic
 receive any retained message for that topic. In this way, SolarFlux will provide a "most recent"
 snapshot of all datum across all nodes and sources.</p>
 <div class="highlight"><span class="filename">Example SolarFlux datum message, expressed as JSON</span><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;_DatumType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;net.solarnetwork.node.domain.ACEnergyDatum&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;_DatumTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;net.solarnetwork.node.domain.ACEnergyDatum&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;net.solarnetwork.node.domain.EnergyDatum&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;net.solarnetwork.node.domain.Datum&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;net.solarnetwork.node.domain.GeneralDatum&quot;</span>
+<span class="w">  </span><span class="nt">"_DatumType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"net.solarnetwork.node.domain.ACEnergyDatum"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"_DatumTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"net.solarnetwork.node.domain.ACEnergyDatum"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"net.solarnetwork.node.domain.EnergyDatum"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"net.solarnetwork.node.domain.Datum"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"net.solarnetwork.node.domain.GeneralDatum"</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;apparentPower&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2797</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1545167905344</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;current&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.800409317016602</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;phase&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PhaseB&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;phaseVoltage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">409.89337158203125</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;powerFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2999000549316406</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;reactivePower&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1996</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;realPower&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1958</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;sourceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ph2&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;voltage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">236.9553680419922</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;watts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1958</span>
+<span class="w">  </span><span class="nt">"apparentPower"</span><span class="p">:</span><span class="w"> </span><span class="mi">2797</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1545167905344</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"current"</span><span class="p">:</span><span class="w"> </span><span class="mf">11.800409317016602</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"phase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PhaseB"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"phaseVoltage"</span><span class="p">:</span><span class="w"> </span><span class="mf">409.89337158203125</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"powerFactor"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2999000549316406</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"reactivePower"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1996</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"realPower"</span><span class="p">:</span><span class="w"> </span><span class="mi">1958</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"sourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ph2"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"voltage"</span><span class="p">:</span><span class="w"> </span><span class="mf">236.9553680419922</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"watts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1958</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="mqtt-message-topics">MQTT message topics<a class="headerlink" href="#mqtt-message-topics" title="Permanent link">&para;</a></h2>
@@ -6550,7 +6550,7 @@ points to consider:</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/open_in_new_tab.js"></script>
       

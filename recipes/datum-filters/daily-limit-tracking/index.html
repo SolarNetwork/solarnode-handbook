@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6360,7 +6360,7 @@ parameter in a <code>wh-startofday</code> Local State entity.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">day_changed parameter expression</label><label for="__tabbed_1_2">wattHours_startOfDay expression</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nx">changeLocalState</span><span class="p">(</span><span class="s1">&#39;day-timestamp&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">epochSecs</span><span class="p">(</span><span class="nx">startOfDay</span><span class="p">()))</span>
+<div class="highlight"><pre><span></span><code><span class="nx">changeLocalState</span><span class="p">(</span><span class="s1">'day-timestamp'</span><span class="p">,</span><span class="w"> </span><span class="nx">epochSecs</span><span class="p">(</span><span class="nx">startOfDay</span><span class="p">()))</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -6372,9 +6372,9 @@ if the saved value differed from the perviously saved value.</em></p>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">day_changed</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">hasLocalState</span><span class="p">(</span><span class="s1">&#39;wh-startofday&#39;</span><span class="p">)</span>
-<span class="o">?</span><span class="w"> </span><span class="nx">saveLocalState</span><span class="p">(</span><span class="s1">&#39;wh-startofday&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">wattHours</span><span class="p">)</span>
-<span class="o">:</span><span class="w"> </span><span class="nx">localState</span><span class="p">(</span><span class="s1">&#39;wh-startofday&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">wattHours</span><span class="p">)</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">day_changed</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">hasLocalState</span><span class="p">(</span><span class="s1">'wh-startofday'</span><span class="p">)</span>
+<span class="o">?</span><span class="w"> </span><span class="nx">saveLocalState</span><span class="p">(</span><span class="s1">'wh-startofday'</span><span class="p">,</span><span class="w"> </span><span class="nx">wattHours</span><span class="p">)</span>
+<span class="o">:</span><span class="w"> </span><span class="nx">localState</span><span class="p">(</span><span class="s1">'wh-startofday'</span><span class="p">,</span><span class="w"> </span><span class="nx">wattHours</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -6502,7 +6502,7 @@ parameter we set up in the previous section.</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">wh_overLimit virtual meter expression</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">has</span><span class="p">(</span><span class="s1">&#39;wattHours_startOfDay&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="nx">currInput</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">wattHours_startOfDay</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">has</span><span class="p">(</span><span class="s1">'wattHours_startOfDay'</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="nx">currInput</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">wattHours_startOfDay</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span>
 <span class="o">?</span><span class="w"> </span><span class="nx">prevReading</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="nx">currInput</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">wattHours_startOfDay</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span>
 <span class="w">                  </span><span class="o">-</span><span class="w"> </span><span class="nx">max</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">prevInput</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">wattHours_startOfDay</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1000</span><span class="p">))</span>
 <span class="o">:</span><span class="w"> </span><span class="nx">prevReading</span>
@@ -6542,20 +6542,20 @@ would be used:</p>
 <div class="tabbed-block">
 <p>The "time period has changed" parameter is renamed to the more generic <code>reportPeriod_changed</code>,
 and this expression would be used:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">changeLocalState</span><span class="p">(</span><span class="s1">&#39;report-period-timestamp&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">epochSecs</span><span class="p">(</span><span class="nx">dateFloor</span><span class="p">(</span><span class="nx">nowTz</span><span class="p">(),</span><span class="w"> </span><span class="s1">&#39;PT4H&#39;</span><span class="p">)))</span>
+<div class="highlight"><pre><span></span><code><span class="nx">changeLocalState</span><span class="p">(</span><span class="s1">'report-period-timestamp'</span><span class="p">,</span><span class="w"> </span><span class="nx">epochSecs</span><span class="p">(</span><span class="nx">dateFloor</span><span class="p">(</span><span class="nx">nowTz</span><span class="p">(),</span><span class="w"> </span><span class="s1">'PT4H'</span><span class="p">)))</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <p>Similary the "start of time period" reading parameter name could be changed to
 <code>wattHours_startOfReportPeriod</code> and its expression changed to:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">reportPeriod_changed</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">hasLocalState</span><span class="p">(</span><span class="s1">&#39;wh-startof-report-period&#39;</span><span class="p">)</span>
-<span class="o">?</span><span class="w"> </span><span class="nx">saveLocalState</span><span class="p">(</span><span class="s1">&#39;wh-startof-report-period&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">wattHours</span><span class="p">)</span>
-<span class="o">:</span><span class="w"> </span><span class="nx">localState</span><span class="p">(</span><span class="s1">&#39;wh-startof-report-period&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">wattHours</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nx">reportPeriod_changed</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">hasLocalState</span><span class="p">(</span><span class="s1">'wh-startof-report-period'</span><span class="p">)</span>
+<span class="o">?</span><span class="w"> </span><span class="nx">saveLocalState</span><span class="p">(</span><span class="s1">'wh-startof-report-period'</span><span class="p">,</span><span class="w"> </span><span class="nx">wattHours</span><span class="p">)</span>
+<span class="o">:</span><span class="w"> </span><span class="nx">localState</span><span class="p">(</span><span class="s1">'wh-startof-report-period'</span><span class="p">,</span><span class="w"> </span><span class="nx">wattHours</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <p>The Virtual Meter expression would then change to make use of the updated parameter names:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">has</span><span class="p">(</span><span class="s1">&#39;reportPeriod_changed&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="nx">currInput</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">wattHours_startOfReportPeriod</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span>
+<div class="highlight"><pre><span></span><code><span class="nx">has</span><span class="p">(</span><span class="s1">'reportPeriod_changed'</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="nx">currInput</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">wattHours_startOfReportPeriod</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span>
 <span class="o">?</span><span class="w"> </span><span class="nx">prevReading</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="nx">currInput</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">wattHours_startOfReportPeriod</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span>
 <span class="w">                </span><span class="o">-</span><span class="w"> </span><span class="nx">max</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">prevInput</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">wattHours_startOfReportPeriod</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1000</span><span class="p">))</span>
 <span class="o">:</span><span class="w"> </span><span class="nx">prevReading</span>
@@ -6615,7 +6615,7 @@ and this expression would be used:</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       

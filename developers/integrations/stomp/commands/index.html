@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6167,7 +6167,7 @@ request-id:1
 content-type:application/json;charset=utf-8
 content-length:159
 
-[{&quot;created&quot;:&quot;2021-08-19 02:30:10.005Z&quot;,&quot;sourceId&quot;:&quot;Mock Energy Meter&quot;,&quot;i&quot;:{&quot;voltage&quot;:234.99959,&quot;frequency&quot;:50.499973,&quot;watts&quot;:11214},&quot;a&quot;:{&quot;wattHours&quot;:6118188}}]^@
+[{"created":"2021-08-19 02:30:10.005Z","sourceId":"Mock Energy Meter","i":{"voltage":234.99959,"frequency":50.499973,"watts":11214},"a":{"wattHours":6118188}}]^@
 </code></pre></div>
 </div>
 </div>
@@ -6262,10 +6262,10 @@ and returns a string result <code>Hi there!</code>:</p>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">topic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">instruction</span><span class="p">.</span><span class="na">getParameterValue</span><span class="p">(</span><span class="n">InstructionHandler</span><span class="p">.</span><span class="na">PARAM_SERVICE</span><span class="p">);</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="s">&quot;/setup/hello&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="s">"/setup/hello"</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hi there!&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Hi there!"</span><span class="p">;</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">InstructionStatus</span><span class="p">.</span><span class="na">createStatus</span><span class="p">(</span><span class="n">instruction</span><span class="p">,</span><span class="w"> </span><span class="n">InstructionState</span><span class="p">.</span><span class="na">Completed</span><span class="p">,</span><span class="w"> </span><span class="n">Instant</span><span class="p">.</span><span class="na">now</span><span class="p">(),</span>
 <span class="w">        </span><span class="n">Map</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">InstructionHandler</span><span class="p">.</span><span class="na">PARAM_SERVICE_RESULT</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">));</span>
 <span class="p">}</span>
@@ -6289,7 +6289,7 @@ request-id:2
 content-type:application/json;charset=utf-8
 content-length:11
 
-&quot;Hi there!&quot;^@
+"Hi there!"^@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -6354,7 +6354,7 @@ from the server will be encoded into JSON.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../../js/open_in_new_tab.js"></script>
       

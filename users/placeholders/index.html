@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6154,23 +6154,23 @@ static value will be ignored.</p>
 <p>For example, to set the <code>floor</code> placeholder to <code>2</code> on node 123, you could make a <code>POST</code> request to
 <code>/solaruser/api/v1/sec/instr/add/UpdateSetting</code> with the following JSON body:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;nodeId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;params&quot;</span><span class="p">:{</span>
-<span class="w">    </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;placeholder&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w">  </span><span class="s2">&quot;floor&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span>
+<span class="w">  </span><span class="nt">"nodeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"params"</span><span class="p">:{</span>
+<span class="w">    </span><span class="nt">"key"</span><span class="p">:</span><span class="w">   </span><span class="s2">"placeholder"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w">  </span><span class="s2">"floor"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Multiple settings can be updated as well, using a different syntax. Here's a request that sets
 both <code>floor</code> to <code>2</code> and <code>room</code> to <code>MEET</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;nodeId&quot;</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="nt">&quot;parameters&quot;</span><span class="p">:[</span>
-<span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;key&quot;</span><span class="p">,</span><span class="w">   </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;placeholder&quot;</span><span class="p">},</span>
-<span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;type&quot;</span><span class="p">,</span><span class="w">  </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;floor&quot;</span><span class="p">},</span>
-<span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">},</span>
-<span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;key&quot;</span><span class="p">,</span><span class="w">   </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;placeholder&quot;</span><span class="p">},</span>
-<span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;type&quot;</span><span class="p">,</span><span class="w">  </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;room&quot;</span><span class="p">},</span>
-<span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;MEET&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"nodeId"</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="nt">"parameters"</span><span class="p">:[</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"key"</span><span class="p">,</span><span class="w">   </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"placeholder"</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"type"</span><span class="p">,</span><span class="w">  </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"floor"</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"value"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"key"</span><span class="p">,</span><span class="w">   </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"placeholder"</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"type"</span><span class="p">,</span><span class="w">  </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"room"</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"value"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"MEET"</span><span class="p">}</span>
 <span class="p">]}</span>
 </code></pre></div>
 
@@ -6225,7 +6225,7 @@ both <code>floor</code> to <code>2</code> and <code>room</code> to <code>MEET</c
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/open_in_new_tab.js"></script>
       

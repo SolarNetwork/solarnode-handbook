@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -6509,7 +6509,7 @@ The <strong>Result Expression</strong> also includes the following additional va
 </table>
 <p>For example, you could generate a datum property based on the success of the executed instruction
 with a <strong>Result Expression</strong> like:</p>
-<div class="highlight"><span class="filename">Generate a true/false datum property based on the instruction result status</span><pre><span></span><code><span class="n">has</span><span class="p">(</span><span class="err">&#39;</span><span class="n">instructionResult</span><span class="err">&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">instructionResult</span><span class="p">.</span><span class="na">completed</span>
+<div class="highlight"><span class="filename">Generate a true/false datum property based on the instruction result status</span><pre><span></span><code><span class="n">has</span><span class="p">(</span><span class="err">'</span><span class="n">instructionResult</span><span class="err">'</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">instructionResult</span><span class="p">.</span><span class="na">completed</span>
 </code></pre></div>
 <h2 id="csv-configurer">CSV Configurer<a class="headerlink" href="#csv-configurer" title="Permanent link">&para;</a></h2>
 <p>This component provides an <strong>Instructor Datum Filter CSV Configurer</strong> service that appears on the
@@ -6671,13 +6671,13 @@ instance.</p>
 <p>Here is the CSV as shown in the example configuration screen shot above (comments have been
 removed for brevity):</p>
 <div class="highlight"><pre><span></span><code>Instance ID,Service Name,Service Group,Source ID,Mode,Tag,Predicate,Instruction Topic,Param Name,Param Value,Param Expr,Result Expr,Result Prop,Result Prop Type
-Photo,Take Photo on Anomaly,,/inv/1,,,has(&#39;voltage&#39;) &amp;&amp; (voltage &lt; 235 || voltage &gt; 245),Signal,/camera/1,snapshot,FALSE,,,
-DR,Execute DR Event,,/dr/event,,,has(&#39;initiate&#39;) &amp;&amp; initiate == 1,CancelInstruction,id,localState(&#39;dr-instruction-id&#39;),TRUE,,,
+Photo,Take Photo on Anomaly,,/inv/1,,,has('voltage') &amp;&amp; (voltage &lt; 235 || voltage &gt; 245),Signal,/camera/1,snapshot,FALSE,,,
+DR,Execute DR Event,,/dr/event,,,has('initiate') &amp;&amp; initiate == 1,CancelInstruction,id,localState('dr-instruction-id'),TRUE,,,
 ,,,,,,,,ignoreErrors,true,FALSE,,,
-,,,,,,,OrchestrateControls,service,DR HVAC,FALSE,&quot;has(&#39;instructionResult&#39;) &amp;&amp; instructionResult.completed
-? saveLocalState(&#39;dr-instruction-id&#39;, instructionResult.instructionId)
-: null&quot;,instructionId,Status
-,,,,,,,,date,&quot;datePlus(timestamp(), &#39;PT2M&#39;)&quot;,TRUE,,,
+,,,,,,,OrchestrateControls,service,DR HVAC,FALSE,"has('instructionResult') &amp;&amp; instructionResult.completed
+? saveLocalState('dr-instruction-id', instructionResult.instructionId)
+: null",instructionId,Status
+,,,,,,,,date,"datePlus(timestamp(), 'PT2M')",TRUE,,,
 </code></pre></div>
 <h2 id="example-vehicle-gate-control">Example: Vehicle Gate Control<a class="headerlink" href="#example-vehicle-gate-control" title="Permanent link">&para;</a></h2>
 <p>Imagine a vehicle service garage, where vehicles enter and leave a maintenance bay in one direction.
@@ -6694,9 +6694,9 @@ present in the bay and activates a "present" signal that SolarNode reads as a <c
 vehicle is present in the bay the sensor signal reads as a <code>0</code> value. Essentially SolarNode has a
 datum stream that looks like this:</p>
 <div class="highlight"><span class="filename">Vehicle presence sensor datum example</span><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;sourceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/vehicle/presence&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-07-14T12:00:00Z&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;isPresent&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">// (1)!</span>
+<span class="w">    </span><span class="nt">"sourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/vehicle/presence"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-07-14T12:00:00Z"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"isPresent"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">// (1)!</span>
 <span class="p">}</span>
 </code></pre></div>
 <ol>
@@ -6796,7 +6796,7 @@ records are used to maintain state between executions of the Instructor.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../js/open_in_new_tab.js"></script>
       
