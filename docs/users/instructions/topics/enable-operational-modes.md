@@ -56,4 +56,4 @@ The following instruction parameters are available:
 
 ## Result
 
-A `Completed` state indicates the operational mode(s) were deactivated.
+A `Completed` state indicates the operational mode(s) were activated.
