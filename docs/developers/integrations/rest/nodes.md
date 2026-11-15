@@ -5,9 +5,9 @@ title: Nodes
 
 The node endpoints provide part of the [SolarQuery API][solarquery-api] for the node and the sources
 in its datum history, so that SolarQuery clients such as the [SolarNetwork Grafana data
-source](datum.md#grafana) can find the datum to query with the [datum endpoints](datum.md). Each
-endpoint is available under both the `/solarquery/api/v1/sec` path that SolarQuery clients use and
-the `/api/v1/sec` path of the rest of the SolarNode REST API.
+source](datum.md#grafana-integration) can find the datum to query with the [datum
+endpoints](datum.md). Each endpoint is available under both the `/solarquery/api/v1/sec` path that
+SolarQuery clients use and the `/api/v1/sec` path of the rest of the SolarNode REST API.
 
 Results are provided as JSON, CBOR, or CSV, depending on the `Accept` HTTP header, and as JSON when
 no `Accept` header is provided.
