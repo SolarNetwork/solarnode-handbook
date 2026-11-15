@@ -319,7 +319,7 @@ of another reading type would be wrong rather than incomplete. These requests fa
 |:--------|:-------|
 | No `readingType` | `400` |
 | A `readingType` that is not a reading type name, such as `delta` | `422` |
-| A `readingType` other than `Difference`, such as `NearestDifference` | `404` |
+| A `readingType` other than `Difference`, such as `NearestDifference` | `422` |
 
 A request that names only other node IDs gets an empty result whatever its reading type, as
 nothing is queried.
