@@ -24,10 +24,13 @@ SolarQuery, with these differences:
 
  * Only the node's own datum are available. A request that names only other node IDs gets an
    empty result, and other node IDs are ignored when the node's own ID is also requested.
- * Only the `Hour`, `Day`, and `Month` aggregations are supported, and only when the [Database
+ * Only the `Hour`, `Day`, and `Month` aggregations, and the [sub-hour
+   aggregations](#sub-hour-aggregation) `FiveMinute`, `TenMinute`, `FifteenMinute`, and
+   `ThirtyMinute`, are supported, and only when the [Database
    historian](../../../users/datum-historian.md#database-historian) has its aggregate setup. Other
    aggregations, and any aggregation without the aggregate setup, are ignored, so datum are returned
-   as they were stored.
+   as they were stored. With the aggregate setup, the `Minute` aggregation is refused, as by
+   SolarQuery.
  * Only the `Difference` reading type is supported.
  * Reading results do not account for meter resets, as SolarNode has nothing like the reset datum
    auxiliary records of SolarNetwork.
@@ -46,7 +49,9 @@ types in the order given, and CBOR when no `Accept` header is provided. They are
 gzip when the `Accept-Encoding` HTTP header allows it.
 
 An error is returned as an error result, with `success` set to `false`, in the format of the
-request and with an HTTP error status.
+request and with an HTTP error status. A query that SolarNode refuses, such as a [sub-hour
+aggregation](#sub-hour-aggregation) over too long a time range, gets a `422` status, as in
+SolarQuery, with a `message` that starts with `Illegal argument:`.
 
 ## Unfiltered history
 
@@ -87,7 +92,9 @@ them to the **Proxy** with its `/unfiltered` path prefix.
 
 Queries can use the **List** query type, or the **Reading** query type with the **Difference**
 reading type, with a **Combining Type** of **None**. With automatic aggregation the data source asks
-for `Hour`, `Day`, or `Month` results as the time range grows. Queries with any other reading type
+for `Hour`, `Day`, or `Month` results as the time range grows. A [sub-hour
+aggregation](#sub-hour-aggregation) such as `FiveMinute` can be chosen as the query's aggregation
+instead, for panels with time ranges of at most five weeks. Queries with any other reading type
 fail with an error, and queries with any other combining type use SolarQuery endpoints that
 SolarNode does not provide, so they fail with an error too.
 
@@ -114,7 +121,7 @@ more](#get-datumstreamreading).
 | `withoutTotalResultsCount` | Boolean | `false` to include the total result count when `max` is given. Defaults to `true`, unlike SolarQuery. |
 | `sorts[n].sortKey` | String | A sort key: one of `node`, `source`, or `time` (or `created`). Other keys are ignored. |
 | `sorts[n].descending` | Boolean | `true` to sort the matching `sortKey` in descending order. |
-| `aggregation` | String | `Hour`, `Day`, or `Month` for aggregated results, when the datum history has aggregates. Other values are ignored. |
+| `aggregation` | String | `FiveMinute`, `TenMinute`, `FifteenMinute`, `ThirtyMinute`, `Hour`, `Day`, or `Month` for aggregated results, when the datum history has aggregates. The keys `5m`, `10m`, `15m`, `30m`, `h`, `d`, and `M` can be used instead. Other values are ignored. |
 | `propertyNames` | String[] | Datum property names to limit datum results to. |
 
 Dates are given in the same forms as SolarQuery, such as `2026-11-01`, `2026-11-01 12:00`, or
@@ -124,8 +131,8 @@ List parameters can be given as a comma-delimited list, or as repeated parameter
 The `local` dates are taken in the time zone of the node, as stored in the datum history, so
 `localStartDate=2026-01-01&localEndDate=2026-02-01` gives January in the node's time zone. When
 either is given, the `local` dates are used in place of `startDate` and `endDate`, as in SolarQuery.
-A `Difference` reading without aggregation, which is one reading over the whole date range, uses
-them only when both are given.
+A `Difference` reading without aggregation, which is one reading over the whole date range, and a
+[sub-hour aggregation](#sub-hour-aggregation) use them only when both are given, as in SolarQuery.
 
 ## GET `/datum/stream/meta/node`
 
@@ -235,6 +242,38 @@ columns, such as `watts`, `watts_count`, `watts_min`, and `watts_max`, or `wattH
 }
 ```
 
+### Sub-hour aggregation
+
+With an `aggregation` of `FiveMinute`, `TenMinute`, `FifteenMinute`, or `ThirtyMinute`, and a datum
+history with the aggregate setup, each datum in `data` is an aggregate of that length of time,
+computed from the stored datum when queried, the way SolarQuery computes them. The aggregates start
+on the multiples of their length in UTC, such as `10:00`, `10:15`, `10:30`, and `10:45` for
+`FifteenMinute`. Unlike the other aggregates, they have no starting and ending readings: each
+accumulating property is a list of only its accumulation, as in SolarQuery, and the CSV `_start`
+and `_end` columns are empty. The difference between two datum in different aggregates is split by
+time between the aggregate of the earlier datum and that of the later one, so any aggregates between
+them, which have no datum, get no part of it.
+
+As in SolarQuery:
+
+ * A date range is required: `startDate` and `endDate`, or both `localStartDate` and
+   `localEndDate`.
+ * The date range can be at most 840 hours (five weeks), so that a whole month can be queried.
+   Whole hours are counted, between the `local` dates when both are given, and otherwise between
+   `startDate` and `endDate`.
+ * `mostRecent` can not be used.
+ * The `Minute` aggregation is not supported.
+
+A query that breaks one of these rules is refused with a `422` status and an error result. The
+range limit is the `JdbcDatumHistorian.maxMinuteAggregationHours` setting of the
+`net.solarnetwork.node.datumhistorian.jdbc` configuration, which can be raised, or set to `0` for no
+limit, at the cost of slower queries over long ranges.
+
+Without the aggregate setup, these aggregations are ignored, like the other aggregations, so datum
+are returned as they were stored.
+
+### Errors after the results have started
+
 If an error occurs after SolarNode has started sending the results, the response ends early, with
 incomplete results rather than an error result. A client can not parse incomplete JSON, CBOR, or
 gzip compressed results, but incomplete CSV results can look complete.
@@ -255,7 +294,7 @@ The endpoint takes the [query parameters](#query-parameters) of the
 |:----------|:-----|:------------|
 | `readingType` | String | **Required.** The reading type. Only `Difference` is supported. |
 | `tolerance` | String | Accepted, but not used by the `Difference` reading type. |
-| `aggregation` | String | `Hour`, `Day`, or `Month` for a reading of each aggregate period, when the datum history has aggregates. Other values are ignored. |
+| `aggregation` | String | `Hour`, `Day`, or `Month` for a reading of each aggregate period, when the datum history has aggregates. The sub-hour aggregations are refused with a `422` status, as in SolarQuery. Other values are ignored. |
 
 Without aggregation, a missing `startDate` or `endDate` is taken to be the current time.
 
