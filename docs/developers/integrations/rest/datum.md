@@ -101,11 +101,11 @@ Queries can use the **List** query type, or the **Reading** query type with the 
 reading type, with a **Combining Type** of **None**. With automatic aggregation the data source asks
 for `Hour`, `Day`, or `Month` results as the time range grows. A [sub-hour
 aggregation](#sub-hour-aggregation) can be chosen as the query's aggregation instead:
-`FifteenMinute` or `ThirtyMinute` for any time range, although `ThirtyMinute` is slow over long time
-ranges of many streams, and `FiveMinute` or `TenMinute` for panels with time ranges of at most five
-weeks. Reading queries can use `FifteenMinute`, but not the other sub-hour aggregations. Queries
-with any other reading type fail with an error, and queries with any other combining type use
-SolarQuery endpoints that SolarNode does not provide, so they fail with an error too.
+`FifteenMinute` or `ThirtyMinute` for any time range, and `FiveMinute` or `TenMinute` for panels
+with time ranges of at most five weeks. Reading queries can use `FifteenMinute`, but not the other
+sub-hour aggregations. Queries with any other reading type fail with an error, and queries with any
+other combining type use SolarQuery endpoints that SolarNode does not provide, so they fail with an
+error too.
 
 Live streaming with the data source **MQTT** setting is not supported by SolarNode.
 
@@ -315,9 +315,9 @@ accumulations and reading differences are added, the starting reading is that of
 and the ending reading that of the last, the counts are added, the minimum and maximum are taken,
 and the average is weighted by the counts. When the two quarters have different status values, the
 one that sorts first is given. A date that is not on a half hour is taken to the next half hour, so
-a half hour is never combined from only one of its quarters. A `ThirtyMinute` query does work in
-proportion to its whole date range, whatever `max` is, as every half hour of the range is combined
-before the page is taken, so a query over a long date range of many streams is slow.
+a half hour is never combined from only one of its quarters. A `ThirtyMinute` query combines only
+the half hours of the page asked for, but finds and sorts those of its whole date range, so without
+`max` a query over a long date range of many streams takes seconds.
 
 ```json title="Example ThirtyMinute response"
 {
