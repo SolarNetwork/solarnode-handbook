@@ -29,16 +29,20 @@ connect to.
 
 ### Aggregates
 
-The Database Historian can also store `Hour`, `Day`, and `Month` aggregates of every datum stream,
-for the aggregated results of the [datum REST API][rest-datum]. This is the historian's aggregate
-setup, which is chosen when the database is set up, as the [JDBC Datum Historian][jdbc-dh] plugin's
-README describes. A scheduled database job keeps the aggregates up to date as datum are stored.
+The Database Historian can also store `FifteenMinute`, `Hour`, `Day`, and `Month` aggregates of
+every datum stream, for the aggregated results of the [datum REST API][rest-datum], which also
+combines the 15 minute aggregates into `ThirtyMinute` ones and computes `FiveMinute` and `TenMinute`
+ones from the datum when queried. This is the historian's aggregate setup, which is chosen when the
+database is set up, as the [JDBC Datum Historian][jdbc-dh] plugin's README describes. A scheduled
+database job keeps the aggregates up to date as datum are stored.
 
-Hourly aggregates start on the hour in UTC, and daily and monthly aggregates at midnight in the
-node's time zone. The hourly aggregates are kept in a table partitioned by UTC year, which manages its
-own partitions: the partition of a year is created when the first hour in that year is stored, which
-can be a past year when a late datum arrives. Partitions are never dropped automatically, so the
-aggregates are kept for as long as the database is.
+15 minute aggregates start on the quarter hours in UTC, and are computed with the hour they are part
+of, so they add up to it. Hourly aggregates start on the hour in UTC, and daily and monthly
+aggregates at midnight in the node's time zone. The 15 minute and hourly aggregates are kept in
+tables partitioned by UTC year, which manage their own partitions: the partition of a year is
+created when the first hour in that year is stored, which can be a past year when a late datum
+arrives. Partitions are never dropped automatically, so the aggregates are kept for as long as the
+database is.
 
 
 
